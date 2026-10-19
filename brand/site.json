@@ -7,7 +7,7 @@
   "base_url": "https://jacode21.github.io/si-journal/",
   "language": "en-us",
   "disclaimer": "Asymptote is for information and education only. Nothing here is investment, legal or tax advice, or an offer to buy or sell any security. Writers may hold positions in companies mentioned. Do your own research, and talk to a licensed professional before you invest.",
-  "accent": "#A8482A",
+  "accent": "#E4500E",
   "tagline_is_working": false,
   "ornament": false,
   "copy": {
@@ -17,20 +17,20 @@
     "footer": "Not investment advice. Just a clearer view.",
     "notfound_title": "This page isn’t here.",
     "notfound_body": "It may have moved. Today’s issue hasn’t.",
-    "signup_soon": "The morning email opens soon. Until then, the feed works.",
+    "signup_soon": "The morning email opens soon. Until then, follow along by RSS.",
     "signup_lede": "One issue each morning. Short, sourced, unhurried.",
     "search_title": "Search",
     "search_body": "Every issue, brief and primer, in one place.",
     "primers_title": "The SI Primer",
     "primers_body": "One idea a day, defined once and cleanly. Read them in order and the vocabulary builds.",
-    "subscribe_title": "The morning email",
-    "subscribe_body": "One issue, every morning. The short version up top, the long view below. Leave whenever you like."
+    "subscribe_title": "Subscribe",
+    "subscribe_body": "One issue every morning: the short version up top, the long view below. Leave whenever you like."
   },
-  "paper": "#F5EFE4",
-  "ink": "#1F1A15",
-  "muted": "#6A5F53",
-  "rule": "#DCD0BC",
-  "paper_deep": "#EDE4D3",
+  "paper": "#ECEAE4",
+  "ink": "#111110",
+  "muted": "#5C5B57",
+  "rule": "#C9C5BC",
+  "paper_deep": "#E2DFD7",
   "serif": "'Newsreader', Georgia, 'Times New Roman', Times, serif",
   "mono": "'IBM Plex Mono', 'Courier New', Courier, monospace",
   "topics": [
@@ -43,5 +43,8 @@
     "Robotics",
     "Policy"
   ],
-  "trace": true
+  "trace": true,
+  "ink_soft": "#3A3936",
+  "accent_text": "#B83A09",
+  "tokens_note": "accent (#E4500E) is the signal orange for marks, rules, focus rings and large type (3.2:1 on paper). For small text, links and buttons use accent_text (#B83A09, 4.8:1)."
 }

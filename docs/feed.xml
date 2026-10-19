@@ -6,7 +6,7 @@
   <atom:link href="https://jacode21.github.io/si-journal/feed.xml" rel="self" type="application/rss+xml"/>
   <description>A daily read on the next decade, for investors. AI and superintelligence are the spine. Energy, bio, space, quantum, robotics and policy come in when they shape the next ten years.</description>
   <language>en-us</language>
-  <lastBuildDate>Mon, 19 Oct 2026 05:06:23 +0000</lastBuildDate>
+  <lastBuildDate>Mon, 19 Oct 2026 05:18:18 +0000</lastBuildDate>
   <item>
     <title>The Grid Said No</title>
     <link>https://jacode21.github.io/si-journal/issues/2026-10-19/</link>
@@ -22,8 +22,7 @@
     <content:encoded><![CDATA[<p><strong>The short version</strong></p><ul>
 <li>Microsoft walked away from Britain&rsquo;s flagship AI data centre because the grid can&rsquo;t connect it until the 2030s. Meanwhile, Anthropic signed for Canadian capacity with its own wind farms on the way.</li>
 <li>The constraint on intelligence is turning into electricity, and the patient capital that can supply it.</li>
-</ul><p><em>Microsoft walked away from Britain&rsquo;s flagship AI data centre. The chips were ready. The power wasn&rsquo;t. Get used to that sentence.</em></p>
-<h2 id="what-happened">What happened</h2>
+</ul><h2 id="what-happened">What happened</h2>
 <p>On Sunday the Telegraph first reported that Microsoft had pulled out as the expected anchor tenant of Nscale&rsquo;s planned AI data centre in Loughton, Essex (<a href="https://www.telegraph.co.uk/business/2026/10/18/microsoft-axes-ai-deal-setback-uk-data-centre-pioneer/">Telegraph</a>; <a href="https://www.theguardian.com/uk-news/2026/oct/18/microsoft-drops-huge-ai-datacentre-project-in-essex-over-power-supply-concerns">Guardian</a>).</p>
 <p>Starmer&rsquo;s government had billed it as the &ldquo;largest UK sovereign AI datacentre&rdquo; (<a href="https://www.theguardian.com/uk-news/2026/oct/18/microsoft-drops-huge-ai-datacentre-project-in-essex-over-power-supply-concerns">Guardian</a>). Nscale pledged £2bn to it (<a href="https://www.bbc.com/news/articles/c9m26kl5y7epo">BBC</a>). Microsoft was its only publicly announced customer (<a href="https://www.theguardian.com/uk-news/2026/oct/18/microsoft-drops-huge-ai-datacentre-project-in-essex-over-power-supply-concerns">Guardian</a>).</p>
 <p>The problem was the grid. UK Power Networks told Nscale it couldn&rsquo;t supply enough power until the early-to-mid 2030s (<a href="https://www.theguardian.com/uk-news/2026/oct/18/microsoft-drops-huge-ai-datacentre-project-in-essex-over-power-supply-concerns">Guardian</a>). Nscale told the BBC it is &ldquo;exploring alternative power sources&rdquo; and that the &ldquo;London-wide grid issue has no impact on our other contracts.&rdquo; Microsoft declined to comment (<a href="https://www.bbc.com/news/articles/c9m26kl5y7epo">BBC</a>).</p>

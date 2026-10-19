@@ -248,26 +248,38 @@ def mini(site, seed):
 TOPICS = ["AI", "Compute", "Energy", "Bio", "Space", "Quantum", "Robotics", "Policy"]
 
 
-def trace_svg(seed_text, accent, label):
-    """A hairline signal trace, like a seismograph strip, seeded by headline + date."""
+def trace_svg(seed_text, accent, label, year=None, draw=True):
+    """Signature hero: a signal trace that keeps closing on a dashed asymptote.
+    Seeded by headline + date, so every issue draws its own line. Scale shows the decade ahead."""
     rnd = random.Random(int(hashlib.sha256(seed_text.encode()).hexdigest(), 16))
-    W, H, mid = 640, 36, 18
-    n = 160
-    spike = rnd.randint(int(n * 0.55), int(n * 0.85))
-    f1, f2, ph = rnd.uniform(0.08, 0.2), rnd.uniform(0.3, 0.6), rnd.uniform(0, 6.3)
+    W, H, top, bot = 1000, 120, 18, 108
+    n = 300
+    spike = rnd.randint(int(n * 0.58), int(n * 0.86))
+    rate = rnd.uniform(2.6, 3.6)
+    f1, f2, ph = rnd.uniform(0.05, 0.11), rnd.uniform(0.32, 0.55), rnd.uniform(0, 6.3)
     pts = []
     for k in range(n + 1):
-        x = W * k / n
-        amp = 2.2 + 1.4 * math.sin(k * f1 + ph)
-        y = mid + amp * math.sin(k * f2 + ph) * 0.6 + rnd.gauss(0, 0.9)
+        t = k / n
+        x = W * t
+        env = 1 - math.exp(-rate * t)                      # always closer, never there
+        base = bot - (bot - top - 5) * env
+        noise = (3.4 * math.sin(k * f2 + ph) + 2.2 * math.sin(k * f1 * 3.1 + ph * 2)) * (1 - 0.6 * env) + rnd.gauss(0, 1.0)
+        y = base + noise * 0.9
         dist = abs(k - spike)
-        if dist < 6:
-            y += (-1) ** k * (13 - dist * 2.1) * rnd.uniform(0.75, 1.0)
+        if dist < 7:
+            y += (-1) ** k * (30 - dist * 4.0) * rnd.uniform(0.8, 1.0)
         pts.append(f"{x:.1f},{max(2, min(H - 2, y)):.1f}")
     sx = W * spike / n
-    return (f'<svg class="trace" viewBox="0 0 {W} {H}" preserveAspectRatio="none" role="img" aria-label="{esc(label)}">'
-            f'<polyline points="{" ".join(pts)}" fill="none" stroke="currentColor" stroke-width="1" vector-effect="non-scaling-stroke" stroke-linejoin="round"/>'
-            f'<circle cx="{sx:.1f}" cy="{mid}" r="2.2" fill="{accent}"/></svg>')
+    sy = float(pts[spike].split(",")[1])
+    svg = (f'<svg class="trace{" draw" if draw else ""}" viewBox="0 0 {W} {H}" role="img" aria-label="{esc(label)}">'
+           f'<line x1="0" y1="{top}" x2="{W}" y2="{top}" stroke="currentColor" stroke-width="1" stroke-dasharray="2 5" opacity=".55" vector-effect="non-scaling-stroke"/>'
+           f'<polyline pathLength="1" points="{" ".join(pts)}" fill="none" stroke="currentColor" vector-effect="non-scaling-stroke" stroke-linejoin="round" stroke-linecap="round"/>'
+           f'<circle class="halo" cx="{sx:.1f}" cy="{sy:.1f}" r="7" vector-effect="non-scaling-stroke"/>'
+           f'<circle class="spike" cx="{sx:.1f}" cy="{sy:.1f}" r="2.6"/></svg>')
+    if year:
+        y0 = int(year)
+        svg += ('<div class="scale" aria-hidden="true">' + "".join(f"<span>{y0 + k}</span>" if k in (0, 5, 10) else "<span></span>" for k in range(11)) + "</div>")
+    return f'<div class="hero-trace">{svg}</div>'
 
 
 STATUS_ALIASES = {"approved": "approved", "approve": "approved", "published": "approved", "publish": "approved",
@@ -306,8 +318,11 @@ def load_issues():
             print(f"  skip: {d.name} is {status}", file=sys.stderr)
             continue
         h1, body = strip_leading_h1(body)
-        if not (meta.get("dek") or meta.get("summary")):
-            m_dek = re.match(r"^\s*([_*])([^\n]+?)\1\s*(\n\s*\n|$)", body)
+        m_dek = re.match(r"^\s*([_*])([^\n]+?)\1\s*(\n\s*\n|$)", body)
+        norm = lambda s: re.sub(r"\W+", "", (s or "").lower())
+        if m_dek and (meta.get("dek") or meta.get("summary")) and norm(m_dek.group(2)) == norm(meta.get("dek") or meta.get("summary")):
+            body = body[m_dek.end():]  # the italic standfirst repeats the frontmatter dek: show it once
+        elif not (meta.get("dek") or meta.get("summary")):
             if m_dek:  # a lone italic line right under the headline is the dek
                 meta["dek"] = m_dek.group(2).strip()
                 body = body[m_dek.end():]
@@ -398,6 +413,8 @@ def load_issues():
             issue["disclaimer_html"] = md(extracted["disclaimer"][1])
         else:
             issue["disclaimer_html"] = None
+        allhtml = issue["lead_html"] + "".join(s["html"] for s in issue["sections"]) + (issue["horizon"]["html"] if issue["horizon"] else "")
+        issue["sources"] = len({u for u in re.findall(r'href="(https?://[^"]+)"', allhtml)})
         issues.append(issue)
     issues.sort(key=lambda i: i["date"])
     n = 0
@@ -423,10 +440,10 @@ DEFAULT_COPY = {
 }
 
 # ---------------------------------------------------------------- templates
-FONTS = ('<link rel="preconnect" href="https://fonts.googleapis.com">'
-         '<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>'
-         '<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,300..700;1,6..72,300..700'
-         '&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">')
+FONTS = ""  # self-hosted in assets/fonts (see style.css); preloaded per page in page()
+
+
+STRIP = {}
 
 
 def page(site, root, title, body, description="", canonical="", kind="website", jsonld=None,
@@ -460,18 +477,22 @@ def page(site, root, title, body, description="", canonical="", kind="website", 
 <meta name="twitter:description" content="{esc(desc)}">
 <meta name="twitter:image" content="{og_img}">
 {f'<meta name="twitter:site" content="{esc(site["twitter"])}">' if site.get("twitter") else ''}
-<meta name="theme-color" content="{site.get('paper', '#F5EFE4')}">
+<meta name="theme-color" content="{site.get('paper', '#ECEAE4')}">
 <link rel="alternate" type="application/rss+xml" title="{esc(site['name'])}" href="{root}feed.xml">
 <link rel="icon" href="{root}assets/favicon.svg" type="image/svg+xml">
-{FONTS}
+<link rel="preload" href="{root}assets/fonts/newsreader.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="{root}assets/fonts/plexmono-400.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="{root}assets/style.css">
+<script>document.documentElement.classList.add('js')</script>
 {head_extra}
 {ld}
 </head>
 <body>
 <a class="skip" href="#main">Skip to content</a>
 {banner}
+<div class="frame" aria-hidden="true"><i></i><i></i><i></i><i></i><b></b></div>
 <header class="masthead" data-pagefind-ignore>
+  <div class="wrap"><p class="strip"><span>{esc(site["name"])} · Daily<span class="wide"> · Est. 2026</span></span><span>{esc(STRIP.get("right", ""))}</span></p></div>
   <div class="wrap masthead-inner">
     <a class="wordmark" href="{root}">{esc(site['name'])}</a>
     <p class="tagline">{esc(site['tagline'])}</p>
@@ -500,6 +521,7 @@ def page(site, root, title, body, description="", canonical="", kind="website", 
   </div>
 </footer>
 {TYPE_JS if 'class="typeline"' in body else ""}
+{DECODE_JS if 'data-decode=' in body else ""}
 {KEYS_JS}
 </body>
 </html>
@@ -522,15 +544,15 @@ def signup_block(site, root):
     C = {**DEFAULT_COPY, **site.get("copy", {})}
     action = site.get("signup_action") or site.get("form_endpoint") or ""
     if not action:
-        return (f'<section class="wrap signup" aria-labelledby="signup-title" data-pagefind-ignore>'
-                f'<h2 class="kicker" id="signup-title">The morning email</h2>'
-                f'<p class="signup-soon"><span class="sc">Signups open soon.</span> {esc(C["signup_soon"])} '
-                f'<a href="{root}feed.xml">The RSS feed works today</a>.</p></section>')
+        return (f'<section class="wrap signup" aria-labelledby="signup-title" data-pagefind-ignore><div class="signup-inner">'
+                f'<h2 class="kicker" id="signup-title"><span class="q">MORNING EMAIL</span></h2>'
+                f'<p class="signup-soon"><span class="sc">Status: soon.</span> {esc(C["signup_soon"])} '
+                f'<a href="{root}feed.xml">RSS feed</a></p></div></section>')
     names = {"email": "email", "name": "name", "interest": "interest", **site.get("signup_fields", {})}
     hidden = "".join(f'<input type="hidden" name="{esc(k)}" value="{esc(v)}">' for k, v in site.get("signup_hidden", {}).items())
     opts = "".join(f"<option>{esc(t)}</option>" for t in TOPICS + ["Everything"])
     return f"""<section class="wrap signup" aria-labelledby="signup-title" data-pagefind-ignore>
-  <h2 class="kicker" id="signup-title">The morning email</h2>
+  <div class="signup-inner"><h2 class="kicker" id="signup-title"><span class="q">MORNING EMAIL</span></h2>
   <p class="signup-lede">{esc(C["signup_lede"])}</p>
   <form class="signup-form" action="{esc(action)}" method="post" data-provider="{esc(site.get('signup_provider', ''))}">
     <div class="field"><label for="su-email">Email <span aria-hidden="true">*</span></label>
@@ -541,7 +563,7 @@ def signup_block(site, root):
       <select id="su-interest" name="{esc(names['interest'])}"><option value="">Choose one</option>{opts}</select></div>
     {hidden}
     <button type="submit">Subscribe</button>
-  </form>
+  </form></div>
 </section>"""
 
 
@@ -590,9 +612,72 @@ def issue_label(i):
     return f"No. {esc(n)}" if n.isdigit() else esc(n)
 
 
+def readout_id(i):
+    n = str(i["number"])
+    return f"ASY/{int(n):03d}" if n.isdigit() else "ASY/EX"
+
+
+def readout(i, prefix=""):
+    """Instrument readout. Real values only: issue, date, reading time, words, distinct sources."""
+    d = i["date"]
+    parts = [("id", readout_id(i)), ("", d.isoformat()), ("", f'{i["minutes"]:02d} MIN'),
+             ("", f'{i["words"]:,} W'), ("", f'{i["sources"]:02d} SRC')]
+    spoken = (f'{full_label(i)}, {long_date(d)}, {i["minutes"]} minute read, {i["words"]:,} words, '
+              f'{i["sources"]} linked sources')
+    inner = " ".join(f'<span class="{c}">{esc(t)}</span>' for c, t in parts)
+    return (f'<p class="readout" data-pagefind-ignore><span class="visually-hidden">{esc(spoken)}</span>'
+            f'<span aria-hidden="true" style="display:contents">{esc(prefix)}{inner}</span></p>')
+
+
+def qlabel(code, spoken, id_=""):
+    """Tight, technical mono label in quotes, e.g. “BRIEFS/04”, with a plain spoken name for screen readers."""
+    idattr = f' id="{id_}"' if id_ else ""
+    return (f'<p class="kicker"{idattr}><span class="visually-hidden">{esc(spoken)}</span>'
+            f'<span class="q" aria-hidden="true">{esc(code)}</span></p>')
+
+
+def decode_h1(text, href=None, extra=""):
+    inner = f'<a href="{href}">{esc(text)}</a>' if href else esc(text)
+    return (f'<h1 class="decode"{extra}><span class="decode-real">{inner}</span>'
+            f'<span class="decode-anim" aria-hidden="true" data-decode="{esc(text)}"></span></h1>')
+
+
+DECODE_JS = """<script>
+(function(){
+  var reduce = window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var key = 'asy-decoded:' + location.pathname, seen = false;
+  try { seen = sessionStorage.getItem(key); sessionStorage.setItem(key, '1'); } catch (e) {}
+  document.querySelectorAll('[data-decode]').forEach(function(el){
+    if (reduce || seen) { el.remove(); return; }
+    var h = el.parentNode, text = el.getAttribute('data-decode'), glyphs = '/\\|<>_-=+*#01:.';
+    h.classList.add('decoding');
+    var n = text.length, t0 = performance.now(), dur = 300 + Math.min(n, 60) * 18;
+    (function frame(now){
+      var p = (now - t0) / dur, out = '';
+      for (var i = 0; i < n; i++) {
+        var c = text[i];
+        out += (c === ' ' || p > (i + 1) / n) ? c : glyphs[(Math.random() * glyphs.length) | 0];
+      }
+      el.textContent = out;
+      if (p < 1.05) requestAnimationFrame(frame); else { h.classList.remove('decoding'); el.remove(); }
+    })(t0);
+  });
+})();
+</script>"""
+
+
 def full_label(i):
     n = str(i["number"])
     return f"Issue No. {esc(n)}" if n.isdigit() else f"{esc(n)} issue"
+
+
+def section_code(s):
+    if s["cls"] == "briefs":
+        return f'BRIEFS/{len(re.findall(r"<h[23]", s["html"])):02d}'
+    if s["cls"] == "primer":
+        m = re.search(r"day\s*(\d+)", s["title"] or "", re.I)
+        return f"PRIMER/D{int(m.group(1)):02d}" if m else "PRIMER"
+    return s["kicker"].upper()
 
 
 def render_issue(site, i, newer, older, review=False):
@@ -601,7 +686,7 @@ def render_issue(site, i, newer, older, review=False):
     for s in i["sections"]:
         t = f'<h2 class="section-title" id="{s["cls"]}">{esc(s["title"])}</h2>' if s["title"] else ""
         secs.append(f'<section class="issue-section {s["cls"]}" aria-labelledby="k-{s["cls"]}">'
-                    f'<p class="kicker" id="k-{s["cls"]}">{esc(s["kicker"])}</p>{t}'
+                    f'{qlabel(section_code(s), s["kicker"], "k-" + s["cls"])}{t}'
                     f'<div class="prose">{s["html"]}</div></section>')
     disc = (i["disclaimer_html"] or "") + f'<p class="legal">{esc(site["disclaimer"])}</p>'
     nav = []
@@ -621,21 +706,22 @@ def render_issue(site, i, newer, older, review=False):
     if i["horizon"]:
         h = i["horizon"]
         horizon = (f'<section class="horizon" aria-labelledby="h-horizon"><h2 class="visually-hidden" id="h-horizon">{esc(h["title"])}</h2>'
-                   f'<p class="kicker" aria-hidden="true">By {esc(h["year"])}</p><div class="prose">{h["html"]}</div></section>')
-    short = (f'<aside class="short-version" aria-labelledby="k-short"><p class="kicker" id="k-short">The short version</p>{i["short_html"]}</aside>'
+                   f'<p class="kicker"><span class="q" aria-hidden="true">BY {esc(h["year"])}</span></p><div class="prose">{h["html"]}</div></section>')
+    short = (f'<aside class="short-version" aria-labelledby="k-short">{qlabel("SHORT VERSION", "The short version", "k-short")}{i["short_html"]}</aside>'
              if i["short_html"] else "")
-    trace = trace_svg(i["title"] + "|" + i["slug"], site["accent"], f"Signal trace for Issue {i['number']}") if site.get("trace", True) else ""
+    trace = trace_svg(i["title"] + "|" + i["slug"], site["accent"], "Signal trace drawn from this issue’s headline and date, closing on a dashed asymptote across the decade ahead", d.year) if site.get("trace", True) else ""
     body = f"""<article class="issue wrap"{pf_body}>
   {filters}
   <header class="issue-head">
     {fig(site, i["slug"], site["accent"], 168, f"Ink sprig, the unique mark of Issue {i['number']}")}
+    {readout(i)}
     <div data-pagefind-ignore>{trace}
-    {typeline(i["kicker"])}</div>
-    <p class="meta" data-pagefind-ignore><span class="sc">{full_label(i)}</span> <span aria-hidden="true">·</span> <time class="sc" datetime="{d.isoformat()}">{long_date(d)}</time> <span aria-hidden="true">·</span> <span class="sc">{i["minutes"]} min read</span></p>
-    {tags_html(i["tags"], filter_attr=not review)}
-    <p class="kicker" data-pagefind-ignore>The Lead Essay</p>
-    <h1 data-pagefind-meta="title">{esc(i["title"])}</h1>
+    {typeline(i["kicker"])}
+    {qlabel("LEAD", "The lead essay")}</div>
+    <span hidden data-pagefind-meta="title:{esc(i["title"])}"></span>
+    {decode_h1(i["title"])}
     {f'<p class="dek">{esc(i["dek"])}</p>' if i["dek"] else ""}
+    <div class="meta-row" data-pagefind-ignore><p class="meta"><time datetime="{d.isoformat()}">{long_date(d)}</time></p>{tags_html(i["tags"], filter_attr=not review)}</div>
     {f'<p class="byline sc">By {esc(i["author"])}</p>' if i["author"] else ""}
   </header>
   {short}
@@ -674,7 +760,7 @@ def render_home(site, issues):
   <p class="kicker">{esc(C["soon_kicker"])}</p>
   <h1>{esc(C["soon_title"])}</h1>
   <p class="dek">{esc(C["soon_body"])}</p>
-  <p><a class="cta" href="{root}about/">What this is <span aria-hidden="true">→</span></a> <span class="sep" aria-hidden="true">·</span> <a class="cta" href="{root}feed.xml">RSS feed <span aria-hidden="true">→</span></a></p>
+  <p><a class="cta" href="{root}about/">What this is <span class="arr" aria-hidden="true">→</span></a> <span class="sep" aria-hidden="true">·</span> <a class="cta" href="{root}feed.xml">RSS feed <span class="arr" aria-hidden="true">→</span></a></p>
 </section>
 <div id="archive"></div>
 {signup_block(site, root)}"""
@@ -683,28 +769,29 @@ def render_home(site, issues):
     archive = "".join(
         f"""<li><a href="{root}issues/{i["slug"]}/">
   {mini(site, i["slug"])}
-  <span class="a-text"><span class="sc">{issue_label(i)} · <time datetime="{i["date"].isoformat()}">{i["date"]:%B} {i["date"].day}, {i["date"].year}</time> · {i["minutes"]} min</span>
-  <span class="a-title">{esc(i["title"])}</span>
+  <span class="sc"><span class="visually-hidden">{full_label(i)}, </span><span aria-hidden="true">{readout_id(i)}</span><br><time datetime="{i["date"].isoformat()}">{i["date"].isoformat()}</time></span>
+  <span class="a-text"><span class="a-title">{esc(i["title"])}</span>
   {f'<span class="a-dek">{esc(i["dek"])}</span>' if i["dek"] else ""}
-  {f'<span class="a-tags">{" · ".join(esc(t) for t in i["tags"])}</span>' if i["tags"] else ""}</span></a></li>"""
+  {f'<span class="a-tags">{" ".join("[" + esc(t) + "]" for t in i["tags"])}</span>' if i["tags"] else ""}</span></a></li>"""
         for i in issues)
     contents = "".join(f'<li>{esc(s["kicker"])}{": " + esc(s["title"]) if s["title"] else ""}</li>' for s in latest["sections"])
-    trace = trace_svg(latest["title"] + "|" + latest["slug"], site["accent"], f"Signal trace for Issue {latest['number']}") if site.get("trace", True) else ""
-    short = f'<div class="short-version"><p class="kicker">The short version</p>{latest["short_html"]}</div>' if latest["short_html"] else ""
+    trace = trace_svg(latest["title"] + "|" + latest["slug"], site["accent"], "Signal trace drawn from today’s headline and date, closing on a dashed asymptote across the decade ahead", latest["date"].year) if site.get("trace", True) else ""
+    short = f'<div class="short-version">{qlabel("SHORT VERSION", "The short version")}{latest["short_html"]}</div>' if latest["short_html"] else ""
     body = f"""<section class="wrap featured" aria-labelledby="featured-title">
   {fig(site, latest["slug"], site["accent"], 220, f"Ink sprig, the unique mark of Issue {latest['number']}")}
+  {readout(latest)}
   {trace}
-  <p class="meta"><span class="sc">Today’s issue · {issue_label(latest)}</span> <span aria-hidden="true">·</span> <time class="sc" datetime="{latest["date"].isoformat()}">{long_date(latest["date"])}</time> <span aria-hidden="true">·</span> <span class="sc">{latest["minutes"]} min read</span></p>
-  {tags_html(latest["tags"])}
-  <h1 id="featured-title"><a href="{root}issues/{latest["slug"]}/">{esc(latest["title"])}</a></h1>
+  {qlabel("TODAY", "Today’s issue")}
+  {decode_h1(latest["title"], f'{root}issues/{latest["slug"]}/', ' id="featured-title"')}
   {f'<p class="dek">{esc(latest["dek"])}</p>' if latest["dek"] else ""}
+  <div class="meta-row"><p class="meta"><time datetime="{latest["date"].isoformat()}">{long_date(latest["date"])}</time></p>{tags_html(latest["tags"])}</div>
   {short}
-  {f'<ul class="contents" aria-label="In this issue"><li>The Lead Essay</li>{contents}</ul>' if contents else ""}
-  <p><a class="cta" href="{root}issues/{latest["slug"]}/">Read the issue <span aria-hidden="true">→</span></a></p>
+  {f'<ol class="contents" aria-label="In this issue"><li>The lead essay</li>{contents}</ol>' if contents else ""}
+  <p><a class="cta" href="{root}issues/{latest["slug"]}/">Read the issue <span class="arr" aria-hidden="true">→</span></a></p>
 </section>
 {signup_block(site, root)}
 <section class="wrap archive" id="archive" aria-labelledby="archive-title">
-  <h2 id="archive-title" class="kicker">The Archive</h2>
+  <h2 id="archive-title" class="kicker"><span class="visually-hidden">The archive</span><span class="q" aria-hidden="true">ARCHIVE/{len(issues):02d}</span></h2>
   <ol class="archive-list">{archive}</ol>
 </section>"""
     return page(site, root, site["name"], body, canonical=site["base_url"], jsonld=ld)
@@ -820,7 +907,7 @@ def render_404(site):
     root = "/" + site["base_url"].split("//", 1)[-1].split("/", 1)[-1] if "//" in site["base_url"] else "/"
     body = (f'<section class="wrap forthcoming">{fig(site, "lost", site["accent"], 160, "A stray ink sprig")}'
             f'<p class="kicker">404</p><h1>{esc(C["notfound_title"])}</h1><p class="dek">{esc(C["notfound_body"])}</p>'
-            f'<p><a class="cta" href="{root}">Back to today’s issue <span aria-hidden="true">→</span></a></p></section>')
+            f'<p><a class="cta" href="{root}">Back to today’s issue <span class="arr" aria-hidden="true">→</span></a></p></section>')
     return page(site, root, "Not found", body, noindex=True)
 
 
@@ -885,13 +972,10 @@ def write(path, text):
 def run_pagefind(have_issues):
     """Index only published issue pages (lead essay, briefs, primer, signal as sub-results)."""
     import subprocess
-    import tempfile
-    if have_issues:
-        cmd = ["npx", "-y", "pagefind@1.5.2", "--site", str(OUT), "--glob", "issues/**/*.html"]
-    else:  # nothing published yet: build an empty index so the search page still loads
-        tmp = Path(tempfile.mkdtemp())
-        (tmp / "index.html").write_text('<html lang="en"><body><main data-pagefind-body><h1>Search index placeholder</h1><p>pagefindplaceholder</p></main></body></html>')
-        cmd = ["npx", "-y", "pagefind@1.5.2", "--site", str(tmp), "--output-path", str(OUT / "pagefind")]
+    if not have_issues:
+        print("  search: no published issues yet, index skipped")
+        return
+    cmd = ["npx", "-y", "pagefind@1.5.2", "--site", str(OUT), "--glob", "issues/**/*.html"]
     r = subprocess.run(cmd, capture_output=True, text=True)
     if r.returncode != 0:
         print(r.stdout[-2000:], r.stderr[-2000:], file=sys.stderr)
@@ -927,7 +1011,14 @@ def main():
     OUT.mkdir()
     shutil.copytree(ASSETS, OUT / "assets")
     css = (OUT / "assets" / "style.css")
-    css.write_text(css.read_text(encoding="utf-8").replace("__ACCENT__", site["accent"]), encoding="utf-8")
+    tok = css.read_text(encoding="utf-8")
+    for k in ("paper", "paper_deep", "ink", "ink_soft", "muted", "rule", "accent", "accent_text"):
+        tok = tok.replace(f"__{k.upper()}__", site.get(k, ""))
+    assert "__" not in re.sub(r"[a-z]__[a-z]|__[a-z]", "", tok), "unfilled CSS token"
+    css.write_text(tok, encoding="utf-8")
+    if issues:
+        a = issues[0]
+        STRIP["right"] = f"Latest {readout_id(a)} · {a['date'].isoformat()}"
     write(OUT / "assets" / "favicon.svg", f'<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64"><rect width="64" height="64" rx="10" fill="{site["accent"]}"/><text x="32" y="45" font-family="Georgia,serif" font-size="38" text-anchor="middle" fill="{site.get("paper", "#F5EFE4")}">{esc(site["name"][:1])}</text></svg>')
     write(OUT / ".nojekyll", "")
     write(OUT / "index.html", render_home(site, issues))
