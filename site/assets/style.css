@@ -283,3 +283,5 @@ h1 a{text-decoration:none}
 .issue-head .kicker{margin-bottom:.5rem}
 .typeline{margin-bottom:1.6rem}
 @media (max-width:560px){.strip .wide{display:none}}
+.hero-trace.compact{margin:0 0 1.4rem;opacity:.85}
+.search-page>.readout,.about .readout{margin-top:0}

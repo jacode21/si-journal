@@ -52,3 +52,26 @@ Each pass has before/after screenshots at 1440 and 390 px in `screenshots/pass-N
 - The disclosure rule is now full measure; only the paragraph text is smaller.
 - The signup line now reads: "The morning email opens soon. Until then, follow along by RSS."
 - **Focus check:** keyboard focus on nav and search shows a 2px signal-orange ring (3.2:1 against paper, which meets the 3:1 non-text minimum). `/` jumps to search. Shots: `screenshots/pass-2/focus-*.png`.
+
+**Results:** Lighthouse accessibility is 100 on all four runs. Mobile performance is 100 on home (LCP 1.6 s) and 96 on the issue. Desktop is 100.
+
+## Pass 3 — Oct 19, 02:10–02:35 ET: the system reaches every page, and the CSS is inlined
+
+**Critique of pass 2**
+- Only the home and issue pages felt machine-made. About, Primer, Search and Subscribe fell back to plain editorial pages with no readout and no trace, so the system broke as you navigated.
+- The About page's dek repeated the masthead tagline ("Always closer." twice on one screen).
+- The Primer list used a different date dialect ("NO. 1 · OCTOBER 19, 2026") from the archive (`ASY/001 · 2026-10-19`).
+- The nav never showed where you were (no `aria-current`).
+- **Performance:** the one remaining blocker was the 15 KB stylesheet (about 150 ms render-blocking on mobile, LCP on the dek). Mobile issue score was 96.
+
+**Changes**
+- Every secondary page gets an instrument readout with real counts and a compact, static, seeded trace (`aria-hidden`):
+  - About: `ASY/ABOUT · 01 ISSUE · 01 PRIMER · SINCE 2026-10-19`
+  - Primer: `ASY/PRIMER · 01 LESSON · ONE A DAY`
+  - Search: `ASY/SEARCH · INDEX 01 ISSUE · PAGEFIND`
+  - Subscribe: `ASY/SUBSCRIBE · DAILY · SIGNUP NOT YET OPEN`
+  Values come from the build, and singular/plural is handled.
+- The About dek is removed; the H1 and the first paragraph carry it.
+- Primer rows now use the archive's readout format.
+- The nav gets `aria-current="page"` with a signal-orange underline.
+- **CSS is inlined** (comments stripped) on every page, so nothing render-blocking remains. Fonts are still self-hosted and preloaded. `assets/style.css` is kept for anyone who links it.

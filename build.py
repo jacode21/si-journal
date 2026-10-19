@@ -248,11 +248,12 @@ def mini(site, seed):
 TOPICS = ["AI", "Compute", "Energy", "Bio", "Space", "Quantum", "Robotics", "Policy"]
 
 
-def trace_svg(seed_text, accent, label, year=None, draw=True):
+def trace_svg(seed_text, accent, label, year=None, draw=True, compact=False):
     """Signature hero: a signal trace that keeps closing on a dashed asymptote.
     Seeded by headline + date, so every issue draws its own line. Scale shows the decade ahead."""
     rnd = random.Random(int(hashlib.sha256(seed_text.encode()).hexdigest(), 16))
-    W, H, top, bot = 1000, 120, 18, 108
+    W, H, top, bot = (1000, 56, 8, 50) if compact else (1000, 120, 18, 108)
+    amp_k = 0.5 if compact else 1.0
     n = 300
     spike = rnd.randint(int(n * 0.58), int(n * 0.86))
     rate = rnd.uniform(2.6, 3.6)
@@ -264,10 +265,10 @@ def trace_svg(seed_text, accent, label, year=None, draw=True):
         env = 1 - math.exp(-rate * t)                      # always closer, never there
         base = bot - (bot - top - 5) * env
         noise = (3.4 * math.sin(k * f2 + ph) + 2.2 * math.sin(k * f1 * 3.1 + ph * 2)) * (1 - 0.6 * env) + rnd.gauss(0, 1.0)
-        y = base + noise * 0.9
+        y = base + noise * 0.9 * amp_k
         dist = abs(k - spike)
         if dist < 7:
-            y += (-1) ** k * (30 - dist * 4.0) * rnd.uniform(0.8, 1.0)
+            y += (-1) ** k * (30 - dist * 4.0) * rnd.uniform(0.8, 1.0) * amp_k
         pts.append(f"{x:.1f},{max(2, min(H - 2, y)):.1f}")
     sx = W * spike / n
     sy = float(pts[spike].split(",")[1])
@@ -279,7 +280,7 @@ def trace_svg(seed_text, accent, label, year=None, draw=True):
     if year:
         y0 = int(year)
         svg += ('<div class="scale" aria-hidden="true">' + "".join(f"<span>{y0 + k}</span>" if k in (0, 5, 10) else "<span></span>" for k in range(11)) + "</div>")
-    return f'<div class="hero-trace">{svg}</div>'
+    return f'<div class="hero-trace{" compact" if compact else ""}">{svg}</div>'
 
 
 STATUS_ALIASES = {"approved": "approved", "approve": "approved", "published": "approved", "publish": "approved",
@@ -444,6 +445,17 @@ FONTS = ""  # self-hosted in assets/fonts (see style.css); preloaded per page in
 
 
 STRIP = {}
+CSS_TEXT = [""]
+
+
+def nav_items(root, canonical):
+    items = [("", "Latest"), ("#archive", "Archive"), ("primers/", "Primer"), ("about/", "About"), ("subscribe/", "Subscribe")]
+    cur = (canonical or "").split("/si-journal/")[-1] if canonical else None
+    out = []
+    for path, label in items:
+        here = cur is not None and path == cur and path != "#archive"
+        out.append(f'<li><a href="{root}{path}"{" aria-current=\"page\"" if here else ""}>{label}</a></li>')
+    return "".join(out)
 
 
 def page(site, root, title, body, description="", canonical="", kind="website", jsonld=None,
@@ -482,7 +494,7 @@ def page(site, root, title, body, description="", canonical="", kind="website", 
 <link rel="icon" href="{root}assets/favicon.svg" type="image/svg+xml">
 <link rel="preload" href="{root}assets/fonts/newsreader.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="{root}assets/fonts/plexmono-400.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="stylesheet" href="{root}assets/style.css">
+<style>{CSS_TEXT[0].replace("url(fonts/", "url(" + root + "assets/fonts/")}</style>
 <script>document.documentElement.classList.add('js')</script>
 {head_extra}
 {ld}
@@ -497,11 +509,7 @@ def page(site, root, title, body, description="", canonical="", kind="website", 
     <a class="wordmark" href="{root}">{esc(site['name'])}</a>
     <p class="tagline">{esc(site['tagline'])}</p>
     <nav aria-label="Primary"><ul>
-      <li><a href="{root}">Latest</a></li>
-      <li><a href="{root}#archive">Archive</a></li>
-      <li><a href="{root}primers/">Primer</a></li>
-      <li><a href="{root}about/">About</a></li>
-      <li><a href="{root}subscribe/">Subscribe</a></li>
+      {nav_items(root, canonical)}
     </ul></nav>
     <form class="masthead-search" role="search" action="{root}search/" method="get">
       <label for="q-top" class="visually-hidden">Search issues</label>
@@ -626,6 +634,22 @@ def readout(i, prefix=""):
     inner = " ".join(f'<span class="{c}">{esc(t)}</span>' for c, t in parts)
     return (f'<p class="readout" data-pagefind-ignore><span class="visually-hidden">{esc(spoken)}</span>'
             f'<span aria-hidden="true" style="display:contents">{esc(prefix)}{inner}</span></p>')
+
+
+STATS = {}
+
+
+def plural(n, word):
+    return f"{n:02d} {word}{'' if n == 1 else 'S'}"
+
+
+def page_head(site, code, spoken_bits, seed):
+    """Readout + compact static trace for non-issue pages. Real values only."""
+    shown = " ".join(f"<span>{esc(x)}</span>" for x in spoken_bits)
+    return (f'<p class="readout" ><span class="visually-hidden">{esc(", ".join(spoken_bits))}</span>'
+            f'<span aria-hidden="true" style="display:contents"><span class="id">{esc(code)}</span> {shown}</span></p>'
+            + (trace_svg(seed, site["accent"], "", draw=False, compact=True).replace('role="img" aria-label=""', 'aria-hidden="true"')
+               if site.get("trace", True) else ""))
 
 
 def qlabel(code, spoken, id_=""):
@@ -827,10 +851,9 @@ def render_about(site):
         b = DEFAULT_ABOUT.format(**site)
     body = f"""<article class="wrap about">
   <header class="issue-head">
-    {fig(site, site["name"], site["accent"], 150, "The masthead’s ink sprig")}
+    {page_head(site, "ASY/ABOUT", [plural(STATS.get("issues", 0), "ISSUE"), plural(STATS.get("primers", 0), "PRIMER")] + ([f'SINCE {STATS["since"]}'] if STATS.get("since") else []), "about")}
     {qlabel("ABOUT", "About")}
     <h1>About {esc(site["name"])}</h1>
-    <p class="dek">{esc(site["tagline"])}</p>
   </header>
   <div class="prose lead-body">{md(b)}</div>
 </article>
@@ -848,10 +871,11 @@ def render_primers(site, issues):
         if not p:
             continue
         rows.append(f'<li><a href="{root}issues/{i["slug"]}/#k-primer"><span class="a-text">'
-                    f'<span class="sc">{issue_label(i)} · <time datetime="{i["date"].isoformat()}">{i["date"]:%B} {i["date"].day}, {i["date"].year}</time></span>'
+                    f'<span class="sc"><span class="visually-hidden">{full_label(i)}, </span><span aria-hidden="true">{readout_id(i)} · </span><time datetime="{i["date"].isoformat()}">{i["date"].isoformat()}</time></span>'
                     f'<span class="a-title">{esc(p["title"] or "SI Primer")}</span></span></a></li>')
     lst = f'<ol class="archive-list">{"".join(rows)}</ol>' if rows else f'<p class="dek">{esc(C["soon_body"])}</p>'
     body = f"""<section class="wrap search-page" aria-labelledby="primers-title">
+  {page_head(site, "ASY/PRIMER", [plural(len(rows), "LESSON"), "ONE A DAY"], "primer")}
   {qlabel(f"PRIMER/{len(rows):02d}", "Lessons")}
   <h1 id="primers-title">{esc(C["primers_title"])}</h1>
   <p class="dek">{esc(C["primers_body"])}</p>
@@ -864,6 +888,7 @@ def render_subscribe(site):
     C = {**DEFAULT_COPY, **site.get("copy", {})}
     root = "../"
     body = f"""<section class="wrap search-page" aria-labelledby="sub-title">
+  {page_head(site, "ASY/SUBSCRIBE", ["DAILY", "SIGNUP " + ("OPEN" if (site.get("signup_action") or site.get("form_endpoint")) else "NOT YET OPEN")], "subscribe")}
   {qlabel("SUBSCRIBE", "Subscribe")}
   <h1 id="sub-title">{esc(C["subscribe_title"])}</h1>
   <p class="dek">{esc(C["subscribe_body"])}</p>
@@ -891,6 +916,7 @@ def render_search(site):
     C = {**DEFAULT_COPY, **site.get("copy", {})}
     root = "../"
     body = f"""<section class="wrap search-page" aria-labelledby="search-title">
+  {page_head(site, "ASY/SEARCH", ["INDEX " + plural(STATS.get("issues", 0), "ISSUE"), "PAGEFIND"], "search")}
   {qlabel("SEARCH", "Search")}
   <h1 id="search-title">{esc(C["search_title"])}</h1>
   <p class="dek">{esc(C["search_body"])}</p>
@@ -1016,6 +1042,9 @@ def main():
         tok = tok.replace(f"__{k.upper()}__", site.get(k, ""))
     assert "__" not in re.sub(r"[a-z]__[a-z]|__[a-z]", "", tok), "unfilled CSS token"
     css.write_text(tok, encoding="utf-8")
+    CSS_TEXT[0] = re.sub(r"\s*\n\s*", "\n", re.sub(r"/\*.*?\*/", "", tok, flags=re.S)).strip()
+    prim = [i for i in issues if any(s["cls"] == "primer" for s in i["sections"])]
+    STATS.update(issues=len(issues), primers=len(prim), since=issues[-1]["date"].isoformat() if issues else "")
     if issues:
         a = issues[0]
         STRIP["right"] = f"Latest {readout_id(a)} · {a['date'].isoformat()}"
