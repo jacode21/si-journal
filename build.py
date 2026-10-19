@@ -657,6 +657,12 @@ def page_head(site, code, spoken_bits, seed):
                if site.get("trace", True) else ""))
 
 
+def plain_label(text, id_=""):
+    """Unquoted mono label, shown as written (no forced capitals)."""
+    idattr = f' id="{id_}"' if id_ else ""
+    return f'<p class="kicker plain"{idattr}>{esc(text)}</p>'
+
+
 def qlabel(code, spoken, id_=""):
     """Tight, technical mono label in quotes, e.g. “BRIEFS/04”, with a plain spoken name for screen readers."""
     idattr = f' id="{id_}"' if id_ else ""
@@ -736,7 +742,7 @@ def render_issue(site, i, newer, older, review=False):
         h = i["horizon"]
         horizon = (f'<section class="horizon" aria-labelledby="h-horizon"><h2 class="visually-hidden" id="h-horizon">{esc(h["title"])}</h2>'
                    f'<p class="kicker"><span class="q" aria-hidden="true">BY {esc(h["year"])}</span></p><div class="prose">{h["html"]}</div></section>')
-    short = (f'<aside class="short-version" aria-labelledby="k-short">{qlabel("SHORT VERSION", "The short version", "k-short")}{i["short_html"]}</aside>'
+    short = (f'<aside class="short-version" aria-labelledby="k-short">{plain_label("Short version", "k-short")}{i["short_html"]}</aside>'
              if i["short_html"] else "")
     trace = trace_svg(i["title"] + "|" + i["slug"], site["accent"], "Signal trace drawn from this issue’s headline and date, closing on a dashed asymptote across the decade ahead", d.year) if site.get("trace", True) else ""
     body = f"""<article class="issue wrap"{pf_body}>
@@ -805,7 +811,7 @@ def render_home(site, issues):
         for i in issues)
     contents = "".join(f'<li>{esc(s["kicker"])}{": " + esc(s["title"]) if s["title"] else ""}</li>' for s in latest["sections"])
     trace = trace_svg(latest["title"] + "|" + latest["slug"], site["accent"], "Signal trace drawn from today’s headline and date, closing on a dashed asymptote across the decade ahead", latest["date"].year) if site.get("trace", True) else ""
-    short = f'<div class="short-version">{qlabel("SHORT VERSION", "The short version")}{latest["short_html"]}</div>' if latest["short_html"] else ""
+    short = f'<div class="short-version">{plain_label("Short version")}{latest["short_html"]}</div>' if latest["short_html"] else ""
     body = f"""<section class="wrap featured" aria-labelledby="featured-title">
   {fig(site, latest["slug"], site["accent"], 220, f"Ink sprig, the unique mark of Issue {latest['number']}")}
   {readout(latest)}
