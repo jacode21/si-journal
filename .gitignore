@@ -1,0 +1,17 @@
+# Allow-list: this folder is shared with other desks; only the site and its sources are published.
+/*
+!/.gitignore
+!/build.py
+!/si
+!/shots.py
+!/og.py
+!/SITE.md
+!/site/
+!/docs/
+# issues/ sources are added explicitly by ./si publish, approved issues only
+!/brand/
+/brand/*
+!/brand/site.json
+!/brand/about.md
+!/brand/design-tokens.md
+__pycache__/

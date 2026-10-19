@@ -1,0 +1,96 @@
+#!/usr/bin/env bash
+# SI Journal site commands. Run from anywhere:  /workspace/si-journal/si <command>
+#
+#   ./si build                 build docs/ (approved issues only, plus search index)
+#   ./si preview [port]        build and serve docs/ at http://localhost:8000
+#   ./si review [--push]       render every status:review issue, save full-page screenshots to review/<date>/
+#                              (desktop.png, mobile.png). --push also publishes the unlisted /review/<date>-<token>/ link.
+#   ./si approve <date>        mark issues/<date> approved (writes issues/<date>/status), rebuild, publish
+#   ./si publish ["message"]   build, commit, push to GitHub Pages
+#   ./si shots                 screenshots of the live site to screenshots/ and preview.png
+set -euo pipefail
+cd "$(dirname "$0")"
+ROOT=$(pwd)
+python3 -c "import markdown" 2>/dev/null || python3 -m pip install --user --break-system-packages -q markdown
+need_pw(){ python3 -c "import playwright" 2>/dev/null || python3 -m pip install --user --break-system-packages -q playwright; }
+BASE=$(python3 -c 'import json;print(json.load(open("brand/site.json"))["base_url"])')
+
+serve(){ # serve DIR on a free port, echo port
+  local dir=$1 port
+  port=$(python3 -c 'import socket;s=socket.socket();s.bind(("",0));print(s.getsockname()[1])')
+  (cd "$dir" && exec python3 -m http.server "$port" --bind 127.0.0.1 >/dev/null 2>&1) &
+  echo "$! $port"
+}
+
+publish(){
+  local msg=${1:-"Publish $(date +%Y-%m-%d)"} extra=${2:-}
+  python3 build.py $extra
+  git add -A
+  # issue sources: only approved issues (and layout examples) go into the public repo
+  python3 build.py --list | while read -r slug status; do
+    if [ "$status" = approved ]; then
+      for f in issue.md lead-essay.md briefs.md primer.md signal.md short.md disclaimer.md status; do
+        [ -f "issues/$slug/$f" ] && git add -f "issues/$slug/$f"   # published copy only; notes and drafts stay local
+      done
+    fi
+  done
+  if git diff --cached --quiet; then echo "Nothing changed; the site is already up to date."; return 0; fi
+  git commit -q -m "$msg"
+  git push -q origin main
+  echo "Pushed. GitHub Pages usually updates in about a minute: $BASE"
+}
+
+case "${1:-help}" in
+  build) shift; python3 build.py "$@" ;;
+  preview)
+    python3 build.py --review
+    echo "Serving http://localhost:${2:-8000}/ (Ctrl-C to stop)"; cd docs && python3 -m http.server "${2:-8000}" ;;
+  review)
+    need_pw
+    TMP=$(mktemp -d)
+    SI_OUT="$TMP/site" python3 build.py --review
+    read -r PID PORT < <(serve "$TMP/site")
+    sleep 1
+    python3 - "$PORT" <<'PY'
+import json, sys, os
+sys.path.insert(0, ".")
+import shots
+port = sys.argv[1]
+links = json.load(open(".review-links.json"))
+jobs = []
+for slug, url, rel in links:
+    d = os.path.join("review", slug); os.makedirs(d, exist_ok=True)
+    local = f"http://127.0.0.1:{port}/{rel}"
+    jobs += [(local, f"{d}/desktop.png", False, True), (local, f"{d}/mobile.png", True, True)]
+shots.shoot(jobs)
+for slug, url, rel in links:
+    print(f"REVIEW {slug}\n  link (live after --push): {url}\n  screenshots: review/{slug}/desktop.png  review/{slug}/mobile.png")
+PY
+    kill "$PID" 2>/dev/null || true
+    if [ "${2:-}" = "--push" ]; then publish "Review copies $(date +%Y-%m-%d)" --review; fi ;;
+  approve)
+    d=${2:?usage: ./si approve YYYY-MM-DD}
+    [ -s "issues/$d/issue.md" ] || [ -s "issues/$d/lead-essay.md" ] || { echo "no issues/$d/issue.md or lead-essay.md"; exit 1; }
+    echo approved > "issues/$d/status"
+    echo "issues/$d marked approved."
+    publish "Publish issue $d" ;;
+  publish) publish "${2:-}" ;;
+  shots)
+    need_pw
+    LATEST=$(python3 build.py --list | awk '$2=="approved" && $1 !~ /^example-/ {s=$1} END{print s}')
+    mkdir -p screenshots
+    python3 - "$BASE" "$LATEST" <<'PY'
+import sys; sys.path.insert(0, ".")
+import shots
+base, latest = sys.argv[1], sys.argv[2]
+jobs = [(base, "screenshots/home-desktop.png", False, True), (base, "screenshots/home-mobile.png", True, True),
+        (base, "preview.png", False, False), (base + "about/", "screenshots/about-desktop.png", False, True),
+        (base + "search/?q=ai", "screenshots/search-desktop.png", False, False)]
+if latest:
+    jobs += [(f"{base}issues/{latest}/", f"screenshots/issue-{latest}-desktop.png", False, True),
+             (f"{base}issues/{latest}/", f"screenshots/issue-{latest}-mobile.png", True, True)]
+shots.shoot(jobs)
+PY
+    ;;
+  *) sed -n '2,10p' "$0" ;;
+esac

@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+Disallow: /si-journal/review/
+
+Sitemap: https://jacode21.github.io/si-journal/sitemap.xml

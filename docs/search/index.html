@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Search · Asymptote</title>
+<meta name="description" content="Search every issue of Asymptote.">
+
+<link rel="canonical" href="https://jacode21.github.io/si-journal/search/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Search">
+<meta property="og:description" content="Search every issue of Asymptote.">
+<meta property="og:site_name" content="Asymptote">
+<meta property="og:url" content="https://jacode21.github.io/si-journal/search/">
+<meta property="og:image" content="https://jacode21.github.io/si-journal/assets/og.png">
+<meta property="og:image:width" content="1200"><meta property="og:image:height" content="630">
+<meta property="og:locale" content="en_US">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Search">
+<meta name="twitter:description" content="Search every issue of Asymptote.">
+<meta name="twitter:image" content="https://jacode21.github.io/si-journal/assets/og.png">
+
+<meta name="theme-color" content="#F5EFE4">
+<link rel="alternate" type="application/rss+xml" title="Asymptote" href="../feed.xml">
+<link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,300..700;1,6..72,300..700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/style.css">
+<link href="../pagefind/pagefind-ui.css" rel="stylesheet">
+<script src="../pagefind/pagefind-ui.js"></script>
+<script>
+window.addEventListener('DOMContentLoaded', function(){
+  var ui = new PagefindUI({ element: '#search', showSubResults: true, showImages: false, resetStyles: false,
+    excerptLength: 26, pageSize: 8, autofocus: false,
+    translations: { placeholder: 'Search issues, briefs and primers', zero_results: 'Nothing for [SEARCH_TERM] yet. Try a broader word.' } });
+  var q = new URLSearchParams(location.search).get('q');
+  if (q) { ui.triggerSearch(q); }
+  var input = document.querySelector('#search .pagefind-ui__search-input');
+  if (input) { input.setAttribute('aria-label', 'Search issues, briefs and primers'); if (!q) input.focus(); }
+});
+</script>
+
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+
+<header class="masthead" data-pagefind-ignore>
+  <div class="wrap masthead-inner">
+    <a class="wordmark" href="../">Asymptote</a>
+    <p class="tagline">Always closer.</p>
+    <nav aria-label="Primary"><ul>
+      <li><a href="../">Latest</a></li>
+      <li><a href="../#archive">Archive</a></li>
+      <li><a href="../primers/">Primer</a></li>
+      <li><a href="../about/">About</a></li>
+      <li><a href="../subscribe/">Subscribe</a></li>
+    </ul></nav>
+    <form class="masthead-search" role="search" action="../search/" method="get">
+      <label for="q-top" class="visually-hidden">Search issues</label>
+      <input id="q-top" name="q" type="search" placeholder="Search" autocomplete="off" aria-keyshortcuts="/ Control+K Meta+K">
+      <kbd aria-hidden="true">/</kbd>
+    </form>
+  </div>
+</header>
+<main id="main" tabindex="-1">
+<section class="wrap search-page" aria-labelledby="search-title">
+  <p class="kicker">Search</p>
+  <h1 id="search-title">Search</h1>
+  <p class="dek">Every issue, brief and primer, in one place.</p>
+  <div id="search" class="pf"></div>
+  <noscript><p>Search needs JavaScript. The <a href="../#archive">archive</a> lists every issue.</p></noscript>
+  <p class="small kbd-hint">Press <kbd>/</kbd> or <kbd>⌘K</kbd> anywhere to jump here. Use <kbd>Tab</kbd> to move through results and filters.</p>
+</section>
+</main>
+<footer class="colophon" data-pagefind-ignore>
+  <div class="wrap">
+    <p class="signoff">Not investment advice. Just a clearer view.</p>
+    <p class="disclaimer-short">Asymptote is for information and education only. Nothing here is investment, legal or tax advice, or an offer to buy or sell any security. Writers may hold positions in companies mentioned. Do your own research, and talk to a licensed professional before you invest.</p>
+    <p class="small">© 2026 Asymptote · <a href="../about/">About</a> · <a href="../search/">Search</a> · <a href="../feed.xml">RSS</a></p>
+  </div>
+</footer>
+
+<script>
+document.addEventListener('keydown', function(e){
+  var t = e.target, typing = t && (t.isContentEditable || /^(INPUT|TEXTAREA|SELECT)$/.test(t.tagName));
+  var k = (e.key === '/' && !typing && !e.metaKey && !e.ctrlKey && !e.altKey) ||
+          ((e.metaKey || e.ctrlKey) && (e.key === 'k' || e.key === 'K'));
+  if (!k) return;
+  var q = document.querySelector('#search .pagefind-ui__search-input') || document.getElementById('q-top');
+  if (q) { e.preventDefault(); q.focus(); if (q.select) q.select(); }
+});
+</script>
+</body>
+</html>
