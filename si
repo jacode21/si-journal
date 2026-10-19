@@ -7,6 +7,7 @@
 #                              (desktop.png, mobile.png). --push also publishes the unlisted /review/<date>-<token>/ link.
 #   ./si approve <date>        mark issues/<date> approved (writes issues/<date>/status), rebuild, publish
 #   ./si publish ["message"]   build, commit, push to GitHub Pages
+#   ./si publish-layout ["msg"] publish template/CSS only, rebuilding with the issue files already committed (live text)
 #   ./si shots                 screenshots of the live site to screenshots/ and preview.png
 set -euo pipefail
 cd "$(dirname "$0")"
@@ -75,6 +76,23 @@ PY
     echo "issues/$d marked approved."
     publish "Publish issue $d" ;;
   publish) publish "${2:-}" ;;
+  publish-layout)
+    TMP=$(mktemp -d)
+    python3 build.py --list | while read -r slug status; do
+      [ "$status" = approved ] || continue
+      mkdir -p "$TMP/$slug"
+      # the live build used issue.md alone when present, so reproduce exactly that
+      if git cat-file -e "HEAD:issues/$slug/issue.md" 2>/dev/null; then files="issue.md status"
+      else files="lead-essay.md briefs.md primer.md signal.md short.md disclaimer.md status"; fi
+      for f in $files; do
+        if git cat-file -e "HEAD:issues/$slug/$f" 2>/dev/null; then git show "HEAD:issues/$slug/$f" > "$TMP/$slug/$f"; fi
+      done
+    done
+    SI_ISSUES="$TMP" python3 build.py
+    git add -A -- build.py si site docs brand/site.json brand/design-tokens.md DESIGN_NOTES.md SITE.md
+    if git diff --cached --quiet; then echo "Nothing changed."; exit 0; fi
+    git commit -q -m "${2:-Layout update}"; git push -q origin main
+    echo "Pushed layout only (issue text unchanged): $BASE" ;;
   shots)
     need_pw
     LATEST=$(python3 build.py --list | awk '$2=="approved" && $1 !~ /^example-/ {s=$1} END{print s}')

@@ -6,25 +6,15 @@
   "author": "Jacob Slusser",
   "base_url": "https://jacode21.github.io/si-journal/",
   "language": "en-us",
-  "disclaimer": "Asymptote is for information and education only. Nothing here is investment, legal or tax advice, or an offer to buy or sell any security. Do your own research, and talk to a licensed professional before you invest.",
+  "disclaimer": "Not investment advice.",
   "accent": "#E4500E",
   "tagline_is_working": false,
   "ornament": false,
   "copy": {
-    "soon_kicker": "On its way",
-    "soon_title": "Issue No. 1 is on its way.",
-    "soon_body": "Good things take a minute. The first issue is nearly ready.",
-    "footer": "Not investment advice. Just a clearer view.",
-    "notfound_title": "This page isn’t here.",
-    "notfound_body": "It may have moved. Today’s issue hasn’t.",
-    "signup_soon": "The morning email opens soon. Until then, follow along by",
-    "signup_lede": "One issue each morning. Short, sourced, unhurried.",
     "search_title": "Search",
-    "search_body": "Every issue, brief and primer, in one place.",
-    "primers_title": "The SI Primer",
-    "primers_body": "One idea a day, defined once and cleanly. Read them in order and the vocabulary builds.",
+    "primers_title": "Primer",
     "subscribe_title": "Subscribe",
-    "subscribe_body": "One issue every morning: the short version up top, the long view below. Leave whenever you like."
+    "about": "{name} is a daily briefing on AI and the technologies shaping the next decade, written for investors. Every figure links to its source. Edited by {author}."
   },
   "paper": "#ECEAE4",
   "ink": "#111110",
@@ -46,5 +36,7 @@
   "trace": true,
   "ink_soft": "#3A3936",
   "accent_text": "#AC3406",
-  "tokens_note": "accent (#E4500E) is the signal orange for marks, rules, focus rings and large type (3.2:1 on paper). For small text, links and buttons use accent_text (#AC3406: 5.4:1 on paper, 4.9:1 on paper_deep)."
+  "tokens_note": "accent (#E4500E) is the signal orange for marks, rules, focus rings and large type (3.2:1 on paper). For small text, links and buttons use accent_text (#AC3406: 5.4:1 on paper, 4.9:1 on paper_deep).",
+  "disclosures": "Asymptote is for information and education only. Nothing here is investment, legal or tax advice, or an offer to buy or sell any security. Do your own research, and talk to a licensed professional before you invest.",
+  "disclaimer_url": "https://jacode21.github.io/si-journal/disclosures/"
 }

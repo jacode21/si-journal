@@ -78,7 +78,7 @@ def md(text):
     )
     # "Tags: AI, Energy" lines inside briefs/signal become quiet mono labels
     return TAGLINE_RE.sub(lambda m: '<p class="inline-tags" data-pagefind-ignore><span class="visually-hidden">Topics: </span>'
-                          + " ".join("[" + esc(t.strip()) + "]" for t in m.group(2).split(",") if t.strip()) + "</p>", out)
+                          + " · ".join(esc(t.strip()) for t in m.group(2).split(",") if t.strip()) + "</p>", out)
 
 
 def esc(s):
@@ -277,7 +277,7 @@ def trace_svg(seed_text, accent, label, year=None, draw=True, compact=False):
            f'<polyline pathLength="1" points="{" ".join(pts)}" fill="none" stroke="currentColor" vector-effect="non-scaling-stroke" stroke-linejoin="round" stroke-linecap="round"/>'
            f'<circle class="halo" cx="{sx:.1f}" cy="{sy:.1f}" r="7" vector-effect="non-scaling-stroke"/>'
            f'<circle class="spike" cx="{sx:.1f}" cy="{sy:.1f}" r="2.6"/></svg>')
-    if year:
+    if year and False:  # scale labels removed in the clean pass
         y0 = int(year)
         svg += ('<div class="scale" aria-hidden="true">' + "".join(f"<span>{y0 + k}</span>" if k in (0, 5, 10) else "<span></span>" for k in range(11)) + "</div>")
     return f'<div class="hero-trace{" compact" if compact else ""}">{svg}</div>'
@@ -345,8 +345,11 @@ def load_issues():
         }
 
         def part(fname, key, default_title):
-            txt = None if single else read(d / fname)
+            # the Primer has its own file (primer.md) and that file wins over any copy inside issue.md;
+            # versioned copies such as primer.v1.md are never read
+            txt = read(d / fname) if (not single or key == "primer") else None
             if txt and txt.strip():
+                extracted.pop(key, None)
                 m, b = parse_frontmatter(txt)
                 h, b = strip_leading_h1(b)
                 b2, ex = split_sections(b)
@@ -428,6 +431,8 @@ def load_issues():
 
 
 DEFAULT_COPY = {
+    "about": "{name} is a daily briefing on AI and the technologies shaping the next decade, written for investors. Every figure links to its source. Edited by {author}.",
+    "subscribe_open": "One issue each morning, by email.",
     "soon_kicker": "On its way",
     "soon_title": "Issue No. 1 is on its way.",
     "soon_body": "Good things take a minute. Follow the RSS feed and it will find you when it lands.",
@@ -445,17 +450,27 @@ FONTS = ""  # self-hosted in assets/fonts (see style.css); preloaded per page in
 
 
 STRIP = {}
+SIGNUP_OPEN = [False]
+VARIANT = [""]
 CSS_TEXT = [""]
 
 
 def nav_items(root, canonical):
-    items = [("", "Latest"), ("#archive", "Archive"), ("primers/", "Primer"), ("about/", "About"), ("subscribe/", "Subscribe")]
+    items = [("#archive", "Archive"), ("primers/", "Primer"), ("about/", "About")]
+    if SIGNUP_OPEN[0]:
+        items.append(("subscribe/", "Subscribe"))
     cur = (canonical or "").split("/si-journal/")[-1] if canonical else None
     out = []
     for path, label in items:
         here = cur is not None and path == cur and path != "#archive"
         out.append(f'<li><a href="{root}{path}"{" aria-current=\"page\"" if here else ""}>{label}</a></li>')
+    here = cur == "search/"
+    out.append(f'<li><a class="search-link" href="{root}search/" aria-label="Search"{AC if here else ""}>'
+               '<svg viewBox="0 0 16 16" width="15" height="15" aria-hidden="true" focusable="false"><circle cx="6.8" cy="6.8" r="5" fill="none" stroke="currentColor" stroke-width="1.3"/><path d="M10.5 10.5 15 15" stroke="currentColor" stroke-width="1.3"/></svg></a></li>')
     return "".join(out)
+
+
+AC = ' aria-current="page"'
 
 
 def page(site, root, title, body, description="", canonical="", kind="website", jsonld=None,
@@ -500,23 +515,13 @@ def page(site, root, title, body, description="", canonical="", kind="website", 
 {head_extra}
 {ld}
 </head>
-<body>
+<body{f' class="v-{VARIANT[0].lower()}"' if VARIANT[0] else ""}>
 <a class="skip" href="#main">Skip to content</a>
 {banner}
-<div class="frame" aria-hidden="true"><i></i><i></i><i></i><i></i><b></b></div>
 <header class="masthead" data-pagefind-ignore>
-  <div class="wrap"><p class="strip"><span>{esc(site["name"])} · Daily<span class="wide"> · Est. 2026</span></span><span>{esc(STRIP.get("right", ""))}</span></p></div>
   <div class="wrap masthead-inner">
     <a class="wordmark" href="{root}">{esc(site['name'])}</a>
-    <p class="tagline">{esc(site['tagline'])}</p>
-    <nav aria-label="Primary"><ul>
-      {nav_items(root, canonical)}
-    </ul></nav>
-    <form class="masthead-search" role="search" action="{root}search/" method="get">
-      <label for="q-top" class="visually-hidden">Search issues</label>
-      <input id="q-top" name="q" type="search" placeholder="Search" autocomplete="off" aria-keyshortcuts="/ Control+K Meta+K">
-      <kbd aria-hidden="true">/</kbd>
-    </form>
+    <nav aria-label="Primary"><ul>{nav_items(root, canonical)}</ul></nav>
   </div>
 </header>
 <main id="main" tabindex="-1">
@@ -524,13 +529,9 @@ def page(site, root, title, body, description="", canonical="", kind="website", 
 </main>
 <footer class="colophon" data-pagefind-ignore>
   <div class="wrap">
-    {"" if 'class="disclaimer"' in body else f'<p class="signoff">{esc(C["footer"])}</p>'}
-    {"" if 'class="disclaimer"' in body else f'<p class="disclaimer-short">{esc(site["disclaimer"])}</p>'}
-    <p class="small">© {dt.date.today().year} {esc(site['name'])} · <a href="{root}about/">About</a> · <a href="{root}search/">Search</a> · <a href="{root}feed.xml">RSS</a></p>
+    <p class="small"><span>{esc(site["disclaimer"])} <a href="{root}disclosures/">Disclosures</a></span><span>© {dt.date.today().year} {esc(site['name'])} · <a href="{root}feed.xml">RSS</a></span></p>
   </div>
 </footer>
-{TYPE_JS if 'class="typeline"' in body else ""}
-{DECODE_JS if 'data-decode=' in body else ""}
 {KEYS_JS}
 </body>
 </html>
@@ -543,8 +544,10 @@ document.addEventListener('keydown', function(e){
   var k = (e.key === '/' && !typing && !e.metaKey && !e.ctrlKey && !e.altKey) ||
           ((e.metaKey || e.ctrlKey) && (e.key === 'k' || e.key === 'K'));
   if (!k) return;
-  var q = document.querySelector('#search .pagefind-ui__search-input') || document.getElementById('q-top');
-  if (q) { e.preventDefault(); q.focus(); if (q.select) q.select(); }
+  var q = document.querySelector('#search .pagefind-ui__search-input');
+  e.preventDefault();
+  if (q) { q.focus(); if (q.select) q.select(); }
+  else { var a = document.querySelector('.search-link'); if (a) location.href = a.href; }
 });
 </script>"""
 
@@ -557,6 +560,7 @@ def signup_block(site, root, bare=False):
                          '<h2 class="visually-hidden" id="signup-title">Sign up</h2>', 1))
     action = site.get("signup_action") or site.get("form_endpoint") or ""
     if not action:
+        return ""  # hidden until signup_action is set
         return (f'<section class="wrap signup" aria-labelledby="signup-title" data-pagefind-ignore><div class="signup-inner">'
                 f'<h2 class="kicker" id="signup-title"><span class="q">MORNING EMAIL</span></h2>'
                 f'<p class="signup-soon">{esc(C["signup_soon"])} <a href="{root}feed.xml">RSS</a>.</p></div></section>')
@@ -564,15 +568,14 @@ def signup_block(site, root, bare=False):
     hidden = "".join(f'<input type="hidden" name="{esc(k)}" value="{esc(v)}">' for k, v in site.get("signup_hidden", {}).items())
     opts = "".join(f"<option>{esc(t)}</option>" for t in TOPICS + ["Everything"])
     return f"""<section class="wrap signup" aria-labelledby="signup-title" data-pagefind-ignore>
-  <div class="signup-inner"><h2 class="kicker" id="signup-title"><span class="q">MORNING EMAIL</span></h2>
-  <p class="signup-lede">{esc(C["signup_lede"])}</p>
+  <div class="signup-inner"><h2 class="visually-hidden" id="signup-title">Subscribe</h2>
   <form class="signup-form" action="{esc(action)}" method="post" data-provider="{esc(site.get('signup_provider', ''))}">
     <div class="field"><label for="su-email">Email <span aria-hidden="true">*</span></label>
       <input id="su-email" name="{esc(names['email'])}" type="email" required autocomplete="email" inputmode="email"></div>
     <div class="field"><label for="su-name">Name <span class="opt">(optional)</span></label>
       <input id="su-name" name="{esc(names['name'])}" type="text" autocomplete="given-name"></div>
-    <div class="field"><label for="su-interest">What are you watching? <span class="opt">(optional)</span></label>
-      <select id="su-interest" name="{esc(names['interest'])}"><option value="">Choose one</option>{opts}</select></div>
+    <div class="field"><label for="su-interest">Topic <span class="opt">(optional)</span></label>
+      <select id="su-interest" name="{esc(names['interest'])}"><option value="">Any</option>{opts}</select></div>
     {hidden}
     <button type="submit">Subscribe</button>
   </form></div>
@@ -672,8 +675,7 @@ def qlabel(code, spoken, id_=""):
 
 def decode_h1(text, href=None, extra=""):
     inner = f'<a href="{href}">{esc(text)}</a>' if href else esc(text)
-    return (f'<h1 class="decode"{extra}><span class="decode-real">{inner}</span>'
-            f'<span class="decode-anim" aria-hidden="true" data-decode="{esc(text)}"></span></h1>')
+    return f'<h1{extra}>{inner}</h1>'
 
 
 DECODE_JS = """<script>
@@ -700,6 +702,24 @@ DECODE_JS = """<script>
 </script>"""
 
 
+def dek_span(i):
+    return f'<span class="a-dek">{esc(i["dek"])}</span>' if i["dek"] else ""
+
+
+def quiet_trace(site, i):
+    """The waveform as quiet art: static, unlabeled, decorative."""
+    if not site.get("trace", True):
+        return ""
+    t = trace_svg(i["title"] + "|" + i["slug"], site["accent"], "", draw=False, compact=True)
+    return t.replace('role="img" aria-label=""', 'aria-hidden="true" focusable="false"')
+
+
+def section_name(s):
+    if s["cls"] == "primer":
+        return f'Primer: {s["title"]}' if s["title"] else "Primer"
+    return s["title"] or s["kicker"]
+
+
 def full_label(i):
     n = str(i["number"])
     return f"Issue No. {esc(n)}" if n.isdigit() else f"{esc(n)} issue"
@@ -718,16 +738,16 @@ def render_issue(site, i, newer, older, review=False):
     root = "../../"
     secs = []
     for s in i["sections"]:
-        t = f'<h2 class="section-title" id="{s["cls"]}">{esc(s["title"])}</h2>' if s["title"] else ""
+        t = f'<h2 class="section-title" id="k-{s["cls"]}">{esc(section_name(s))}</h2>'
         secs.append(f'<section class="issue-section {s["cls"]}" aria-labelledby="k-{s["cls"]}">'
-                    f'{qlabel(section_code(s), s["kicker"], "k-" + s["cls"])}{t}'
+                    f'{t}'
                     f'<div class="prose">{s["html"]}</div></section>')
-    disc = (i["disclaimer_html"] or "") + f'<p class="legal">{esc(site["disclaimer"])}</p>'
+    disc = i["disclaimer_html"] or ""
     nav = []
     if older and not review:
-        nav.append(f'<a rel="prev" href="{root}issues/{older["slug"]}/"><span class="sc">Previous</span>{esc(older["title"])}</a>')
+        nav.append(f'<a rel="prev" href="{root}issues/{older["slug"]}/"><span class="sc">Earlier</span>{esc(older["title"])}</a>')
     if newer and not review:
-        nav.append(f'<a rel="next" class="next" href="{root}issues/{newer["slug"]}/"><span class="sc">Next</span>{esc(newer["title"])}</a>')
+        nav.append(f'<a rel="next" class="next" href="{root}issues/{newer["slug"]}/"><span class="sc">Later</span>{esc(newer["title"])}</a>')
     d = i["date"]
     filters = "" if review else (
         # attribute forms, so none of this leaks into the indexed text or excerpts
@@ -740,30 +760,26 @@ def render_issue(site, i, newer, older, review=False):
     horizon = ""
     if i["horizon"]:
         h = i["horizon"]
-        horizon = (f'<section class="horizon" aria-labelledby="h-horizon"><h2 class="visually-hidden" id="h-horizon">{esc(h["title"])}</h2>'
-                   f'<p class="kicker"><span class="q" aria-hidden="true">BY {esc(h["year"])}</span></p><div class="prose">{h["html"]}</div></section>')
+        horizon = (f'<section class="horizon" aria-labelledby="h-horizon"><h2 class="section-title small-h" id="h-horizon">{esc(h["title"])}</h2>'
+                   f'<div class="prose">{h["html"]}</div></section>')
     short = (f'<aside class="short-version" aria-labelledby="k-short">{plain_label("Short version", "k-short")}{i["short_html"]}</aside>'
              if i["short_html"] else "")
-    trace = trace_svg(i["title"] + "|" + i["slug"], site["accent"], "Signal trace drawn from this issue’s headline and date, closing on a dashed asymptote across the decade ahead", d.year) if site.get("trace", True) else ""
+    trace = quiet_trace(site, i)
     body = f"""<article class="issue wrap"{pf_body}>
   {filters}
   <header class="issue-head">
-    {fig(site, i["slug"], site["accent"], 168, f"Ink sprig, the unique mark of Issue {i['number']}")}
-    {readout(i)}
-    <div data-pagefind-ignore>{trace}
-    {typeline(i["kicker"])}
-    {qlabel("LEAD", "The lead essay")}</div>
+    {trace}
     <span hidden data-pagefind-meta="title:{esc(i["title"])}"></span>
+    <p class="meta" data-pagefind-ignore><time datetime="{d.isoformat()}">{long_date(d)}</time></p>
     {decode_h1(i["title"])}
     {f'<p class="dek">{esc(i["dek"])}</p>' if i["dek"] else ""}
-    <div class="meta-row" data-pagefind-ignore><p class="meta"><time datetime="{d.isoformat()}">{long_date(d)}</time></p>{tags_html(i["tags"], filter_attr=not review)}</div>
-    {f'<p class="byline sc">By {esc(i["author"])}</p>' if i["author"] else ""}
+    <div data-pagefind-ignore>{tags_html(i["tags"], filter_attr=not review)}</div>
   </header>
   {short}
   <div class="prose lead-body">{i["lead_html"]}</div>
   {horizon}
   {"".join(secs)}
-  <aside class="disclaimer" aria-label="Disclosures" data-pagefind-ignore>{qlabel("DISCLOSURES", "Disclosures")}{disc}</aside>
+  {f'<aside class="disclaimer" aria-label="Disclosures" data-pagefind-ignore>{disc}</aside>' if disc else ""}
   {f'<nav class="issue-nav" aria-label="More issues" data-pagefind-ignore>{"".join(nav)}</nav>' if nav else ""}
 </article>
 {"" if review else signup_block(site, root)}"""
@@ -790,45 +806,39 @@ def render_home(site, issues):
     ld = [org_ld(site), website_ld(site)]
     if not issues:
         body = f"""<section class="wrap forthcoming">
-  {fig(site, "forthcoming", site["accent"], 200, "An ink sprig awaiting its first issue")}
-  {trace_svg("forthcoming", site["accent"], "A quiet signal trace, waiting for the first issue") if site.get("trace", True) else ""}
-  <p class="kicker">{esc(C["soon_kicker"])}</p>
-  <h1>{esc(C["soon_title"])}</h1>
-  <p class="dek">{esc(C["soon_body"])}</p>
-  <p><a class="cta" href="{root}about/">What this is <span class="arr" aria-hidden="true">→</span></a> <span class="sep" aria-hidden="true">·</span> <a class="cta" href="{root}feed.xml">RSS feed <span class="arr" aria-hidden="true">→</span></a></p>
+  <h1>No issues yet.</h1>
 </section>
 <div id="archive"></div>
 {signup_block(site, root)}"""
         return page(site, root, site["name"], body, canonical=site["base_url"], jsonld=ld)
     latest = issues[0]
     archive = "".join(
-        f"""<li><a href="{root}issues/{i["slug"]}/">
-  {mini(site, i["slug"])}
-  <span class="sc"><span class="visually-hidden">{full_label(i)}, </span><span aria-hidden="true">{readout_id(i)}</span><br><time datetime="{i["date"].isoformat()}">{i["date"].isoformat()}</time></span>
-  <span class="a-text"><span class="a-title">{esc(i["title"])}</span>
-  {f'<span class="a-dek">{esc(i["dek"])}</span>' if i["dek"] else ""}
-  {f'<span class="a-tags">{" ".join("[" + esc(t) + "]" for t in i["tags"])}</span>' if i["tags"] else ""}</span></a></li>"""
-        for i in issues)
-    contents = "".join(f'<li>{esc(s["kicker"])}{": " + esc(s["title"]) if s["title"] else ""}</li>' for s in latest["sections"])
-    trace = trace_svg(latest["title"] + "|" + latest["slug"], site["accent"], "Signal trace drawn from today’s headline and date, closing on a dashed asymptote across the decade ahead", latest["date"].year) if site.get("trace", True) else ""
-    short = f'<div class="short-version">{plain_label("Short version")}{latest["short_html"]}</div>' if latest["short_html"] else ""
-    body = f"""<section class="wrap featured" aria-labelledby="featured-title">
-  {fig(site, latest["slug"], site["accent"], 220, f"Ink sprig, the unique mark of Issue {latest['number']}")}
-  {readout(latest)}
-  {trace}
-  {qlabel("TODAY", "Today’s issue")}
-  {decode_h1(latest["title"], f'{root}issues/{latest["slug"]}/', ' id="featured-title"')}
-  {f'<p class="dek">{esc(latest["dek"])}</p>' if latest["dek"] else ""}
-  <div class="meta-row"><p class="meta"><time datetime="{latest["date"].isoformat()}">{long_date(latest["date"])}</time></p>{tags_html(latest["tags"])}</div>
-  {short}
-  {f'<ol class="contents" aria-label="In this issue"><li>The lead essay</li>{contents}</ol>' if contents else ""}
-  <p><a class="cta" href="{root}issues/{latest["slug"]}/">Read the issue <span class="arr" aria-hidden="true">→</span></a></p>
-</section>
-{signup_block(site, root)}
-<section class="wrap archive" id="archive" aria-labelledby="archive-title">
-  <h2 id="archive-title" class="kicker"><span class="visually-hidden">The archive</span><span class="q" aria-hidden="true">ARCHIVE/{len(issues):02d}</span></h2>
+        f'<li><a href="{root}issues/{i["slug"]}/"><time class="sc" datetime="{i["date"].isoformat()}">{i["date"]:%b} {i["date"].day}, {i["date"].year}</time>'
+        f'<span class="a-title">{esc(i["title"])}</span></a></li>' for i in issues)
+    archive_html = f"""<section class="wrap archive" id="archive" aria-labelledby="archive-title">
+  <h2 id="archive-title" class="list-head">Archive</h2>
   <ol class="archive-list">{archive}</ol>
 </section>"""
+    if VARIANT[0] == "C":  # index-first: the home page is the list
+        rows = "".join(
+            f'<li><a href="{root}issues/{i["slug"]}/"><time class="sc" datetime="{i["date"].isoformat()}">{i["date"]:%b} {i["date"].day}, {i["date"].year}</time>'
+            f'<span class="a-text"><span class="a-title">{esc(i["title"])}</span>{dek_span(i)}</span></a></li>' for i in issues)
+        body = f"""<section class="wrap archive index-first" id="archive" aria-labelledby="archive-title">
+  <h1 id="archive-title" class="visually-hidden">Issues</h1>
+  <ol class="archive-list">{rows}</ol>
+</section>"""
+        return page(site, root, site["name"], body, canonical=site["base_url"], jsonld=ld)
+    short = f'<div class="short-version">{plain_label("Short version")}{latest["short_html"]}</div>' if latest["short_html"] else ""
+    body = f"""<section class="wrap featured" aria-labelledby="featured-title">
+  {quiet_trace(site, latest)}
+  <p class="meta"><time datetime="{latest["date"].isoformat()}">{long_date(latest["date"])}</time></p>
+  {decode_h1(latest["title"], f'{root}issues/{latest["slug"]}/', ' id="featured-title"')}
+  {f'<p class="dek">{esc(latest["dek"])}</p>' if latest["dek"] else ""}
+  {tags_html(latest["tags"])}
+  {short}
+</section>
+{signup_block(site, root)}
+{archive_html}"""
     return page(site, root, site["name"], body, canonical=site["base_url"], jsonld=ld)
 
 
@@ -854,23 +864,23 @@ Nobody knows the date. What we can watch is the slope.
 
 def render_about(site):
     root = "../"
-    txt = read(BRAND / "about.md")
-    if txt and txt.strip():
-        _, b = parse_frontmatter(txt)
-        _, b = strip_leading_h1(b)
-    else:
-        b = DEFAULT_ABOUT.format(**site)
-    body = f"""<article class="wrap about">
-  <header class="issue-head">
-    {page_head(site, "ASY/ABOUT", [plural(STATS.get("issues", 0), "ISSUE"), plural(STATS.get("primers", 0), "PRIMER")] + ([f'SINCE {STATS["since"]}'] if STATS.get("since") else []), "about")}
-    {qlabel("ABOUT", "About")}
-    <h1>About {esc(site["name"])}</h1>
-  </header>
-  <div class="prose lead-body">{md(b)}</div>
-</article>
-{signup_block(site, root)}"""
-    return page(site, root, "About", body, f"What {site['name']} is, how each issue is built, and who makes it.",
-                f'{site["base_url"]}about/', jsonld=[org_ld(site)])
+    C = {**DEFAULT_COPY, **site.get("copy", {})}
+    text = C["about"].format(**site)
+    body = f"""<article class="wrap page">
+  <h1>About</h1>
+  <p>{esc(text)}</p>
+</article>"""
+    return page(site, root, "About", body, text, f'{site["base_url"]}about/', jsonld=[org_ld(site)])
+
+
+def render_disclosures(site):
+    root = "../"
+    text = site.get("disclosures") or site["disclaimer"]
+    body = f"""<article class="wrap page">
+  <h1>Disclosures</h1>
+  <p>{esc(text)}</p>
+</article>"""
+    return page(site, root, "Disclosures", body, text, f'{site["base_url"]}disclosures/')
 
 
 def render_primers(site, issues):
@@ -881,37 +891,28 @@ def render_primers(site, issues):
         p = next((s for s in i["sections"] if s["cls"] == "primer"), None)
         if not p:
             continue
-        rows.append(f'<li><a href="{root}issues/{i["slug"]}/#k-primer"><span class="a-text">'
-                    f'<span class="sc"><span class="visually-hidden">{full_label(i)}, </span><span aria-hidden="true">{readout_id(i)} · </span><time datetime="{i["date"].isoformat()}">{i["date"].isoformat()}</time></span>'
+        rows.append(f'<li><a href="{root}issues/{i["slug"]}/#k-primer"><span class="a-text row">'
+                    f'<time class="sc" datetime="{i["date"].isoformat()}">{i["date"]:%b} {i["date"].day}, {i["date"].year}</time>'
                     f'<span class="a-title">{esc(p["title"] or "SI Primer")}</span></span></a></li>')
-    lst = f'<ol class="archive-list">{"".join(rows)}</ol>' if rows else f'<p class="dek">{esc(C["soon_body"])}</p>'
-    body = f"""<section class="wrap search-page" aria-labelledby="primers-title">
-  {page_head(site, "ASY/PRIMER", [plural(len(rows), "LESSON"), "ONE A DAY"], "primer")}
-  {qlabel(f"PRIMER/{len(rows):02d}", "Lessons")}
-  <h1 id="primers-title">{esc(C["primers_title"])}</h1>
-  <p class="dek">{esc(C["primers_body"])}</p>
+    lst = f'<ol class="archive-list">{"".join(rows)}</ol>' if rows else "<p>No lessons yet.</p>"
+    body = f"""<section class="wrap page" aria-labelledby="primers-title">
+  <h1 id="primers-title">Primer</h1>
   {lst}
 </section>"""
-    return page(site, root, C["primers_title"], body, C["primers_body"], f'{site["base_url"]}primers/')
+    return page(site, root, "Primer", body, "One concept per issue, in order.", f'{site["base_url"]}primers/')
 
 
 def render_subscribe(site):
     C = {**DEFAULT_COPY, **site.get("copy", {})}
     root = "../"
-    body = f"""<section class="wrap search-page" aria-labelledby="sub-title">
-  {page_head(site, "ASY/SUBSCRIBE", ["DAILY", "SIGNUP " + ("OPEN" if (site.get("signup_action") or site.get("form_endpoint")) else "NOT YET OPEN")], "subscribe")}
-  {qlabel("SUBSCRIBE", "Subscribe")}
-  <h1 id="sub-title">{esc(C["subscribe_title"])}</h1>
-  <p class="dek">{esc(C["subscribe_body"])}</p>
-  <dl class="spec">
-    <div><dt>Frequency</dt><dd>Every morning, ET.</dd></div>
-    <div><dt>Format</dt><dd>The short version, the lead essay, three or four briefs, the SI Primer, one signal to watch.</dd></div>
-    <div><dt>Sources</dt><dd>Every number, date and quote is linked.</dd></div>
-    <div><dt>Status</dt><dd>{"Open." if (site.get("signup_action") or site.get("form_endpoint")) else "Not open yet."}</dd></div>
-  </dl>
-</section>
-{signup_block(site, root, bare=True)}"""
-    return page(site, root, "Subscribe", body, C["subscribe_body"], f'{site["base_url"]}subscribe/')
+    if SIGNUP_OPEN[0]:
+        inner = f'<p>{esc(C["subscribe_open"])}</p></section>{signup_block(site, root, bare=True)}'
+    else:
+        inner = f'<p>Subscribe by <a href="{root}feed.xml">RSS</a>.</p></section>'
+    body = f"""<section class="wrap page" aria-labelledby="sub-title">
+  <h1 id="sub-title">Subscribe</h1>
+  {inner}"""
+    return page(site, root, "Subscribe", body, "Subscribe to " + site["name"] + ".", f'{site["base_url"]}subscribe/')
 
 
 SEARCH_JS = """<link href="../pagefind/pagefind-ui.css" rel="stylesheet">
@@ -920,7 +921,7 @@ SEARCH_JS = """<link href="../pagefind/pagefind-ui.css" rel="stylesheet">
 window.addEventListener('DOMContentLoaded', function(){
   var ui = new PagefindUI({ element: '#search', showSubResults: true, showImages: false, resetStyles: false,
     excerptLength: 26, pageSize: 8, autofocus: false,
-    translations: { placeholder: 'Search issues, briefs and primers', zero_results: 'Nothing for [SEARCH_TERM] yet. Try a broader word.' } });
+    translations: { placeholder: 'Search', zero_results: 'No results for [SEARCH_TERM].' } });
   var q = new URLSearchParams(location.search).get('q');
   if (q) { ui.triggerSearch(q); }
   var input = document.querySelector('#search .pagefind-ui__search-input');
@@ -932,14 +933,10 @@ window.addEventListener('DOMContentLoaded', function(){
 def render_search(site):
     C = {**DEFAULT_COPY, **site.get("copy", {})}
     root = "../"
-    body = f"""<section class="wrap search-page" aria-labelledby="search-title">
-  {page_head(site, "ASY/SEARCH", ["INDEX " + plural(STATS.get("issues", 0), "ISSUE"), "PAGEFIND"], "search")}
-  {qlabel("SEARCH", "Search")}
-  <h1 id="search-title">{esc(C["search_title"])}</h1>
-  <p class="dek">{esc(C["search_body"])}</p>
+    body = f"""<section class="wrap page" aria-labelledby="search-title">
+  <h1 id="search-title">Search</h1>
   <div id="search" class="pf"></div>
   <noscript><p>Search needs JavaScript. The <a href="../#archive">archive</a> lists every issue.</p></noscript>
-  <p class="small kbd-hint">Press <kbd>/</kbd> or <kbd>⌘K</kbd> anywhere to jump here. Use <kbd>Tab</kbd> to move through results and filters.</p>
 </section>"""
     return page(site, root, "Search", body, f"Search every issue of {site['name']}.", f'{site["base_url"]}search/',
                 head_extra=SEARCH_JS)
@@ -948,9 +945,7 @@ def render_search(site):
 def render_404(site):
     C = {**DEFAULT_COPY, **site.get("copy", {})}
     root = "/" + site["base_url"].split("//", 1)[-1].split("/", 1)[-1] if "//" in site["base_url"] else "/"
-    body = (f'<section class="wrap forthcoming">{fig(site, "lost", site["accent"], 160, "A stray ink sprig")}'
-            f'<p class="kicker">404</p><h1>{esc(C["notfound_title"])}</h1><p class="dek">{esc(C["notfound_body"])}</p>'
-            f'<p><a class="cta" href="{root}">Back to today’s issue <span class="arr" aria-hidden="true">→</span></a></p></section>')
+    body = f'<section class="wrap page"><h1>Page not found</h1><p><a href="{root}">Home</a></p></section>'
     return page(site, root, "Not found", body, noindex=True)
 
 
@@ -1066,7 +1061,10 @@ def main():
         a = issues[0]
         STRIP["right"] = f"Latest {readout_id(a)} · {a['date'].isoformat()}"
     write(OUT / "assets" / "favicon.svg", f'<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64"><rect width="64" height="64" rx="10" fill="{site["accent"]}"/><text x="32" y="45" font-family="Georgia,serif" font-size="38" text-anchor="middle" fill="{site.get("paper", "#F5EFE4")}">{esc(site["name"][:1])}</text></svg>')
+    SIGNUP_OPEN[0] = bool(site.get("signup_action") or site.get("form_endpoint"))
+    VARIANT[0] = os.environ.get("SI_VARIANT", "").upper()
     write(OUT / ".nojekyll", "")
+    write(OUT / "disclosures" / "index.html", render_disclosures(site))
     write(OUT / "index.html", render_home(site, issues))
     write(OUT / "about" / "index.html", render_about(site))
     write(OUT / "search" / "index.html", render_search(site))

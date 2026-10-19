@@ -92,3 +92,31 @@ Each pass has before/after screenshots at 1440 and 390 px in `screenshots/pass-N
 **Results** (live, published 01:30 ET): home mobile 100 (LCP 1.9 s), issue mobile 99 (LCP 2.0 s, down from 2.6 s), desktop 100/100. Accessibility, best practices and SEO are 100 on every run, CLS ≤ 0.007 and TBT 0 ms. The only flags left are cache-TTL, which GitHub Pages controls and we can't set. verify.py: ALL OK.
 
 **Known and accepted:** U+2192 (→) isn't in Newsreader or Plex Mono, so it falls back to a system glyph wherever it appears.
+
+## Clean pass — Oct 19, ~14:10–14:40 ET: reduction
+
+Jacob asked for no unnecessary text and a clean layout. Only the template and microcopy changed; the issue text belongs to the Editor.
+
+**Removed:**
+- **Masthead:** the top strip ("ASYMPTOTE · DAILY · EST. 2026" / "LATEST ASY/001 · …"), the tagline, the search field with its `/` hint, and the "Latest" nav item.
+- **Construction layer:** registration marks, margin ruler, baseline/column grid and paper grain.
+- **Readouts:** the instrument readouts (ASY/001 · 09 MIN · 2,166 W · 22 SRC, plus the ASY/ABOUT-style heads) and the compact traces on secondary pages.
+- **Quoted labels:** all of them ("TODAY", "LEAD", "BRIEFS/03", "PRIMER/D01", "BY 2036", "DISCLOSURES", "MORNING EMAIL", "ARCHIVE/01"), plus the 01/02 numbering in the Short version.
+- **Waveform extras:** the 2026/2031/2036 scale, the tick rail, the dashed asymptote, the halo and the draw-in. Also gone: the headline decode and the typed kicker with its blinking cursor.
+- **Home:** the "In this issue" list, the "Read the issue" button, and the archive codes, deks and tags. **Issue page:** the byline and the repeated legal paragraph.
+- **Signup:** hidden, and Subscribe is out of the nav until `signup_action` is set. No "opens soon" note anywhere.
+- **Microcopy:** the footer sign-off, the search and primer intros, the keyboard hint, the subscribe spec sheet, the 404 and coming-soon charm lines, and the long About. Tag brackets are gone too.
+
+**Kept:**
+- Wordmark on the left; nav on the right with Archive, Primer, About and a search icon (`/` and ⌘K still jump to search).
+- Date, headline, dek, small mono tags, the Short version and the body, with plain serif section heads.
+- The issue's own disclaimer and sources.
+- One static, unlabeled waveform on the home and issue pages only.
+- A one-line footer: "Not investment advice. Disclosures" · "© 2026 Asymptote · RSS". `/disclosures/` holds the full plain text. In `brand/site.json`, `disclaimer` is now "Not investment advice."; `disclosures` holds the long text and `disclaimer_url` the link.
+
+**Critique 1 → fixes:** Briefs and Signal were rendering empty headings, so they now fall back to the section name. Paragraph gap 1.75rem → 1.05em. The redundant CTA is cut. Inline brief tags are now "AI · Policy" with no brackets.
+**Critique 2 → fixes:** the Primer list wrapped one word per line (a grid nested in a grid); fixed. Subscribe without signup is now one line: "Subscribe by RSS."
+
+**Build rule:** `primer.md`, when present, overrides any Primer inside issue.md. Versioned copies (`primer.v1.md` and so on) are never read.
+**Publishing:** `./si publish-layout` rebuilds with the issue files as committed (the live text), so the Editor's rewrite stays local until "republish". After that, `./si publish` publishes everything.
+**Samples** (local only, `SI_VARIANT=A|B|C`, built from the new issue.md and primer.md): `screenshots/samples/`.
