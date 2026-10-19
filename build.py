@@ -78,7 +78,7 @@ def md(text):
     )
     # "Tags: AI, Energy" lines inside briefs/signal become quiet mono labels
     return TAGLINE_RE.sub(lambda m: '<p class="inline-tags" data-pagefind-ignore><span class="visually-hidden">Topics: </span>'
-                          + " · ".join(esc(t.strip()) for t in m.group(2).split(",") if t.strip()) + "</p>", out)
+                          + " ".join("[" + esc(t.strip()) + "]" for t in m.group(2).split(",") if t.strip()) + "</p>", out)
 
 
 def esc(s):
@@ -515,7 +515,7 @@ def page(site, root, title, body, description="", canonical="", kind="website", 
 </main>
 <footer class="colophon" data-pagefind-ignore>
   <div class="wrap">
-    <p class="signoff">{esc(C["footer"])}</p>
+    {"" if 'class="disclaimer"' in body else f'<p class="signoff">{esc(C["footer"])}</p>'}
     {"" if 'class="disclaimer"' in body else f'<p class="disclaimer-short">{esc(site["disclaimer"])}</p>'}
     <p class="small">© {dt.date.today().year} {esc(site['name'])} · <a href="{root}about/">About</a> · <a href="{root}search/">Search</a> · <a href="{root}feed.xml">RSS</a></p>
   </div>
@@ -546,8 +546,7 @@ def signup_block(site, root):
     if not action:
         return (f'<section class="wrap signup" aria-labelledby="signup-title" data-pagefind-ignore><div class="signup-inner">'
                 f'<h2 class="kicker" id="signup-title"><span class="q">MORNING EMAIL</span></h2>'
-                f'<p class="signup-soon"><span class="sc">Status: soon.</span> {esc(C["signup_soon"])} '
-                f'<a href="{root}feed.xml">RSS feed</a></p></div></section>')
+                f'<p class="signup-soon">{esc(C["signup_soon"])} <a href="{root}feed.xml">RSS</a>.</p></div></section>')
     names = {"email": "email", "name": "name", "interest": "interest", **site.get("signup_fields", {})}
     hidden = "".join(f'<input type="hidden" name="{esc(k)}" value="{esc(v)}">' for k, v in site.get("signup_hidden", {}).items())
     opts = "".join(f"<option>{esc(t)}</option>" for t in TOPICS + ["Everything"])
@@ -696,11 +695,12 @@ def render_issue(site, i, newer, older, review=False):
         nav.append(f'<a rel="next" class="next" href="{root}issues/{newer["slug"]}/"><span class="sc">Next</span>{esc(newer["title"])}</a>')
     d = i["date"]
     filters = "" if review else (
-        f'<span hidden data-pagefind-filter="year">{d.year}</span>'
-        f'<span hidden data-pagefind-filter="month">{d:%B %Y}</span>'
-        f'<span hidden data-pagefind-sort="date">{d.isoformat()}</span>'
-        f'<span hidden data-pagefind-meta="date">{long_date(d)}</span>'
-        f'<span hidden data-pagefind-meta="issue">{esc(issue_label(i))}</span>')
+        # attribute forms, so none of this leaks into the indexed text or excerpts
+        f'<span hidden data-pagefind-filter="year:{d.year}"></span>'
+        f'<span hidden data-pagefind-filter="month:{d:%B %Y}"></span>'
+        f'<span hidden data-pagefind-sort="date:{d.isoformat()}"></span>'
+        f'<span hidden data-pagefind-meta="date:{long_date(d)}"></span>'
+        f'<span hidden data-pagefind-meta="issue:{esc(issue_label(i))}"></span>')
     pf_body = "" if review else " data-pagefind-body"
     horizon = ""
     if i["horizon"]:
@@ -728,7 +728,7 @@ def render_issue(site, i, newer, older, review=False):
   <div class="prose lead-body">{i["lead_html"]}</div>
   {horizon}
   {"".join(secs)}
-  <aside class="disclaimer" aria-label="Disclosures" data-pagefind-ignore><p class="kicker">Disclosures</p>{disc}</aside>
+  <aside class="disclaimer" aria-label="Disclosures" data-pagefind-ignore>{qlabel("DISCLOSURES", "Disclosures")}{disc}</aside>
   {f'<nav class="issue-nav" aria-label="More issues" data-pagefind-ignore>{"".join(nav)}</nav>' if nav else ""}
 </article>
 {"" if review else signup_block(site, root)}"""
@@ -828,7 +828,7 @@ def render_about(site):
     body = f"""<article class="wrap about">
   <header class="issue-head">
     {fig(site, site["name"], site["accent"], 150, "The masthead’s ink sprig")}
-    <p class="kicker">About</p>
+    {qlabel("ABOUT", "About")}
     <h1>About {esc(site["name"])}</h1>
     <p class="dek">{esc(site["tagline"])}</p>
   </header>
@@ -852,7 +852,7 @@ def render_primers(site, issues):
                     f'<span class="a-title">{esc(p["title"] or "SI Primer")}</span></span></a></li>')
     lst = f'<ol class="archive-list">{"".join(rows)}</ol>' if rows else f'<p class="dek">{esc(C["soon_body"])}</p>'
     body = f"""<section class="wrap search-page" aria-labelledby="primers-title">
-  <p class="kicker">Lessons</p>
+  {qlabel(f"PRIMER/{len(rows):02d}", "Lessons")}
   <h1 id="primers-title">{esc(C["primers_title"])}</h1>
   <p class="dek">{esc(C["primers_body"])}</p>
   {lst}
@@ -864,7 +864,7 @@ def render_subscribe(site):
     C = {**DEFAULT_COPY, **site.get("copy", {})}
     root = "../"
     body = f"""<section class="wrap search-page" aria-labelledby="sub-title">
-  <p class="kicker">Subscribe</p>
+  {qlabel("SUBSCRIBE", "Subscribe")}
   <h1 id="sub-title">{esc(C["subscribe_title"])}</h1>
   <p class="dek">{esc(C["subscribe_body"])}</p>
 </section>
@@ -891,7 +891,7 @@ def render_search(site):
     C = {**DEFAULT_COPY, **site.get("copy", {})}
     root = "../"
     body = f"""<section class="wrap search-page" aria-labelledby="search-title">
-  <p class="kicker">Search</p>
+  {qlabel("SEARCH", "Search")}
   <h1 id="search-title">{esc(C["search_title"])}</h1>
   <p class="dek">{esc(C["search_body"])}</p>
   <div id="search" class="pf"></div>

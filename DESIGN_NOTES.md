@@ -29,3 +29,26 @@ Each pass has before/after screenshots at 1440 and 390 px in `screenshots/pass-N
 - **Performance:** fonts are self-hosted (latin woff2), with preloads for the two upright faces and `font-display: swap`.
 - **Copy:** the subscribe page copy is de-duplicated.
 - `brand/site.json` gained `ink_soft`, `accent_text`, `tokens_note`, and the new paper/ink/muted/rule/accent values.
+
+**Results:** Lighthouse mobile performance went from 78 to 98 on home and 96 on the issue (LCP 4.0 s → 2.4–2.6 s). Desktop performance is 100, CLS is 0 or close to it, and SEO and best practices are 100. Accessibility dropped to 96 on the issue page because of one contrast failure, fixed in pass 2.
+
+## Pass 2 — Oct 19, 01:45–02:05 ET: consistency, contrast, search hygiene
+
+**Critique of pass 1**
+- **Accessibility:** Lighthouse flagged the orange "PRIMER/D01" label on the tinted Primer panel at 4.32:1, below the 4.5:1 minimum for small text.
+- Search excerpts began with leaked metadata ("19, 2026No. 1 The Grid Said No…"). The hidden filter and meta spans were being indexed as text.
+- The quoted-label system was half applied. Issue sections were quoted, but page kickers (About, Search, Subscribe, Lessons) and "Disclosures" were not.
+- Briefs' topic lines used "AI · COMPUTE" while page tags used `[AI]`. Two dialects for the same thing.
+- On issue pages, "Not investment advice. Just a clearer view." showed twice: once in Disclosures, once as the footer sign-off.
+- The disclosure rule was shorter than the other rules, because `font-size` shrank the `ch` measure.
+- The signup line read "Status: soon. The morning email opens soon…". It said "soon" twice.
+
+**Changes**
+- `accent_text` is now `#AC3406`: 5.4:1 on paper, 4.9:1 on paper-deep. Synced in `brand/site.json` for the email.
+- Pagefind filters, sort and meta now use the attribute form (`data-pagefind-filter="year:2026"`), so excerpts start with real prose.
+- Every page kicker is a quoted mono label: “ABOUT”, “SEARCH”, “SUBSCRIBE”, “PRIMER/01”, “DISCLOSURES”. Each has a spoken name for screen readers.
+- Inline topic lines in briefs and signal now render as `[AI] [COMPUTE]`, matching the tags.
+- The footer sign-off is suppressed on pages that already carry Disclosures.
+- The disclosure rule is now full measure; only the paragraph text is smaller.
+- The signup line now reads: "The morning email opens soon. Until then, follow along by RSS."
+- **Focus check:** keyboard focus on nav and search shows a 2px signal-orange ring (3.2:1 against paper, which meets the 3:1 non-text minimum). `/` jumps to search. Shots: `screenshots/pass-2/focus-*.png`.

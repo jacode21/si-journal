@@ -6,7 +6,7 @@
 @font-face{font-family:"IBM Plex Mono";font-style:normal;font-weight:500;font-display:swap;src:url(fonts/plexmono-500.woff2) format("woff2")}
 :root{
   --paper:#ECEAE4; --paper-deep:#E2DFD7; --ink:#111110; --ink-soft:#3A3936; --muted:#5C5B57;
-  --rule:#C9C5BC; --accent:#E4500E; --accent-text:#B83A09;
+  --rule:#C9C5BC; --accent:#E4500E; --accent-text:#AC3406;
   --serif:"Newsreader", Georgia, "Times New Roman", Times, serif;
   --mono:"IBM Plex Mono", ui-monospace, "SFMono-Regular", Menlo, Consolas, "Courier New", monospace;
   --measure:64ch; --hair:1px; --base:1.75rem;
@@ -171,7 +171,8 @@ h1 a{text-decoration:none}
 .short-version ul{margin:0 0 .9rem;padding-left:0;list-style:none;counter-reset:s}
 .short-version li{margin:.45em 0;line-height:1.45;display:grid;grid-template-columns:2.2rem 1fr;counter-increment:s}
 .short-version li::before{content:counter(s, decimal-leading-zero);font-family:var(--mono);font-size:.72rem;color:var(--accent-text);padding-top:.32em}
-.disclaimer{margin:calc(var(--base) * 2) 0 0;padding:1rem 0 0;border-top:var(--hair) solid var(--ink);max-width:var(--measure);color:var(--muted);font-size:.86em;line-height:1.55}
+.disclaimer{margin:calc(var(--base) * 2) 0 0;padding:1rem 0 0;border-top:var(--hair) solid var(--ink);max-width:var(--measure);color:var(--muted);line-height:1.55}
+.disclaimer p:not(.kicker){font-size:.86em;max-width:72ch}
 .disclaimer .kicker{color:var(--muted)}
 .disclaimer .legal{font-size:.92em;margin-top:.6em}
 .disclaimer p:first-of-type:not(.kicker){color:var(--ink-soft)}

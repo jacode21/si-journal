@@ -17,7 +17,7 @@
     "footer": "Not investment advice. Just a clearer view.",
     "notfound_title": "This page isn’t here.",
     "notfound_body": "It may have moved. Today’s issue hasn’t.",
-    "signup_soon": "The morning email opens soon. Until then, follow along by RSS.",
+    "signup_soon": "The morning email opens soon. Until then, follow along by",
     "signup_lede": "One issue each morning. Short, sourced, unhurried.",
     "search_title": "Search",
     "search_body": "Every issue, brief and primer, in one place.",
@@ -45,6 +45,6 @@
   ],
   "trace": true,
   "ink_soft": "#3A3936",
-  "accent_text": "#B83A09",
-  "tokens_note": "accent (#E4500E) is the signal orange for marks, rules, focus rings and large type (3.2:1 on paper). For small text, links and buttons use accent_text (#B83A09, 4.8:1)."
+  "accent_text": "#AC3406",
+  "tokens_note": "accent (#E4500E) is the signal orange for marks, rules, focus rings and large type (3.2:1 on paper). For small text, links and buttons use accent_text (#AC3406: 5.4:1 on paper, 4.9:1 on paper_deep)."
 }
