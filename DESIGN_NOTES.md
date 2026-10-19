@@ -4,7 +4,7 @@ The brief: future-minimal (Rubin × Abloh), "technology with a soul", one serif 
 The test for each pass: *would someone think a careful machine that reads poetry made this?*
 Each pass has before/after screenshots at 1440 and 390 px in `screenshots/pass-N/{before,after}/`, plus Lighthouse summaries in `screenshots/pass-N/lh-*.txt`.
 
-## Pass 1 — Oct 19, 01:10–01:40 ET: from warm-classic to instrument
+## Pass 1 — Oct 19, ~01:08–01:18 ET: from warm-classic to instrument
 
 **Critique of the live v0**
 - It read as a warm literary magazine, with nothing machine-made about it. Cream paper, pill tags and soft rules all said "classic".
@@ -32,7 +32,7 @@ Each pass has before/after screenshots at 1440 and 390 px in `screenshots/pass-N
 
 **Results:** Lighthouse mobile performance went from 78 to 98 on home and 96 on the issue (LCP 4.0 s → 2.4–2.6 s). Desktop performance is 100, CLS is 0 or close to it, and SEO and best practices are 100. Accessibility dropped to 96 on the issue page because of one contrast failure, fixed in pass 2.
 
-## Pass 2 — Oct 19, 01:45–02:05 ET: consistency, contrast, search hygiene
+## Pass 2 — Oct 19, ~01:18–01:22 ET: consistency, contrast, search hygiene
 
 **Critique of pass 1**
 - **Accessibility:** Lighthouse flagged the orange "PRIMER/D01" label on the tinted Primer panel at 4.32:1, below the 4.5:1 minimum for small text.
@@ -55,7 +55,7 @@ Each pass has before/after screenshots at 1440 and 390 px in `screenshots/pass-N
 
 **Results:** Lighthouse accessibility is 100 on all four runs. Mobile performance is 100 on home (LCP 1.6 s) and 96 on the issue. Desktop is 100.
 
-## Pass 3 — Oct 19, 02:10–02:35 ET: the system reaches every page, and the CSS is inlined
+## Pass 3 — Oct 19, ~01:22–01:26 ET: the system reaches every page, and the CSS is inlined
 
 **Critique of pass 2**
 - Only the home and issue pages felt machine-made. About, Primer, Search and Subscribe fell back to plain editorial pages with no readout and no trace, so the system broke as you navigated.
@@ -78,7 +78,7 @@ Each pass has before/after screenshots at 1440 and 390 px in `screenshots/pass-N
 
 **Results:** Render-blocking resources are gone on every run. Lighthouse home mobile scored 98 (LCP 2.4 s, network variance), issue mobile 96 (LCP 2.6 s, the italic dek waiting on a 143 KB font), desktop 100 on both. Accessibility, best practices and SEO are 100 everywhere.
 
-## Pass 4: font weight and an honest Subscribe page
+## Pass 4 — Oct 19, ~01:26–01:30 ET: font weight and an honest Subscribe page
 
 **Critique of pass 3**
 - Mobile LCP is the italic dek, and it waits on `newsreader-italic.woff2` (143 KB), which wasn't preloaded. Both Newsreader files also carried the unused 300 weight and hinting.
@@ -88,3 +88,7 @@ Each pass has before/after screenshots at 1440 and 390 px in `screenshots/pass-N
 - **Fonts** were re-cut with fontTools. The wght axis is limited to 400–700 (opsz stays for display sizes), the files are subset to Latin + punctuation, and hinting is dropped. Newsreader went from 128 to 92 KB, the italic from 143 to 102 KB, and Plex Mono from 15 to 12 KB each. `@font-face` ranges are updated to match.
 - The italic is preloaded only where a dek is the likely LCP (home and issue pages).
 - **Subscribe** is now a spec sheet: mono `dt`, serif `dd`, hairline rows (Frequency / Format / Sources / Status). Every line is true and comes from the house format, and Status is computed from `signup_action`. The signup block on this page renders bare, with no second label or rule. The form appears automatically once `signup_action` is set.
+
+**Results** (live, published 01:30 ET): home mobile 100 (LCP 1.9 s), issue mobile 99 (LCP 2.0 s, down from 2.6 s), desktop 100/100. Accessibility, best practices and SEO are 100 on every run, CLS ≤ 0.007 and TBT 0 ms. The only flags left are cache-TTL, which GitHub Pages controls and we can't set. verify.py: ALL OK.
+
+**Known and accepted:** U+2192 (→) isn't in Newsreader or Plex Mono, so it falls back to a system glyph wherever it appears.
