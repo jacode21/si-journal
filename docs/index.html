@@ -25,8 +25,9 @@
 <link rel="icon" href="./assets/favicon.svg" type="image/svg+xml">
 <link rel="preload" href="./assets/fonts/newsreader.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="./assets/fonts/plexmono-400.woff2" as="font" type="font/woff2" crossorigin>
-<style>@font-face{font-family:"Newsreader";font-style:normal;font-weight:300 700;font-display:swap;src:url(./assets/fonts/newsreader.woff2) format("woff2")}
-@font-face{font-family:"Newsreader";font-style:italic;font-weight:300 700;font-display:swap;src:url(./assets/fonts/newsreader-italic.woff2) format("woff2")}
+<link rel="preload" href="./assets/fonts/newsreader-italic.woff2" as="font" type="font/woff2" crossorigin>
+<style>@font-face{font-family:"Newsreader";font-style:normal;font-weight:400 700;font-display:swap;src:url(./assets/fonts/newsreader.woff2) format("woff2")}
+@font-face{font-family:"Newsreader";font-style:italic;font-weight:400 700;font-display:swap;src:url(./assets/fonts/newsreader-italic.woff2) format("woff2")}
 @font-face{font-family:"IBM Plex Mono";font-style:normal;font-weight:400;font-display:swap;src:url(./assets/fonts/plexmono-400.woff2) format("woff2")}
 @font-face{font-family:"IBM Plex Mono";font-style:normal;font-weight:500;font-display:swap;src:url(./assets/fonts/plexmono-500.woff2) format("woff2")}
 :root{
@@ -272,7 +273,14 @@ border-bottom:var(--hair) solid var(--ink);padding:.45rem 2rem .45rem 1.1rem;bor
 .typeline{margin-bottom:1.6rem}
 @media (max-width:560px){.strip .wide{display:none}}
 .hero-trace.compact{margin:0 0 1.4rem;opacity:.85}
-.search-page>.readout,.about .readout{margin-top:0}</style>
+.search-page>.readout,.about .readout{margin-top:0}
+.spec{margin:2rem 0 0;padding:0;border-top:var(--hair) solid var(--ink);max-width:var(--measure)}
+.spec div{display:grid;grid-template-columns:8rem 1fr;gap:1rem;padding:.7rem 0;border-bottom:var(--hair) solid var(--rule)}
+.spec dt{font-family:var(--mono);font-size:.7rem;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);padding-top:.25em}
+.spec dd{margin:0}
+.signup-inner.bare{border-top:0;padding-top:0}
+.search-page + .signup{padding-top:0;margin-top:-1rem}
+@media (max-width:560px){.spec div{grid-template-columns:1fr;gap:.2rem}}</style>
 <script>document.documentElement.classList.add('js')</script>
 
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "Organization", "@id": "https://jacode21.github.io/si-journal/#org", "name": "Asymptote", "url": "https://jacode21.github.io/si-journal/", "logo": {"@type": "ImageObject", "url": "https://jacode21.github.io/si-journal/assets/og.png"}, "founder": {"@type": "Person", "name": "Jacob Slusser"}}</script><script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebSite", "@id": "https://jacode21.github.io/si-journal/#website", "name": "Asymptote", "url": "https://jacode21.github.io/si-journal/", "description": "A daily read on the next decade, for investors. AI and superintelligence are the spine. Energy, bio, space, quantum, robotics and policy come in when they shape the next ten years.", "inLanguage": "en-US", "publisher": {"@id": "https://jacode21.github.io/si-journal/#org"}, "potentialAction": {"@type": "SearchAction", "target": {"@type": "EntryPoint", "urlTemplate": "https://jacode21.github.io/si-journal/search/?q={search_term_string}"}, "query-input": "required name=search_term_string"}}</script>

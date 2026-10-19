@@ -75,3 +75,16 @@ Each pass has before/after screenshots at 1440 and 390 px in `screenshots/pass-N
 - Primer rows now use the archive's readout format.
 - The nav gets `aria-current="page"` with a signal-orange underline.
 - **CSS is inlined** (comments stripped) on every page, so nothing render-blocking remains. Fonts are still self-hosted and preloaded. `assets/style.css` is kept for anyone who links it.
+
+**Results:** Render-blocking resources are gone on every run. Lighthouse home mobile scored 98 (LCP 2.4 s, network variance), issue mobile 96 (LCP 2.6 s, the italic dek waiting on a 143 KB font), desktop 100 on both. Accessibility, best practices and SEO are 100 everywhere.
+
+## Pass 4: font weight and an honest Subscribe page
+
+**Critique of pass 3**
+- Mobile LCP is the italic dek, and it waits on `newsreader-italic.woff2` (143 KB), which wasn't preloaded. Both Newsreader files also carried the unused 300 weight and hinting.
+- The Subscribe page was mostly empty. It also repeated itself: a "Subscribe" page header, then a second ruled block labeled “MORNING EMAIL” with one sentence. That reads like a stub, not an instrument.
+
+**Changes**
+- **Fonts** were re-cut with fontTools. The wght axis is limited to 400–700 (opsz stays for display sizes), the files are subset to Latin + punctuation, and hinting is dropped. Newsreader went from 128 to 92 KB, the italic from 143 to 102 KB, and Plex Mono from 15 to 12 KB each. `@font-face` ranges are updated to match.
+- The italic is preloaded only where a dek is the likely LCP (home and issue pages).
+- **Subscribe** is now a spec sheet: mono `dt`, serif `dd`, hairline rows (Frequency / Format / Sources / Status). Every line is true and comes from the house format, and Status is computed from `signup_action`. The signup block on this page renders bare, with no second label or rule. The form appears automatically once `signup_action` is set.

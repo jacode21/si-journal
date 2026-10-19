@@ -494,6 +494,7 @@ def page(site, root, title, body, description="", canonical="", kind="website", 
 <link rel="icon" href="{root}assets/favicon.svg" type="image/svg+xml">
 <link rel="preload" href="{root}assets/fonts/newsreader.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="{root}assets/fonts/plexmono-400.woff2" as="font" type="font/woff2" crossorigin>
+{f'<link rel="preload" href="{root}assets/fonts/newsreader-italic.woff2" as="font" type="font/woff2" crossorigin>' if 'class="dek"' in body and kind in ("article",) or canonical == site["base_url"] else ""}
 <style>{CSS_TEXT[0].replace("url(fonts/", "url(" + root + "assets/fonts/")}</style>
 <script>document.documentElement.classList.add('js')</script>
 {head_extra}
@@ -548,8 +549,12 @@ document.addEventListener('keydown', function(e){
 </script>"""
 
 
-def signup_block(site, root):
+def signup_block(site, root, bare=False):
     C = {**DEFAULT_COPY, **site.get("copy", {})}
+    if bare:  # subscribe page: no second label/rule, the page itself is the block
+        return (signup_block(site, root).replace('<div class="signup-inner">', '<div class="signup-inner bare">', 1)
+                .replace('<h2 class="kicker" id="signup-title"><span class="q">MORNING EMAIL</span></h2>',
+                         '<h2 class="visually-hidden" id="signup-title">Sign up</h2>', 1))
     action = site.get("signup_action") or site.get("form_endpoint") or ""
     if not action:
         return (f'<section class="wrap signup" aria-labelledby="signup-title" data-pagefind-ignore><div class="signup-inner">'
@@ -892,8 +897,14 @@ def render_subscribe(site):
   {qlabel("SUBSCRIBE", "Subscribe")}
   <h1 id="sub-title">{esc(C["subscribe_title"])}</h1>
   <p class="dek">{esc(C["subscribe_body"])}</p>
+  <dl class="spec">
+    <div><dt>Frequency</dt><dd>Every morning, ET.</dd></div>
+    <div><dt>Format</dt><dd>The short version, the lead essay, three or four briefs, the SI Primer, one signal to watch.</dd></div>
+    <div><dt>Sources</dt><dd>Every number, date and quote is linked.</dd></div>
+    <div><dt>Status</dt><dd>{"Open." if (site.get("signup_action") or site.get("form_endpoint")) else "Not open yet."}</dd></div>
+  </dl>
 </section>
-{signup_block(site, root)}"""
+{signup_block(site, root, bare=True)}"""
     return page(site, root, "Subscribe", body, C["subscribe_body"], f'{site["base_url"]}subscribe/')
 
 
