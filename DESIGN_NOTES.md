@@ -120,3 +120,8 @@ Jacob asked for no unnecessary text and a clean layout. Only the template and mi
 **Build rule:** `primer.md`, when present, overrides any Primer inside issue.md. Versioned copies (`primer.v1.md` and so on) are never read.
 **Publishing:** `./si publish-layout` rebuilds with the issue files as committed (the live text), so the Editor's rewrite stays local until "republish". After that, `./si publish` publishes everything.
 **Samples** (local only, `SI_VARIANT=A|B|C`, built from the new issue.md and primer.md): `screenshots/samples/`.
+
+## Design guide + newsfeed — Oct 19, ~20:40–23:00 ET
+- Added a story content model (`stories/<date>/<slug>.md`), the newsfeed home page, topic pages, story pages with a right rail, a month-grouped Archive, the Primer card and list, and About rows. See SITE.md and brand/design-tokens.md.
+- Applied Jacob's design guide: palette #F0EEE8 / #191918 / #D95727 / #928D85 (with AA text variants #AD4217 and #5F5B55), large literary headlines, mono data labels. No animation or ornament; the waveform is retired.
+- Until real stories exist, the feed lists each published issue as its entry: headline, dek, date and topics, linking to the issue. Mock stories (`mock: true`) only build with `SI_MOCK=1`.

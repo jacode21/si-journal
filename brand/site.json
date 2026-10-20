@@ -7,20 +7,57 @@
   "base_url": "https://jacode21.github.io/si-journal/",
   "language": "en-us",
   "disclaimer": "Not investment advice.",
-  "accent": "#E4500E",
+  "accent": "#D95727",
   "tagline_is_working": false,
   "ornament": false,
   "copy": {
     "search_title": "Search",
     "primers_title": "Primer",
     "subscribe_title": "Subscribe",
-    "about": "{name} is a daily briefing on AI and the technologies shaping the next decade, written for investors. Every figure links to its source. Edited by {author}."
+    "about": "{name} is a daily briefing on AI and the technologies shaping the next decade, written for investors. Every figure links to its source. Edited by {author}.",
+    "hero_title": "The next decade, daily.",
+    "hero_body": "AI, energy, chips, compute, bio, space, quantum, robotics and the policy that shapes what comes next.",
+    "topic_sub": "",
+    "archive_sub": "Every issue, in one place.",
+    "primer_sub": "A daily guide to the concepts, companies and forces shaping the next decade.",
+    "about_sub": "We cover the technologies, companies and policies that will define the next decade.",
+    "about_rows": [
+      [
+        "Our focus",
+        "AI, energy, chips and compute, bio, space, quantum, robotics, and the policy that shapes what comes next."
+      ],
+      [
+        "Our approach",
+        "Facts first. Real sources. Clear and interesting writing. No hype. No investment advice."
+      ],
+      [
+        "Our team",
+        [
+          [
+            "Editor-in-Chief",
+            "Story selection, writing and final approval."
+          ],
+          [
+            "Research Desk",
+            "Monitors the last 48 hours and prepares verified notes and the daily Primer."
+          ],
+          [
+            "Design Studio",
+            "Builds and runs the website."
+          ],
+          [
+            "Newsletter",
+            "Turns each approved day into a styled email."
+          ]
+        ]
+      ]
+    ]
   },
-  "paper": "#ECEAE4",
-  "ink": "#111110",
-  "muted": "#5C5B57",
-  "rule": "#C9C5BC",
-  "paper_deep": "#E2DFD7",
+  "paper": "#F0EEE8",
+  "ink": "#191918",
+  "muted": "#5F5B55",
+  "rule": "#D3CFC6",
+  "paper_deep": "#E6E3DB",
   "serif": "'Newsreader', Georgia, 'Times New Roman', Times, serif",
   "mono": "'IBM Plex Mono', 'Courier New', Courier, monospace",
   "topics": [
@@ -33,10 +70,11 @@
     "Robotics",
     "Policy"
   ],
-  "trace": true,
-  "ink_soft": "#3A3936",
-  "accent_text": "#AC3406",
-  "tokens_note": "accent (#E4500E) is the signal orange for marks, rules, focus rings and large type (3.2:1 on paper). For small text, links and buttons use accent_text (#AC3406: 5.4:1 on paper, 4.9:1 on paper_deep).",
+  "trace": false,
+  "ink_soft": "#4A4843",
+  "accent_text": "#AD4217",
+  "tokens_note": "From Jacob's design guide (Oct 2026): bone paper #F0EEE8, near-black ink #191918, signal orange #D95727, graphite #928D85. Orange marks active state or meaningful emphasis only. #D95727 is 3.4:1 on paper, so it is for rules, active underlines, dots and large type; small orange text uses accent_text #AD4217 (5.1:1). Graphite #928D85 is 2.8:1, so it is for rules and icons only; small grey text uses muted #5F5B55 (5.8:1).",
   "disclosures": "Asymptote is for information and education only. Nothing here is investment, legal or tax advice, or an offer to buy or sell any security. Do your own research, and talk to a licensed professional before you invest.",
-  "disclaimer_url": "https://jacode21.github.io/si-journal/disclosures/"
+  "disclaimer_url": "https://jacode21.github.io/si-journal/disclosures/",
+  "graphite": "#928D85"
 }

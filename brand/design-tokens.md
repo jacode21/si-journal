@@ -1,34 +1,38 @@
 # Asymptote design tokens (site and email)
 
-Source of truth: `brand/site.json` (keys in brackets). Last design pass: Oct 19, 2026 (pass 4). Design rationale: `DESIGN_NOTES.md`.
+Source of truth: `brand/site.json` (keys in brackets). Last update: Oct 19, 2026, design guide applied (local, not yet live). Design rationale: `DESIGN_NOTES.md`.
 
-## Color: cool bone paper, near-black ink, one signal-orange accent
+## Color (design guide, Oct 2026): bone paper, near-black ink, signal orange, graphite
+Orange marks an active state or meaningful emphasis, never decoration.
+
 | Token | Hex | Use |
 |---|---|---|
-| paper [`paper`] | `#ECEAE4` | page background (with faint grain on the site) |
-| paper deep [`paper_deep`] | `#E2DFD7` | Primer panel, code and input background |
-| ink [`ink`] | `#111110` | text, headlines, buttons, strong rules (16.5:1 on paper) |
-| ink soft [`ink_soft`] | `#3A3936` | deks, secondary text |
-| muted [`muted`] | `#5C5B57` | metadata, mono labels (≥ 5.4:1 on paper) |
-| rule [`rule`] | `#C9C5BC` | hairlines, borders, grid |
-| accent [`accent`] | `#E4500E` | **marks only**: trace dot, registration marks, focus ring, underlines, list markers. 3.2:1 on paper, so never for small text |
-| accent text [`accent_text`] | `#AC3406` | accent-colored **text and links** (≥ 4.5:1 on paper and paper deep) |
+| paper [`paper`] | `#F0EEE8` | Bone paper: page background |
+| paper deep [`paper_deep`] | `#E6E3DB` | Analysis ("our view") block, code, inputs |
+| ink [`ink`] | `#191918` | Near-black ink: text, headlines, strong rules (15.2:1 on paper) |
+| ink soft [`ink_soft`] | `#4A4843` | Deks, mono summaries (7.9:1) |
+| muted [`muted`] | `#5F5B55` | Small grey text: dates, labels, tags (5.8:1) |
+| graphite [`graphite`] | `#928D85` | Graphite: dividers, separators and icons only (2.8:1, never text) |
+| rule [`rule`] | `#D3CFC6` | Hairlines between rows |
+| accent [`accent`] | `#D95727` | Signal orange: active tab underline, dots, short accent rules, the analysis bar. 3.4:1, so never small text |
+| accent text [`accent_text`] | `#AD4217` | Orange text: topic labels, numbers, "Read primer" links (5.1:1) |
 
-**Email:** use `accent_text` for any accent-colored words or links, and `accent` only for rules, bullets and blocks.
+**Newsletter Desk:** the email must match these values. Small orange text uses `accent_text`; `accent` is for rules and dots only. Graphite is never used for text.
 
-## Type: one serif, one mono, no grotesk
-- **Serif** (headlines, deks, body): `'Newsreader', Georgia, 'Times New Roman', Times, serif`. Self-hosted, Latin subset, opsz axis, weights 400–700, upright and italic. Headlines are 500 at display opsz, body is 400.
-- **Mono** (labels, readout, tags, inputs): `'IBM Plex Mono', 'Courier New', Courier, monospace`. Weights 400/500, uppercase, tracking 0.06–0.08em, ~0.72rem.
-- Email-safe fallbacks: Georgia for the serif, Courier New for the mono.
-- Measure ~65ch. Body ~17–19.6px with 1.62 line-height.
+## Type: one serif + one mono
+The guide names no typefaces; its mockups show a literary serif with a utilitarian mono. Self-hosted:
+- **Serif** for headlines and body: Newsreader (SIL OFL). Headlines are weight 600, large, with tight tracking.
+- **Mono** for data labels, dates, nav, key points and summaries: IBM Plex Mono (SIL OFL), 400/500, uppercase labels, tracking 0.08em.
+- Email fallbacks: Georgia and Courier New.
 
-## System
-- **Readout** (mono, real values only): `ASY/001 · 2026-10-19 · 09 MIN · 2,166 W · 22 SRC` (issue number, date, reading time, word count, distinct sources). Screen readers get a spoken version.
-- **Quoted labels**: tight mono codes in accent quotes, e.g. “BY 2036”, “BRIEFS/03”, “PRIMER”.
-- **Tags**: bracketed and square, `[AI] [ENERGY]`, from the fixed list AI, Compute, Energy, Bio, Space, Quantum, Robotics, Policy. No pills.
-- **Signal trace**: a hairline waveform seeded by the issue, closing on a dashed asymptote with a 2026–2036 scale and one accent dot. It draws in once on load (static under reduced motion).
-- **Construction layer** (desktop ≥ 1100px): registration marks, a margin ruler, and a faint baseline/column grid.
-- **Headline decode** on first load, as an aria-hidden overlay. Skipped under reduced motion.
+## Components
+- **Masthead:** the wordmark, "ALWAYS CLOSER." in small mono, then the nav FEED · ISSUES · PRIMER · ABOUT and a search icon. The active item gets an orange 2px underline.
+- **Feed lead:** "The next decade, daily." with a mono descriptor and a short orange rule.
+- **Topic tabs:** mono text, active underline in orange, "● LATEST" on the right.
+- **Story rows:** `OCT 19, 2026 | TOPIC` with the topic in orange text, a serif headline, a 2-line mono summary, mono tags, and an arrow column behind a hairline.
+- **Story page:** meta line, headline, dek. A right rail holds KEY POINTS (numbered mono), TOPICS and SOURCES (numbered). Body sections are numbered mono labels (01 WHAT HAPPENED…). The analysis section sits on paper-deep with an orange left bar. The footer reads NOT INVESTMENT ADVICE · ← PREVIOUS / NEXT →.
+- **Archive:** month groups, rows of `OCT 19 · title · →`. **Primer:** the latest card, then a numbered list with dates. **About:** label/value rows (Our focus / Our approach / Our team).
+- No animation, no ornament, no dashboard clutter. The waveform is retired (`trace: false`).
 
 ## URLs
 - Home: `https://jacode21.github.io/si-journal/`

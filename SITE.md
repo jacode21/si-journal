@@ -67,3 +67,28 @@ Split files also work: `lead-essay.md` plus optional `briefs.md`, `primer.md`, `
 Search is Pagefind 1.5.2 via npx, run by `build.py`. Press `/` or Cmd-K to focus it. Filters: topic, year, month. Only issue pages are indexed. Briefs, primer and other headings show up as sub-results.
 
 No custom domain is set (there's no CNAME). Domains are tracked in `brand/domains.md` (Editor-owned).
+
+## Stories and the newsfeed (local, not yet published)
+
+One file per story at `stories/YYYY-MM-DD/<slug>.md`:
+
+```
+---
+headline: China's rare-earth truce has an end date
+dek: One or two plain sentences.
+date: 2026-10-19
+time: 07:30          # optional, ET, 24h; orders stories within a day
+order: 3             # optional; editor's order within a day when no time
+topics: Policy       # comma list from: AI, Compute, Energy, Bio, Space, Quantum, Robotics, Policy
+sources:
+  - CIRS | https://…
+  - China Daily | https://…
+---
+Facts-first body in Markdown, inline links allowed.
+```
+
+- Approval is per day: `stories/<date>/status` (draft / review / approved). It falls back to `issues/<date>/status`. `./si approve <date>` writes both.
+- `./si review` renders review-day stories at `/review/<date>-<token>/<slug>/` and takes screenshots into `review/<date>/<slug>/`.
+- Never built: `mock: true` files (shown only with `SI_MOCK=1`), and files named `_*`, `*.v1.md`, `*.draft.md`, `*.notes.md` or `README.md`.
+- An issue becomes a roundup by adding `stories: slug-a, slug-b` to its frontmatter. Issues without it work exactly as before.
+- With at least one published story, the home page is the feed. It adds `/topic/<topic>/` pages, an `/issues/` index and `/stories/<date>/<slug>/` pages, and RSS, the sitemap and search include stories. Without published stories, the home page stays the latest issue.

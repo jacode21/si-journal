@@ -31,6 +31,7 @@ ROOT = Path(__file__).resolve().parent
 import os
 OUT = Path(os.environ.get("SI_OUT", ROOT / "docs"))
 ISSUES = Path(os.environ.get("SI_ISSUES", ROOT / "issues"))
+STORIES = Path(os.environ.get("SI_STORIES", ROOT / "stories"))
 BRAND = ROOT / "brand"
 ASSETS = ROOT / "site" / "assets"
 DATE_RE = re.compile(r"^\d{4}-\d{2}-\d{2}$")
@@ -58,13 +59,20 @@ def parse_frontmatter(text):
                 end = i
                 break
         if end:
+            last = None
             for line in parts[1:end]:
+                if re.match(r"^\s+-\s+", line) and last:  # list item under the previous key
+                    if not isinstance(meta.get(last), list):
+                        meta[last] = [meta[last]] if meta.get(last) else []
+                    meta[last].append(re.sub(r"^\s+-\s+", "", line).strip())
+                    continue
                 if ":" in line and not line.lstrip().startswith("#"):
                     k, v = line.split(":", 1)
                     v = v.strip()
                     if len(v) >= 2 and v[0] == v[-1] and v[0] in "\"'":
                         v = v[1:-1]
-                    meta[k.strip().lower()] = v
+                    last = k.strip().lower()
+                    meta[last] = v
             body = "\n".join(parts[end + 1:])
     return meta, body.strip("\n")
 
@@ -342,6 +350,7 @@ def load_issues():
             "tags": parse_tags(meta.get("tags") or meta.get("topics") or ""),
             "words": len(re.findall(r"\w+", body)),
             "sections": [],
+            "story_slugs": parse_tags(meta.get("stories") or "") if not isinstance(meta.get("stories"), list) else meta["stories"],
         }
 
         def part(fname, key, default_title):
@@ -431,6 +440,7 @@ def load_issues():
 
 
 DEFAULT_COPY = {
+    "hero_title": "", "hero_body": "", "topic_sub": "", "archive_sub": "", "primer_sub": "", "about_sub": "", "about_rows": [],
     "about": "{name} is a daily briefing on AI and the technologies shaping the next decade, written for investors. Every figure links to its source. Edited by {author}.",
     "subscribe_open": "One issue each morning, by email.",
     "soon_kicker": "On its way",
@@ -451,18 +461,19 @@ FONTS = ""  # self-hosted in assets/fonts (see style.css); preloaded per page in
 
 STRIP = {}
 SIGNUP_OPEN = [False]
+HAVE_STORIES = [False]
 VARIANT = [""]
 CSS_TEXT = [""]
 
 
 def nav_items(root, canonical):
-    items = [("#archive", "Archive"), ("primers/", "Primer"), ("about/", "About")]
+    items = ([("", "Feed"), ("issues/", "Issues")] if HAVE_STORIES[0] else [("#archive", "Issues")]) + [("primers/", "Primer"), ("about/", "About")]
     if SIGNUP_OPEN[0]:
         items.append(("subscribe/", "Subscribe"))
     cur = (canonical or "").split("/si-journal/")[-1] if canonical else None
     out = []
     for path, label in items:
-        here = cur is not None and path == cur and path != "#archive"
+        here = cur is not None and path != "#archive" and (path == cur or (path == "" and cur.startswith("topic/")))
         out.append(f'<li><a href="{root}{path}"{" aria-current=\"page\"" if here else ""}>{label}</a></li>')
     here = cur == "search/"
     out.append(f'<li><a class="search-link" href="{root}search/" aria-label="Search"{AC if here else ""}>'
@@ -520,7 +531,7 @@ def page(site, root, title, body, description="", canonical="", kind="website", 
 {banner}
 <header class="masthead" data-pagefind-ignore>
   <div class="wrap masthead-inner">
-    <a class="wordmark" href="{root}">{esc(site['name'])}</a>
+    <p class="brand"><a class="wordmark" href="{root}">{esc(site['name'])}</a>{f'<span class="tagline">{esc(site["tagline"])}</span>' if site.get("tagline") else ""}</p>
     <nav aria-label="Primary"><ul>{nav_items(root, canonical)}</ul></nav>
   </div>
 </header>
@@ -734,6 +745,24 @@ def section_code(s):
     return s["kicker"].upper()
 
 
+ALL_STORIES = []
+
+
+def roundup(i):
+    want = i.get("story_slugs") or []
+    if not want:
+        return ""
+    by = {st["slug"]: st for st in ALL_STORIES if st["day"] == i["slug"]}
+    got = [by[x] for x in want if x in by]
+    missing = [x for x in want if x not in by]
+    if missing:
+        print(f"  warning: issue {i['slug']} lists stories that aren't approved or don't exist: {missing}", file=sys.stderr)
+    if not got:
+        return ""
+    return (f'<section class="roundup" aria-labelledby="rd-h" data-pagefind-ignore><h2 id="rd-h" class="section-title small-h">Stories</h2>'
+            f'<ol class="cards">{"".join(story_card(st, "../../") for st in got)}</ol></section>')
+
+
 def render_issue(site, i, newer, older, review=False):
     root = "../../"
     secs = []
@@ -776,6 +805,7 @@ def render_issue(site, i, newer, older, review=False):
     <div data-pagefind-ignore>{tags_html(i["tags"], filter_attr=not review)}</div>
   </header>
   {short}
+  {roundup(i)}
   <div class="prose lead-body">{i["lead_html"]}</div>
   {horizon}
   {"".join(secs)}
@@ -862,15 +892,311 @@ Nobody knows the date. What we can watch is the slope.
 """
 
 
+# ---------------------------------------------------------------- stories
+STORY_SKIP = re.compile(r"(\.v\d+|\.draft|\.notes?|^_|^readme)", re.I)
+
+
+def day_status(date_dir):
+    """Approval is per day: stories/<date>/status, else issues/<date>/status, else draft."""
+    for f in (STORIES / date_dir / "status", ISSUES / date_dir / "status"):
+        t = read(f)
+        if t and t.strip():
+            return STATUS_ALIASES.get(t.strip().lower(), "draft")
+    return "draft"
+
+
+def parse_sources(v):
+    out = []
+    for x in (v if isinstance(v, list) else [v] if v else []):
+        if "|" in x:
+            label, url = [y.strip() for y in x.rsplit("|", 1)]
+        else:
+            label, url = re.sub(r"^https?://(www\.)?", "", x).split("/")[0], x.strip()
+        out.append((label, url))
+    return out
+
+
+def load_stories(include_review=False):
+    out = []
+    if not STORIES.exists():
+        return out
+    allow_mock = os.environ.get("SI_MOCK") == "1"
+    for d in sorted(STORIES.iterdir()):
+        if not (d.is_dir() and DATE_RE.match(d.name)):
+            continue
+        status = day_status(d.name)
+        if status != "approved" and not (include_review and status == "review"):
+            continue
+        for f in sorted(d.glob("*.md")):
+            if STORY_SKIP.search(f.stem):
+                continue
+            meta, body = parse_frontmatter(f.read_text(encoding="utf-8"))
+            if not body.strip():
+                continue
+            mock = str(meta.get("mock", "")).lower() in ("true", "yes", "1")
+            if mock and not allow_mock:
+                continue  # local mocks never reach a real build
+            _, body = strip_leading_h1(body)
+            date = dt.date.fromisoformat(str(meta.get("date", d.name))[:10])
+            tags = parse_tags(meta.get("topics") or meta.get("tags") or "")
+            unknown = [t for t in tags if t.lower() not in {x.lower() for x in TOPICS}]
+            if unknown:
+                print(f"  warning: {d.name}/{f.name}: unknown topic(s) {unknown}; use {TOPICS}", file=sys.stderr)
+            out.append({
+                "slug": f.stem, "day": d.name, "date": date, "time": str(meta.get("time", "")).strip(),
+                "order": int(meta.get("order") or 99),
+                "title": meta.get("headline") or meta.get("title") or f.stem.replace("-", " ").capitalize(),
+                "dek": meta.get("dek") or "", "tags": [next((x for x in TOPICS if x.lower() == t.lower()), t) for t in tags],
+                "sources": parse_sources(meta.get("sources")), "html": md(body), "mock": mock,
+                "mock_note": meta.get("mock_note") or "Local mock, not for publication.",
+                "status": status, "words": len(re.findall(r"\w+", body)),
+                "key_points": meta["key_points"] if isinstance(meta.get("key_points"), list) else [],
+            })
+    # newest first; within a day, by time (latest first), then the editor's order
+    out.sort(key=lambda x: (x["date"], x["time"] or "", -x["order"]), reverse=True)
+    return out
+
+
+def story_url(st, root=""):
+    if st.get("url"):
+        return root + st["url"]
+    return f'{root}stories/{st["day"]}/{st["slug"]}/'
+
+
+def story_when(st):
+    return f'{long_date(st["date"])}{" · " + esc(st["time"]) + " ET" if st["time"] else ""}'
+
+
+ARROW = '<svg class="arr" viewBox="0 0 16 10" width="16" height="10" aria-hidden="true" focusable="false"><path d="M0 5h14M10 1l4 4-4 4" fill="none" stroke="currentColor" stroke-width="1.2"/></svg>'
+ARROW_L = '<svg class="arr" viewBox="0 0 16 10" width="16" height="10" aria-hidden="true" focusable="false"><path d="M16 5H2M6 1 2 5l4 4" fill="none" stroke="currentColor" stroke-width="1.2"/></svg>'
+
+
+def mono_date(d):
+    return f"{d:%b} {d.day:02d}, {d.year}".upper()
+
+
+def card_time(st):
+    return f'<time>{esc(st["time"])} ET</time>' if st["time"] else ""
+
+
+def dek_html(st):
+    return f'<span class="card-dek">{esc(st["dek"])}</span>' if st["dek"] else ""
+
+
+def tags_line(st):
+    if not st["tags"]:
+        return ""
+    return '<span class="card-tags"><span class="visually-hidden">Topics: </span>' + "".join(f"<span>{esc(x)}</span>" for x in st["tags"]) + "</span>"
+
+
+def story_card(st, root, prefer=""):
+    t = prefer if prefer in st["tags"] else (st["tags"][0] if st["tags"] else "")
+    lead = f' <span class="sep" aria-hidden="true">|</span> <span class="card-tag">{esc(t)}</span>' if t else ""
+    return (f'<li class="card" data-topics="{esc(" ".join(x.lower() for x in st["tags"]))}"><a href="{story_url(st, root)}">'
+            f'<span class="card-body"><span class="card-top"><time datetime="{st["date"].isoformat()}">{mono_date(st["date"])}</time>'
+            f'{" · " + card_time(st) if st["time"] else ""}{lead}</span>'
+            f'<span class="card-title">{esc(st["title"])}</span>'
+            f'{dek_html(st)}'
+            f'{tags_line(st)}</span>'
+            f'<span class="card-go">{ARROW}</span></a></li>')
+
+
+def topic_slug(t):
+    return re.sub(r"[^a-z0-9]+", "-", t.lower()).strip("-")
+
+
+def chips(root, active=""):
+    items = [("", "All")] + [(topic_slug(t), t) for t in TOPICS]
+    out = []
+    for sl, label in items:
+        href = f"{root}topic/{sl}/" if sl else root
+        cur = ' aria-current="page"' if sl == active else ""
+        out.append(f'<li><a class="chip" href="{href}" data-topic="{sl}"{cur}>{esc(label)}</a></li>')
+    return (f'<nav class="chips" aria-label="Filter by topic"><ul>{"".join(out)}</ul>'
+            f'<p class="chips-sort" aria-hidden="true"><span class="dot"></span>Latest</p></nav>')
+
+
+def stream(stories, root, prefer=""):
+    days, out = {}, []
+    for st in stories:
+        days.setdefault(st["date"], []).append(st)
+    for d, group in days.items():
+        out.append(f'<section class="day" data-day="{d.isoformat()}"><h2 class="day-head"><time datetime="{d.isoformat()}">{long_date(d)}</time></h2>'
+                   f'<ol class="cards">{"".join(story_card(st, root, prefer) for st in group)}</ol></section>')
+    return "".join(out)
+
+
+FEED_STORIES = []
+
+
+FEED_JS = """<script>
+(function(){
+  // day headings: Today / Yesterday, from the reader's own clock
+  var now = new Date(), iso = function(d){ return d.getFullYear() + '-' + ('0' + (d.getMonth() + 1)).slice(-2) + '-' + ('0' + d.getDate()).slice(-2); };
+  var today = iso(now), y = new Date(now); y.setDate(now.getDate() - 1); var yday = iso(y);
+  document.querySelectorAll('.day-head time').forEach(function(t){
+    var v = t.getAttribute('datetime');
+    if (v === today) t.textContent = 'Today'; else if (v === yday) t.textContent = 'Yesterday';
+  });
+  // topic chips filter in place; the links still work without JavaScript
+  var chips = document.querySelectorAll('.chip[data-topic]'), empty = document.querySelector('.feed-empty');
+  function apply(topic){
+    var shown = 0;
+    document.querySelectorAll('.day').forEach(function(day){
+      var n = 0;
+      day.querySelectorAll('.card').forEach(function(c){
+        var ok = !topic || (' ' + c.getAttribute('data-topics') + ' ').indexOf(' ' + topic.replace(/-/g, ' ') + ' ') >= 0;
+        c.hidden = !ok; if (ok) n++;
+      });
+      day.hidden = n === 0; shown += n;
+    });
+    if (empty) empty.hidden = shown > 0;
+    chips.forEach(function(c){ if (c.getAttribute('data-topic') === topic) c.setAttribute('aria-current', 'page'); else c.removeAttribute('aria-current'); });
+  }
+  if (!document.querySelector('.feed[data-static-topic]')) chips.forEach(function(c){
+    c.addEventListener('click', function(e){
+      if (e.metaKey || e.ctrlKey || e.shiftKey) return;
+      e.preventDefault(); var t = c.getAttribute('data-topic'); apply(t);
+      history.replaceState(null, '', t ? '?topic=' + t : location.pathname);
+    });
+  });
+  var q = new URLSearchParams(location.search).get('topic');
+  if (q && !document.querySelector('.feed[data-static-topic]')) apply(q);
+})();
+</script>"""
+
+
+def render_feed_page(site, stories, root, topic=""):
+    C = {**DEFAULT_COPY, **site.get("copy", {})}
+    label = next((t for t in TOPICS if topic_slug(t) == topic), "")
+    shown = [st for st in stories if not topic or label in st["tags"]]
+    if topic:
+        head = f'<header class="page-head"><p class="meta">Topic</p><h1 class="feed-title">{esc(label)}</h1></header>'
+    else:
+        head = (f'<header class="lead"><h1>{esc(C["hero_title"])}</h1><p class="sub">{esc(C["hero_body"])}</p>'
+                f'<span class="rule-accent" aria-hidden="true"></span></header>')
+    mock = ('<p class="mock-note" role="note">Local mock: these stories are Issue No. 1 split into parts, text and sources verbatim. Not published.</p>'
+            if any(x["mock"] for x in shown) else "")
+    empty = f'<p class="feed-empty"{" hidden" if shown else ""}>No stories in this topic yet.</p>'
+    body = f"""<section class="wrap feed"{f' data-static-topic="{topic}"' if topic else ""} aria-label="Stories">
+  {head}
+  {chips(root, topic)}
+  {stream(shown, root, label)}
+  {empty}
+  {mock}
+</section>"""
+    title = site["name"] if not topic else label
+    canon = site["base_url"] + (f"topic/{topic}/" if topic else "")
+    desc = site["description"] if not topic else f"{label} stories from {site['name']}."
+    ld = [org_ld(site), website_ld(site)] if not topic else []
+    return page(site, root, title, body + FEED_JS, desc, canon, jsonld=ld)
+
+
+VIEW_RE = re.compile(r"(our view|outlook|by 20\d\d|what is our view)", re.I)
+
+
+def number_sections(h):
+    """Story system: each H2 becomes a numbered mono section label; the analysis section is set apart."""
+    n = [0]
+    def sub(m):
+        n[0] += 1
+        cls = " view" if VIEW_RE.search(m.group(2)) else ""
+        return f'<h2{m.group(1)} class="sec{cls}">{m.group(2)}</h2>'
+    out = re.sub(r"<h2([^>]*)>(.*?)</h2>", sub, h)
+    # wrap the analysis section (heading + following blocks up to the next h2) so it reads visibly separate
+    return re.sub(r'(<h2[^>]*class="sec view".*?)(?=<h2|\Z)', r'<div class="view-block">\1</div>', out, flags=re.S)
+
+
+def render_story(site, st, newer, older, review=False, root="../../../"):
+    srcs = "".join(f'<li><a href="{esc(u)}" rel="noopener">{esc(l)}</a></li>' for l, u in st["sources"])
+    nav = []
+    if older:
+        nav.append(f'<a rel="prev" href="{story_url(older, root)}"><span class="sc">Previous</span>{esc(older["title"])}</a>')
+    if newer:
+        nav.append(f'<a rel="next" class="next" href="{story_url(newer, root)}"><span class="sc">Next</span>{esc(newer["title"])}</a>')
+    d = st["date"]
+    filters = "" if review else (
+        f'<span hidden data-pagefind-filter="year:{d.year}"></span><span hidden data-pagefind-filter="month:{d:%B %Y}"></span>'
+        f'<span hidden data-pagefind-sort="date:{d.isoformat()}"></span><span hidden data-pagefind-meta="date:{long_date(d)}"></span>')
+    kp = "".join(f"<li>{md(x)[3:-4] if md(x).startswith('<p>') else md(x)}</li>" for x in st.get("key_points", []))
+    rail_kp = f'<section class="rail-block kp" aria-labelledby="kp-h"><h2 id="kp-h" class="rail-h">Key points</h2><ol>{kp}</ol></section>' if kp else ""
+    rail_tags = (f'<section class="rail-block" aria-labelledby="tp-h"><h2 id="tp-h" class="rail-h">Topics</h2><p class="rail-tags">'
+                 + " ".join(f'<a href="{root}topic/{topic_slug(t)}/">{esc(t)}</a>' for t in st["tags"]) + "</p></section>") if st["tags"] else ""
+    mock = ""
+    norm = lambda x: re.sub(r"\W+", "", re.sub(r"<[^>]+>|\([^)]*\)", "", html.unescape(x or ""))).lower()
+    show_dek = st["dek"] and not norm(st["html"]).startswith(norm(st["dek"])[:80])  # no dek that repeats the first line
+    nav = []
+    if older:
+        nav.append(f'<a rel="prev" href="{story_url(older, root)}">{ARROW_L}<span>Previous<span class="visually-hidden">: {esc(older["title"])}</span></span></a>')
+    if newer:
+        nav.append(f'<a rel="next" class="next" href="{story_url(newer, root)}"><span>Next<span class="visually-hidden">: {esc(newer["title"])}</span></span>{ARROW}</a>')
+    meta_tags = " ".join(f"<span>{esc(t)}</span>" for t in st["tags"])
+    body = f"""<article class="wrap story"{"" if review else " data-pagefind-body"}>
+  {filters}
+  <header class="story-head">
+    <p class="meta" data-pagefind-ignore><time datetime="{d.isoformat()}">{mono_date(d)}{" · " + esc(st["time"]) + " ET" if st["time"] else ""}</time>{f' <span class="sep" aria-hidden="true">|</span> <span class="meta-tags">{meta_tags}</span>' if meta_tags else ""}</p>
+    <h1>{esc(st["title"])}</h1>
+    {f'<p class="dek">{esc(st["dek"])}</p>' if show_dek else ""}
+  </header>
+  {f'<aside class="rail rail-top" aria-label="Key points" data-pagefind-ignore>{rail_kp}</aside>' if rail_kp else ""}
+  <div class="prose story-body">{number_sections(st["html"])}</div>
+  <aside class="rail rail-side" aria-label="Story details" data-pagefind-ignore>
+    {rail_tags}
+    {f'<section class="rail-block sources" aria-labelledby="src-h"><h2 id="src-h" class="rail-h">Sources</h2><ol>{srcs}</ol></section>' if srcs else ""}
+  </aside>
+  <footer class="story-foot" data-pagefind-ignore><p class="nia">{esc(site["disclaimer"])}</p>{f'<nav class="pn" aria-label="More stories">{"".join(nav)}</nav>' if nav else ""}</footer>
+</article>"""
+    url = site["base_url"] + story_url(st)
+    pub = f'{d.isoformat()}T{(st["time"] or "06:00")}:00-04:00'
+    ld = {"@context": "https://schema.org", "@type": "NewsArticle", "headline": st["title"][:110], "description": st["dek"],
+          "datePublished": pub, "dateModified": pub, "url": url, "mainEntityOfPage": url,
+          "image": [site["base_url"] + "assets/og.png"], "inLanguage": "en-US",
+          "author": [{"@type": "Person", "name": site["author"]}], "publisher": org_ld(site),
+          "isPartOf": {"@id": site["base_url"] + "#website"}, "keywords": st["tags"], "wordCount": st["words"],
+          "citation": [u for _, u in st["sources"]]}
+    if review or st["mock"]:
+        banner = ('<div class="review-banner" role="note"><strong>' + ("Local mock" if st["mock"] else "Review copy")
+                  + '</strong> · not published, not indexed</div>')
+        return page(site, root, st["title"], body, st["dek"], kind="article", jsonld=[ld], noindex=True, banner=banner)
+    return page(site, root, st["title"], body, st["dek"], url, kind="article", jsonld=[ld],
+                head_extra=f'<meta property="article:published_time" content="{pub}">' +
+                "".join(f'<meta property="article:tag" content="{esc(t)}">' for t in st["tags"]))
+
+
+def render_issues_index(site, issues):
+    C = {**DEFAULT_COPY, **site.get("copy", {})}
+    root = "../"
+    months, out = {}, []
+    for i in issues:
+        months.setdefault((i["date"].year, i["date"].month), []).append(i)
+    for (y, m), group in months.items():
+        rows = "".join(
+            f'<li><a href="{root}issues/{i["slug"]}/"><time datetime="{i["date"].isoformat()}">{i["date"]:%b} {i["date"].day:02d}</time>'
+            f'<span class="row-title">{esc(i["title"])}</span>{ARROW}</a></li>' for i in group)
+        out.append(f'<section class="month"><h2 class="month-h">{dt.date(y, m, 1):%B %Y}</h2><ol class="rows">{rows}</ol></section>')
+    body = f"""<section class="wrap page" aria-labelledby="issues-title">
+  <header class="page-head"><h1 id="issues-title">Archive</h1><p class="sub">{esc(C["archive_sub"])}</p></header>
+  {"".join(out) or "<p>No issues yet.</p>"}
+</section>"""
+    return page(site, root, "Archive", body, C["archive_sub"], f'{site["base_url"]}issues/')
+
+
 def render_about(site):
     root = "../"
     C = {**DEFAULT_COPY, **site.get("copy", {})}
-    text = C["about"].format(**site)
+    rows = []
+    for label, val in C.get("about_rows", []):
+        if isinstance(val, list):
+            v = "".join(f'<div class="team"><strong>{esc(a)}</strong><span>{esc(b)}</span></div>' for a, b in val)
+        else:
+            v = f"<p>{esc(val)}</p>"
+        rows.append(f'<div class="about-row"><h2>{esc(label)}</h2><div>{v}</div></div>')
     body = f"""<article class="wrap page">
-  <h1>About</h1>
-  <p>{esc(text)}</p>
+  <header class="page-head"><h1>About</h1><p class="sub">{esc(C["about_sub"])}</p><span class="rule-accent" aria-hidden="true"></span></header>
+  <div class="about-rows">{"".join(rows)}</div>
+  <p class="about-foot">{esc(C["about"].format(**site))}</p>
 </article>"""
-    return page(site, root, "About", body, text, f'{site["base_url"]}about/', jsonld=[org_ld(site)])
+    return page(site, root, "About", body, C["about_sub"], f'{site["base_url"]}about/', jsonld=[org_ld(site)])
 
 
 def render_disclosures(site):
@@ -886,20 +1212,28 @@ def render_disclosures(site):
 def render_primers(site, issues):
     C = {**DEFAULT_COPY, **site.get("copy", {})}
     root = "../"
-    rows = []
-    for i in reversed(issues):  # oldest first: lessons build on each other
+    items = []
+    for i in issues:  # newest first
         p = next((s for s in i["sections"] if s["cls"] == "primer"), None)
-        if not p:
-            continue
-        rows.append(f'<li><a href="{root}issues/{i["slug"]}/#k-primer"><span class="a-text row">'
-                    f'<time class="sc" datetime="{i["date"].isoformat()}">{i["date"]:%b} {i["date"].day}, {i["date"].year}</time>'
-                    f'<span class="a-title">{esc(p["title"] or "SI Primer")}</span></span></a></li>')
-    lst = f'<ol class="archive-list">{"".join(rows)}</ol>' if rows else "<p>No lessons yet.</p>"
+        if p:
+            items.append((i, p))
+    if items:
+        i, p = items[0]
+        latest = (f'<article class="primer-latest"><p class="meta"><time datetime="{i["date"].isoformat()}">{mono_date(i["date"])}</time></p>'
+                  f'<h2><a href="{root}issues/{i["slug"]}/#k-primer">{esc(p["title"] or "SI Primer")}</a></h2>'
+                  f'<p><a class="read" href="{root}issues/{i["slug"]}/#k-primer">Read primer {ARROW}</a></p></article>')
+        rows = "".join(
+            f'<li><a href="{root}issues/{i["slug"]}/#k-primer"><span class="num">{n:02d}</span><span class="row-title">{esc(p["title"] or "SI Primer")}</span>'
+            f'<time datetime="{i["date"].isoformat()}">{mono_date(i["date"])}</time></a></li>'
+            for n, (i, p) in enumerate(reversed(items), 1))
+        lst = f'{latest}<ol class="rows numbered" aria-label="All lessons, in order">{rows}</ol>'
+    else:
+        lst = "<p>No lessons yet.</p>"
     body = f"""<section class="wrap page" aria-labelledby="primers-title">
-  <h1 id="primers-title">Primer</h1>
+  <header class="page-head"><h1 id="primers-title">Primer</h1><p class="sub">{esc(C["primer_sub"])}</p></header>
   {lst}
 </section>"""
-    return page(site, root, "Primer", body, "One concept per issue, in order.", f'{site["base_url"]}primers/')
+    return page(site, root, "Primer", body, C["primer_sub"], f'{site["base_url"]}primers/')
 
 
 def render_subscribe(site):
@@ -934,7 +1268,7 @@ def render_search(site):
     C = {**DEFAULT_COPY, **site.get("copy", {})}
     root = "../"
     body = f"""<section class="wrap page" aria-labelledby="search-title">
-  <h1 id="search-title">Search</h1>
+  <header class="page-head"><h1 id="search-title">Search</h1></header>
   <div id="search" class="pf"></div>
   <noscript><p>Search needs JavaScript. The <a href="../#archive">archive</a> lists every issue.</p></noscript>
 </section>"""
@@ -945,7 +1279,7 @@ def render_search(site):
 def render_404(site):
     C = {**DEFAULT_COPY, **site.get("copy", {})}
     root = "/" + site["base_url"].split("//", 1)[-1].split("/", 1)[-1] if "//" in site["base_url"] else "/"
-    body = f'<section class="wrap page"><h1>Page not found</h1><p><a href="{root}">Home</a></p></section>'
+    body = f'<section class="wrap page"><header class="page-head"><p class="meta">404</p><h1>Page not found</h1></header><p><a class="read" href="{root}">Back to the feed {ARROW}</a></p></section>'
     return page(site, root, "Not found", body, noindex=True)
 
 
@@ -953,6 +1287,21 @@ def render_feed(site, issues):
     def cdata(s):
         return "<![CDATA[" + s.replace("]]>", "]]]]><![CDATA[>") + "]]>"
     items = []
+    for st in FEED_STORIES[:100]:
+        url = site["base_url"] + story_url(st)
+        hh, mm = (st["time"].split(":") + ["0"])[:2] if st["time"] else ("6", "0")
+        pub = email.utils.format_datetime(dt.datetime.combine(st["date"], dt.time(int(hh), int(mm)), tzinfo=dt.timezone(dt.timedelta(hours=-4))))
+        srcs = "".join(f'<li><a href="{esc(u)}">{esc(l)}</a></li>' for l, u in st["sources"])
+        content = st["html"] + (f"<p><strong>Sources</strong></p><ol>{srcs}</ol>" if srcs else "")
+        cats = "".join(f"    <category>{esc(t)}</category>\n" for t in st["tags"])
+        items.append((st["date"], f"""  <item>
+    <title>{esc(st["title"])}</title>
+    <link>{url}</link>
+    <guid isPermaLink="true">{url}</guid>
+    <pubDate>{pub}</pubDate>
+    <description>{esc(st["dek"] or st["title"])}</description>
+{cats}    <content:encoded>{cdata(content)}</content:encoded>
+  </item>"""))
     for i in issues[:50]:
         url = f'{site["base_url"]}issues/{i["slug"]}/'
         pub = email.utils.format_datetime(dt.datetime.combine(i["date"], dt.time(6, 0), tzinfo=dt.timezone(dt.timedelta(hours=-4))))
@@ -962,14 +1311,15 @@ def render_feed(site, issues):
         content += "".join(f'<h2>{esc(s["kicker"])}{": " + esc(s["title"]) if s["title"] else ""}</h2>{s["html"]}' for s in i["sections"])
         content += i["disclaimer_html"] or f"<p><em>{esc(site['disclaimer'])}</em></p>"
         cats = "".join(f"    <category>{esc(t)}</category>\n" for t in i["tags"])
-        items.append(f"""  <item>
+        items.append((i["date"], f"""  <item>
     <title>{esc(i["title"])}</title>
     <link>{url}</link>
     <guid isPermaLink="true">{url}</guid>
     <pubDate>{pub}</pubDate>
     <description>{esc(i["dek"] or i["title"])}</description>
 {cats}    <content:encoded>{cdata(content)}</content:encoded>
-  </item>""")
+  </item>"""))
+    items = [x for _, x in sorted(items, key=lambda t: t[0], reverse=True)]
     now = email.utils.format_datetime(dt.datetime.now(dt.timezone.utc))
     return f"""<?xml version="1.0" encoding="UTF-8"?>
 <rss version="2.0" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom">
@@ -992,6 +1342,9 @@ def render_sitemap(site, issues):
             (site["base_url"] + "about/", today), (site["base_url"] + "primers/", today),
             (site["base_url"] + "subscribe/", today), (site["base_url"] + "search/", today)]
     urls += [(f'{site["base_url"]}issues/{i["slug"]}/', i["date"].isoformat()) for i in issues]
+    urls += [(site["base_url"] + story_url(st), st["date"].isoformat()) for st in FEED_STORIES]
+    if HAVE_STORIES[0]:
+        urls += [(site["base_url"] + "issues/", today)] + [(f'{site["base_url"]}topic/{topic_slug(t)}/', today) for t in TOPICS]
     body = "".join(f"  <url><loc>{esc(u)}</loc><lastmod>{m}</lastmod></url>\n" for u, m in urls)
     return f'<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n{body}</urlset>\n'
 
@@ -1007,13 +1360,13 @@ def write(path, text):
     path.write_text(text, encoding="utf-8")
 
 
-def run_pagefind(have_issues):
+def run_pagefind(have_issues, have_stories=False):
     """Index only published issue pages (lead essay, briefs, primer, signal as sub-results)."""
     import subprocess
-    if not have_issues:
+    if not have_issues and not have_stories:
         print("  search: no published issues yet, index skipped")
         return
-    cmd = ["npx", "-y", "pagefind@1.5.2", "--site", str(OUT), "--glob", "issues/**/*.html"]
+    cmd = ["npx", "-y", "pagefind@1.5.2", "--site", str(OUT), "--glob", "{issues,stories}/**/*.html"]
     r = subprocess.run(cmd, capture_output=True, text=True)
     if r.returncode != 0:
         print(r.stdout[-2000:], r.stderr[-2000:], file=sys.stderr)
@@ -1035,6 +1388,10 @@ def main():
             if d.is_dir() and (DATE_RE.match(d.name) or d.name.startswith("example-")):
                 lead = read(d / "lead-essay.md") or ""
                 print(d.name, issue_status(d, parse_frontmatter(lead)[0]) if lead.strip() else "empty")
+        for d in sorted(STORIES.iterdir()) if STORIES.exists() else []:
+            if d.is_dir() and DATE_RE.match(d.name):
+                n = len([f for f in d.glob("*.md") if not STORY_SKIP.search(f.stem)])
+                print(f"stories/{d.name}", day_status(d.name), f"{n} file(s)")
         return 0
 
     site = load_site()
@@ -1050,7 +1407,7 @@ def main():
     shutil.copytree(ASSETS, OUT / "assets")
     css = (OUT / "assets" / "style.css")
     tok = css.read_text(encoding="utf-8")
-    for k in ("paper", "paper_deep", "ink", "ink_soft", "muted", "rule", "accent", "accent_text"):
+    for k in ("paper", "paper_deep", "ink", "ink_soft", "muted", "graphite", "rule", "accent", "accent_text"):
         tok = tok.replace(f"__{k.upper()}__", site.get(k, ""))
     assert "__" not in re.sub(r"[a-z]__[a-z]|__[a-z]", "", tok), "unfilled CSS token"
     css.write_text(tok, encoding="utf-8")
@@ -1065,7 +1422,25 @@ def main():
     VARIANT[0] = os.environ.get("SI_VARIANT", "").upper()
     write(OUT / ".nojekyll", "")
     write(OUT / "disclosures" / "index.html", render_disclosures(site))
-    write(OUT / "index.html", render_home(site, issues))
+    stories_all = load_stories(include_review=args.review)
+    pub_stories = [st for st in stories_all if st["status"] == "approved"]
+    rev_stories = [st for st in stories_all if st["status"] == "review"]
+    ALL_STORIES[:] = pub_stories
+    FEED_STORIES[:] = [st for st in pub_stories if not st["mock"]] if os.environ.get("SI_MOCK") != "1" else pub_stories
+    # with no published stories yet, each published issue is a feed entry (its own headline, dek, date, topics)
+    entries = FEED_STORIES or [{"slug": i["slug"], "day": i["slug"], "date": i["date"], "time": "", "order": 0, "title": i["title"],
+                                "dek": i["dek"], "tags": i["tags"], "mock": False, "url": f'issues/{i["slug"]}/'} for i in issues]
+    HAVE_STORIES[0] = bool(entries)
+    if entries:
+        write(OUT / "index.html", render_feed_page(site, entries, "./"))
+        for t in TOPICS:
+            write(OUT / "topic" / topic_slug(t) / "index.html", render_feed_page(site, entries, "../../", topic_slug(t)))
+        write(OUT / "issues" / "index.html", render_issues_index(site, issues))
+        for n, st in enumerate(FEED_STORIES):
+            write(OUT / "stories" / st["day"] / st["slug"] / "index.html",
+                  render_story(site, st, FEED_STORIES[n - 1] if n > 0 else None, FEED_STORIES[n + 1] if n + 1 < len(FEED_STORIES) else None))
+    else:
+        write(OUT / "index.html", render_home(site, issues))
     write(OUT / "about" / "index.html", render_about(site))
     write(OUT / "search" / "index.html", render_search(site))
     write(OUT / "primers" / "index.html", render_primers(site, issues))
@@ -1083,6 +1458,12 @@ def main():
         slug = f'{i["slug"]}-{review_token(i["slug"])}'
         write(OUT / "review" / slug / "index.html", render_issue(site, i, None, None, review=True))
         review_links.append((i["slug"], f'{site["base_url"]}review/{slug}/', f"review/{slug}/"))
+    for st in rev_stories:
+        if not args.review:
+            continue
+        slug = f'{st["day"]}-{review_token(st["day"])}'
+        write(OUT / "review" / slug / st["slug"] / "index.html", render_story(site, st, None, None, review=True, root="../../../"))
+        review_links.append((f'{st["day"]}/{st["slug"]}', f'{site["base_url"]}review/{slug}/{st["slug"]}/', f"review/{slug}/{st['slug']}/"))
     write(OUT / "feed.xml", render_feed(site, issues))
     write(OUT / "sitemap.xml", render_sitemap(site, issues))
     write(OUT / "robots.txt", render_robots(site))
@@ -1091,8 +1472,9 @@ def main():
     xml.dom.minidom.parseString((OUT / "feed.xml").read_bytes())
     xml.dom.minidom.parseString((OUT / "sitemap.xml").read_bytes())
     if not args.no_search:
-        run_pagefind(bool(issues))
-    print(f"Built {len(issues)} published issue(s), {len(review_links)} review cop(ies) → {OUT}")
+        run_pagefind(bool(issues), bool(FEED_STORIES))
+    print(f"Built {len(issues)} published issue(s), {len(FEED_STORIES)} stor{'y' if len(FEED_STORIES) == 1 else 'ies'}"
+          f"{' (incl. LOCAL MOCKS)' if any(st['mock'] for st in FEED_STORIES) else ''}, {len(review_links)} review cop(ies) → {OUT}")
     for i in issues:
         print(f"  published  No. {i['number']}  {i['slug']}  {i['title']}")
     for slug, url, _ in review_links:

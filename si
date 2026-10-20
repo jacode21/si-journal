@@ -3,9 +3,9 @@
 #
 #   ./si build                 build docs/ (approved issues only, plus search index)
 #   ./si preview [port]        build and serve docs/ at http://localhost:8000
-#   ./si review [--push]       render every status:review issue, save full-page screenshots to review/<date>/
+#   ./si review [--push]       render every status:review issue and every review-day story, save full-page screenshots to review/<date>/
 #                              (desktop.png, mobile.png). --push also publishes the unlisted /review/<date>-<token>/ link.
-#   ./si approve <date>        mark issues/<date> approved (writes issues/<date>/status), rebuild, publish
+#   ./si approve <date>        mark the day approved (issues/<date>/status and stories/<date>/status) (writes issues/<date>/status), rebuild, publish
 #   ./si publish ["message"]   build, commit, push to GitHub Pages
 #   ./si publish-layout ["msg"] publish template/CSS only, rebuilding with the issue files already committed (live text)
 #   ./si shots                 screenshots of the live site to screenshots/ and preview.png
@@ -34,6 +34,16 @@ publish(){
         [ -f "issues/$slug/$f" ] && git add -f "issues/$slug/$f"   # published copy only; notes and drafts stay local
       done
     fi
+  done
+  # stories: approval is per day; local mocks (mock: true) and versioned copies never go in
+  python3 build.py --list | awk '$1 ~ /^stories\// && $2=="approved" {print $1}' | while read -r dir; do
+    for f in "$dir"/*.md; do
+      [ -f "$f" ] || continue
+      case "$(basename "$f")" in _*|*.v[0-9]*.md|*.draft.md|*.notes.md|README.md) continue ;; esac
+      grep -qiE '^mock:[[:space:]]*(true|yes|1)' "$f" && continue
+      git add -f "$f"
+    done
+    [ -f "$dir/status" ] && git add -f "$dir/status"
   done
   if git diff --cached --quiet; then echo "Nothing changed; the site is already up to date."; return 0; fi
   git commit -q -m "$msg"
@@ -71,9 +81,10 @@ PY
     if [ "${2:-}" = "--push" ]; then publish "Review copies $(date +%Y-%m-%d)" --review; fi ;;
   approve)
     d=${2:?usage: ./si approve YYYY-MM-DD}
-    [ -s "issues/$d/issue.md" ] || [ -s "issues/$d/lead-essay.md" ] || { echo "no issues/$d/issue.md or lead-essay.md"; exit 1; }
-    echo approved > "issues/$d/status"
-    echo "issues/$d marked approved."
+    have=0
+    if [ -s "issues/$d/issue.md" ] || [ -s "issues/$d/lead-essay.md" ]; then echo approved > "issues/$d/status"; echo "issues/$d marked approved."; have=1; fi
+    if ls "stories/$d"/*.md >/dev/null 2>&1; then echo approved > "stories/$d/status"; echo "stories/$d marked approved ($(ls "stories/$d"/*.md | wc -l) file(s); mocks are skipped)."; have=1; fi
+    [ $have = 1 ] || { echo "nothing to approve: no issues/$d/issue.md, lead-essay.md or stories/$d/*.md"; exit 1; }
     publish "Publish issue $d" ;;
   publish) publish "${2:-}" ;;
   publish-layout)
@@ -95,7 +106,7 @@ PY
     echo "Pushed layout only (issue text unchanged): $BASE" ;;
   shots)
     need_pw
-    LATEST=$(python3 build.py --list | awk '$2=="approved" && $1 !~ /^example-/ {s=$1} END{print s}')
+    LATEST=$(python3 build.py --list | awk '$2=="approved" && $1 !~ /^example-/ && $1 !~ /^stories\// {s=$1} END{print s}')
     mkdir -p screenshots
     python3 - "$BASE" "$LATEST" <<'PY'
 import sys; sys.path.insert(0, ".")

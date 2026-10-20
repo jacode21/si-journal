@@ -20,7 +20,7 @@
 <meta name="twitter:description" content="Microsoft walked away from Britain&#x27;s flagship AI data centre. The chips were ready. The power wasn&#x27;t. Get used to that sentence.">
 <meta name="twitter:image" content="https://jacode21.github.io/si-journal/assets/og.png">
 
-<meta name="theme-color" content="#ECEAE4">
+<meta name="theme-color" content="#F0EEE8">
 <link rel="alternate" type="application/rss+xml" title="Asymptote" href="../../feed.xml">
 <link rel="icon" href="../../assets/favicon.svg" type="image/svg+xml">
 <link rel="preload" href="../../assets/fonts/newsreader.woff2" as="font" type="font/woff2" crossorigin>
@@ -31,8 +31,8 @@
 @font-face{font-family:"IBM Plex Mono";font-style:normal;font-weight:400;font-display:swap;src:url(../../assets/fonts/plexmono-400.woff2) format("woff2")}
 @font-face{font-family:"IBM Plex Mono";font-style:normal;font-weight:500;font-display:swap;src:url(../../assets/fonts/plexmono-500.woff2) format("woff2")}
 :root{
---paper:#ECEAE4; --paper-deep:#E2DFD7; --ink:#111110; --ink-soft:#3A3936; --muted:#5C5B57;
---rule:#C9C5BC; --accent:#E4500E; --accent-text:#AC3406;
+--paper:#F0EEE8; --paper-deep:#E6E3DB; --ink:#191918; --ink-soft:#4A4843; --muted:#5F5B55;
+--rule:#D3CFC6; --graphite:#928D85; --accent:#D95727; --accent-text:#AD4217;
 --serif:"Newsreader", Georgia, "Times New Roman", Times, serif;
 --mono:"IBM Plex Mono", ui-monospace, "SFMono-Regular", Menlo, Consolas, "Courier New", monospace;
 --measure:64ch; --hair:1px; --base:1.75rem;
@@ -170,7 +170,6 @@ border-bottom:var(--hair) solid var(--accent);padding-bottom:.15rem}
 .issue-nav{flex-direction:column}.issue-nav a{max-width:100%}
 .issue-nav .next{margin-left:0;text-align:left}
 }
-@media (prefers-reduced-motion:no-preference){a{transition:color .15s ease}}
 @media print{.masthead nav,.skip,.issue-nav{display:none}body{background:#fff}}
 .v-a .masthead-inner{flex-direction:column;align-items:center;text-align:center;gap:1rem}
 .v-a .wordmark{font-size:2.6rem}
@@ -194,7 +193,166 @@ border-bottom:var(--hair) solid var(--accent);padding-bottom:.15rem}
 .index-first .archive-list{border-top:0}
 .index-first .archive-list a{padding:1.6rem 0;grid-template-columns:9rem 1fr}
 .index-first .a-title{font-size:clamp(1.5em,1.2em + 1.2vw,2.1em);line-height:1.1;font-variation-settings:"opsz" 72;letter-spacing:-.025em}
-@media (max-width:560px){.index-first .archive-list a{grid-template-columns:1fr}}</style>
+@media (max-width:560px){.index-first .archive-list a{grid-template-columns:1fr}}
+.feed{padding-top:1.6rem;padding-bottom:3rem}
+.feed-title{font-size:clamp(2rem,1.4rem + 2.4vw,2.8rem);margin:.4rem 0 1rem}
+.chips{margin:0 0 1.6rem;overflow-x:auto;-webkit-overflow-scrolling:touch;scrollbar-width:none}
+.chips::-webkit-scrollbar{display:none}
+.chips ul{list-style:none;margin:0;padding:.2rem 0;display:flex;gap:.4rem;flex-wrap:wrap}
+.chip{display:inline-flex;align-items:center;min-height:38px;padding:0 .7rem;border:var(--hair) solid var(--rule);background:transparent;
+font-family:var(--mono);font-size:.72rem;letter-spacing:.06em;text-transform:uppercase;color:var(--ink-soft);text-decoration:none;white-space:nowrap}
+.chip:hover{border-color:var(--ink);color:var(--ink)}
+.chip[aria-current]{background:var(--ink);border-color:var(--ink);color:var(--paper)}
+.day{margin:0 0 2rem}
+.day-head{font-family:var(--mono);font-weight:500;font-size:.74rem;letter-spacing:.06em;text-transform:uppercase;color:var(--ink);
+margin:0;padding:.5rem 0;border-bottom:var(--hair) solid var(--ink)}
+.cards{list-style:none;margin:0;padding:0}
+.card{border-bottom:var(--hair) solid var(--rule)}
+.card a{display:flex;flex-direction:column;gap:.35rem;padding:1.1rem 0 1.2rem;text-decoration:none;min-height:44px}
+.card a:hover .card-title{color:var(--accent-text)}
+.card-top{display:flex;gap:.8rem;align-items:baseline;font-family:var(--mono);font-size:.68rem;letter-spacing:.06em;text-transform:uppercase;color:var(--muted)}
+.card-tag{color:var(--accent-text)}
+.card-mock{color:var(--ink);border:var(--hair) solid var(--ink);padding:0 .35rem}
+.card-title{font-size:1.32em;line-height:1.18;font-weight:500;letter-spacing:-.015em;font-variation-settings:"opsz" 48;text-wrap:balance}
+.card-dek{color:var(--ink-soft);font-size:.95em;line-height:1.45;display:-webkit-box;-webkit-line-clamp:2;line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.feed-empty{color:var(--muted)}
+.story{padding-top:2.6rem;padding-bottom:2rem}
+.story-head h1{font-size:clamp(2rem,1.3rem + 3vw,3.2rem)}
+.story .prose{margin-top:.4rem}
+.sources{max-width:var(--measure);margin:2.4rem 0 0;padding-top:1rem;border-top:var(--hair) solid var(--ink)}
+.sources h2{font-family:var(--mono);font-weight:500;font-size:.74rem;letter-spacing:.06em;text-transform:uppercase;margin:0 0 .6rem}
+.sources ol{margin:0;padding-left:1.4em;font-size:.95em}
+.sources li{margin:.3em 0}
+.sources li::marker{font-family:var(--mono);font-size:.8em;color:var(--muted)}
+.mock-note{font-family:var(--mono);font-size:.68rem;line-height:1.5;letter-spacing:.02em;color:var(--ink);margin:0 0 1rem;padding-left:.6rem;border-left:2px solid var(--accent);max-width:var(--measure)}
+.roundup{max-width:var(--measure);margin:0 0 2.4rem}
+@media (max-width:560px){
+.chips ul{flex-wrap:nowrap}
+.chip{min-height:44px;padding:0 .9rem}
+.chips{margin-right:-1.5rem;padding-right:1.5rem}
+.card-title{font-size:1.22em}
+.story{padding-top:1.8rem}
+}
+:root{--page:70rem}
+.masthead .wrap,.feed.wrap,.story.wrap,.page.wrap,.colophon .wrap{max-width:var(--page)}
+a{text-decoration-color:var(--graphite)}
+.masthead{border-bottom:var(--hair) solid var(--ink)}
+.masthead-inner{align-items:center;padding-top:1.1rem;padding-bottom:1rem}
+.brand{margin:0;display:flex;align-items:baseline;gap:.9rem;flex-wrap:wrap}
+.wordmark{font-size:1.7rem;font-weight:600;letter-spacing:-.025em}
+.tagline{font-family:var(--mono);font-size:.64rem;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+.masthead nav a{font-size:.7rem;letter-spacing:.08em}
+.masthead nav a:hover,.masthead nav a[aria-current]{color:var(--ink);box-shadow:inset 0 -2px 0 var(--accent)}
+h1,h2,h3{font-weight:600}
+.page-head{margin:0 0 2rem}
+.page-head h1,.lead h1{font-size:clamp(2.6rem,1.6rem + 3.6vw,4.4rem);line-height:1.02;letter-spacing:-.035em;margin:0 0 .8rem}
+.sub{font-family:var(--mono);font-size:.82rem;line-height:1.6;color:var(--ink-soft);margin:0;max-width:44ch}
+.rule-accent{display:block;width:2rem;height:2px;background:var(--accent);margin-top:1.4rem}
+.meta{font-size:.7rem;letter-spacing:.08em;text-transform:uppercase}
+.sep{color:var(--graphite);margin:0 .35rem}
+.feed{padding-top:3rem}
+.lead{padding:0 0 2.6rem;border-bottom:var(--hair) solid var(--rule);margin-bottom:0}
+.lead h1{max-width:12ch}
+.chips{display:flex;align-items:center;justify-content:space-between;gap:1rem;border-bottom:var(--hair) solid var(--ink);margin:0 0 .4rem}
+.chips ul{gap:0 1.35rem;padding:0;flex-wrap:nowrap;overflow-x:auto;scrollbar-width:none}
+.chip,.chip:hover{border:0;background:transparent;min-height:46px;padding:0;font-size:.68rem;letter-spacing:.08em;color:var(--muted)}
+.chip:hover{color:var(--ink)}
+.chip[aria-current]{background:transparent;color:var(--ink);box-shadow:inset 0 -2px 0 var(--accent)}
+.chips-sort{flex:none;margin:0;font-family:var(--mono);font-size:.66rem;letter-spacing:.08em;text-transform:uppercase;color:var(--ink);display:flex;align-items:center;gap:.45rem}
+.chips-sort .dot{width:6px;height:6px;border-radius:50%;background:var(--accent)}
+.day{margin:0}
+.day-head{border-bottom:var(--hair) solid var(--rule);color:var(--muted);font-weight:400;padding:1.4rem 0 .5rem;font-size:.68rem;letter-spacing:.08em}
+.card{border-bottom:var(--hair) solid var(--rule)}
+.card a{display:grid;grid-template-columns:1fr auto;gap:0 1.5rem;align-items:stretch;padding:1.25rem 0;flex-direction:initial}
+.card-body{display:flex;flex-direction:column;gap:.4rem;min-width:0}
+.card-top{font-size:.66rem;letter-spacing:.08em;color:var(--muted);gap:0}
+.card-tag{color:var(--accent-text)}
+.card-title{font-size:1.38em;font-weight:600;line-height:1.15;letter-spacing:-.02em}
+.card-dek{font-family:var(--mono);font-size:.76rem;line-height:1.55;color:var(--ink-soft);max-width:70ch}
+.card-tags{display:flex;flex-wrap:wrap;gap:.2rem 1rem;font-family:var(--mono);font-size:.62rem;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+.card-go{display:flex;align-items:center;padding-left:1.4rem;border-left:var(--hair) solid var(--rule);color:var(--ink)}
+.card a:hover .card-go{color:var(--accent-text)}
+.arr{display:inline-block;vertical-align:middle}
+.mock-note{margin:1.6rem 0 0}
+.story{display:grid;grid-template-columns:minmax(0,1fr);padding-top:2.6rem}
+.story-head h1{font-size:clamp(2.1rem,1.4rem + 2.6vw,3.3rem);line-height:1.06;letter-spacing:-.03em;max-width:20ch}
+.story .dek{font-style:normal;font-size:1.18em;color:var(--ink-soft);max-width:60ch}
+.meta-tags span+span{margin-left:.9rem}
+.rail-block{padding:1rem 0;border-top:var(--hair) solid var(--rule)}
+.rail-h{font-family:var(--mono);font-size:.66rem;font-weight:500;letter-spacing:.08em;text-transform:uppercase;margin:0 0 .7rem;color:var(--ink)}
+.kp ol{list-style:none;margin:0;padding:0;counter-reset:k}
+.kp li{counter-increment:k;display:grid;grid-template-columns:1.8rem 1fr;font-family:var(--mono);font-size:.74rem;line-height:1.55;color:var(--ink-soft);margin:0 0 .8rem}
+.kp li::before{content:counter(k,decimal-leading-zero);color:var(--accent-text)}
+.rail-tags{margin:0;display:flex;flex-wrap:wrap;gap:.3rem 1rem;font-family:var(--mono);font-size:.66rem;letter-spacing:.08em;text-transform:uppercase}
+.rail-tags a{text-decoration:none;color:var(--ink-soft);min-height:24px;display:inline-flex;align-items:center}
+.rail-tags a:hover{color:var(--accent-text)}
+.sources{margin:0;border-top:var(--hair) solid var(--rule);padding-top:1rem;max-width:none}
+.sources ol{padding-left:1.6em;font-family:var(--mono);font-size:.72rem;line-height:1.5}
+.sources li{margin:.15em 0}
+.sources li a{display:inline-block;padding:.3rem 0;min-height:24px}
+.prose h2.sec,.sec{font-family:var(--mono);font-size:.74rem;font-weight:500;letter-spacing:.08em;text-transform:uppercase;margin:2.4rem 0 1rem;padding-top:.9rem;border-top:var(--hair) solid var(--ink);display:flex;gap:1.2rem;line-height:1.4}
+.story-body{counter-reset:sec}
+.sec{counter-increment:sec}
+.sec::before{content:counter(sec,decimal-leading-zero);color:var(--accent-text)}
+.story-body > .sec:first-child,.story-body > p:first-child{margin-top:0}
+.view-block{background:var(--paper-deep);padding:.1rem 1.2rem 1px;margin:2.4rem 0 1rem;border-left:2px solid var(--accent)}
+.prose .view-block h2.sec{border-top:0;margin-top:.9rem;padding-top:.3rem}
+.story-foot{display:flex;justify-content:space-between;align-items:center;gap:1rem;flex-wrap:wrap;border-top:var(--hair) solid var(--ink);margin-top:3rem;padding:1rem 0 0}
+.nia{margin:0;font-family:var(--mono);font-size:.66rem;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+.pn{display:flex;gap:1.8rem}
+.pn a{display:inline-flex;align-items:center;gap:.5rem;min-height:44px;font-family:var(--mono);font-size:.68rem;letter-spacing:.08em;text-transform:uppercase;text-decoration:none;color:var(--ink)}
+.pn a:hover{color:var(--accent-text)}
+@media (min-width:1000px){
+.story{grid-template-columns:minmax(0,1fr) 17rem;column-gap:4rem;grid-template-areas:"head rail" "top rail" "body rail" "foot foot"}
+.story-head{grid-area:head}.rail-top{grid-area:top}.story-body{grid-area:body}
+.rail-side{grid-area:rail;align-self:start;position:sticky;top:1.5rem}
+.rail-top + .story-body{margin-top:0}
+.story-foot{grid-area:foot}
+.story:has(.rail-top){grid-template-areas:"head kp" "body rail" "foot foot"}
+.story:has(.rail-top) .rail-top{grid-area:kp;align-self:end}
+.story:has(.rail-top) .rail-side{position:static}
+}
+.rail-top{margin:1.4rem 0 .4rem}
+.month{margin:0 0 2.2rem}
+.month-h{font-family:var(--mono);font-size:.7rem;font-weight:500;letter-spacing:.08em;text-transform:uppercase;margin:0;padding:0 0 .6rem;border-bottom:var(--hair) solid var(--ink)}
+.rows{list-style:none;margin:0;padding:0}
+.rows li{border-bottom:var(--hair) solid var(--rule)}
+.rows a{display:grid;grid-template-columns:5.5rem 1fr auto;gap:1rem;align-items:center;padding:.85rem 0;text-decoration:none;min-height:44px}
+.rows time{font-family:var(--mono);font-size:.68rem;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+.row-title{font-size:1.05em;line-height:1.3}
+.rows a:hover .row-title{color:var(--accent-text)}
+.rows.numbered a{grid-template-columns:2.4rem 1fr auto}
+.rows .num{font-family:var(--mono);font-size:.7rem;color:var(--muted)}
+.primer-latest{border-top:var(--hair) solid var(--ink);padding:1.2rem 0 1.6rem;margin:0 0 1rem}
+.primer-latest h2{font-size:clamp(1.6rem,1.2rem + 1.4vw,2.2rem);margin:.2rem 0 .6rem}
+.primer-latest h2 a{text-decoration:none}
+.read{font-family:var(--mono);font-size:.7rem;letter-spacing:.08em;text-transform:uppercase;color:var(--accent-text);text-decoration:none;display:inline-flex;gap:.5rem;align-items:center;min-height:44px}
+.read:hover{color:var(--ink)}
+.about-rows{border-top:var(--hair) solid var(--rule);max-width:52rem}
+.about-row{display:grid;grid-template-columns:11rem 1fr;gap:1.5rem;padding:1.1rem 0;border-bottom:var(--hair) solid var(--rule)}
+.about-row h2{font-family:var(--mono);font-size:.68rem;font-weight:500;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin:.25rem 0 0}
+.about-row p{margin:0}
+.team{display:grid;grid-template-columns:9.5rem 1fr;gap:1rem;margin:0 0 .5rem}
+.team strong{font-weight:600}
+.about-foot{color:var(--ink-soft);max-width:var(--measure);margin-top:1.8rem;font-size:.95em}
+.issue-head h1{font-weight:600}
+.issue-section{border-top-color:var(--ink)}
+.short-version li::marker,.prose li::marker{color:var(--accent)}
+.colophon{margin-top:2rem}
+.colophon .small{font-size:.64rem;letter-spacing:.08em;text-transform:uppercase}
+@media (max-width:700px){
+.chips-sort{display:none}
+.card a{gap:0 1rem}
+.card-go{padding-left:.9rem}
+.card-title{font-size:1.2em}
+.about-row,.team{grid-template-columns:1fr;gap:.3rem}
+.rows a{grid-template-columns:4.6rem 1fr auto}
+.rows.numbered a{grid-template-columns:2rem 1fr}
+.rows.numbered time{display:none}
+.tagline{display:none}
+.lead h1{max-width:none}
+}
+@media (prefers-reduced-motion:reduce){*{transition:none!important}}</style>
 <script>document.documentElement.classList.add('js')</script>
 <meta property="article:published_time" content="2026-10-19T06:00:00-04:00"><meta property="article:tag" content="Compute"><meta property="article:tag" content="Energy"><meta property="article:tag" content="Policy"><meta property="article:tag" content="AI"><meta property="article:tag" content="Quantum"><meta property="article:tag" content="Space">
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "NewsArticle", "headline": "The Grid Said No", "description": "Microsoft walked away from Britain's flagship AI data centre. The chips were ready. The power wasn't. Get used to that sentence.", "datePublished": "2026-10-19T06:00:00-04:00", "dateModified": "2026-10-19T06:00:00-04:00", "url": "https://jacode21.github.io/si-journal/issues/2026-10-19/", "mainEntityOfPage": "https://jacode21.github.io/si-journal/issues/2026-10-19/", "image": ["https://jacode21.github.io/si-journal/assets/og.png"], "inLanguage": "en-US", "author": [{"@type": "Person", "name": "Jacob Slusser"}], "publisher": {"@context": "https://schema.org", "@type": "Organization", "@id": "https://jacode21.github.io/si-journal/#org", "name": "Asymptote", "url": "https://jacode21.github.io/si-journal/", "logo": {"@type": "ImageObject", "url": "https://jacode21.github.io/si-journal/assets/og.png"}, "founder": {"@type": "Person", "name": "Jacob Slusser"}}, "isPartOf": {"@id": "https://jacode21.github.io/si-journal/#website"}, "keywords": ["Compute", "Energy", "Policy", "AI", "Quantum", "Space"], "wordCount": 2166}</script>
@@ -204,15 +362,15 @@ border-bottom:var(--hair) solid var(--accent);padding-bottom:.15rem}
 
 <header class="masthead" data-pagefind-ignore>
   <div class="wrap masthead-inner">
-    <a class="wordmark" href="../../">Asymptote</a>
-    <nav aria-label="Primary"><ul><li><a href="../../#archive">Archive</a></li><li><a href="../../primers/">Primer</a></li><li><a href="../../about/">About</a></li><li><a class="search-link" href="../../search/" aria-label="Search"><svg viewBox="0 0 16 16" width="15" height="15" aria-hidden="true" focusable="false"><circle cx="6.8" cy="6.8" r="5" fill="none" stroke="currentColor" stroke-width="1.3"/><path d="M10.5 10.5 15 15" stroke="currentColor" stroke-width="1.3"/></svg></a></li></ul></nav>
+    <p class="brand"><a class="wordmark" href="../../">Asymptote</a><span class="tagline">Always closer.</span></p>
+    <nav aria-label="Primary"><ul><li><a href="../../">Feed</a></li><li><a href="../../issues/">Issues</a></li><li><a href="../../primers/">Primer</a></li><li><a href="../../about/">About</a></li><li><a class="search-link" href="../../search/" aria-label="Search"><svg viewBox="0 0 16 16" width="15" height="15" aria-hidden="true" focusable="false"><circle cx="6.8" cy="6.8" r="5" fill="none" stroke="currentColor" stroke-width="1.3"/><path d="M10.5 10.5 15 15" stroke="currentColor" stroke-width="1.3"/></svg></a></li></ul></nav>
   </div>
 </header>
 <main id="main" tabindex="-1">
 <article class="issue wrap" data-pagefind-body>
   <span hidden data-pagefind-filter="year:2026"></span><span hidden data-pagefind-filter="month:October 2026"></span><span hidden data-pagefind-sort="date:2026-10-19"></span><span hidden data-pagefind-meta="date:Monday, October 19, 2026"></span><span hidden data-pagefind-meta="issue:No. 1"></span>
   <header class="issue-head">
-    <div class="hero-trace compact"><svg class="trace" viewBox="0 0 1000 56" aria-hidden="true" focusable="false"><line x1="0" y1="8" x2="1000" y2="8" stroke="currentColor" stroke-width="1" stroke-dasharray="2 5" opacity=".55" vector-effect="non-scaling-stroke"/><polyline pathLength="1" points="0.0,49.6 3.3,49.1 6.7,47.8 10.0,48.2 13.3,48.0 16.7,47.5 20.0,48.7 23.3,47.4 26.7,47.2 30.0,47.4 33.3,47.2 36.7,46.6 40.0,46.5 43.3,46.5 46.7,45.7 50.0,44.4 53.3,44.1 56.7,42.1 60.0,42.4 63.3,41.4 66.7,39.6 70.0,41.1 73.3,39.7 76.7,39.7 80.0,39.5 83.3,40.9 86.7,40.3 90.0,40.0 93.3,40.8 96.7,41.3 100.0,41.2 103.3,40.5 106.7,41.6 110.0,39.9 113.3,38.8 116.7,37.5 120.0,37.5 123.3,36.5 126.7,35.8 130.0,35.0 133.3,34.9 136.7,33.7 140.0,33.8 143.3,34.2 146.7,34.1 150.0,34.4 153.3,34.5 156.7,34.2 160.0,34.9 163.3,35.7 166.7,35.2 170.0,33.9 173.3,34.6 176.7,33.4 180.0,32.8 183.3,32.1 186.7,32.5 190.0,32.4 193.3,31.7 196.7,31.7 200.0,31.0 203.3,31.3 206.7,30.9 210.0,31.0 213.3,31.2 216.7,31.2 220.0,30.7 223.3,30.0 226.7,29.3 230.0,28.8 233.3,28.5 236.7,28.2 240.0,28.9 243.3,28.1 246.7,27.5 250.0,27.5 253.3,27.9 256.7,28.2 260.0,28.6 263.3,28.6 266.7,27.6 270.0,28.5 273.3,28.8 276.7,28.9 280.0,28.7 283.3,27.3 286.7,27.0 290.0,27.2 293.3,26.4 296.7,25.8 300.0,25.6 303.3,24.6 306.7,24.0 310.0,23.9 313.3,24.1 316.7,24.8 320.0,24.7 323.3,24.3 326.7,25.2 330.0,24.8 333.3,25.4 336.7,26.0 340.0,25.6 343.3,25.8 346.7,25.7 350.0,24.5 353.3,24.9 356.7,24.3 360.0,23.2 363.3,23.4 366.7,22.5 370.0,22.4 373.3,22.7 376.7,23.4 380.0,22.2 383.3,22.8 386.7,22.1 390.0,22.9 393.3,21.7 396.7,22.6 400.0,22.7 403.3,23.0 406.7,21.9 410.0,21.8 413.3,21.3 416.7,21.6 420.0,20.9 423.3,19.8 426.7,20.7 430.0,21.0 433.3,21.3 436.7,20.8 440.0,20.9 443.3,21.4 446.7,21.6 450.0,21.3 453.3,22.4 456.7,20.7 460.0,21.3 463.3,21.3 466.7,20.5 470.0,19.2 473.3,20.0 476.7,19.7 480.0,19.1 483.3,19.0 486.7,19.0 490.0,18.6 493.3,17.8 496.7,18.2 500.0,19.7 503.3,20.2 506.7,19.8 510.0,20.9 513.3,20.7 516.7,20.3 520.0,19.9 523.3,19.8 526.7,18.5 530.0,19.4 533.3,19.6 536.7,17.8 540.0,17.8 543.3,18.3 546.7,18.0 550.0,18.7 553.3,16.8 556.7,17.7 560.0,17.6 563.3,17.3 566.7,18.1 570.0,18.0 573.3,18.5 576.7,17.9 580.0,18.0 583.3,18.7 586.7,18.1 590.0,17.9 593.3,17.9 596.7,17.9 600.0,17.6 603.3,16.8 606.7,17.5 610.0,16.3 613.3,16.4 616.7,17.0 620.0,17.4 623.3,17.7 626.7,16.7 630.0,18.5 633.3,17.7 636.7,18.3 640.0,16.5 643.3,17.1 646.7,16.0 650.0,16.7 653.3,16.1 656.7,15.7 660.0,16.2 663.3,16.1 666.7,16.2 670.0,16.3 673.3,16.6 676.7,16.2 680.0,17.2 683.3,17.0 686.7,17.4 690.0,16.9 693.3,17.9 696.7,15.0 700.0,21.8 703.3,10.4 706.7,24.2 710.0,5.2 713.3,26.7 716.7,2.6 720.0,28.6 723.3,6.1 726.7,22.5 730.0,9.1 733.3,19.6 736.7,12.9 740.0,16.1 743.3,16.4 746.7,15.7 750.0,16.2 753.3,16.2 756.7,16.8 760.0,16.9 763.3,16.3 766.7,16.1 770.0,15.3 773.3,15.4 776.7,15.0 780.0,15.7 783.3,14.7 786.7,15.0 790.0,15.0 793.3,14.8 796.7,14.9 800.0,14.9 803.3,15.8 806.7,15.0 810.0,16.6 813.3,14.6 816.7,15.1 820.0,15.1 823.3,15.4 826.7,15.3 830.0,15.0 833.3,15.1 836.7,14.6 840.0,14.4 843.3,15.7 846.7,13.9 850.0,15.1 853.3,15.2 856.7,15.9 860.0,15.7 863.3,14.8 866.7,16.4 870.0,15.3 873.3,14.7 876.7,14.8 880.0,15.5 883.3,14.4 886.7,14.7 890.0,14.2 893.3,13.4 896.7,13.1 900.0,13.6 903.3,13.7 906.7,13.1 910.0,14.0 913.3,14.5 916.7,15.7 920.0,14.9 923.3,14.8 926.7,15.2 930.0,15.3 933.3,15.1 936.7,14.7 940.0,14.8 943.3,14.7 946.7,14.7 950.0,13.9 953.3,13.8 956.7,13.0 960.0,14.3 963.3,13.0 966.7,13.8 970.0,13.7 973.3,15.0 976.7,15.2 980.0,14.7 983.3,14.6 986.7,14.3 990.0,14.9 993.3,14.1 996.7,14.7 1000.0,14.6" fill="none" stroke="currentColor" vector-effect="non-scaling-stroke" stroke-linejoin="round" stroke-linecap="round"/><circle class="halo" cx="716.7" cy="2.6" r="7" vector-effect="non-scaling-stroke"/><circle class="spike" cx="716.7" cy="2.6" r="2.6"/></svg></div>
+    
     <span hidden data-pagefind-meta="title:The Grid Said No"></span>
     <p class="meta" data-pagefind-ignore><time datetime="2026-10-19">Monday, October 19, 2026</time></p>
     <h1>The Grid Said No</h1>
@@ -223,6 +381,7 @@ border-bottom:var(--hair) solid var(--accent);padding-bottom:.15rem}
 <li>Microsoft walked away from Britain&rsquo;s flagship AI data centre because the grid can&rsquo;t connect it until the 2030s. Meanwhile, Anthropic signed for Canadian capacity with its own wind farms on the way.</li>
 <li>The constraint on intelligence is turning into electricity, and the patient capital that can supply it.</li>
 </ul></aside>
+  
   <div class="prose lead-body"><h2 id="what-happened">What happened</h2>
 <p>On Sunday the Telegraph first reported that Microsoft had pulled out as the expected anchor tenant of Nscale&rsquo;s planned AI data centre in Loughton, Essex (<a href="https://www.telegraph.co.uk/business/2026/10/18/microsoft-axes-ai-deal-setback-uk-data-centre-pioneer/">Telegraph</a>; <a href="https://www.theguardian.com/uk-news/2026/oct/18/microsoft-drops-huge-ai-datacentre-project-in-essex-over-power-supply-concerns">Guardian</a>).</p>
 <p>Starmer&rsquo;s government had billed it as the &ldquo;largest UK sovereign AI datacentre&rdquo; (<a href="https://www.theguardian.com/uk-news/2026/oct/18/microsoft-drops-huge-ai-datacentre-project-in-essex-over-power-supply-concerns">Guardian</a>). Nscale pledged £2bn to it (<a href="https://www.bbc.com/news/articles/c9m26kl5y7epo">BBC</a>). Microsoft was its only publicly announced customer (<a href="https://www.theguardian.com/uk-news/2026/oct/18/microsoft-drops-huge-ai-datacentre-project-in-essex-over-power-supply-concerns">Guardian</a>).</p>
