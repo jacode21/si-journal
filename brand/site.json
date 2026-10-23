@@ -3,7 +3,7 @@
   "tagline": "Always closer.",
   "name_is_working_title": false,
   "description": "A daily read on the next decade, for investors. AI and superintelligence are the spine. Energy, bio, space, quantum, robotics and policy come in when they shape the next ten years.",
-  "author": "Jacob Slusser",
+  "author": "The Tomorrow Post",
   "base_url": "https://jacode21.github.io/si-journal/",
   "language": "en-us",
   "disclaimer": "Not investment advice.",
@@ -73,7 +73,7 @@
   "trace": false,
   "ink_soft": "#4A4843",
   "accent_text": "#AD4217",
-  "tokens_note": "From Jacob's design guide (Oct 2026): bone paper #F0EEE8, near-black ink #191918, signal orange #D95727, graphite #928D85. Orange marks active state or meaningful emphasis only. #D95727 is 3.4:1 on paper, so it is for rules, active underlines, dots and large type; small orange text uses accent_text #AD4217 (5.1:1). Graphite #928D85 is 2.8:1, so it is for rules and icons only; small grey text uses muted #5F5B55 (5.8:1).",
+  "tokens_note": "From The Tomorrow Post's design guide (Oct 2026): bone paper #F0EEE8, near-black ink #191918, signal orange #D95727, graphite #928D85. Orange marks active state or meaningful emphasis only. #D95727 is 3.4:1 on paper, so it is for rules, active underlines, dots and large type; small orange text uses accent_text #AD4217 (5.1:1). Graphite #928D85 is 2.8:1, so it is for rules and icons only; small grey text uses muted #5F5B55 (5.8:1).",
   "disclosures": "Asymptote is for information and education only. Nothing here is investment, legal or tax advice, or an offer to buy or sell any security. Do your own research, and talk to a licensed professional before you invest.",
   "disclaimer_url": "https://jacode21.github.io/si-journal/disclosures/",
   "graphite": "#928D85"
