@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <rss version="2.0" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom">
 <channel>
-  <title>Asymptote</title>
-  <link>https://jacode21.github.io/si-journal/</link>
-  <atom:link href="https://jacode21.github.io/si-journal/feed.xml" rel="self" type="application/rss+xml"/>
-  <description>A daily read on the next decade, for investors. AI and superintelligence are the spine. Energy, bio, space, quantum, robotics and policy come in when they shape the next ten years.</description>
+  <title>The Tomorrow Post</title>
+    <link>https://thetomorrowpost.com/</link>
+    <atom:link href="https://thetomorrowpost.com/feed.xml" rel="self" type="application/rss+xml"/>
+  <description>The Tomorrow Post: A daily read on the next decade, for investors. AI and superintelligence are the spine. Energy, bio, space, quantum, robotics and policy come in when they shape the next ten years.</description>
   <language>en-us</language>
   <lastBuildDate>Tue, 20 Oct 2026 02:59:38 +0000</lastBuildDate>
   <item>
