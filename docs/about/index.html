@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>About · The Tomorrow Post</title>
+<meta name="description" content="What The Tomorrow Post is for, how it works, and who edits it." />
+<link rel="canonical" href="https://thetomorrowpost.com/about/" />
+<meta property="og:type" content="website" />
+<meta property="og:site_name" content="The Tomorrow Post" />
+<meta property="og:title" content="About · The Tomorrow Post" />
+<meta property="og:description" content="What The Tomorrow Post is for, how it works, and who edits it." />
+<meta property="og:url" content="https://thetomorrowpost.com/about/" />
+<meta property="og:image" content="https://thetomorrowpost.com/assets/og-preview.png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta property="og:image:alt" content="The Tomorrow Post — A newspaper for the digital age." />
+<meta name="twitter:card" content="summary_large_image" />
+<link rel="icon" href="/favicon.ico" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,400&family=Newsreader:ital,opsz,wght@0,6..72,300;0,6..72,400;0,6..72,600;1,6..72,400&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet" />
+<script>try{if(localStorage.getItem('ttp-theme')==='dark'){document.documentElement.setAttribute('data-theme','dark');}}catch(e){}</script>
+<style>
+:root{--bg:#FAF6EF;--ink:#14181D;--ink-soft:#4A463C;--grey:#7A7568;--rule:#D8D2C2;--accent:#A65E2E;--accent-text:#8F5127;--panel:#F1EAD9;}
+html[data-theme="dark"]{--bg:#111417;--ink:#EFE9DB;--ink-soft:#B9B2A4;--grey:#8A8578;--rule:#2C313A;--accent:#A65E2E;--accent-text:#B87333;--panel:#171B20;}
+*{box-sizing:border-box;}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:"Newsreader",Georgia,serif;font-size:19px;line-height:1.6;font-variant-numeric:oldstyle-nums proportional-nums;}
+a{color:inherit;}
+a:hover{color:var(--accent-text);}
+:focus-visible{outline:2px solid var(--accent-text);outline-offset:2px;}
+.skip-link{position:absolute;left:-9999px;top:0;background:var(--bg);color:var(--accent-text);padding:.6rem 1rem;z-index:10;font-family:"IBM Plex Mono",monospace;font-size:.75rem;}
+.skip-link:focus{left:0;}
+.wrap{max-width:1200px;margin:0 auto;padding:0 5%;}
+.mono{font-family:"IBM Plex Mono",monospace;text-transform:uppercase;letter-spacing:.12em;}
+.masthead{text-align:center;padding:1.2rem 0 0;}
+.folio-row{display:flex;justify-content:space-between;gap:1rem;font-size:.68rem;color:var(--grey);padding-bottom:.9rem;}
+.mark{width:44px;height:24px;}
+.mark .ray,.mark .arc{stroke:var(--ink);stroke-width:1.6;fill:none;stroke-linecap:round;}
+.mark .sun-line{stroke:var(--accent);stroke-width:2;}
+.wordmark{font-family:"Playfair Display",serif;font-weight:900;font-size:clamp(2rem,6vw,3.2rem);line-height:1.05;margin:.4rem 0 .2rem;}
+.wordmark a{text-decoration:none;}
+.descriptor{font-style:italic;font-weight:300;color:var(--ink-soft);margin:0 0 1rem;font-size:1.05rem;}
+.main-nav{display:flex;justify-content:center;flex-wrap:wrap;gap:.2rem 1.6rem;border-top:1px solid var(--ink);border-bottom:1px solid var(--rule);padding:.65rem 0;}
+.main-nav a{font-family:"IBM Plex Mono",monospace;text-transform:uppercase;letter-spacing:.12em;font-size:.72rem;text-decoration:none;color:var(--ink-soft);min-height:44px;display:inline-flex;align-items:center;}
+.main-nav a[aria-current="page"]{color:var(--accent-text);}
+main{max-width:680px;margin:0 auto;padding:2.2rem 0 3rem;}
+.kicker{font-family:"IBM Plex Mono",monospace;text-transform:uppercase;letter-spacing:.14em;font-size:.72rem;color:var(--accent-text);margin:0 0 .9rem;}
+h1{font-family:"Playfair Display",serif;font-weight:700;font-size:clamp(1.9rem,5.4vw,2.7rem);line-height:1.14;margin:0 0 1.1rem;}
+h2{font-family:"Playfair Display",serif;font-weight:700;font-size:1.45rem;margin:2.4rem 0 .8rem;}
+p{margin:0 0 1.1rem;}
+.lede{font-size:1.22rem;font-weight:300;line-height:1.5;}
+.entry-label{font-family:"IBM Plex Mono",monospace;text-transform:uppercase;letter-spacing:.12em;font-size:.72rem;color:var(--accent-text);margin:1.6rem 0 .35rem;}
+.byline{font-family:"IBM Plex Mono",monospace;text-transform:uppercase;letter-spacing:.12em;font-size:.72rem;color:var(--grey);}
+.rule{border:none;border-top:1px solid var(--rule);margin:2rem 0;}
+footer{border-top:1px solid var(--ink);margin-top:1rem;padding:1.4rem 0 2.4rem;text-align:center;color:var(--grey);font-size:.85rem;}
+footer .f-word{font-family:"Playfair Display",serif;font-weight:900;font-size:1.3rem;color:var(--ink);}
+.sub-form label{display:block;font-family:"IBM Plex Mono",monospace;text-transform:uppercase;letter-spacing:.12em;font-size:.72rem;color:var(--ink-soft);margin-bottom:.5rem;}
+.sub-row{display:flex;gap:.6rem;flex-wrap:wrap;}
+.sub-row input{flex:1 1 240px;height:48px;padding:0 .9rem;font:inherit;font-size:1rem;background:transparent;color:var(--ink);border:1px solid var(--grey);border-radius:0;}
+.sub-row button{height:48px;padding:0 1.2rem;background:var(--accent);color:#FAF6EF;border:none;font-family:"IBM Plex Mono",monospace;text-transform:uppercase;letter-spacing:.12em;font-size:.75rem;cursor:pointer;}
+.reassure{color:var(--grey);font-size:.9rem;font-style:italic;}
+</style>
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+<div class="wrap">
+<header class="masthead">
+  <div class="folio-row mono"><span>Vol. 1 · New York</span><span>thetomorrowpost.com</span></div>
+  <svg class="mark" viewBox="0 0 64 34" aria-hidden="true"><g><line class="ray" x1="32" y1="2" x2="32" y2="8"/><line class="ray" x1="12" y1="8" x2="16" y2="13"/><line class="ray" x1="52" y1="8" x2="48" y2="13"/><path class="arc" d="M10 28 A22 22 0 0 1 54 28"/></g><line class="sun-line" x1="2" y1="28" x2="62" y2="28"/></svg>
+  <p class="wordmark"><a href="/">The Tomorrow Post</a></p>
+  <p class="descriptor">A newspaper for the digital age.</p>
+  <nav class="main-nav" aria-label="Main">
+    <a href="/#/">Today</a><a href="/#/topics">Topics</a><a href="/#/record">The Record</a><a href="/about/" aria-current="page">About</a><a href="/subscribe/">Subscribe</a>
+  </nav>
+</header>
+<main id="main">
+
+<p class="kicker">About</p>
+<h1>About The Tomorrow Post</h1>
+<p class="lede">The Tomorrow Post is a daily newspaper about the frontier — the models, markets and machines deciding what happens next. Its tagline is its standard: a newspaper for the digital age.</p>
+<h2>What This Paper Is For</h2>
+<p class="entry-label">Signal over noise</p>
+<p>Most days, a handful of developments actually matter. The paper's job is to find them, verify them, and say plainly why they matter — and to let the rest go. A smaller edition of true things beats a large one of almosts.</p>
+<p class="entry-label">Three readers at once</p>
+<p>Every story is written to serve an investor weighing what something is worth, a professional deciding what to use, and a curious reader who wants to understand. Money, use, wonder — if a story serves none of the three, it isn't signal.</p>
+<p class="entry-label">A record, not a feed</p>
+<p>Stories here are followed, not dropped. Developing stories keep their history in the open — assessments dated, revised, and answered for — and the paper builds knowledge from its own reporting, so each edition knows what the last one said.</p>
+<p class="entry-label">Measured by design</p>
+<p>No clickbait, no pop-ups, no engagement bait. The paper is built to be forwarded: it succeeds when a reader sends a story to a smart friend.</p>
+<hr class="rule" />
+<h2>How We Work, Briefly</h2>
+<p>Every claim is sourced, and sources sit on the story page. Company claims are labeled as claims, figures carry their caveats, and unverified reports are marked as such. The paper is produced with AI tools and written under house bylines; the standards above apply to every line regardless. Corrections and tips: <a href="mailto:hello@thetomorrowpost.com">hello@thetomorrowpost.com</a>. The Tomorrow Post is a newspaper, not investment advice.</p>
+<hr class="rule" />
+<h2>The Editors</h2>
+<p><strong>Avery Lane</strong> — Frontier Editor. Frontier — the models and the labs.</p>
+<p><strong>Jordan Hale</strong> — Capital Editor. Capital — the money and the markets.</p>
+<p><strong>Taylor Brooks</strong> — Build &amp; Tools Editor. Build &amp; Tools — the products professionals actually use.</p>
+<p><strong>Casey Vale</strong> — Elsewhere Editor. Elsewhere — everything the frontier touches.</p>
+
+</main>
+<footer>
+  <p class="f-word">The Tomorrow Post</p>
+  <p>A newspaper for the digital age.<br />Corrections and tips: <a href="mailto:hello@thetomorrowpost.com">hello@thetomorrowpost.com</a><br />© 2026 The Tomorrow Post</p>
+</footer>
+</div>
+</body>
+</html>
