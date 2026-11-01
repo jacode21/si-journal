@@ -5,7 +5,194 @@
 <link>https://thetomorrowpost.com/</link>
 <description>A newspaper for the digital age. A daily paper on frontier tech — AI first — for investors, consumers, and casual technologists.</description>
 <language>en-us</language>
-<lastBuildDate>Sat, 31 Oct 2026 12:00:00 +0000</lastBuildDate>
+<lastBuildDate>Sun, 01 Nov 2026 12:00:00 +0000</lastBuildDate>
+<item>
+<title>Malware Now Hands Stolen Data to an AI Model and Asks What the Victim Is Worth</title>
+<link>https://thetomorrowpost.com/article/volta-malware-ai-ranks-victims</link>
+<guid isPermaLink="true">https://thetomorrowpost.com/article/volta-malware-ai-ranks-victims</guid>
+<pubDate>Sun, 01 Nov 2026 12:00:00 +0000</pubDate>
+<description>Cisco Talos documented a Windows infostealer that, after taking passwords, cookies and payment cards, sends the haul to a commercial AI model with instructions to rank the victim&#x27;s most valuable assets. If the first model refuses, the malware tries a second, then a third. Talos reports no evidence the malware has been used in real attacks.</description>
+<content:encoded><![CDATA[<p>Cisco Talos published its analysis of a Windows infostealer it calls VOLTA on October 31. The theft side is conventional and thorough: browser credentials, cookies and saved payment cards from Chromium browsers, Firefox and Thunderbird; session tokens for Discord, Telegram, Steam and Roblox; Microsoft OAuth tokens; cryptocurrency wallet material; SSH and cloud configuration files; Wi-Fi profiles and screenshots. Talos says the malware then uses stolen access to enrich the haul, searching a victim's email for purchase receipts and pulling delivery histories.</p><p>The new part comes after the theft. VOLTA assembles the collected material into a structured bundle and, when it has an API key, sends it through OpenRouter to a commercial AI model. Its prompt tells the model to act as a forensic intelligence analyst drafting a target assessment, with sections headed 'WHAT THEY'RE WORTH' — valuables ranked by how easily they can be turned into money — and 'THEIR OPSEC,' an assessment of the victim's security habits. The default model is Anthropic's Claude Opus 4.6. The malware scans each reply for refusal phrases such as 'I can't,' and on a refusal falls back to Moonshot's Kimi K2 and then to Google's Gemini 2.5 Flash. The output is saved as a file named AI_Analysis.txt and exfiltrated with the rest.</p><p>Talos is explicit about the limits of the finding. The researchers, led by Ryan Fetterman, found VOLTA through CAIRN, a toolkit Talos open-sourced on September 22 for hunting malware with built-in AI. They have not reported whether any of the three models complied or refused in testing, and they have not tracked the malware in use in real attacks; the sample was first seen on October 11. Without a configured API key, the AI stage is skipped and VOLTA works as an ordinary stealer. The significance of the sample is the division of labor it assumes: the commodity part of an intrusion is no longer reading what was stolen, because a rented model will read it, rank it and write the summary.</p>]]></content:encoded>
+</item>
+<item>
+<title>Alibaba&#x27;s Qwen Will Power Apple Intelligence in China, With Testing From November 4</title>
+<link>https://thetomorrowpost.com/article/qwen-powers-apple-intelligence-china</link>
+<guid isPermaLink="true">https://thetomorrowpost.com/article/qwen-powers-apple-intelligence-china</guid>
+<pubDate>Sun, 01 Nov 2026 12:00:00 +0000</pubDate>
+<description>Apple and Alibaba announced on Saturday that Qwen will supply the model behind Siri, Writing Tools and Visual Intelligence for iPhone users in China. Testing starts November 4 in the developer beta; the public release is planned for December. The rebuilt Siri assistant is not part of the package.</description>
+<content:encoded><![CDATA[<p>Apple Intelligence is coming to iPhones in mainland China on a Chinese model. Apple announced on its China newsroom on Saturday that testing begins November 4 in the latest iOS developer beta, with a public release planned for December in iOS 27.3. Alibaba confirmed the partnership the same day: its Qwen models will be integrated into Siri, Writing Tools and Visual Intelligence, covering text and image understanding and content generation. Alibaba's chief executive, Eddie Wu, said Qwen would be deeply integrated across Apple's ecosystem.</p><p>The arrangement reflects the regulatory structure of the market. Generative AI services in China require local approval, and reporting on the announcement notes that China's cyberspace regulator registered Apple's on-device generative AI service in July. In China, Qwen stands in the position ChatGPT occupies elsewhere in Apple Intelligence: for certain requests, Siri can pass a question to Qwen and draw on its knowledge, and a Compose option in Writing Tools lets it draft original text. The integration is opt-in — users choose whether to enable it and what to share — and Alibaba says requests sent through Apple Intelligence, and the responses generated, will not be used to train its models.</p><p>What Chinese users are getting is the first generation of the product, two years after its United States launch. Apple's announcement states that the December release does not include Siri AI or the other next-generation Apple Intelligence features announced at its 2026 developers conference — the rebuilt assistant now rolling out elsewhere is not in this package. Eligibility is narrow: an Apple Intelligence-capable iPhone bought in China, or a device whose location and Apple Account region are both set to China, with support for other Apple platforms to follow after further approvals. The first outside check on the arrangement arrives quickly: developers can test Qwen's behavior inside Siri and Writing Tools from Tuesday's beta.</p>]]></content:encoded>
+</item>
+<item>
+<title>Pope Leo XIV Asked States to Ban Lethal Autonomous Weapons at November Talks in Geneva</title>
+<link>https://thetomorrowpost.com/article/pope-leo-ban-lethal-autonomous-weapons</link>
+<guid isPermaLink="true">https://thetomorrowpost.com/article/pope-leo-ban-lethal-autonomous-weapons</guid>
+<pubDate>Sun, 01 Nov 2026 12:00:00 +0000</pubDate>
+<description>Addressing AI researchers at the Vatican on Friday, Pope Leo XIV said decisions over human life and the use of force must remain under human control, rejected legal personhood for AI systems, and urged states meeting in Geneva in November toward a prohibition of lethal autonomous weapons.</description>
+<content:encoded><![CDATA[<p>Pope Leo XIV used an address to AI researchers at the Vatican on Friday, October 30, to ask states meeting in Geneva in November to take concrete steps toward prohibiting lethal autonomous weapons. Decisions affecting human life, freedom and the use of force, he said, must always remain subject to effective, informed and responsible human control, and artificial intelligence must be 'disarmed.' The meeting — 'The Future of AI: A Dialogue between the Vatican and the Scientific World' — was organized by the Pontifical Academy for Life and the Future of Life Institute.</p><p>The address restated the position of his May encyclical, Magnifica Humanitas, in five considerations, and drew a line his predecessor also drew: Pope Francis told the G7 in 2024 that no machine should ever choose to take a human life. Leo rejected proposals to grant AI systems legal personhood — 'Machines are instruments, not people' — arguing that responsibility for a system's actions rests with its human creators and operators, and called for shared international standards, independent oversight and clear mechanisms of accountability. The remarks are a moral appeal to negotiators, not law; no state has committed to the ban ahead of the Geneva talks. In a separate note of the same week, the Holy See Press Office confirmed that the Pope, who was born in Chicago, has already mailed his ballot for Tuesday's United States midterm elections.</p>]]></content:encoded>
+</item>
+<item>
+<title>Polynesia’s Genomes Hold Drug Clues the Big Databases Missed</title>
+<link>https://thetomorrowpost.com/article/polynesia-genomes-drug-clues</link>
+<guid isPermaLink="true">https://thetomorrowpost.com/article/polynesia-genomes-drug-clues</guid>
+<pubDate>Sun, 01 Nov 2026 12:00:00 +0000</pubDate>
+<description>Genomes from more than 1,000 French Polynesians show founder effects at least ten times stronger than Finland’s — concentrating rare variants until their effects on health become measurable.</description>
+</item>
+<item>
+<title>Permission Is Now a Line Item</title>
+<link>https://thetomorrowpost.com/article/permission-is-now-a-line-item</link>
+<guid isPermaLink="true">https://thetomorrowpost.com/article/permission-is-now-a-line-item</guid>
+<pubDate>Sun, 01 Nov 2026 12:00:00 +0000</pubDate>
+<description>A judge held that the turbines powering xAI&#x27;s Colossus site are not exempt from air permits, so whether they were ever permitted will be argued in full. The ruling decides no liability — and that is the point: permission has moved from a filing made before construction to a legal exposure carried during operation.</description>
+<content:encoded><![CDATA[<p>A data center used to need land, power and capital. The ruling in Mississippi adds a fourth requirement in a form builders cannot schedule around: a judge held that the turbines powering xAI's Colossus site are not exempt from air permits, so the question of whether they were ever permitted will be argued in full. The ruling decides no liability, and that is the point. Permission has moved from a filing made before construction to a legal exposure carried during operation, at a cost counted in time and in public. October's scarcest input was a grid connection. November's may be consent.</p>]]></content:encoded>
+</item>
+<item>
+<title>The New York City Marathon Runs Its 50th Five-Borough Race Today</title>
+<link>https://thetomorrowpost.com/article/nyc-marathon-50th-five-borough-race</link>
+<guid isPermaLink="true">https://thetomorrowpost.com/article/nyc-marathon-50th-five-borough-race</guid>
+<pubDate>Sun, 01 Nov 2026 12:00:00 +0000</pubDate>
+<description>The TCS New York City Marathon runs today on the 50th anniversary of its five-borough course, with both defending champions — Benson Kipruto, who won last year by three hundredths of a second, and Hellen Obiri, the women&#x27;s course-record holder — and an extra hour in the morning, returned by the overnight clock change.</description>
+<content:encoded><![CDATA[<p>The TCS New York City Marathon runs today, Sunday, November 1, on the 50th anniversary of the race's five-borough course. The professional women start at 8:35 a.m. Eastern and the professional men at 9:05 a.m., on a morning made longer by the calendar: clocks went back one hour at 2 a.m., so the race's early waves start on the extra hour the fall change returns.</p><p>Both defending champions are back. Benson Kipruto of Kenya won the men's race last year by three hundredths of a second over Alexander Mutiso — the closest finish in the race's history — and Hellen Obiri returns after setting the women's course record of 2:19:51 last November. Obiri's challengers include Sheila Chepkirui, the 2024 champion, and Edna Kiplagat, who won in 2010. Two expected contenders are absent: Olympic champion Sifan Hassan withdrew after illness disrupted her preparation, and American Fiona O'Keeffe is out with an injury. The American men's race pairs Conner Mantz, the national record holder at 2:04:43, against Zouhair Talbi, whose 2:03:45 in Boston in April is the fastest marathon run by an American, on a course not eligible for records.</p>]]></content:encoded>
+</item>
+<item>
+<title>A Molecular Brake Slows a Spinning Rotor 300,000-Fold</title>
+<link>https://thetomorrowpost.com/article/molecular-brake-300000-fold</link>
+<guid isPermaLink="true">https://thetomorrowpost.com/article/molecular-brake-300000-fold</guid>
+<pubDate>Sun, 01 Nov 2026 12:00:00 +0000</pubDate>
+<description>Researchers in Prague used light to block a molecular rotor’s spin. At very low temperatures, the braked rotor would need about 350 billion years for a single turn — roughly 25 times the age of the universe.</description>
+</item>
+<item>
+<title>A Personal Vaccine Cut Melanoma Recurrence or Death Risk by 42% in a Phase 3 Trial</title>
+<link>https://thetomorrowpost.com/article/melanoma-vaccine-recurrence-risk-42</link>
+<guid isPermaLink="true">https://thetomorrowpost.com/article/melanoma-vaccine-recurrence-risk-42</guid>
+<pubDate>Sun, 01 Nov 2026 12:00:00 +0000</pubDate>
+<description>A vaccine built from each patient’s own tumor, added to immunotherapy after surgery, reduced the risk of death or recurrence by 42% in 1,137 people with advanced melanoma. The result was reported at a European oncology meeting.</description>
+</item>
+<item>
+<title>A Federal Judge Let the Lawsuit Over xAI&#x27;s Data Center Turbines Proceed</title>
+<link>https://thetomorrowpost.com/article/judge-lets-xai-turbine-lawsuit-proceed</link>
+<guid isPermaLink="true">https://thetomorrowpost.com/article/judge-lets-xai-turbine-lawsuit-proceed</guid>
+<pubDate>Sun, 01 Nov 2026 12:00:00 +0000</pubDate>
+<description>A federal judge denied xAI&#x27;s request to dismiss a Clean Air Act lawsuit over the gas turbines powering its Colossus data center outside Memphis. The court rejected the company&#x27;s argument that the turbines are mobile equipment exempt from air permits. The ruling decides no liability; it means the permit question will now be heard in full.</description>
+<content:encoded><![CDATA[<p>A federal judge has denied xAI's motion to dismiss a Clean Air Act lawsuit over the gas turbines powering its Colossus data center outside Memphis, TechCrunch reported on Saturday. Judge Debra M. Brown of the US District Court for the Northern District of Mississippi ruled that the plaintiffs have standing under the Clean Air Act, that the turbines are not 'mobile sources' under Mississippi's state implementation plan, and that the Act's citizen-suit provision does not violate the Constitution. The ruling, released on Friday, October 30, allows the case to proceed. It does not decide whether xAI violated the Act.</p><h4>What the suit alleges</h4><p>The NAACP and the Mississippi State Conference of the NAACP filed the case on April 14, 2026, represented by the Southern Environmental Law Center. The center says xAI 'installed and operated at least 35 combustion turbines and other sources of air pollution at the Colossus site without ever obtaining the necessary preconstruction or operating air permits.' The complaint in the Mississippi case, as summarized in Saturday's coverage, alleges that X.AI Corp. and MZX Tech LLC installed and operated 27 gas turbines in Southaven, Mississippi, from August to December 2025 without an air permit, and that the turbines powered AI data centers in the Memphis area and emitted smog-forming pollutants and particulate matter. xAI's defense was procedural: the turbines are mobile, and therefore exempt; the plaintiffs lack standing; and citizen suits of this kind are unconstitutional. The court rejected each argument at this stage.</p><h4>The second ruling in a month</h4><p>This is the second dismissal attempt the case has survived in October. On October 19, the same court allowed the federal government to intervene in the case while denying its request to end it. Abre' Connor, the NAACP's director of environmental and climate justice, described Saturday's outcome as 'another important victory in our effort to hold xAI accountable.' xAI is now owned by SpaceX; the company has not, in the reporting, answered the underlying allegation — whether the permits were required and were not obtained.</p><p>The case lands inside a thread this paper has followed since its first edition: the buildout's binding constraint is power, and power is obtained in public. Edition 001's lead was a data center abandoned for want of a grid connection; Edition 005 recorded moratoria, grid queues and local opposition delaying projects. The Colossus ruling is the courtroom version of the same constraint. A builder can install turbines faster than a grid connection can be approved; what Saturday's ruling establishes is that the speed does not settle the permission, and that the permission question can be litigated while the machines run.</p>]]></content:encoded>
+</item>
+<item>
+<title>Five Silicon Qubits Now Share a Single Control Wire</title>
+<link>https://thetomorrowpost.com/article/five-silicon-qubits-one-wire</link>
+<guid isPermaLink="true">https://thetomorrowpost.com/article/five-silicon-qubits-one-wire</guid>
+<pubDate>Sun, 01 Nov 2026 12:00:00 +0000</pubDate>
+<description>A RIKEN-led team ran five silicon qubits down one shared microwave line and kept their accuracy at the level error correction requires — attacking the wiring bottleneck that keeps quantum processors small.</description>
+</item>
+<item>
+<title>The First Known Fruit-Eating Dinosaur Had Chewing Muscles Built Like a Parrot’s</title>
+<link>https://thetomorrowpost.com/article/first-fruit-eating-dinosaur-parrot-jaws</link>
+<guid isPermaLink="true">https://thetomorrowpost.com/article/first-fruit-eating-dinosaur-parrot-jaws</guid>
+<pubDate>Sun, 01 Nov 2026 12:00:00 +0000</pubDate>
+<description>A small Cretaceous dinosaur, Infernogallus jamesi, had a chewing-muscle arrangement seen today only in fruit-eating parrots — evidence that some dinosaurs ate fruit, and may have carried the seeds that spread flowering plants.</description>
+</item>
+<item>
+<title>East Antarctica’s Ice Sheet Stayed Stable in 100,000-Year Simulations Even Above 10 Degrees of Warming</title>
+<link>https://thetomorrowpost.com/article/east-antarctica-ice-sheet-snowfall</link>
+<guid isPermaLink="true">https://thetomorrowpost.com/article/east-antarctica-ice-sheet-snowfall</guid>
+<pubDate>Sun, 01 Nov 2026 12:00:00 +0000</pubDate>
+<description>In coupled climate simulations, the largest ice sheet on Earth held up under extreme warming because warmer air delivered it more snow and more cloud cover — while West Antarctica and Greenland, in the same simulations, lost heavily.</description>
+</item>
+<item>
+<title>Colorectal Cancer in Patients Under 50 Is Biologically Different, a 189-Tumor Study Finds</title>
+<link>https://thetomorrowpost.com/article/early-onset-colorectal-cancer-different-biology</link>
+<guid isPermaLink="true">https://thetomorrowpost.com/article/early-onset-colorectal-cancer-different-biology</guid>
+<pubDate>Sun, 01 Nov 2026 12:00:00 +0000</pubDate>
+<description>Tumors from patients diagnosed before 50 carry proportionally more stromal cells and fewer epithelial cells than tumors from older patients, in the largest study of its kind — a possible reason the disease behaves more aggressively in younger people.</description>
+</item>
+<item>
+<title>AI-Designed Virus Shells Delivered Genes to Primate Brains 152 Times Better</title>
+<link>https://thetomorrowpost.com/article/dyno-capsids-brain-delivery-152-fold</link>
+<guid isPermaLink="true">https://thetomorrowpost.com/article/dyno-capsids-brain-delivery-152-fold</guid>
+<pubDate>Sun, 01 Nov 2026 12:00:00 +0000</pubDate>
+<description>Dyno Therapeutics’ engineered capsids reached the brain far more efficiently than the standard AAV9 in non-human primates, and versions built to evade antibodies tested negative against up to 85% of human serum samples. All of it is preclinical.</description>
+</item>
+<item>
+<title>Crushed Shells Mixed Into Beach Sand Helped Young Clams Grow in More Acidic Water</title>
+<link>https://thetomorrowpost.com/article/crushed-shells-young-clams-acidification</link>
+<guid isPermaLink="true">https://thetomorrowpost.com/article/crushed-shells-young-clams-acidification</guid>
+<pubDate>Sun, 01 Nov 2026 12:00:00 +0000</pubDate>
+<description>Adding shell fragments to the sand where baby clams burrow changed the water between the grains, lowered its acidity, and produced larger shells — a measured version of a shell-adding practice Indigenous communities have used for generations.</description>
+</item>
+<item>
+<title>The Clocks Went Back at 2 A.M., on the Earliest Date the Change Can Fall</title>
+<link>https://thetomorrowpost.com/article/clocks-went-back-november-1-2026</link>
+<guid isPermaLink="true">https://thetomorrowpost.com/article/clocks-went-back-november-1-2026</guid>
+<pubDate>Sun, 01 Nov 2026 12:00:00 +0000</pubDate>
+<description>Daylight saving time ended at 2 a.m. this morning, the earliest date the fall change can occur. The House voted in July to make daylight saving permanent; the Senate has not acted, so the 25-hour day proceeded on schedule.</description>
+<content:encoded><![CDATA[<p>Daylight saving time ended at 2 a.m. local time this morning, Sunday, November 1, when clocks across most of the United States went back one hour to 1 a.m. — making today a 25-hour day and this the earliest date on which the fall change can fall, since the rule sets it on the first Sunday in November. Sunrise and sunset both arrive about an hour earlier by the clock from today: brighter mornings, darker evenings, until daylight saving returns on March 14, 2027.</p><p>The change happened under a law Congress nearly replaced this year. The Sunshine Protection Act, which would make daylight saving time permanent and end the twice-yearly switch, passed the House of Representatives in July and has not been taken up by the Senate, which is in an extended election recess — so the ritual proceeded on its 2007 schedule. Hawaii and most of Arizona do not observe daylight saving time and did not change their clocks. The overlap that made this weekend unusual — Halloween on Saturday followed immediately by the fall-back — last occurred in 2020 and, by the calendar's arithmetic, will not happen again until 2037.</p>]]></content:encoded>
+</item>
+<item>
+<title>Chainalysis Said an Attacker Using AI Agents Accessed Customer Names, Emails and Roles</title>
+<link>https://thetomorrowpost.com/article/chainalysis-breach-offensive-agentic-techniques</link>
+<guid isPermaLink="true">https://thetomorrowpost.com/article/chainalysis-breach-offensive-agentic-techniques</guid>
+<pubDate>Sun, 01 Nov 2026 12:00:00 +0000</pubDate>
+<description>Chainalysis, whose software traces cryptocurrency crime for law enforcement and exchanges, disclosed on Friday that an attacker used AI agents to reach its internal systems earlier in October. Names, email addresses, user IDs and organization role labels were accessed. The company reports no evidence that investigation content, credentials or session tokens were reached.</description>
+<content:encoded><![CDATA[<p>Chainalysis disclosed on Friday that an external attacker used what the company calls 'offensive agentic techniques' to gain unauthorized access to its systems and internal tools earlier in October. The data accessed was customer identity information: user IDs, full names, email addresses and organization role labels for users provisioned on its platform. Chainalysis said its investigation to date has found no evidence of unauthorized access to investigation content, authentication credentials or session tokens, and that it is still determining which records were accessed for each organization.</p><p>The company's business is tracing other people's breaches. Chainalysis sells blockchain analytics to law enforcement agencies, government bodies, exchanges and financial institutions, which makes the accessed directory — who works on crypto investigations, at which organization, in what role — the sensitive part of an incident the company describes as involving non-sensitive data. Chainalysis said it is patching vulnerabilities and hardening its systems, is working with external cybersecurity experts, and is using large language models to support a broader security review. It advised customers to enable two-factor authentication and to watch for impersonation attempts.</p><p>Chainalysis stated that the incident is not related to the theft of about $6.3 billion from the exchange Binance, reported in Edition 013. The disclosure does not say which vulnerabilities were exploited, which internal tools were reached, or how long the attacker was inside; 'offensive agentic techniques' is the company's description, and it offered no detail on the methods. What is established is narrower than the phrase suggests: an attacker used AI tooling of some kind, and the firm that tracks crypto crime is now in the position of its own customers — disclosing an intrusion whose full scope is still being determined.</p>]]></content:encoded>
+</item>
+<item>
+<title>Cells Can Now Record What They Were Doing Days Ago</title>
+<link>https://thetomorrowpost.com/article/cells-record-their-own-past</link>
+<guid isPermaLink="true">https://thetomorrowpost.com/article/cells-record-their-own-past</guid>
+<pubDate>Sun, 01 Nov 2026 12:00:00 +0000</pubDate>
+<description>Engineered organelles archive a cell’s own RNA as it works — so days later, researchers can read back which genes were active, including in the rare cancer cells that survive chemotherapy and seed relapse.</description>
+</item>
+<item>
+<title>A Structure Called the Cat’s Tail Records a Pluto-Scale Collision 63 Light-Years Away</title>
+<link>https://thetomorrowpost.com/article/cats-tail-beta-pictoris-collision</link>
+<guid isPermaLink="true">https://thetomorrowpost.com/article/cats-tail-beta-pictoris-collision</guid>
+<pubDate>Sun, 01 Nov 2026 12:00:00 +0000</pubDate>
+<description>Hubble has imaged the Cat’s Tail in visible light for the first time: a dark stream about 1,000 times the Earth–Sun distance across, inside a young star’s debris disk — evidence of a collision between bodies the size of Pluto.</description>
+</item>
+<item>
+<title>The Buildout Now Needs Permission</title>
+<link>https://thetomorrowpost.com/article/buildout-now-needs-permission</link>
+<guid isPermaLink="true">https://thetomorrowpost.com/article/buildout-now-needs-permission</guid>
+<pubDate>Sun, 01 Nov 2026 12:00:00 +0000</pubDate>
+<description>This paper&#x27;s first edition argued the scarcest asset in AI is a signed grid connection. A year of reporting later, the constraint has a second form: courts, permits and public consent. A federal ruling in Mississippi, polling that shows most Americans opposed to new data centers, and a Google chip answering prompts from orbit are three points on the same line.</description>
+<content:encoded><![CDATA[<p>The Tomorrow Post's first edition, on October 19, led with a sentence that has organized a year of reporting: the scarcest asset in AI may be a signed grid connection. The evidence since has widened the point. Edition 005 recorded the buildout meeting zoning boards — moratoria in several states, grid queues, and projects cancelled when power could not be delivered on any useful schedule. On Friday, a federal judge in Mississippi added the courtroom to the list of places where a data center's power supply is decided, denying xAI's motion to dismiss the NAACP's Clean Air Act suit over the Colossus turbines and rejecting the argument that a turbine on a trailer is not a source of pollution the law reaches.</p><p>The public side of the same constraint is measurable. Polling summarized in weekend coverage of the buildout's finances puts opposition to new data centers at about two-thirds of Americans, with disputes over electricity prices, environmental effects and jobs named as the drivers. Opposition at that level does not stop projects by itself; it changes their timelines and their politics, which for a financed project is the same as changing their cost. The week also supplied the scale of what is being consented to: an account of the five largest builders' latest filings put their combined quarterly spending on property and equipment about $31.8 billion above what their operations brought in — arithmetic from the companies' 10-Q reports, reported Saturday. Every one of those dollars assumes a site where building is allowed to proceed.</p><p>Against that background, the weekend's most quietly significant item was a poem. On October 30, Google said its Project Suncatcher prototype satellite had returned the first AI response from a data-center-class TPU in orbit: its Gemma 4 model, loaded before launch, answered a prompt with a haiku — 'Blue marble below / Data streams in silent grace / Starlight feeds my core' — downlinked as the satellite passed over Svalbard, Norway. The satellite, built with Planet and launched October 1 on a SpaceX rideshare, carries four TPUs and generates up to 1 kilowatt; only one chip can run at a time, for about twenty minutes. Google gives no performance figures, and the tests that matter — heat and radiation — come next, ahead of two interconnected satellites planned for 2027.</p><p>Read together, the three items describe one industry at three distances from the same problem. On the ground, compute needs permission: permits, courts and neighbors now sit inside the critical path alongside chips and capital, and a ruling like Friday's reprices time itself. In the polling, the public whose electricity bills and land carry the buildout is registering its answer before most projects reach it. In orbit, the largest builders are spending real money to learn whether the permission problem can be left behind entirely — at 1 kilowatt and twenty minutes at a time, which is to say: not yet, and not soon. The grid said no in October 2025. In November 2026 the answer is coming from more directions, and the builders are answering in more places.</p>]]></content:encoded>
+</item>
+<item>
+<title>Bleu Robotics Raised €5 Million to Teach Factory Humanoids a New Task From About Ten Demonstrations</title>
+<link>https://thetomorrowpost.com/article/bleu-robotics-5-million-humanoid-factory</link>
+<guid isPermaLink="true">https://thetomorrowpost.com/article/bleu-robotics-5-million-humanoid-factory</guid>
+<pubDate>Sun, 01 Nov 2026 12:00:00 +0000</pubDate>
+<description>The Paris startup, founded by two INRIA research directors and a former Renault assembly-line manager, says its software lets a humanoid robot learn a factory task from as few as ten operator demonstrations. Its stated target is full deployment on a production line in under an hour. The two industrial partners it cites are unnamed.</description>
+<content:encoded><![CDATA[<p>Bleu Robotics, a Paris startup founded in 2025, has closed a €5 million pre-seed round co-led by Contrarian Ventures and OVNI Capital, with Kvanted, WEPA Ventures, Motier Ventures and Charlie Songhurst participating. The founding team combines research and factory experience: Jean-Baptiste Mouret and Serena Ivaldi are research directors at INRIA, the French national computing institute, with more than fifteen years in AI and robotics between them, and Benoît Berkoukchi managed assembly lines at Renault.</p><p>The company's claim is about setup time. Humanoid robots are general in form and specific in practice: each new factory task has traditionally meant weeks of programming and integration. Bleu says its learning system — it calls the method abductive learning — lets a humanoid learn a new task from as few as ten demonstrations by a human operator, and that it is targeting full deployment on a production line in one hour or less, at the accuracy above 99% that factories require. Those are the company's figures and goals, stated in its announcement coverage; they have not been independently tested. Bleu says it is already working with two major industrial companies and building partnerships with robot distributors; it does not name the companies.</p><p>The target customer explains the pitch. High-mix, low-volume manufacturers change tasks too often for conventional industrial robots, which repay their setup cost only across long identical runs. A humanoid that can be retaught in an hour would fit the work those factories actually have — if the demonstrated learning survives contact with a real line: varied parts, worn fixtures, and the accuracy standard the company itself cites. The pre-seed buys the test. What would settle the claim is a named customer reporting a deployment time, and that figure does not yet exist in public.</p>]]></content:encoded>
+</item>
+<item>
+<title>Starving Ants Protect Their Brains’ Energy First, Like Humans Do</title>
+<link>https://thetomorrowpost.com/article/ants-protect-brain-energy-starvation</link>
+<guid isPermaLink="true">https://thetomorrowpost.com/article/ants-protect-brain-energy-starvation</guid>
+<pubDate>Sun, 01 Nov 2026 12:00:00 +0000</pubDate>
+<description>When food runs short, ants keep supplying their brains at a rate comparable to the share humans protect — even though a colony is supposed to put the group ahead of any individual.</description>
+</item>
+<item>
+<title>Anthropic Extended Its Text Watermark to Four More Claude Models, and One Setting Change Removes It on Two of Them</title>
+<link>https://thetomorrowpost.com/article/anthropic-watermark-four-models-loophole</link>
+<guid isPermaLink="true">https://thetomorrowpost.com/article/anthropic-watermark-four-models-loophole</guid>
+<pubDate>Sun, 01 Nov 2026 12:00:00 +0000</pubDate>
+<description>Anthropic is adding its invisible text watermark to Mythos 5, Opus 4.7, Opus 4.6 and Sonnet 4.6 ahead of a European deadline. On Opus 4.6 and Sonnet 4.6 the mark applies only at default sampling settings, and Anthropic&#x27;s own advice to customers who rely on it for compliance is to keep those defaults.</description>
+<content:encoded><![CDATA[<p>Anthropic is extending its text watermark to four more Claude models — Mythos 5, Opus 4.7, Opus 4.6 and Sonnet 4.6 — in an email to API customers reported by The Decoder on Saturday. Newer models, including Opus 5.5, already carry the mark. The watermark is not a label attached to the text; Anthropic describes it as an imperceptible pattern in word choice, a variant of Google DeepMind's SynthID-Text method, which biases word selection during generation so the output carries a statistical signal that can be checked later. It adds no tokens, does not change pricing, and cannot be switched off. A detection API is in private preview.</p><p>On two of the four models, the mark has a condition. On Opus 4.6 and Sonnet 4.6, it applies only when the three sampling parameters — temperature, top_p and top_k, which control randomness in word choice — are left at their defaults. Changing any one of them is enough to receive unmarked output. Anthropic's email states the condition plainly and warns customers: 'If you rely on the watermark for your own compliance, keep these settings at their defaults.' The email carries no such caveat for Mythos 5 or Opus 4.7, which The Decoder reads as meaning the mark applies to those models at any settings.</p><p>The reason for the retrofit is a deadline. Anthropic points to the EU AI Act's December transparency deadline: models released after August 2, 2026 shipped with the watermark from launch, and older models are being brought in in stages. The result is a compliance tool whose coverage depends, on two widely used models, on a configuration choice most developers make for unrelated reasons — output randomness. Anyone building a process on the assumption that Claude output is marked now has a documented exception to design around, published by the company itself.</p>]]></content:encoded>
+</item>
+<item>
+<title>Anthropic Took 66% of the Money and 48% of the Tokens in OpenRouter&#x27;s Latest Week</title>
+<link>https://thetomorrowpost.com/article/anthropic-openrouter-spend-token-share</link>
+<guid isPermaLink="true">https://thetomorrowpost.com/article/anthropic-openrouter-spend-token-share</guid>
+<pubDate>Sun, 01 Nov 2026 12:00:00 +0000</pubDate>
+<description>In the most recent week of OpenRouter&#x27;s data, Anthropic and OpenAI served nearly the same number of tokens and took very different shares of the spending: 48% of the tokens and 66% of the money for Anthropic, against 52% and 34% for OpenAI. The figures cover one routing platform, not the market.</description>
+<content:encoded><![CDATA[<p>Peter Walker, OpenRouter's head of insights, posted the routing platform's chart of Anthropic's and OpenAI's 2026 usage on Saturday, under the summary 'Opus 5.5 reversed the trend.' In the most recent week on the chart, the two laboratories split the traffic almost evenly — Anthropic took 48% of the tokens routed between them and OpenAI 52% — and split the money unevenly: Anthropic took 66% of the spend and OpenAI 34%. The ratio between those shares works out to about 2.1 times as much spend per token for Anthropic as for OpenAI, by the arithmetic of FourWeekMBA's account of the chart.</p><p>The chart's totals give the scale. Tokens routed between the two laboratories have risen 224 times since the first week of 2026, and spend 81 times — which means the average price of a routed token has fallen by roughly two-thirds over the year, on the same arithmetic. Walker's account of the year has three moves: OpenAI regained spend share steadily, token volumes jumped with new low-cost models from both laboratories, and the launch of Opus 5.5 on September 22 reversed the spend trend back toward Anthropic. This paper reported on October 25 that Anthropic's token volume on OpenRouter rose about 3.6 times in the weeks after Opus 5.5 launched (Edition 006).</p><p>The limits of the data matter as much as the figures. OpenRouter is one routing platform, used disproportionately by developers rather than by the enterprise accounts both laboratories sell to directly, and a share of routed tokens is not a share of revenue. What the chart does establish is a price structure: at the layer where buyers can switch models with a line of code, the two frontier laboratories currently sell similar volumes of tokens at dissimilar prices, and the higher-priced one has been gaining since its September launch. Anthropic's roadshow, in the week of November 9, will ask public investors to price that structure.</p>]]></content:encoded>
+</item>
+<item>
+<title>A 237-Million-Year-Old Amphibian Appears to Have Lived Its Whole Life in the Ocean</title>
+<link>https://thetomorrowpost.com/article/amphibian-lived-whole-life-in-ocean</link>
+<guid isPermaLink="true">https://thetomorrowpost.com/article/amphibian-lived-whole-life-in-ocean</guid>
+<pubDate>Sun, 01 Nov 2026 12:00:00 +0000</pubDate>
+<description>No amphibian lives in the sea today. Chemical signatures in two armored fossils found in China match seawater, not the local rock — evidence of a marine amphibian 30 kilometers from the nearest possible island.</description>
+</item>
 <item>
 <title>Starbucks&#x27; US Sales Rose 7.7%, on Bigger Tickets, Its Strongest Fall Menu, and 250 Closed Stores</title>
 <link>https://thetomorrowpost.com/article/starbucks-us-sales-rose-7-7-percent</link>
@@ -120,191 +307,6 @@
 <guid isPermaLink="true">https://thetomorrowpost.com/article/east-antarctica-ice-sheet-snowfall</guid>
 <pubDate>Sat, 31 Oct 2026 12:00:00 +0000</pubDate>
 <description>In coupled climate simulations, the largest ice sheet on Earth held up under extreme warming because warmer air delivered it more snow and more cloud cover — while West Antarctica and Greenland, in the same simulations, lost heavily.</description>
-</item>
-<item>
-<title>Colorectal Cancer in Patients Under 50 Is Biologically Different, a 189-Tumor Study Finds</title>
-<link>https://thetomorrowpost.com/article/early-onset-colorectal-cancer-different-biology</link>
-<guid isPermaLink="true">https://thetomorrowpost.com/article/early-onset-colorectal-cancer-different-biology</guid>
-<pubDate>Sat, 31 Oct 2026 12:00:00 +0000</pubDate>
-<description>Tumors from patients diagnosed before 50 carry proportionally more stromal cells and fewer epithelial cells than tumors from older patients, in the largest study of its kind — a possible reason the disease behaves more aggressively in younger people.</description>
-</item>
-<item>
-<title>AI-Designed Virus Shells Delivered Genes to Primate Brains 152 Times Better</title>
-<link>https://thetomorrowpost.com/article/dyno-capsids-brain-delivery-152-fold</link>
-<guid isPermaLink="true">https://thetomorrowpost.com/article/dyno-capsids-brain-delivery-152-fold</guid>
-<pubDate>Sat, 31 Oct 2026 12:00:00 +0000</pubDate>
-<description>Dyno Therapeutics’ engineered capsids reached the brain far more efficiently than the standard AAV9 in non-human primates, and versions built to evade antibodies tested negative against up to 85% of human serum samples. All of it is preclinical.</description>
-</item>
-<item>
-<title>Crushed Shells Mixed Into Beach Sand Helped Young Clams Grow in More Acidic Water</title>
-<link>https://thetomorrowpost.com/article/crushed-shells-young-clams-acidification</link>
-<guid isPermaLink="true">https://thetomorrowpost.com/article/crushed-shells-young-clams-acidification</guid>
-<pubDate>Sat, 31 Oct 2026 12:00:00 +0000</pubDate>
-<description>Adding shell fragments to the sand where baby clams burrow changed the water between the grains, lowered its acidity, and produced larger shells — a measured version of a shell-adding practice Indigenous communities have used for generations.</description>
-</item>
-<item>
-<title>Cells Can Now Record What They Were Doing Days Ago</title>
-<link>https://thetomorrowpost.com/article/cells-record-their-own-past</link>
-<guid isPermaLink="true">https://thetomorrowpost.com/article/cells-record-their-own-past</guid>
-<pubDate>Sat, 31 Oct 2026 12:00:00 +0000</pubDate>
-<description>Engineered organelles archive a cell’s own RNA as it works — so days later, researchers can read back which genes were active, including in the rare cancer cells that survive chemotherapy and seed relapse.</description>
-</item>
-<item>
-<title>A Structure Called the Cat’s Tail Records a Pluto-Scale Collision 63 Light-Years Away</title>
-<link>https://thetomorrowpost.com/article/cats-tail-beta-pictoris-collision</link>
-<guid isPermaLink="true">https://thetomorrowpost.com/article/cats-tail-beta-pictoris-collision</guid>
-<pubDate>Sat, 31 Oct 2026 12:00:00 +0000</pubDate>
-<description>Hubble has imaged the Cat’s Tail in visible light for the first time: a dark stream about 1,000 times the Earth–Sun distance across, inside a young star’s debris disk — evidence of a collision between bodies the size of Pluto.</description>
-</item>
-<item>
-<title>Hackers Took $6.3 Billion From Binance in About 20 Minutes, the Largest Crypto Theft on Record</title>
-<link>https://thetomorrowpost.com/article/binance-6-3-billion-theft</link>
-<guid isPermaLink="true">https://thetomorrowpost.com/article/binance-6-3-billion-theft</guid>
-<pubDate>Sat, 31 Oct 2026 12:00:00 +0000</pubDate>
-<description>Binance, the largest crypto exchange, said about $6.3 billion was taken from its hot wallets on Thursday across 10 blockchains. Analytics firms attribute the theft to a North Korea-linked group. About $3 billion has been frozen with partners, withdrawals are paused, and Binance says it will cover every loss.</description>
-<content:encoded><![CDATA[<p>Binance, the world's largest cryptocurrency exchange, said on Thursday that a security incident had affected about $6.3 billion of crypto assets — more than four times the $1.5 billion taken from Bybit in February 2025, the previous largest theft on record. According to TRM Labs, the attacker moved about $6.36 billion across 10 blockchains in roughly 20 minutes, starting Thursday afternoon Eastern time. Blockchain analytics firm Arkham Intelligence reported that 70 wallet addresses believed to belong to the attackers held a combined $5.788 billion as of Friday afternoon, including 1.768 billion Tether (USDT), 18,270 bitcoin, 497,976 ether and about 824.6 million USD Coin (USDC) (Seoul Economic Daily, reporting Arkham's figures).</p><p>TRM Labs and Elliptic attribute the attack to TraderTraitor, a North Korea-linked hacking group; Binance itself has not named an attacker. Binance said its initial investigation indicated the attacker compromised an engineer's laptop, gained access to the environment running internal services, and executed unauthorized withdrawals. In an update on Friday, the exchange said investigators had found additional points of breach beyond the laptop, that the unauthorized outflows had stopped, and that the full attack path remains under investigation.</p><p>The response so far is a freeze and a pledge. Binance said about $3 billion of the assets have been frozen together with partner firms: Tether's chief executive Paolo Ardoino said the company had frozen more than $1.567 billion of USDT linked to the incident, and Circle's Jeremy Allaire said Circle had frozen more than $800 million of USDC (CoinDesk). Binance has reserved more than $6.34 billion in company funds to cover losses, including $5 billion already held in the affected tokens, according to its updates on X, and co-chief executive Richard Teng posted that user money is safe and the exchange is covering every loss. Withdrawals remain paused while the exchange rebuilds its withdrawal system; deposits are working again. Bitcoin fell to a low of $76,400 on Friday, its lowest since September 18, and crypto futures liquidations reached $1.57 billion, most of them bets on rising prices (CoinDesk). The frozen half of the theft is mostly stablecoins, which issuers can freeze; the bitcoin portion, as hardware-wallet company Ballet's Bobby Lee noted in Friday coverage, is the part least likely to be recoverable.</p>]]></content:encoded>
-</item>
-<item>
-<title>Starving Ants Protect Their Brains’ Energy First, Like Humans Do</title>
-<link>https://thetomorrowpost.com/article/ants-protect-brain-energy-starvation</link>
-<guid isPermaLink="true">https://thetomorrowpost.com/article/ants-protect-brain-energy-starvation</guid>
-<pubDate>Sat, 31 Oct 2026 12:00:00 +0000</pubDate>
-<description>When food runs short, ants keep supplying their brains at a rate comparable to the share humans protect — even though a colony is supposed to put the group ahead of any individual.</description>
-</item>
-<item>
-<title>Spotify Plans to Charge $4 to $5 Extra for an AI Remix Service, the FT Reports</title>
-<link>https://thetomorrowpost.com/article/spotify-ai-remix-service-extra-charge</link>
-<guid isPermaLink="true">https://thetomorrowpost.com/article/spotify-ai-remix-service-extra-charge</guid>
-<pubDate>Fri, 30 Oct 2026 12:00:00 +0000</pubDate>
-<description>The service, reported to be planned for the first quarter of 2027, would let subscribers remake songs with AI — a folk track as a dance track, or one artist covering another. Spotify has licensing deals with Universal, Merlin and Believe, and is still negotiating with Sony and Warner, the FT reported via Reuters.</description>
-<content:encoded><![CDATA[<p>Spotify plans to launch an AI music remix service in the first quarter of 2027, the Financial Times reported on Friday, in a report carried by Reuters. The service would let subscribers use AI to make their own versions of songs — turning a folk song into a dance track, or making one artist appear to cover another's song — for an additional $4 to $5 a month, according to the report. Spotify did not immediately respond to Reuters' request for comment, and the timing is reported to target an unveiling around the Grammy Awards in February.</p><p>The licensing is the substance of the story. The FT reported that Spotify has reached deals with Universal Music Group, the independent label group Merlin and the French company Believe, and is still negotiating with Sony Music and Warner Music. A remix feature built on licensed catalogues is a different product from the unlicensed AI covers that have circulated online for two years: the labels are being paid before the feature exists, and the two largest remaining catalogues are the price of completing it. Whether listeners will pay a second monthly fee, on top of a subscription, to remake songs they already stream is the consumer question the 2027 launch will answer.</p>]]></content:encoded>
-</item>
-<item>
-<title>Samsung&#x27;s Operating Profit Hit a Record 107.4 Trillion Won, Almost All of It From Chips</title>
-<link>https://thetomorrowpost.com/article/samsung-record-107-trillion-won-chips</link>
-<guid isPermaLink="true">https://thetomorrowpost.com/article/samsung-record-107-trillion-won-chips</guid>
-<pubDate>Fri, 30 Oct 2026 12:00:00 +0000</pubDate>
-<description>Samsung confirmed third-quarter operating profit of 107.4 trillion won, the first quarter above 100 trillion won for any technology company. Its chip division earned 106.5 trillion won of it; the division that makes its phones and appliances lost money for a second straight quarter.</description>
-<content:encoded><![CDATA[<p>Samsung Electronics confirmed its full third-quarter results on Thursday in Seoul. Revenue was 195.25 trillion won and operating profit was 107.44 trillion won — about $80 billion — up roughly ninefold from a year earlier and 20% from the second quarter. Samsung is the first technology company to report operating profit above 100 trillion won in a single quarter. Both figures matched the preliminary guidance the company issued on October 8; the new information in Thursday's report is the division breakdown and the outlook given on the earnings call.</p><p>The Device Solutions division — memory, chip design and foundry — earned 106.5 trillion won of operating profit on 147.1 trillion won of revenue, about 99% of the company's total. Memory revenue was 140.7 trillion won, up 427% year over year. Samsung said sales of HBM4, its newest high-bandwidth memory, more than tripled from the second quarter and made up 60% of its HBM sales, and that average DRAM selling prices rose about 20% in the quarter. Jaejune Kim, the executive vice president for memory sales and marketing, told analysts that Samsung's 2027 HBM supply is already sold out. The Device eXperience division — phones, televisions and appliances — posted an operating loss of 800 billion won, its second consecutive quarterly loss, as the memory prices that enrich the chip division raise its own component costs.</p><p>Samsung approved a third-quarter dividend of 30 trillion won and said full-year capital spending will be about 84.4 trillion won, most of it in the chip division. It expects AI-related memory demand to grow faster than supply in 2027. Samsung shares fell 5.48% in Seoul on Thursday despite the record result. The division split is the week's supplier story in one company: the same memory shortage is a record profit on one side of Samsung and a loss on the other.</p>]]></content:encoded>
-</item>
-<item>
-<title>Polynesia’s Genomes Hold Drug Clues the Big Databases Missed</title>
-<link>https://thetomorrowpost.com/article/polynesia-genomes-drug-clues</link>
-<guid isPermaLink="true">https://thetomorrowpost.com/article/polynesia-genomes-drug-clues</guid>
-<pubDate>Fri, 30 Oct 2026 12:00:00 +0000</pubDate>
-<description>Genomes from more than 1,000 French Polynesians show founder effects at least ten times stronger than Finland’s — concentrating rare variants until their effects on health become measurable.</description>
-</item>
-<item>
-<title>Opentrons Raised $40 Million to Put AI-Driven Laboratory Robots in More Labs</title>
-<link>https://thetomorrowpost.com/article/opentrons-40-million-lab-robots</link>
-<guid isPermaLink="true">https://thetomorrowpost.com/article/opentrons-40-million-lab-robots</guid>
-<pubDate>Fri, 30 Oct 2026 12:00:00 +0000</pubDate>
-<description>Opentrons builds open, programmable robots that run laboratory experiments, and says more than 11,000 of them are deployed in over 80 countries. The $40 million Series E, led by Avego, funds the software and data layer that lets AI systems design, run and revise experiments in a continuous loop.</description>
-<content:encoded><![CDATA[<p>Opentrons Labworks announced a $40 million Series E financing on Thursday, led by the healthcare investor Avego with participation from BroadOak Capital Partners. Existing investors include SoftBank Vision Fund and Khosla Ventures. The company, founded in 2014 and based in Long Island City, New York, is led by chief executive James Atwood. It did not disclose a valuation.</p><p>Opentrons builds laboratory robots — the Flex platform — that are open and programmable through an API, so experiments can be specified in software, run by the robot, and repeated identically in another laboratory. The company says more than 11,000 of its robots are deployed in laboratories in over 80 countries, including at 90% of the top 20 global pharmaceutical companies and every top-15 US research university. Those deployment figures are the company's. The new capital goes to scaling its robotics, software and data infrastructure, to AI-driven experimental execution, and to expansion into new markets.</p><p>The company's stated problem is a sequencing gap in AI-driven science: frontier models can now generate hypotheses and design experiments faster than physical laboratories can run them, so the bottleneck moves from the model to the bench. Opentrons' answer is to make the bench programmable — each experiment run on its robots produces structured, reproducible data that the next round of model work can use. The round lands in a competitive stretch for laboratory automation: the British company Automata raised $45 million in February, and Multiply Labs raised $75 million this month for robotic biomanufacturing (Dealroom). What distinguishes the claims here is installed base: Opentrons is selling an execution layer on top of 11,000 machines already in laboratories, not asking laboratories to adopt a first machine.</p>]]></content:encoded>
-</item>
-<item>
-<title>A Molecular Brake Slows a Spinning Rotor 300,000-Fold</title>
-<link>https://thetomorrowpost.com/article/molecular-brake-300000-fold</link>
-<guid isPermaLink="true">https://thetomorrowpost.com/article/molecular-brake-300000-fold</guid>
-<pubDate>Fri, 30 Oct 2026 12:00:00 +0000</pubDate>
-<description>Researchers in Prague used light to block a molecular rotor’s spin. At very low temperatures, the braked rotor would need about 350 billion years for a single turn — roughly 25 times the age of the universe.</description>
-</item>
-<item>
-<title>Microsoft Booked $10 Billion in Revenue From OpenAI in One Quarter, Its Filing Shows</title>
-<link>https://thetomorrowpost.com/article/microsoft-10-billion-openai-revenue-filing</link>
-<guid isPermaLink="true">https://thetomorrowpost.com/article/microsoft-10-billion-openai-revenue-filing</guid>
-<pubDate>Fri, 30 Oct 2026 12:00:00 +0000</pubDate>
-<description>Microsoft&#x27;s quarterly filing discloses $10.0 billion of revenue from its commercial arrangements with OpenAI in the three months to September 30 — nearly 11% of its total revenue — and $7.2 billion of receivables from OpenAI at quarter-end, up from $6.0 billion in June.</description>
-<content:encoded><![CDATA[<p>Microsoft's Form 10-Q, filed this week, discloses $10.0 billion of revenue from its commercial arrangements with OpenAI in the three months ended September 30, including revenue-sharing payments (TechCrunch, reading the filing). The figure is nearly 11% of Microsoft's $92.3 billion of quarterly revenue (Edition 011). Revenue from OpenAI for the full fiscal year to June 2026 was $24.1 billion. Microsoft did not break the $10 billion down between Azure cloud services and revenue sharing.</p><p>The same filing puts accounts receivable from OpenAI at $7.2 billion on September 30, up from $6.0 billion on June 30. Receivables are amounts owed for past transactions; they are not additional revenue, and the filing does not say why the balance grew. Microsoft holds an approximately 24% interest in OpenAI on an as-converted basis, down from about 25% in June, and reports $13.0 billion of funding commitments to OpenAI, of which $12.0 billion had been funded by September 30.</p><p>The disclosure matters because of where it sits. The $10 billion appears in the quarterly filing's related-party notes, not in the earnings release that carried the quarter's headlines. One customer — a company Microsoft part-owns, funds, and supplies — now accounts for about a ninth of its revenue, and the document that establishes the figure is the filing, read after the earnings call. OpenAI's bridge signatures are due today; what its largest partner's books show is part of the evidence those signatures are written against.</p>]]></content:encoded>
-</item>
-<item>
-<title>A Personal Vaccine Cut Melanoma Recurrence or Death Risk by 42% in a Phase 3 Trial</title>
-<link>https://thetomorrowpost.com/article/melanoma-vaccine-recurrence-risk-42</link>
-<guid isPermaLink="true">https://thetomorrowpost.com/article/melanoma-vaccine-recurrence-risk-42</guid>
-<pubDate>Fri, 30 Oct 2026 12:00:00 +0000</pubDate>
-<description>A vaccine built from each patient’s own tumor, added to immunotherapy after surgery, reduced the risk of death or recurrence by 42% in 1,137 people with advanced melanoma. The result was reported at a European oncology meeting.</description>
-</item>
-<item>
-<title>Intel Beat Third-Quarter Estimates, Then Guided the Fourth Quarter Well Below Them</title>
-<link>https://thetomorrowpost.com/article/intel-beat-third-quarter-guided-fourth-down</link>
-<guid isPermaLink="true">https://thetomorrowpost.com/article/intel-beat-third-quarter-guided-fourth-down</guid>
-<pubDate>Fri, 30 Oct 2026 12:00:00 +0000</pubDate>
-<description>Intel&#x27;s third-quarter revenue rose 21% to $16.5 billion and adjusted earnings of 52 cents a share beat the 40 cents expected, with data-center and AI revenue up 78%. The fourth-quarter guide — revenue of $15 billion to $16 billion against $17.1 billion expected — sent the shares down sharply after hours.</description>
-<content:encoded><![CDATA[<p>Intel reported third-quarter results after Thursday's close. Revenue rose 21% year over year to $16.51 billion, in line with the $16.5 billion consensus compiled by LSEG. Adjusted earnings were 52 cents a share, against 40 cents expected, and adjusted gross margin was 44.1%, above the company's 42% guidance. Intel said it was the eighth consecutive quarter in which revenue, gross margin and earnings beat its own guidance. Data Center and AI revenue rose 78% to $7.3 billion. Client Computing and Physical AI revenue fell 5% to $8.1 billion; Intel attributed the weakness to industry-wide memory shortages raising PC component prices and to limited customer IT budgets.</p><p>The fourth-quarter guidance reversed the response. Intel forecast revenue of $15.0 billion to $16.0 billion and adjusted earnings of 25 cents a share, against analyst expectations of about $17.1 billion and 43 cents, with adjusted gross margin of 38%. Shares fell more than 16% in extended trading; some market reports put the after-hours decline near 23%. Intel said total capital spending for 2026 will remain about $20 billion and rise significantly in 2027 to expand manufacturing capacity for AI server CPUs. Chief Financial Officer David Zinsner said 2027 will be an investment year in which the company may not achieve positive free cash flow.</p><p>Intel's quarter is the supplier side of this week's results read from the other end. The memory makers — SK Hynix (Edition 011) and Samsung, in this edition — reported record margins because memory is scarce. Intel's client business is one of the buyers paying for that scarcity, in a quarter when its data-center business grew at its fastest rate in 15 years on the same AI demand.</p>]]></content:encoded>
-</item>
-<item>
-<title>Google&#x27;s AI Search Would Not Say Who Won the 2020 Election</title>
-<link>https://thetomorrowpost.com/article/google-ai-would-not-say-2020-winner</link>
-<guid isPermaLink="true">https://thetomorrowpost.com/article/google-ai-would-not-say-2020-winner</guid>
-<pubDate>Fri, 30 Oct 2026 12:00:00 +0000</pubDate>
-<description>Asked who won the 2020 US presidential election, Google&#x27;s AI Mode pointed users to Federal Election Commission reports instead of answering. It answered correctly for 2016 and 2024. Google called it a technical gap and said on Thursday the 2020 responses were fixed, six days before the midterm elections.</description>
-<content:encoded><![CDATA[<p>Google's AI Mode would not say who won the 2020 US presidential election. USA Today reported that on Wednesday, asked the question directly, the AI search feature answered with a pointer to certified Federal Election Commission reports rather than a name. Asked about 2016 and 2024, it answered Donald Trump correctly. The issue appeared only in AI Mode, not in the Gemini app. Google said on X that a technical gap in how its systems verify election responses affected 2020 results — and, it said, 2022 Senate races — and posted on Thursday that the 2020 responses were fixed.</p><p>The timing is the story's weight: the failure surfaced six days before the November 3 midterm elections. OpenAI is running an election operation to monitor model behavior and will carry Associated Press vote counts on election night, according to its October posts. Anthropic says Claude draws official voting information from Democracy Works, the nonpartisan civic technology organization, and displays a banner linking to its tools. Four congressional Democrats wrote to the large AI companies on October 20 saying some chatbots' error rates on election and voting questions were unacceptably high. A search feature that declines to state a certified result is not misinformation; it is an absence where the product's purpose is an answer, five days before an election in which its safeguards are the companies' own argument for being trusted with the count.</p>]]></content:encoded>
-</item>
-<item>
-<title>Five Silicon Qubits Now Share a Single Control Wire</title>
-<link>https://thetomorrowpost.com/article/five-silicon-qubits-one-wire</link>
-<guid isPermaLink="true">https://thetomorrowpost.com/article/five-silicon-qubits-one-wire</guid>
-<pubDate>Fri, 30 Oct 2026 12:00:00 +0000</pubDate>
-<description>A RIKEN-led team ran five silicon qubits down one shared microwave line and kept their accuracy at the level error correction requires — attacking the wiring bottleneck that keeps quantum processors small.</description>
-</item>
-<item>
-<title>The Earnings Are In. The Financing Question Remains.</title>
-<link>https://thetomorrowpost.com/article/earnings-in-financing-question-remains</link>
-<guid isPermaLink="true">https://thetomorrowpost.com/article/earnings-in-financing-question-remains</guid>
-<pubDate>Fri, 30 Oct 2026 12:00:00 +0000</pubDate>
-<description>Four earnings reports and a Federal Reserve decision closed the week this paper set as the buildout&#x27;s hearing. Demand passed every test put to it: the three largest cloud businesses grew 39% to 103%. The disagreement that remains is narrower — who carries the cost while the returns arrive, and at what interest rate.</description>
-<content:encoded><![CDATA[<p>The hearing is over. Between Wednesday and Thursday night, the Federal Reserve decided, and Microsoft, Alphabet and Amazon reported — the calendar this paper set in Edition 007 as the buildout's first full examination. Meta reported earlier in the month. The results agree on the point the spending's defenders needed: demand is not the weak part of the account. Azure revenue grew 48% and was disclosed in dollars for the first time. Google Cloud revenue grew 103%. AWS revenue grew 39%, its fastest rate in nearly five years, to a $184 billion annualized rate. Amazon's operating income rose 61% to a record margin.</p><p>The suppliers gave the same testimony from the other side of the invoice. SK Hynix reported an operating margin of 79.7% and contracts covering more than half of its 2027 and 2028 production (Edition 011). Samsung's chip division earned 99% of a record 107.4 trillion won operating profit, and its 2027 high-bandwidth memory supply is already sold out. Intel is the exception that locates the rule: its data-center revenue grew 78%, but its client business shrank under the memory prices the other suppliers are charging, and its shares fell on a fourth-quarter guide that assumes the squeeze continues.</p><p>What the week did not settle is the financing. The three cloud reports carried three different cash outcomes: free cash flow of positive $18.6 billion at Microsoft, negative $9.1 billion in Alphabet's quarter, and negative $42.4 billion over Amazon's last 12 months. Alphabet has raised $147.2 billion from outside investors this year. Amazon's long-term debt has risen from $65.6 billion to $173.1 billion since December. Microsoft's filing shows $10 billion of its quarter's revenue came from one related party, OpenAI, which also owed it $7.2 billion at quarter-end. None of this establishes that the spending fails; it establishes who is carrying it while it is tested.</p><p>The calendar now moves the question off earnings calls. Today, signatures are due on OpenAI's bridge — up to $30 billion at a $1.25 trillion valuation, priced before Anthropic's roadshow exists. Anthropic's roadshow follows in the week of November 9, with a 10-Q season behind it that has shown investors exactly what the sector's cash flows look like. The Fed's next meeting is December 8–9, with futures putting the odds of an increase near 80% and two sitting members already voting for one. The earnings answered the demand question in full. The financing question gets its answers from signature pages and a roadshow, at interest rates the Fed has just declined to lower.</p>]]></content:encoded>
-</item>
-<item>
-<title>Colorectal Cancer in Patients Under 50 Is Biologically Different, a 189-Tumor Study Finds</title>
-<link>https://thetomorrowpost.com/article/early-onset-colorectal-cancer-different-biology</link>
-<guid isPermaLink="true">https://thetomorrowpost.com/article/early-onset-colorectal-cancer-different-biology</guid>
-<pubDate>Fri, 30 Oct 2026 12:00:00 +0000</pubDate>
-<description>Tumors from patients diagnosed before 50 carry proportionally more stromal cells and fewer epithelial cells than tumors from older patients, in the largest study of its kind — a possible reason the disease behaves more aggressively in younger people.</description>
-</item>
-<item>
-<title>AI-Designed Virus Shells Delivered Genes to Primate Brains 152 Times Better</title>
-<link>https://thetomorrowpost.com/article/dyno-capsids-brain-delivery-152-fold</link>
-<guid isPermaLink="true">https://thetomorrowpost.com/article/dyno-capsids-brain-delivery-152-fold</guid>
-<pubDate>Fri, 30 Oct 2026 12:00:00 +0000</pubDate>
-<description>Dyno Therapeutics’ engineered capsids reached the brain far more efficiently than the standard AAV9 in non-human primates, and versions built to evade antibodies tested negative against up to 85% of human serum samples. All of it is preclinical.</description>
-</item>
-<item>
-<title>The Demand Is Proven. The Financing Is the Open Question.</title>
-<link>https://thetomorrowpost.com/article/demand-proven-financing-open</link>
-<guid isPermaLink="true">https://thetomorrowpost.com/article/demand-proven-financing-open</guid>
-<pubDate>Fri, 30 Oct 2026 12:00:00 +0000</pubDate>
-<description>Three hyperscalers reported the same quarter and settled the demand question: Azure grew 48%, Google Cloud 103% and AWS 39%. What separates the reports is cash — positive $18.6 billion at Microsoft, negative $9.1 billion in Alphabet&#x27;s quarter, negative $42.4 billion over Amazon&#x27;s 12 months.</description>
-<content:encoded><![CDATA[<p>Three hyperscalers have now reported the same quarter, and the demand question is settled: Azure revenue grew 48%, Google Cloud revenue grew 103% and AWS revenue grew 39%, each at or above what analysts expected. What separates the reports is cash. Microsoft's free cash flow stayed positive at $18.6 billion. Alphabet's was negative $9.1 billion in the quarter. Amazon's was negative $42.4 billion over 12 months, in a quarter when it spent $77.3 billion and its operating income rose 61%. The returns are arriving as operating income while the costs leave as cash, and debt and equity markets are carrying the difference. The next test is today's OpenAI bridge signatures, where the financed layer prices the same gap.</p>]]></content:encoded>
-</item>
-<item>
-<title>Cells Can Now Record What They Were Doing Days Ago</title>
-<link>https://thetomorrowpost.com/article/cells-record-their-own-past</link>
-<guid isPermaLink="true">https://thetomorrowpost.com/article/cells-record-their-own-past</guid>
-<pubDate>Fri, 30 Oct 2026 12:00:00 +0000</pubDate>
-<description>Engineered organelles archive a cell’s own RNA as it works — so days later, researchers can read back which genes were active, including in the rare cancer cells that survive chemotherapy and seed relapse.</description>
-</item>
-<item>
-<title>A Structure Called the Cat’s Tail Records a Pluto-Scale Collision 63 Light-Years Away</title>
-<link>https://thetomorrowpost.com/article/cats-tail-beta-pictoris-collision</link>
-<guid isPermaLink="true">https://thetomorrowpost.com/article/cats-tail-beta-pictoris-collision</guid>
-<pubDate>Fri, 30 Oct 2026 12:00:00 +0000</pubDate>
-<description>Hubble has imaged the Cat’s Tail in visible light for the first time: a dark stream about 1,000 times the Earth–Sun distance across, inside a young star’s debris disk — evidence of a collision between bodies the size of Pluto.</description>
-</item>
-<item>
-<title>Starving Ants Protect Their Brains’ Energy First, Like Humans Do</title>
-<link>https://thetomorrowpost.com/article/ants-protect-brain-energy-starvation</link>
-<guid isPermaLink="true">https://thetomorrowpost.com/article/ants-protect-brain-energy-starvation</guid>
-<pubDate>Fri, 30 Oct 2026 12:00:00 +0000</pubDate>
-<description>When food runs short, ants keep supplying their brains at a rate comparable to the share humans protect — even though a colony is supposed to put the group ahead of any individual.</description>
-</item>
-<item>
-<title>Amazon Says More Than a Million Robots Work in Its Fulfillment Network</title>
-<link>https://thetomorrowpost.com/article/amazon-million-robots-fulfillment</link>
-<guid isPermaLink="true">https://thetomorrowpost.com/article/amazon-million-robots-fulfillment</guid>
-<pubDate>Fri, 30 Oct 2026 12:00:00 +0000</pubDate>
-<description>Amazon says its fulfillment network now runs more than a million robots, a figure reported alongside Thursday&#x27;s earnings. The machines work the warehouses behind a stores business that sold $112.9 billion of goods in the quarter.</description>
-<content:encoded><![CDATA[<p>Amazon says more than a million robots now work across its fulfillment network. The figure was reported by PYMNTS on Thursday alongside the company's third-quarter earnings, in coverage of chief executive Andy Jassy's remarks on the company's AI plans. The robots move goods through the warehouses that supply Amazon's stores business, whose North America segment reported $112.9 billion of sales in the quarter and operating income up from $4.8 billion to $8.7 billion.</p><p>The number lands in a specific context. The same earnings report carried $77.3 billion of capital spending in one quarter (the Lead, this edition), most of it for AI infrastructure, and a plan for about $220 billion across 2026. Amazon's automation program is the older, quieter version of the same strategy: capital substituted for labor inside its own operations, at a scale — a million machines — that no other retailer reports. What the figure does not come with is a current human headcount for the same network, or a statement of how the two numbers are expected to move against each other. Those are the figures that would turn a milestone into an account of what the automation is doing.</p>]]></content:encoded>
 </item>
 </channel>
 </rss>
