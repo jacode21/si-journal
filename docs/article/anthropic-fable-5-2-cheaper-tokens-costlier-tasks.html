@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Anthropic’s New Model Costs 20% Less per Token and 31% More per Finished Task — The Tomorrow Post</title>
+<meta name="description" content="Anthropic released Claude Fable 5.2 and Claude Mythos 5.2 on Monday, November 9 — the day its IPO roadshow began. The price is $8 per million input tokens and $40 per million output tokens, down from $10 and $50 for Fable 5.1, and output runs up to 30% faster. Independent evaluators put Fable 5.2 first on their rankings. On SemiAnalysis’s GDPx benchmark of professional tasks, the cost of one finished task rose from $67.16 to $88.15, because the model spends far more tokens checking its own work.">
+<link rel="canonical" href="https://thetomorrowpost.com/article/anthropic-fable-5-2-cheaper-tokens-costlier-tasks">
+<link rel="icon" href="https://thetomorrowpost.com/assets/favicon.ico" sizes="any">
+<link rel="apple-touch-icon" href="https://thetomorrowpost.com/assets/apple-touch-icon.png">
+<link rel="manifest" href="https://thetomorrowpost.com/assets/site.webmanifest">
+<meta name="theme-color" media="(prefers-color-scheme: light)" content="#EDEAE3">
+<meta name="theme-color" media="(prefers-color-scheme: dark)" content="#111417">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="The Tomorrow Post">
+<meta property="og:title" content="Anthropic’s New Model Costs 20% Less per Token and 31% More per Finished Task">
+<meta property="og:description" content="Anthropic released Claude Fable 5.2 and Claude Mythos 5.2 on Monday, November 9 — the day its IPO roadshow began. The price is $8 per million input tokens and $40 per million output tokens, down from $10 and $50 for Fable 5.1, and output runs up to 30% faster. Independent evaluators put Fable 5.2 first on their rankings. On SemiAnalysis’s GDPx benchmark of professional tasks, the cost of one finished task rose from $67.16 to $88.15, because the model spends far more tokens checking its own work.">
+<meta property="og:url" content="https://thetomorrowpost.com/article/anthropic-fable-5-2-cheaper-tokens-costlier-tasks">
+<meta property="og:image" content="https://thetomorrowpost.com/cards/anthropic-fable-5-2-cheaper-tokens-costlier-tasks.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Anthropic’s New Model Costs 20% Less per Token and 31% More per Finished Task — The Tomorrow Post">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Anthropic’s New Model Costs 20% Less per Token and 31% More per Finished Task">
+<meta name="twitter:description" content="Anthropic released Claude Fable 5.2 and Claude Mythos 5.2 on Monday, November 9 — the day its IPO roadshow began. The price is $8 per million input tokens and $40 per million output tokens, down from $10 and $50 for Fable 5.1, and output runs up to 30% faster. Independent evaluators put Fable 5.2 first on their rankings. On SemiAnalysis’s GDPx benchmark of professional tasks, the cost of one finished task rose from $67.16 to $88.15, because the model spends far more tokens checking its own work.">
+<meta name="twitter:image" content="https://thetomorrowpost.com/cards/anthropic-fable-5-2-cheaper-tokens-costlier-tasks.png">
+<meta name="twitter:image:alt" content="Anthropic’s New Model Costs 20% Less per Token and 31% More per Finished Task — The Tomorrow Post">
+<meta property="article:published_time" content="2026-11-10T12:00:00-04:00">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "NewsArticle", "headline": "Anthropic’s New Model Costs 20% Less per Token and 31% More per Finished Task", "description": "Anthropic released Claude Fable 5.2 and Claude Mythos 5.2 on Monday, November 9 — the day its IPO roadshow began. The price is $8 per million input tokens and $40 per million output tokens, down from $10 and $50 for Fable 5.1, and output runs up to 30% faster. Independent evaluators put Fable 5.2 first on their rankings. On SemiAnalysis’s GDPx benchmark of professional tasks, the cost of one finished task rose from $67.16 to $88.15, because the model spends far more tokens checking its own work.", "datePublished": "2026-11-10", "mainEntityOfPage": "https://thetomorrowpost.com/article/anthropic-fable-5-2-cheaper-tokens-costlier-tasks", "image": ["https://thetomorrowpost.com/cards/anthropic-fable-5-2-cheaper-tokens-costlier-tasks.png"], "publisher": {"@type": "Organization", "name": "The Tomorrow Post", "url": "https://thetomorrowpost.com"}, "author": {"@type": "Organization", "name": "The Tomorrow Post"}}</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,400&family=Newsreader:ital,opsz,wght@0,6..72,300;0,6..72,400;0,6..72,600;1,6..72,400&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<script>try{if(localStorage.getItem('ttp-theme')==='dark'){document.documentElement.setAttribute('data-theme','dark');}}catch(e){}</script>
+<style>
+:root{--bg:#EDEAE3;--ink:#14181D;--ink-soft:#4A463C;--grey:#7A7568;--rule:#D8D2C2;--accent:#A65E2E;--accent-text:#8F5127;--panel:#E1DDD3;}
+html[data-theme="dark"]{--bg:#111417;--ink:#EFE9DB;--ink-soft:#B9B2A4;--grey:#8A8578;--rule:#2C313A;--accent:#A65E2E;--accent-text:#B87333;--panel:#171B20;}
+*{box-sizing:border-box;}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:"Newsreader",Georgia,serif;font-variant-numeric:oldstyle-nums proportional-nums;}
+a{color:inherit;}
+a:hover{color:var(--accent-text);}
+:focus-visible{outline:2px solid var(--accent-text);outline-offset:2px;}
+.skip-link{position:absolute;left:-9999px;top:0;background:var(--bg);color:var(--accent-text);padding:.6rem 1rem;z-index:10;font-family:"IBM Plex Mono",monospace;font-size:.75rem;}
+.skip-link:focus{left:0;}
+.wrap{max-width:1200px;margin:0 auto;padding:0 5%;}
+.mono{font-family:"IBM Plex Mono",monospace;text-transform:uppercase;letter-spacing:.12em;}
+.masthead{text-align:center;padding:1.2rem 0 0;}
+.folio-row{display:flex;justify-content:space-between;gap:1rem;font-family:"IBM Plex Mono",monospace;text-transform:uppercase;letter-spacing:.12em;font-size:.68rem;color:var(--grey);padding-bottom:.9rem;}
+.mark{width:44px;height:24px;}
+.mark .ray,.mark .arc{stroke:var(--ink);stroke-width:1.6;fill:none;stroke-linecap:round;}
+.mark .sun-line{stroke:var(--accent);stroke-width:2;}
+.wordmark{font-family:"Playfair Display",serif;font-weight:900;font-size:clamp(2rem,6vw,3.2rem);line-height:1.05;margin:.4rem 0 .2rem;}
+.wordmark a{text-decoration:none;}
+.descriptor{font-style:italic;font-weight:300;color:var(--ink-soft);margin:0 0 1rem;font-size:1.05rem;}
+.main-nav{display:flex;justify-content:center;flex-wrap:wrap;gap:.2rem 1.6rem;border-top:1px solid var(--ink);border-bottom:1px solid var(--rule);padding:.65rem 0;}
+.main-nav a{font-family:"IBM Plex Mono",monospace;text-transform:uppercase;letter-spacing:.12em;font-size:.72rem;text-decoration:none;color:var(--ink-soft);min-height:44px;display:inline-flex;align-items:center;}
+main.article{max-width:680px;margin:0 auto;padding:2.2rem 0 1rem;}
+.kicker{font-family:"IBM Plex Mono",monospace;text-transform:uppercase;letter-spacing:.14em;font-size:.72rem;color:var(--accent-text);margin:0 0 .9rem;}
+h1{font-family:"Playfair Display",serif;font-weight:700;font-size:clamp(1.9rem,5.4vw,2.7rem);line-height:1.14;margin:0 0 1rem;text-wrap:balance;}
+.dek{font-size:1.22rem;font-weight:300;line-height:1.5;color:var(--ink-soft);}
+.meta{font-family:"IBM Plex Mono",monospace;text-transform:uppercase;letter-spacing:.12em;font-size:.72rem;color:var(--grey);border-top:1px solid var(--rule);border-bottom:2.5px solid var(--ink);padding:.7rem 0 .6rem;margin-top:1.4rem;line-height:1.9;}
+.body{font-size:19px;line-height:1.62;margin-top:1.6rem;}
+.body p{margin:0 0 1rem;}
+.body h4{font-family:"IBM Plex Mono",monospace;font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;color:var(--accent-text);margin:1.8rem 0 .5rem;}
+.body a{color:var(--accent-text);}
+.fig{background:var(--panel);border-top:3px solid var(--accent);padding:1.4rem 1.5rem 1.2rem;margin:1.8rem 0;}
+.fig .v{font-family:"Playfair Display",serif;font-weight:700;font-size:2.9rem;line-height:1;}
+.fig .l{font-style:italic;font-size:1rem;line-height:1.5;color:var(--ink-soft);padding-top:.6rem;margin:0;}
+.fig figcaption{font-family:"IBM Plex Mono",monospace;text-transform:uppercase;letter-spacing:.12em;font-size:.65rem;color:var(--grey);padding-top:.7rem;}
+.box{border-top:1px solid var(--rule);border-bottom:1px solid var(--rule);padding:1rem 0;margin:1.8rem 0;font-size:1rem;line-height:1.6;}
+.box h5{font-family:"IBM Plex Mono",monospace;font-size:.7rem;letter-spacing:.14em;text-transform:uppercase;margin:0 0 .5rem;color:var(--accent-text);}
+.srcs{font-size:.92rem;color:var(--ink-soft);line-height:1.6;border-top:1px solid var(--rule);margin-top:2rem;padding-top:1rem;}
+.srcs h5{font-family:"IBM Plex Mono",monospace;font-size:.7rem;letter-spacing:.14em;text-transform:uppercase;margin:0 0 .5rem;color:var(--ink);}
+.horizon{text-align:center;margin:2.4rem 0 0;}
+.also{border-top:1px solid var(--rule);margin-top:1.2rem;padding-top:1rem;}
+.also h5{font-family:"IBM Plex Mono",monospace;font-size:.7rem;letter-spacing:.14em;text-transform:uppercase;margin:0 0 .6rem;color:var(--accent-text);}
+.also ul{list-style:none;margin:0;padding:0;}
+.also li{margin:0 0 .45rem;font-size:1.05rem;}
+.also a{text-decoration:none;border-bottom:1px solid var(--rule);}
+.sub-block{border-top:2.5px solid var(--ink);margin-top:2.6rem;padding-top:1.4rem;}
+.sub-block h3{font-family:"Playfair Display",serif;font-weight:700;font-size:1.5rem;margin:0 0 .4rem;}
+.sub-block p{color:var(--ink-soft);margin:0 0 1rem;}
+.sub-form label{display:block;font-family:"IBM Plex Mono",monospace;text-transform:uppercase;letter-spacing:.12em;font-size:.72rem;color:var(--ink-soft);margin-bottom:.5rem;}
+.sub-row{display:flex;gap:.6rem;flex-wrap:wrap;}
+.sub-row input{flex:1 1 240px;height:48px;padding:0 .9rem;font:inherit;font-size:1rem;background:transparent;color:var(--ink);border:1px solid var(--grey);border-radius:0;}
+.sub-row button{height:48px;padding:0 1.2rem;background:var(--accent);color:#FAF6EF;border:none;font-family:"IBM Plex Mono",monospace;text-transform:uppercase;letter-spacing:.12em;font-size:.75rem;cursor:pointer;}
+.reassure{color:var(--grey);font-size:.9rem;font-style:italic;}
+.cta{margin-top:1.6rem;font-size:1rem;color:var(--ink-soft);}
+footer.site{max-width:680px;margin:0 auto;padding:1.4rem 0 2.4rem;border-top:1px solid var(--rule);color:var(--ink-soft);font-size:.92rem;line-height:1.6;}
+footer.site .f-word{font-family:"Playfair Display",serif;font-weight:900;font-size:1.25rem;color:var(--ink);}
+::selection{background:var(--accent);color:#FAF6EF;}
+@media (max-width:640px){.body{font-size:18px;}}
+@media print{.masthead,.sub-block,.cta,footer.site{display:none;}body{background:#fff;color:#14181D;}}
+</style>
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+<div class="wrap">
+<header class="masthead">
+  <div class="folio-row"><span>Vol. 1 · New York</span><span>thetomorrowpost.com</span></div>
+  <svg class="mark" viewBox="0 0 64 34" aria-hidden="true"><g><line class="ray" x1="32" y1="2" x2="32" y2="8"/><line class="ray" x1="12" y1="8" x2="16" y2="13"/><line class="ray" x1="52" y1="8" x2="48" y2="13"/><path class="arc" d="M10 28 A22 22 0 0 1 54 28"/></g><line class="sun-line" x1="2" y1="28" x2="62" y2="28"/></svg>
+  <p class="wordmark"><a href="https://thetomorrowpost.com/">The Tomorrow Post</a></p>
+  <p class="descriptor">A newspaper for the digital age.</p>
+  <nav class="main-nav" aria-label="Main">
+    <a href="https://thetomorrowpost.com/#/">Today</a><a href="https://thetomorrowpost.com/#/topics">Topics</a><a href="https://thetomorrowpost.com/#/record">The Record</a><a href="https://thetomorrowpost.com/about/">About</a><a href="https://thetomorrowpost.com/subscribe/">Subscribe</a>
+  </nav>
+</header>
+<main class="article" id="main">
+<p class="kicker">The Lead · Frontier</p>
+<h1>Anthropic’s New Model Costs 20% Less per Token and 31% More per Finished Task</h1>
+<div class="dek">Anthropic released Claude Fable 5.2 and Claude Mythos 5.2 on Monday, November 9 — the day its IPO roadshow began. The price is $8 per million input tokens and $40 per million output tokens, down from $10 and $50 for Fable 5.1, and output runs up to 30% faster. Independent evaluators put Fable 5.2 first on their rankings. On SemiAnalysis’s GDPx benchmark of professional tasks, the cost of one finished task rose from $67.16 to $88.15, because the model spends far more tokens checking its own work.</div>
+<div class="meta">Edited by Avery Lane · Frontier Editor &nbsp;·&nbsp; Issue No. 023 &nbsp;·&nbsp; Tuesday, November 10, 2026</div>
+<figure class="fig"><div class="v">$88.15 per task</div><p class="l">SemiAnalysis’s measured cost of one finished professional task on its GDPx benchmark for Fable 5.2, up from $67.16 for Fable 5.1 — against a 20% cut in the price per token</p><figcaption>The figure, from the story's reporting</figcaption></figure>
+<div class="body"><p>Anthropic chose the timing. Fable 5.2 and Mythos 5.2 — the same underlying model, with Fable carrying the safeguards that let it ship to everyone — went live on Monday, November 9, the morning the company’s bankers began marketing its shares to public investors. The launch post leads with capability: gains in coding, reasoning and vision, output up to 30% faster than the 5.1 models, and a price cut of a fifth, to $8 per million input tokens and $40 per million output tokens. An optional fast mode runs up to 2.5 times faster at double those prices.</p><h4>The rankings, checked by others</h4><p>The strongest claims in the launch do not rest only on Anthropic’s own table. Artificial Analysis, an independent benchmarking firm, put Fable 5.2 at maximum effort first on its Intelligence Index v5, at 65 — ahead of Google’s Gemini 4 Carbon at 60, Anthropic’s own Opus 5.5 at 59 and OpenAI’s GPT-6 Astra at 57. Epoch, another independent evaluator, scored it 174 on its Capabilities Index, a record, against 169 for Astra. On Anthropic’s own table, Fable 5.2 leads Opus 5.5 on most measures but not all: Gemini 4 Carbon scores higher on AutomationBench, a test of business workflows, and Opus 5.5 keeps a small lead on one knowledge-work rating.</p><h4>Where the money goes</h4><p>The launch’s most useful number comes from SemiAnalysis, which ran Fable 5.2 on GDPx, its benchmark of professional tasks. The model ranked first, solving 16.4% of the tasks. It also cost $88.15 per task, up from $67.16 for Fable 5.1 — an increase of about 31%, in the same release that cut the price per token by 20%. The run logs explain the gap. Where Opus 5.5 and Fable 5.1 would try about 20 test cases, Fable 5.2 sometimes wrote hundreds or thousands, and it sent subagents — smaller copies of itself — to check its work independently. Checking is what the extra tokens buy. Anthropic’s own efficiency figures point the same way from the other side: at high effort the model uses about 98,000 output tokens per task where Opus 5.5 at maximum uses about 173,000, and at maximum effort a task costs about $26.50, roughly two and a half times Opus 5.5.</p><h4>What Anthropic says it did</h4><p>The company’s demonstrations are its own, and this paper labels them as such. Anthropic says 1,000 Fable 5.2 agents formalized the existing proof of Fermat’s Last Theorem — translated it into a form a computer can verify step by step — in 30 hours, where Opus 5.5 completed 26% in 18 hours on the same setup. It says a team of more than 1,000 subagents built a working operating system from an empty folder over eight days; that the model designed three working electronic devices with a partner company; that it solved two open problems in black-hole physics; and that Mythos 5.2 modelled 28 of 34 gene-therapy capsids, the protein shells used to deliver gene therapies. It also says more than 90% of the changes merged into its own core codebase are now written by Claude, with human guidance. None of these demonstrations has been independently rerun in full.</p><h4>The limits written into the launch</h4><p>Two constraints arrived with the model. Anthropic states in its system card, as summarized in the launch coverage, that it deliberately limited the abilities that most directly speed up AI research itself — optimizing the low-level code that runs on accelerators, and improving model architectures — holding them near Opus 5.5’s level. And Fable 5.2 requires data retention by default, so that Anthropic’s safety classifiers can run on the traffic; zero data retention is available only to eligible enterprise customers. For subscribers, Fable counts against at most half of a weekly usage limit, with extra resets this week scaled by how long a customer has subscribed.</p><p>The roadshow will price Anthropic’s shares, not its tokens. But the two arguments are now the same argument: the company is selling a model that is cheaper by the unit and more expensive by the job, because the job now includes the model auditing itself. Whether that is a cost or a feature depends on what the buyer was previously paying humans to check.</p></div>
+<div style="border-top:1px solid #111417;margin-top:2.2rem;padding-top:1.25rem"><div style="font-family:'IBM Plex Mono',monospace;text-transform:uppercase;letter-spacing:.18em;font-size:.68rem;color:#8F5127">The Bigger Picture</div><p style="font-size:1.07rem;font-weight:300;line-height:1.6;color:#3A3F45;margin-top:.55rem">The frontier’s pricing unit no longer describes its product. A token was a sensible unit when models answered once and stopped. A model that hires subagents, writes a thousand test cases and re-derives its own results is selling verified work, and verified work is priced by the task. Expect the labs’ next pricing fight to be fought there — per finished, checked task — and expect buyers to start demanding the audit trail as part of what they paid for.</p></div>
+<div class="srcs"><h5>Sources</h5>Anthropic — Introducing Claude Fable 5.2 and Claude Mythos 5.2, Nov 9, 2026 (read in full)<br>Latent Space — Fable 5.2 retakes World #1 LLM spot as $ANT IPO roadshow begins, Nov 9, 2026 (Artificial Analysis, Epoch and SemiAnalysis GDPx figures as reported there)<br>Anthropic — Claude can design electronic prototypes from start to finish, Nov 9, 2026</div>
+<div class="horizon"><svg class="mark" viewBox="0 0 64 34" aria-hidden="true"><g><line class="ray" x1="32" y1="2" x2="32" y2="8"/><line class="ray" x1="12" y1="8" x2="16" y2="13"/><line class="ray" x1="52" y1="8" x2="48" y2="13"/><path class="arc" d="M10 28 A22 22 0 0 1 54 28"/></g><line class="sun-line" x1="2" y1="28" x2="62" y2="28"/></svg></div>
+<div class="also"><h5>Also in this issue</h5><ul><li><a href="https://thetomorrowpost.com/article/cheaper-tokens-more-expensive-answers">Cheaper Tokens, More Expensive Answers</a></li><li><a href="https://thetomorrowpost.com/article/anthropic-roadshow-pricing-circulated-then-retracted">Anthropic Told Its Bankers a $69.3 Billion Pricing Was Wrong Hours After Circulating It</a></li><li><a href="https://thetomorrowpost.com/article/openai-control-room-stops-research-jobs-35-seconds">OpenAI Built a System That Can Stop Any Research Job Within 35 Seconds</a></li><li><a href="https://thetomorrowpost.com/article/chinese-labs-hiring-silicon-valley-pay-gap">Chinese AI Labs Are Hiring in Silicon Valley and Running Into American Pay</a></li><li><a href="https://thetomorrowpost.com/article/fireworks-ai-breach-datasets-model-weights">Fireworks AI Says Its October Breach Also Reached Datasets and Partial Model Weights</a></li></ul></div>
+<div class="sub-block">
+  <h3>Tomorrow, in your inbox.</h3>
+  <p>A concise, intelligent briefing on what matters next — one edition every morning at 7:00 AM Eastern.</p>
+  <form class="sub-form" action="https://buttondown.com/api/emails/embed-subscribe/thetomorrowpost" method="post">
+    <label for="bd-email-article">Email address</label>
+    <div class="sub-row">
+      <input type="email" name="email" id="bd-email-article" placeholder="Your email address" required>
+      <input type="hidden" name="embed" value="1">
+      <button type="submit">Get the daily briefing →</button>
+    </div>
+  </form>
+  <p class="reassure">Daily. Unsubscribe anytime.</p>
+</div>
+<p class="cta">This story is from <a href="https://thetomorrowpost.com/">today's paper</a> — read The Tomorrow Post in full, with the day's other stories, at <a href="https://thetomorrowpost.com/">thetomorrowpost.com</a>.</p>
+</main>
+<footer class="site">
+  <p class="f-word">The Tomorrow Post</p>
+  <p>A newspaper for the digital age. The Tomorrow Post is a newspaper, not investment advice.<br><a href="https://thetomorrowpost.com/">THETOMORROWPOST.COM</a></p>
+</footer>
+</div>
+<!-- Cloudflare Web Analytics --><script type='module' src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "00677d489201416ba6233eed4d87661e"}'></script><!-- End Cloudflare Web Analytics -->
+</body>
+</html>
