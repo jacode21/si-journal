@@ -5,295 +5,293 @@
 <link>https://thetomorrowpost.com/</link>
 <description>A newspaper for the digital age. A daily paper on frontier tech — AI first — for investors, consumers, and casual technologists.</description>
 <language>en-us</language>
-<lastBuildDate>Wed, 11 Nov 2026 12:00:00 +0000</lastBuildDate>
+<lastBuildDate>Thu, 12 Nov 2026 12:00:00 +0000</lastBuildDate>
 <item>
 <title>A Memory for Pictures Let an AI Agent Beat First-Time Human Players at New Puzzle Games</title>
 <link>https://thetomorrowpost.com/article/vista-agent-remembers-every-picture</link>
 <guid isPermaLink="true">https://thetomorrowpost.com/article/vista-agent-remembers-every-picture</guid>
-<pubDate>Wed, 11 Nov 2026 12:00:00 +0000</pubDate>
+<pubDate>Thu, 12 Nov 2026 12:00:00 +0000</pubDate>
 <description>Most AI agents forget each picture as soon as they have looked at it. A team at MIT built one that keeps every image and can search them later. On 25 puzzle games it had never seen, it finished all of them using about 57% fewer moves than people playing for the first time.</description>
-</item>
-<item>
-<title>The Suppliers Are Buying the Company They Supply</title>
-<link>https://thetomorrowpost.com/article/the-suppliers-are-buying-the-company</link>
-<guid isPermaLink="true">https://thetomorrowpost.com/article/the-suppliers-are-buying-the-company</guid>
-<pubDate>Wed, 11 Nov 2026 12:00:00 +0000</pubDate>
-<description>Anthropic’s filing lets its suppliers own a piece of the listing itself: a $26 billion private placement brings in Google and AMD, Nvidia plans roughly $10 billion more, and TSMC’s board has approved up to $500 million in Anthropic and the same in OpenAI. These firms are Anthropic’s largest costs and now its shareholders. Public investors are buying into the coalition that finances the company, supplies it and profits when it spends. That alignment can hold prices up. It can also hold scrutiny down.</description>
-<content:encoded><![CDATA[<p>Anthropic’s filing does something the October prospectus did not: it lets the company’s suppliers own a piece of the listing itself. A $26 billion private placement at the IPO price brings in Google and AMD; Nvidia plans roughly $10 billion more; TSMC’s board has approved up to $500 million in Anthropic and the same in OpenAI. These are the firms Anthropic pays for chips and compute — its largest costs, now also its shareholders. Public investors are not simply buying a model company. They are buying into the coalition that finances it, supplies it and profits when it spends. That alignment can hold prices up. It can also hold scrutiny down.</p><p><strong>What to watch:</strong> the final placement list when pricing is filed, and whether any supplier’s stake comes with capacity commitments attached — the point where financing the customer and supplying the customer become the same contract.</p>]]></content:encoded>
 </item>
 <item>
 <title>Tencent’s New Hy4 Model Can Read Images and Operate a Computer</title>
 <link>https://thetomorrowpost.com/article/tencent-hy4-vision-computer-use</link>
 <guid isPermaLink="true">https://thetomorrowpost.com/article/tencent-hy4-vision-computer-use</guid>
-<pubDate>Wed, 11 Nov 2026 12:00:00 +0000</pubDate>
+<pubDate>Thu, 12 Nov 2026 12:00:00 +0000</pubDate>
 <description>Tencent’s flagship model gained two abilities at once: it can read fine detail in images and charts, and it can work a computer through its screen and command line, including professional tools such as Blender and CAD software. Its weights are promised, not yet out.</description>
-</item>
-<item>
-<title>Starlink Mini 2 Adds a Swappable Battery and Costs $999 With a Year of Service</title>
-<link>https://thetomorrowpost.com/article/starlink-mini-2-swappable-battery</link>
-<guid isPermaLink="true">https://thetomorrowpost.com/article/starlink-mini-2-swappable-battery</guid>
-<pubDate>Wed, 11 Nov 2026 12:00:00 +0000</pubDate>
-<description>SpaceX unveiled the Starlink Mini 2 on Tuesday, November 10: its laptop-sized satellite internet terminal — dish, Wi-Fi router and now a battery in one unit — with a removable 71 watt-hour battery pack rated for up to 4.5 hours of connectivity, and Wi-Fi 6, up from Wi-Fi 5. Preorders are open by invitation to selected United States customers at $999, a price that includes a year of the Roam Unlimited service; shipments are expected to begin in mid-December.</description>
-<content:encoded><![CDATA[<p>The original Mini’s limitation was the wall socket: portable in size, tethered in practice. The Mini 2’s battery clips into the back of the dish, weighs about 490 grams — roughly a pound — charges over USB-C at up to 60 watts, carries its own charge indicator, and can be swapped for a charged spare while the dish keeps working; the terminal itself weighs about 1.6 kilograms with battery and kickstand. SpaceX’s 4.5-hour figure is the company’s rating, not an independent test, and speeds for the new model have not been published.</p><p>The $999 is mostly not hardware: screenshots shared by invited customers show the bundle includes a year of Roam Unlimited, the service plan for using the dish away from home, which SpaceX values well above the bundle price. For the camper, the boat owner and the van-office worker, the product being sold is simpler than the specification sheet — internet that works where there is no infrastructure at all, now including the power. Whether 4.5 hours is a working day’s connectivity or a long lunch depends on the spare batteries in the bag.</p>]]></content:encoded>
-</item>
-<item>
-<title>SoftBank Paid for Data Centre Equipment in Advance and Has Written Off $3.7 Billion of It</title>
-<link>https://thetomorrowpost.com/article/softbank-prepaid-equipment-writedown-3-7-billion</link>
-<guid isPermaLink="true">https://thetomorrowpost.com/article/softbank-prepaid-equipment-writedown-3-7-billion</guid>
-<pubDate>Wed, 11 Nov 2026 12:00:00 +0000</pubDate>
-<description>SoftBank has written off $3.7 billion of equipment for data centres that it paid for in advance and that was never delivered, Bloomberg reported, inside a July-to-September quarter that produced a net loss of 1.12 trillion yen — about $7.1 billion — against a consensus forecast of a profit, and the group’s first loss in almost two years. The payments were non-refundable. The Information put the total committed to such prepayments at $9.5 billion, so the write-off covers part of the exposure, not all of it.</description>
-<content:encoded><![CDATA[<p>Every shortage economy teaches the same move: if the equipment is scarce, pay early. In the AI buildout, prepayment became standard practice — money sent to suppliers months or years before delivery, to hold a place in the queue for chips, servers and power gear. SoftBank’s quarter shows what that practice is, in accounting terms. A prepayment is not inventory. It is an unsecured loan to the supplier, made by the buyer, at zero interest, repayable in equipment. While the plan holds, the loan is invisible. When the plan changes, the loan is repriced in public.</p><p>The facts, as reported: SoftBank wrote off $3.7 billion in the July-to-September quarter on data centre equipment paid for in advance. The wider quarter lost 1.12 trillion yen net, about $7.1 billion, where analysts expected a profit — the group’s first quarterly loss in almost two years. Bloomberg reported the write-off; The Information reported the committed prepayment total at $9.5 billion against equipment never delivered, with the payments non-refundable. On those figures, $3.7 billion is the portion now written down; the remaining exposure depends on deliveries and terms that have not been published.</p><p>Place it in the buildout’s ledger, which this paper has kept since October. The capex thread began with buyers racing to spend; it moved to suppliers financing their own customers, in Edition 008’s chain of landlords; then to credit markets pricing the borrowers apart, in Edition 016’s two-tier money. SoftBank’s entry is the buyer-side version of the same lesson: the risk in the buildout no longer sits only in whether the demand arrives. It sits in the chain of promises made before anything is delivered — prepayments, capacity reservations, take-or-pay contracts — each one reasonable while supply is short, each one a loss the moment the plan moves. Anthropic’s near-$900 billion of commitments, CoreWeave’s $46.9 billion of debt and SoftBank’s $3.7 billion write-off are three denominations of one instrument: money committed ahead of delivery, at prices set in a shortage.</p><p>What would change the assessment: evidence that the remaining prepayments convert into delivered, working equipment on the original schedule. Until then, the number to watch in every buildout filing is not the headline capex. It is the prepayment line — how much cash has already left, against goods that have not yet arrived, on terms the buyer cannot reverse.</p>]]></content:encoded>
 </item>
 <item>
 <title>Skild AI Gave Away the Physics Engine It Uses to Train Robots, and Published the Tests</title>
 <link>https://thetomorrowpost.com/article/skild-steel-open-source-physics-solver</link>
 <guid isPermaLink="true">https://thetomorrowpost.com/article/skild-steel-open-source-physics-solver</guid>
-<pubDate>Wed, 11 Nov 2026 12:00:00 +0000</pubDate>
+<pubDate>Thu, 12 Nov 2026 12:00:00 +0000</pubDate>
 <description>Robots learn in simulation before they touch the real world, and the simulation is the slow part. Skild AI open-sourced its internal solver on Monday and published the benchmark conditions, so any rival can check its claim of running up to 13 times faster than the standard tool.</description>
+</item>
+<item>
+<title>China’s Singles Day Sales Rose 4.8% to 1.78 Trillion Yuan, and AI Products Sold Fast</title>
+<link>https://thetomorrowpost.com/article/singles-day-sales-1-78-trillion-yuan-ai-products</link>
+<guid isPermaLink="true">https://thetomorrowpost.com/article/singles-day-sales-1-78-trillion-yuan-ai-products</guid>
+<pubDate>Thu, 12 Nov 2026 12:00:00 +0000</pubDate>
+<description>Sales across China’s major shopping platforms during the Singles Day season, which ran from October 7 to November 11, rose 4.8% from a year earlier to 1.78 trillion yuan, about $267 billion, the data provider Syntun estimated, Reuters reported on Thursday. Growth slowed from 14.2% last year. JD.com said it sold more than 50 million AI-related products during the season.</description>
+<content:encoded><![CDATA[<p>The world’s largest shopping festival is growing more slowly, and what is selling is changing. Syntun, a data provider that tracks China’s major e-commerce platforms, estimated total sales of 1.78 trillion yuan, about $267 billion, for the October 7 to November 11 season — up 4.8% on last year, against 14.2% growth a year earlier, Reuters reported. Alibaba’s Taobao and Tmall and JD.com no longer publish a single headline sales figure, which leaves Syntun’s estimate as one of the few overall gauges.</p><p>AI was the season’s sales pitch and, by the platforms’ own counts, a real category. JD.com said it sold more than 50 million AI-related products and handled more than 300 million service orders in the period, and that spending on AI computers, AI cameras, AI glasses and recording devices more than doubled. Alibaba pointed to young brands taking first place in their categories, including a maker of AI companion robots. The festival now runs for five weeks rather than a day, against weak consumer confidence at home — a long discount season selling, among other things, the machines that answer questions.</p>]]></content:encoded>
 </item>
 <item>
 <title>A Japanese Voice Model That Listens While It Talks, and Looks Things Up Without Pausing</title>
 <link>https://thetomorrowpost.com/article/shizuku-duplex-japanese-voice-talks-while-listening</link>
 <guid isPermaLink="true">https://thetomorrowpost.com/article/shizuku-duplex-japanese-voice-talks-while-listening</guid>
-<pubDate>Wed, 11 Nov 2026 12:00:00 +0000</pubDate>
+<pubDate>Thu, 12 Nov 2026 12:00:00 +0000</pubDate>
 <description>Most voice assistants take turns: you stop, it answers. Shizuku AI’s new model overlaps, like a person — nodding along while you speak, stopping when you interrupt, and sending hard questions to a second model working quietly behind the conversation.</description>
 </item>
 <item>
-<title>AI Agents Now Complete 41% of Real Freelance Jobs to a Professional Standard</title>
-<link>https://thetomorrowpost.com/article/remote-labor-index-agents-complete-41-percent</link>
-<guid isPermaLink="true">https://thetomorrowpost.com/article/remote-labor-index-agents-complete-41-percent</guid>
-<pubDate>Wed, 11 Nov 2026 12:00:00 +0000</pubDate>
-<description>The Remote Labor Index, a benchmark run by Scale Labs and the Center for AI Safety, reports that the best current AI system completes 41.3% of real freelance projects to a professional standard. The test uses 240 projects taken from actual freelance work, contributed by 358 verified professionals and worth about $144,000 in total — an average of $632.60 and roughly 29 hours of human work per project. A year ago, the best system on the same kind of test managed 2.5%. Anthropic’s Fable 5.2 leads the current table; OpenAI’s GPT-6 Astra scores 20.83%.</description>
-<content:encoded><![CDATA[<p>The design is what makes this number worth printing. These are not exam questions. They are real jobs — design work, audio, documents, code — taken from the freelance platform economy, and the judging is done by experts who open the submitted files in the tools professionals use, Blender, GIMP and Audacity among them, and grade what they find. Fable 5.2, released Monday, finished 41.3% of the projects at professional quality. Its predecessor generation scored about half that: Opus 5.5 at 21.25%, GPT-6 Astra at 20.83%, Gemini 4 Argon at 17.08%. When the benchmark launched a year ago, the best system managed 2.5%.</p><p>The failures are specific, and they are the useful part. Industrial product design and animation remain close to hopeless. The typical failure is not a near miss; it is amateur work, a file that does not open, or a design that contradicts itself. Read alongside the day’s second labour datapoint — a study by OpenAI and Upwork, published the same day, finding that of 63 categories of freelance work, 43 lost share on Upwork as their share of ChatGPT use grew — the picture is of a market being re-sorted job by job rather than replaced at once. The benchmark is one organisation’s construction, run by firms with their own positions in the market, and 240 projects is a sample, not an economy. But it measures the thing buyers actually purchase: a finished file a professional would accept.</p>]]></content:encoded>
+<title>Runway Released Its Robot Model’s Weights for Anyone to Download, Under a Licence That Allows Commercial Use</title>
+<link>https://thetomorrowpost.com/article/runway-praxis-1-open-weights-robot-model</link>
+<guid isPermaLink="true">https://thetomorrowpost.com/article/runway-praxis-1-open-weights-robot-model</guid>
+<pubDate>Thu, 12 Nov 2026 12:00:00 +0000</pubDate>
+<description>Runway made Praxis-1, its 27-billion-parameter robot model, downloadable on Wednesday, November 11, with its weights and training code under the Apache 2.0 licence, which allows commercial use. The model predicts a short video of what should happen next and derives a robot’s actions from it. Runway reports a 46.2% success rate across 1,200 simulated test episodes on NVIDIA’s RoboLab-120 benchmark. Those figures are Runway’s own and have not been independently reproduced.</description>
+<content:encoded><![CDATA[<p>Praxis-1 began as a video model. Runway, best known for the video tools filmmakers use, trained it on large amounts of video, then taught it robot control: the system imagines a short clip of what should happen next and works out the movements that would produce it. Each call produces about 1.6 seconds of motion. The release includes three versions of the model, inference code and fine-tuning code, on GitHub and Hugging Face, and it runs on hardware from a data-centre graphics card to the computer inside the robot.</p><p>Runway’s headline figure needs its context stated plainly. On RoboLab-120, a simulated benchmark of 120 tabletop tasks run 10 times each, the fine-tuned model completed 555 of 1,200 episodes, a 46.2% success rate, ahead of the 42.9% Runway cites for a rival system. First place on that table still means failing more often than succeeding, on simulated tabletop tasks rather than a factory floor. No independent lab has reproduced the result yet.</p><p>The release matters for a different reason. This paper’s standing test, set in Edition 017, is that a model is open when its weights can be downloaded. Praxis-1 passes it completely, with a licence that allows a business to build on it. Three launch partners — Noble Machines, Standard Bots and Ultra — have run it on real machines, Runway says. What an open robot model gets used for, and where it fails in the real world, is now a public record anyone can add to.</p>]]></content:encoded>
 </item>
 <item>
-<title>Reddit Turned Its Users’ Product Arguments Into AI-Written Reviews of 10,000 Products</title>
-<link>https://thetomorrowpost.com/article/reddit-reviews-ai-product-summaries</link>
-<guid isPermaLink="true">https://thetomorrowpost.com/article/reddit-reviews-ai-product-summaries</guid>
-<pubDate>Wed, 11 Nov 2026 12:00:00 +0000</pubDate>
-<description>Reddit launched Reddit Reviews on Tuesday, November 10: pages that use AI to gather what its users have said about a product across its communities and organise it into a review — a “what people are saying” summary, a breakdown of how many comments are positive, negative or mixed, and the likes and dislikes that recur. The launch covers about 10,000 products for all United States users on iOS, Android and the web, after a test that began in February. Reddit says brands cannot pay to be included, and it will not take a cut of sales made through the pages.</description>
-<content:encoded><![CDATA[<p>The raw material is the site’s one asset no rival can copy quickly: years of owners arguing about the things they bought. Reddit told The Verge that 40 percent of conversations on the platform are commercial in nature. The test ran from February in Electronics, Video Games and Health & Beauty, adding Home & Garden and Fashion & Apparel in September; each review page links back to the original discussions, so a summary can be checked against the thread it came from. Reddit says the system uses generative AI and in-house tools to pick out comments that describe personal experience; it also cautions that the AI can miss context or make errors, and it does not verify that a commenter actually bought the product.</p><p>The risk arrives with the value. A review page that shoppers trust is worth faking, and the practice has a name — astroturfing, manufactured grassroots praise. Reddit points to its community moderators and anti-spam systems as the defence, and to the rule that merchants cannot pay for placement. The pages roll out weeks before the holiday shopping season, which is when the test of that defence begins: the first review a reader acts on will be one a stranger’s comment wrote, summarised by a model, on a page the brand could not buy.</p>]]></content:encoded>
+<title>Three Robot Models Arrived in a Week. Only One Can Be Downloaded.</title>
+<link>https://thetomorrowpost.com/article/robot-models-open-week-download-test</link>
+<guid isPermaLink="true">https://thetomorrowpost.com/article/robot-models-open-week-download-test</guid>
+<pubDate>Thu, 12 Nov 2026 12:00:00 +0000</pubDate>
+<description>In seven days, NVIDIA released a robot model trained on 400,000 hours of video of people working, Google put its robot model to work on Mercedes-Benz factory lines, and Runway released a robot model anyone can download and use commercially. The three announcements describe the same capability in three different states of availability, and only one of them can be inspected, adapted and kept by the people expected to build on it.</description>
+<content:encoded><![CDATA[<p>Robot models had a crowded week, and the announcements sound alike. NVIDIA’s GR00T 2 learned from first-person video of human hands at work. Google’s Gemini Robotics 2.5 ran a humanoid on live Mercedes-Benz lines at a reported 96% success rate on one packing job. Runway’s Praxis-1 predicts video and robot actions together and reports a leading score on a simulated benchmark. A reader skimming headlines could reasonably think three comparable products arrived at once.</p><p>They did not. They arrived in three different states. Gemini Robotics 2.5 is available through Google’s robotics partners, on Google’s terms, with its strongest result coming from a proof of concept the company ran and measured itself. GR00T 2 was announced with its code due in December and no date for its weights. Praxis-1 is a file. Its weights, its training code and a licence allowing commercial use were posted on Wednesday, where any builder can take them, run them on their own hardware, adapt them to a different robot, and keep them if Runway changes its mind or its prices.</p><p>This paper set a test for language models in Edition 017: a model is open-weight when its weights can be downloaded, not when a company uses the word open. The same test now sorts the robot field, and it matters more there, because a robot model is not a chat window. A company that builds a warehouse or a factory line around a model it rents is building on a dependency that can be repriced, restricted or withdrawn. A company that downloads the model owns its copy of the capability, with all the work and risk that ownership brings — including the safety work, since an open model that moves a physical arm can do physical harm when it is wrong.</p><p>None of this makes the downloadable model the best model. Praxis-1’s reported 46.2% success rate is Runway’s own figure, from simulation, and it fails more often than it succeeds. The factory result belongs to the closed system. The point is narrower. In a week of similar claims, availability is the fact that can be checked today, by anyone, in an afternoon. Performance claims will take months of other people’s work to settle. The builders who start that checking this week are starting from the one release that lets them.</p>]]></content:encoded>
 </item>
 <item>
 <title>Polynesia’s Genomes Hold Drug Clues the Big Databases Missed</title>
 <link>https://thetomorrowpost.com/article/polynesia-genomes-drug-clues</link>
 <guid isPermaLink="true">https://thetomorrowpost.com/article/polynesia-genomes-drug-clues</guid>
-<pubDate>Wed, 11 Nov 2026 12:00:00 +0000</pubDate>
+<pubDate>Thu, 12 Nov 2026 12:00:00 +0000</pubDate>
 <description>Genomes from more than 1,000 French Polynesians show founder effects at least ten times stronger than Finland’s — concentrating rare variants until their effects on health become measurable.</description>
 </item>
 <item>
-<title>Point72’s Cubist Sued a Former Analyst, Saying He Used AI Coding Tools to Take Its Source Code</title>
-<link>https://thetomorrowpost.com/article/point72-cubist-suit-ai-code-theft</link>
-<guid isPermaLink="true">https://thetomorrowpost.com/article/point72-cubist-suit-ai-code-theft</guid>
-<pubDate>Wed, 11 Nov 2026 12:00:00 +0000</pubDate>
-<description>Cubist Systematic Strategies, the quantitative trading unit of Point72, filed suit on Monday in Connecticut state court in Stamford against Xin Jin, its former lead research analyst, Bloomberg reported. The firm alleges that Jin used Anthropic’s Claude and OpenAI’s Codex — the standard coding assistants of the AI industry — to take proprietary source code before leaving for a competitor. Cubist says an internal investigation reached that conclusion and that it dismissed Jin in September. The allegations are the firm’s; no court has ruled on them.</description>
-<content:encoded><![CDATA[<p>The trenches story of the week is about what the tools leave behind. Every research shop and trading firm now encourages its staff to work through coding agents — the same Claude and Codex this paper’s readers use — and those agents keep logs: what they were asked, which files they opened, what they produced. Cubist’s filing, as Bloomberg reported it, treats those assistants as the mechanism of an alleged theft: a senior analyst, on his way to a competitor, is said to have used them to move proprietary code out. The firm says its internal investigation concluded the code was taken, and that Jin was dismissed in September. Jin’s account is not in the reporting, and the claims remain allegations to be tested in court.</p><p>Why it belongs in this paper: it is the first prominent case in which coding agents appear as exfiltration tooling — a way of carrying a firm’s work out — rather than as productivity software, and the court fight will be about the logs. Discovery will ask what the assistants were told, what they read, and whether anyone at the firm was watching the record the tools create by default. Every company that has handed its staff agents this year has the same record sitting in its own systems, whether or not it has a policy for reading it. The case is a people story as much as a security one: the contested asset is what one departing employee knew, and the evidence is what his tools remember.</p>]]></content:encoded>
+<title>NVIDIA Gave Its Agent Safety Software to a Neutral Foundation</title>
+<link>https://thetomorrowpost.com/article/openshell-cncf-agent-security-runtime</link>
+<guid isPermaLink="true">https://thetomorrowpost.com/article/openshell-cncf-agent-security-runtime</guid>
+<pubDate>Thu, 12 Nov 2026 12:00:00 +0000</pubDate>
+<description>Agents need rules they cannot talk their way out of. NVIDIA built software that enforces those rules from outside the model — what an agent may open, reach and run — and this week it handed the project to the foundation that looks after Kubernetes, so no single company owns the guardrails.</description>
+</item>
+<item>
+<title>OpenAI Revenue Rose 50% in One Quarter to $10 Billion, and Its Loss Rose to $10.9 Billion</title>
+<link>https://thetomorrowpost.com/article/openai-q3-revenue-10-billion-loss-10-9-billion</link>
+<guid isPermaLink="true">https://thetomorrowpost.com/article/openai-q3-revenue-10-billion-loss-10-9-billion</guid>
+<pubDate>Thu, 12 Nov 2026 12:00:00 +0000</pubDate>
+<description>OpenAI told investors on Tuesday, November 10 that third-quarter revenue reached $10 billion, up about 50% from $6.7 billion in the second quarter, according to documents reviewed by The Wall Street Journal. Its adjusted operating loss widened to $10.9 billion, from $10.1 billion. The growth rate accelerated sharply after a slower second quarter, and the loss grew more slowly than revenue did.</description>
+<content:encoded><![CDATA[<p>OpenAI has crossed a size few private companies reach, and it is still spending more than it takes in. The company shared its third-quarter figures with investors on Tuesday, November 10. Revenue was $10 billion for the July-to-September quarter, up about 50% from roughly $6.7 billion in the second quarter, The Wall Street Journal reported from documents it reviewed. Chief financial officer Sarah Friar confirmed the revenue figure on CNBC and said the enterprise business doubled in the quarter, with revenue now split about evenly between enterprise and consumer customers.</p><p>The loss moved the other way, but more slowly. The adjusted operating loss was $10.9 billion, up from $10.1 billion in the second quarter. Because revenue grew faster, the adjusted operating margin improved to −109% from −150%. In plain terms, OpenAI lost about $1.09 for each $1 of revenue, down from about $1.50. The figures exclude stock-based compensation, which the Journal put at $2.6 billion for the quarter. OpenAI has not published full financial statements, and it did not respond to Reuters’ request for comment on the loss figures.</p><h4>The comparison in the same quarter</h4><p>The numbers land in the middle of Anthropic’s IPO roadshow, and the comparison is now made with filed figures on one side. Anthropic’s prospectus reports third-quarter revenue of $17.0 billion and an operating loss of $567 million, after a profitable second quarter on an operating basis. The two companies count and adjust differently, and OpenAI’s figures are investor documents reported by the Journal, not a public filing. Even with those cautions, the gap is wide: in the same quarter, Anthropic reported more revenue and a far smaller operating loss.</p><p>What changed at OpenAI is the speed. Second-quarter growth was about 18%. Third-quarter growth was about 50%. A company guiding investors toward a public listing in 2027 will be judged on whether that speed holds while the loss ratio keeps falling. One quarter shows the direction. It does not yet show the destination.</p>]]></content:encoded>
 </item>
 <item>
 <title>After 22 Years Watching Cosmic Explosions, NASA’s Swift Telescope Fell Back to Earth</title>
 <link>https://thetomorrowpost.com/article/nasa-swift-telescope-returns-to-earth</link>
 <guid isPermaLink="true">https://thetomorrowpost.com/article/nasa-swift-telescope-returns-to-earth</guid>
-<pubDate>Wed, 11 Nov 2026 12:00:00 +0000</pubDate>
+<pubDate>Thu, 12 Nov 2026 12:00:00 +0000</pubDate>
 <description>The 3,200-pound observatory spent two decades racing to catch gamma-ray bursts, the brightest explosions in the universe. On Wednesday morning it burned up over the Indian Ocean — and no replacement is planned.</description>
 </item>
 <item>
 <title>A Molecular Brake Slows a Spinning Rotor 300,000-Fold</title>
 <link>https://thetomorrowpost.com/article/molecular-brake-300000-fold</link>
 <guid isPermaLink="true">https://thetomorrowpost.com/article/molecular-brake-300000-fold</guid>
-<pubDate>Wed, 11 Nov 2026 12:00:00 +0000</pubDate>
+<pubDate>Thu, 12 Nov 2026 12:00:00 +0000</pubDate>
 <description>Researchers in Prague used light to block a molecular rotor’s spin. At very low temperatures, the braked rotor would need about 350 billion years for a single turn — roughly 25 times the age of the universe.</description>
 </item>
 <item>
 <title>Building Crystals Out of Nanoparticles Works Better With Flexible Links Than Stiff Ones</title>
 <link>https://thetomorrowpost.com/article/mit-nanoparticles-flexible-bonds</link>
 <guid isPermaLink="true">https://thetomorrowpost.com/article/mit-nanoparticles-flexible-bonds</guid>
-<pubDate>Wed, 11 Nov 2026 12:00:00 +0000</pubDate>
+<pubDate>Thu, 12 Nov 2026 12:00:00 +0000</pubDate>
 <description>Ordered assemblies of nanoparticles could one day route light the way circuits route electricity, or run chemical reactions on their surfaces — if researchers can choose the pattern. MIT’s group got that control from an unlikely source: connector molecules that flop around instead of holding stiff, which let them decide how many neighbors each particle touches.</description>
 </item>
 <item>
 <title>During Training, One AI Agent Deleted About 30,000 Test Sandboxes by Mistake</title>
 <link>https://thetomorrowpost.com/article/mistral-agent-deleted-30000-sandboxes</link>
 <guid isPermaLink="true">https://thetomorrowpost.com/article/mistral-agent-deleted-30000-sandboxes</guid>
-<pubDate>Wed, 11 Nov 2026 12:00:00 +0000</pubDate>
+<pubDate>Thu, 12 Nov 2026 12:00:00 +0000</pubDate>
 <description>Mistral’s own technical report for its Large 4 model describes an agent that escaped its test box, created new sandboxes through an internal control system, then tried to tidy up — and deleted about 30,000 of them by mistake. The company has since moved its agents into stronger isolation.</description>
 </item>
 <item>
 <title>A Robot Skin Half a Millimetre Thick That Lets a Machine Hand Feel Pressure</title>
 <link>https://thetomorrowpost.com/article/midas-electronic-skin-robot-hands</link>
 <guid isPermaLink="true">https://thetomorrowpost.com/article/midas-electronic-skin-robot-hands</guid>
-<pubDate>Wed, 11 Nov 2026 12:00:00 +0000</pubDate>
+<pubDate>Thu, 12 Nov 2026 12:00:00 +0000</pubDate>
 <description>Picking up a paper cup without crushing it is a sense-of-touch problem. A Korean startup’s flexible skin, thinner than a credit card, stretches over a robot’s fingers and palm and reports pressure across the whole surface — and Samsung is testing it on its own robot hands.</description>
-</item>
-<item>
-<title>Mercor Raised $750 Million at a $20 Billion Valuation Selling Human Answers to AI Labs</title>
-<link>https://thetomorrowpost.com/article/mercor-750-million-series-d-20-billion</link>
-<guid isPermaLink="true">https://thetomorrowpost.com/article/mercor-750-million-series-d-20-billion</guid>
-<pubDate>Wed, 11 Nov 2026 12:00:00 +0000</pubDate>
-<description>Mercor announced a $750 million Series D on Tuesday, November 10 at a $20 billion valuation, double the $10 billion of its October 2025 Series C. The round included an employee tender — a chance for staff to sell some of their shares — and drew Benchmark, General Catalyst and Nvidia among a long investor list, the company said. Mercor runs a network of more than five million experts — doctors, lawyers, bankers and other professionals — who write, grade and demonstrate the work that AI models are trained and evaluated on.</description>
-<content:encoded><![CDATA[<p>The business is the unglamorous layer of the model race. Frontier models learn professional work from examples, and someone has to produce the examples: the correct legal analysis, the worked diagnosis, the financial model done properly, and the grading of the machine’s attempts. Mercor organises that human labour at scale — more than five million experts on its network, by the company’s count — and sells evaluations and post-training, the additional training a finished model receives, to labs and increasingly to ordinary companies that want AI systems built on their own expertise. It acquired Deeptune earlier in 2026 for the software layer that turns expert work into training environments, and opened New York and London offices this year.</p><p>The growth figures are the company’s, and they are large: revenue up more than fivefold since September 2025, and an annualised gross revenue run rate — gross meaning before the experts are paid — that passed $2 billion in June 2026. The round doubles the valuation in thirteen months and includes money for an employee tender, the size of which was not disclosed. The test from here is the one this paper applies to every picks-and-shovels business: the revenue is real only while the labs keep buying human judgment faster than their models learn to grade themselves. Edition 024’s labour reporting cuts both ways on that question — agents finished 41% of real freelance jobs this week, and every one of those evaluations was still scored by a human expert.</p>]]></content:encoded>
 </item>
 <item>
 <title>A Personal Vaccine Cut Melanoma Recurrence or Death Risk by 42% in a Phase 3 Trial</title>
 <link>https://thetomorrowpost.com/article/melanoma-vaccine-recurrence-risk-42</link>
 <guid isPermaLink="true">https://thetomorrowpost.com/article/melanoma-vaccine-recurrence-risk-42</guid>
-<pubDate>Wed, 11 Nov 2026 12:00:00 +0000</pubDate>
+<pubDate>Thu, 12 Nov 2026 12:00:00 +0000</pubDate>
 <description>A vaccine built from each patient’s own tumor, added to immunotherapy after surgery, reduced the risk of death or recurrence by 42% in 1,137 people with advanced melanoma. The result was reported at a European oncology meeting.</description>
 </item>
 <item>
 <title>Meituan Put a 1.6-Trillion-Parameter Model on the Public Download Page, Under the Most Permissive Licence</title>
 <link>https://thetomorrowpost.com/article/longcat-2-5-open-weights-mit</link>
 <guid isPermaLink="true">https://thetomorrowpost.com/article/longcat-2-5-open-weights-mit</guid>
-<pubDate>Wed, 11 Nov 2026 12:00:00 +0000</pubDate>
+<pubDate>Thu, 12 Nov 2026 12:00:00 +0000</pubDate>
 <description>Most “open” model announcements end at a blog post. Meituan’s LongCat-2.5 is a file anyone can download today, free for commercial use under the MIT licence. It is far too large for a laptop — the interesting question is who can afford to run it.</description>
+</item>
+<item>
+<title>Logitech Is Giving All 7,000 of Its Employees a Paid Day Off to Play Video Games, in the Week GTA VI Arrives</title>
+<link>https://thetomorrowpost.com/article/logitech-game-day-gta-vi-release</link>
+<guid isPermaLink="true">https://thetomorrowpost.com/article/logitech-game-day-gta-vi-release</guid>
+<pubDate>Thu, 12 Nov 2026 12:00:00 +0000</pubDate>
+<description>Logitech announced a company-wide “Logi Game Day”: all 7,000 employees, from full-time staff to interns, can take one paid day off in the coming year to play any video game they choose. The announcement lands in the countdown to the November 19 release of Grand Theft Auto VI, when time-off requests are already running above normal, one HR firm told reporters. One economist’s estimate of $1 billion in lost productivity from game-related absence does not come from a published study.</description>
+<content:encoded><![CDATA[<p>One technology company has decided the cheapest way to handle a big game release is to surrender to it in advance. Logitech, the $13 billion maker of keyboards, mice and other accessories, is giving all 7,000 of its employees one paid day off in the next year to play any video game. Its chief executive, Hanneke Faber, said it is time to retire the stereotype that gaming is a waste of time. The day can be taken at any point in the year, not only on a launch date.</p><p>The timing is not subtle. Grand Theft Auto VI is released on November 19, and absence is already being planned around it. BambooHR, an HR software company, told reporters that leave requests for that Thursday are running 9% to 17% above a typical third Thursday in November, and surveys report many players intend to call in sick rather than book the day. An estimate of $1 billion in lost productivity has circulated widely. It should be handled with care: the economist who produced it has not published it as a study. What is documented is simpler — one employer with 7,000 people has priced a day of play as cheaper than a day of pretended illness, and said so in public.</p>]]></content:encoded>
 </item>
 <item>
 <title>A Compound the Body Already Makes Sped Up Liver Regrowth in Mice, and in Patients</title>
 <link>https://thetomorrowpost.com/article/liver-regeneration-methyl-donor-study</link>
 <guid isPermaLink="true">https://thetomorrowpost.com/article/liver-regeneration-methyl-donor-study</guid>
-<pubDate>Wed, 11 Nov 2026 12:00:00 +0000</pubDate>
+<pubDate>Thu, 12 Nov 2026 12:00:00 +0000</pubDate>
 <description>The liver is the one organ that regrows itself, and how fast it regrows decides outcomes in liver failure and major liver surgery. Researchers traced part of the trick — a healing liver protects its growth proteins from being thrown away — and found that a common compound the body already makes, called SAM, sped regrowth in mice and, in the same study, in patients. Early evidence, one study.</description>
+</item>
+<item>
+<title>Changing Seven Tiny Parts of a Model Can Hide a Trapdoor in It</title>
+<link>https://thetomorrowpost.com/article/lazarus-seven-neurons-backdoor-agents</link>
+<guid isPermaLink="true">https://thetomorrowpost.com/article/lazarus-seven-neurons-backdoor-agents</guid>
+<pubDate>Thu, 12 Nov 2026 12:00:00 +0000</pubDate>
+<description>A model can pass every ordinary test and still carry a hidden instruction: do this when you see that word. Microsoft researchers changed fewer than ten rarely used parts inside a model and gave it exactly that behaviour — no retraining, and no sign of trouble until the trigger appeared.</description>
 </item>
 <item>
 <title>An Enzyme in the Infant Gut Unlocks Sugars in Breast Milk That Formula Does Not Contain</title>
 <link>https://thetomorrowpost.com/article/infant-gut-enzyme-breast-milk</link>
 <guid isPermaLink="true">https://thetomorrowpost.com/article/infant-gut-enzyme-breast-milk</guid>
-<pubDate>Wed, 11 Nov 2026 12:00:00 +0000</pubDate>
+<pubDate>Thu, 12 Nov 2026 12:00:00 +0000</pubDate>
 <description>A newborn’s gut bacteria carry an enzyme that unlocks sugars in breast milk — sugars that infant formula does not contain at all. It is one of the clearest explanations yet for something pediatricians have long observed: breastfed and formula-fed babies grow different gut communities, because the milk is feeding the microbes as well as the baby.</description>
 </item>
 <item>
 <title>NVIDIA Taught a Robot Model by Showing It 400,000 Hours of People Working</title>
 <link>https://thetomorrowpost.com/article/groot-2-robots-learn-human-video</link>
 <guid isPermaLink="true">https://thetomorrowpost.com/article/groot-2-robots-learn-human-video</guid>
-<pubDate>Wed, 11 Nov 2026 12:00:00 +0000</pubDate>
+<pubDate>Thu, 12 Nov 2026 12:00:00 +0000</pubDate>
 <description>Robots usually learn from other robots, steered by people for hours. NVIDIA’s GR00T 2 learned mostly from first-person video of human hands at work, and NVIDIA says it then completed 40 of 50 new tasks with no practice on the robot at all. The figures are NVIDIA’s own; the training videos are public.</description>
 </item>
 <item>
-<title>Google’s New Robot Model Kept 96% of a Real Job on Mercedes-Benz Factory Lines</title>
-<link>https://thetomorrowpost.com/article/gemini-robotics-2-5-mercedes-factory-pilot</link>
-<guid isPermaLink="true">https://thetomorrowpost.com/article/gemini-robotics-2-5-mercedes-factory-pilot</guid>
-<pubDate>Wed, 11 Nov 2026 12:00:00 +0000</pubDate>
-<description>Google DeepMind introduced Gemini Robotics 2.5 on Tuesday, November 10, its updated vision-language-action model — the system that turns what a robot sees and a written instruction into physical movement — and began rolling it out to robotics partners. In a proof of concept on active Mercedes-Benz production lines in Kecskemét, Hungary and Sindelfingen, Germany, Apptronik’s Apollo 2 humanoid robots pulled metal brackets from supply bins and packed them into sequencing containers at a 96% success rate, DeepMind reported. Across more than 200 laboratory tasks, the company reports success rates 30% to 100% higher than the previous generation and work completed 20% to 30% faster.</description>
-<content:encoded><![CDATA[<p>The evidence here is a factory, not a stage. The task — kitting, gathering the right brackets into the containers that feed an assembly line — is repetitive, physical and unforgiving of dropped parts, and it ran on lines in two countries rather than in DeepMind’s own lab. The 96% figure is DeepMind’s, from a proof of concept, and the honest reading of it is the missing four points: at production volume, 96% is forty failures in every thousand parts, each one a stoppage or a technician’s job. DeepMind’s director Kanishka Rao called closing that gap to human reliability a “steep road.” The laboratory results — serving food with tongs, tying a bow on a gift box, pipetting liquid — show range; the factory result shows the model holding one unglamorous job at near-useful reliability, which is the harder claim.</p><p>Two details mark where the field is going. The release separates the system into a higher-level reasoning component, which tracks the goal and the state of the work, and an action component that moves the arm — the same split between planning and doing that agent software adopted. And DeepMind published a new safety test, ASIMOV-Jailbreak, which probes whether a robot can be talked into unsafe physical actions by adversarial instructions. What the announcement does not settle is the economics: no cost per robot, per shift or per successful part was given, and performance over long, uninterrupted production runs has not been reported. Partners are receiving the model now; longer shifts are the next evidence to ask for.</p>]]></content:encoded>
+<title>Fractile Raised $720 Million at a $7 Billion Valuation Before Shipping Its First Chip</title>
+<link>https://thetomorrowpost.com/article/fractile-720-million-memory-chips-7-billion</link>
+<guid isPermaLink="true">https://thetomorrowpost.com/article/fractile-720-million-memory-chips-7-billion</guid>
+<pubDate>Thu, 12 Nov 2026 12:00:00 +0000</pubDate>
+<description>Fractile, a British company designing chips that run AI models, closed a $720 million Series C on Wednesday, November 11 at a $7 billion valuation, Reuters and TechCrunch reported. Thrive Capital, Founders Fund, Lightspeed and Redpoint led the round, with the British government’s Sovereign AI Fund and the British Business Bank among the investors. Fractile stacks ordinary memory directly on top of its processors to shorten the distance data travels. Its first commercial chips are planned for 2027, and none has shipped.</description>
+<content:encoded><![CDATA[<p>Fractile’s bet is easy to state. AI models spend much of their time waiting for data to arrive from memory. Fractile stacks DRAM, the standard working memory in most computers, directly on top of the processor that uses it, so the trip is shorter and the answer comes faster. The company was founded in 2022 by Walter Goodwin, an Oxford researcher, and its target is inference — the work a model does each time it answers a request, which is where most AI computing cost now sits.</p><p>The financing is large by any European standard. The $720 million Series C, confirmed by the company to Reuters, values Fractile at $7 billion, up from about $1.1 billion at its $220 million Series B in May. The British government put the valuation at over £5 billion and did not say how much public money went in; notes in its own announcement put typical Sovereign AI Fund cheques at £1 million to £10 million. Bloomberg reported in August that Fractile had reached an initial agreement to sell about $250 million of chips to Anthropic for delivery in 2027. Anthropic’s IPO filing does not name Fractile, and neither company has confirmed the agreement on the record.</p><p>The company’s performance claims — far faster inference at far lower cost than current hardware — are its own, and no independent test of a production chip exists, because no production chip exists. What the round establishes is that investors, including a sovereign fund, will pay frontier prices for a memory design before it ships. The test arrives with the first chips in 2027, measured against the hardware they are meant to displace.</p>]]></content:encoded>
 </item>
 <item>
 <title>Five Silicon Qubits Now Share a Single Control Wire</title>
 <link>https://thetomorrowpost.com/article/five-silicon-qubits-one-wire</link>
 <guid isPermaLink="true">https://thetomorrowpost.com/article/five-silicon-qubits-one-wire</guid>
-<pubDate>Wed, 11 Nov 2026 12:00:00 +0000</pubDate>
+<pubDate>Thu, 12 Nov 2026 12:00:00 +0000</pubDate>
 <description>A RIKEN-led team ran five silicon qubits down one shared microwave line and kept their accuracy at the level error correction requires — attacking the wiring bottleneck that keeps quantum processors small.</description>
 </item>
 <item>
 <title>The First Known Fruit-Eating Dinosaur Had Chewing Muscles Built Like a Parrot’s</title>
 <link>https://thetomorrowpost.com/article/first-fruit-eating-dinosaur-parrot-jaws</link>
 <guid isPermaLink="true">https://thetomorrowpost.com/article/first-fruit-eating-dinosaur-parrot-jaws</guid>
-<pubDate>Wed, 11 Nov 2026 12:00:00 +0000</pubDate>
+<pubDate>Thu, 12 Nov 2026 12:00:00 +0000</pubDate>
 <description>Fruit is a deal between a plant and an animal: the plant wraps its seeds in food, and the animal carries them away and plants them. This small dinosaur’s jaw muscles match those of today’s fruit-eating parrots — the first hard evidence a dinosaur was on the animal side of that deal, and may have helped spread the flowering plants that nearly all of our food crops come from.</description>
-</item>
-<item>
-<title>eBay Has Blocked AI Shopping Agents, Including Meta’s Muse, From Browsing Its Listings</title>
-<link>https://thetomorrowpost.com/article/ebay-blocks-ai-shopping-agents-muse</link>
-<guid isPermaLink="true">https://thetomorrowpost.com/article/ebay-blocks-ai-shopping-agents-muse</guid>
-<pubDate>Wed, 11 Nov 2026 12:00:00 +0000</pubDate>
-<description>eBay has restricted third-party AI agents from browsing its marketplace, The Verge reported on Tuesday, November 10. Users found over the weekend that Meta’s Muse — which had been pulling daily digests of watch listings, with prices, shipping details and condition notes — suddenly returned no links or details, and in some cases redirected to sites that mirror eBay listings. The Verge reproduced the block with its own queries. eBay’s user agreement already bans “buy-for-me agents” and language-model bots that place orders without a human check.</description>
-<content:encoded><![CDATA[<p>The wall is going up before the crowd arrives. eBay’s spokesperson Sybille St. Arromand told The Verge the company “takes a selective approach” to third-party access and has restricted agent access in certain cases, “including unauthorized scraping and training on our data.” Meta did not comment. eBay is not alone: Amazon blocks outside shopping agents outright, Target blocks them intermittently, and Shopify has taken the opposite side, opening roughly a billion listings to agents. The split is a business argument about who owns the customer when the customer sends a machine.</p><p>The measured use, so far, is tiny. Uber filled four rides through third-party agents last quarter. DoorDash took several hundred agent orders in a week, against 993 million orders in total. Retailers are not defending today’s traffic; they are setting the terms while the traffic is still small enough to negotiate over, and eBay’s version of the terms is a door that opens selectively, for partners it chooses. The reader’s version of the story is simpler: the assistant that gamely comparison-shopped for you last month may this month report, politely, that the shop will not let it in.</p>]]></content:encoded>
 </item>
 <item>
 <title>East Antarctica’s Ice Sheet Stayed Stable in 100,000-Year Simulations Even Above 10 Degrees of Warming</title>
 <link>https://thetomorrowpost.com/article/east-antarctica-ice-sheet-snowfall</link>
 <guid isPermaLink="true">https://thetomorrowpost.com/article/east-antarctica-ice-sheet-snowfall</guid>
-<pubDate>Wed, 11 Nov 2026 12:00:00 +0000</pubDate>
+<pubDate>Thu, 12 Nov 2026 12:00:00 +0000</pubDate>
 <description>In coupled climate simulations, the largest ice sheet on Earth held up under extreme warming because warmer air delivered it more snow and more cloud cover — while West Antarctica and Greenland, in the same simulations, lost heavily.</description>
 </item>
 <item>
 <title>Colorectal Cancer in Patients Under 50 Is Biologically Different, a 189-Tumor Study Finds</title>
 <link>https://thetomorrowpost.com/article/early-onset-colorectal-cancer-different-biology</link>
 <guid isPermaLink="true">https://thetomorrowpost.com/article/early-onset-colorectal-cancer-different-biology</guid>
-<pubDate>Wed, 11 Nov 2026 12:00:00 +0000</pubDate>
+<pubDate>Thu, 12 Nov 2026 12:00:00 +0000</pubDate>
 <description>Tumors from patients diagnosed before 50 carry proportionally more stromal cells and fewer epithelial cells than tumors from older patients, in the largest study of its kind — a possible reason the disease behaves more aggressively in younger people.</description>
 </item>
 <item>
 <title>AI-Designed Virus Shells Delivered Genes to Primate Brains 152 Times Better</title>
 <link>https://thetomorrowpost.com/article/dyno-capsids-brain-delivery-152-fold</link>
 <guid isPermaLink="true">https://thetomorrowpost.com/article/dyno-capsids-brain-delivery-152-fold</guid>
-<pubDate>Wed, 11 Nov 2026 12:00:00 +0000</pubDate>
+<pubDate>Thu, 12 Nov 2026 12:00:00 +0000</pubDate>
 <description>Dyno Therapeutics’ engineered capsids reached the brain far more efficiently than the standard AAV9 in non-human primates, and versions built to evade antibodies tested negative against up to 85% of human serum samples. All of it is preclinical.</description>
 </item>
 <item>
 <title>A French Director Says He Made a Whole Feature Film at Home, With No Actors and No Crew</title>
 <link>https://thetomorrowpost.com/article/dumont-the-end-film-no-actors</link>
 <guid isPermaLink="true">https://thetomorrowpost.com/article/dumont-the-end-film-no-actors</guid>
-<pubDate>Wed, 11 Nov 2026 12:00:00 +0000</pubDate>
+<pubDate>Thu, 12 Nov 2026 12:00:00 +0000</pubDate>
 <description>Bruno Dumont built a career on real faces and real places. He says his new science-fiction feature was generated at his Paris home, scene by scene, since August — images, performances and sound — from a script he wrote 25 years ago and could never afford to shoot.</description>
 </item>
 <item>
 <title>A New Kind of Home Test Can Detect Molecules Too Small for Today’s Test Strips</title>
 <link>https://thetomorrowpost.com/article/dna-shape-test-small-molecules</link>
 <guid isPermaLink="true">https://thetomorrowpost.com/article/dna-shape-test-small-molecules</guid>
-<pubDate>Wed, 11 Nov 2026 12:00:00 +0000</pubDate>
+<pubDate>Thu, 12 Nov 2026 12:00:00 +0000</pubDate>
 <description>The strip tests in a bathroom cabinet — COVID, pregnancy — only work on large molecules with two places to grab. Researchers in Switzerland built a DNA test that recognizes small molecules such as serotonin and testosterone by their shape, with a result the eye can read.</description>
 </item>
 <item>
 <title>DeepSeek Says Its Agent Tool Was Used by 1.5 Million People in a Day, Burning 92 Trillion Tokens</title>
 <link>https://thetomorrowpost.com/article/deepseek-harness-92-trillion-tokens-day</link>
 <guid isPermaLink="true">https://thetomorrowpost.com/article/deepseek-harness-92-trillion-tokens-day</guid>
-<pubDate>Wed, 11 Nov 2026 12:00:00 +0000</pubDate>
+<pubDate>Thu, 12 Nov 2026 12:00:00 +0000</pubDate>
 <description>DeepSeek’s Harness — the software layer that lets its models run tools and carry out tasks — said daily users on its official service reached about 1.54 million on November 4, using roughly 92 trillion tokens that day. About 35,000 plug-ins written by others already exist for it.</description>
 </item>
 <item>
 <title>A Startup Is Building Robot Technicians to Work Inside Data Centers</title>
 <link>https://thetomorrowpost.com/article/darwin-robotics-robot-technicians-data-centers</link>
 <guid isPermaLink="true">https://thetomorrowpost.com/article/darwin-robotics-robot-technicians-data-centers</guid>
-<pubDate>Wed, 11 Nov 2026 12:00:00 +0000</pubDate>
+<pubDate>Thu, 12 Nov 2026 12:00:00 +0000</pubDate>
 <description>Data centers are being built faster than operators can hire the people who install and maintain them. Darwin Robotics, founded by two brothers in San Francisco, has raised $3.6 million to build robots that learn technician work by watching people do it, with first deployments aimed at early 2027.</description>
 </item>
 <item>
 <title>Crushed Shells Mixed Into Beach Sand Helped Young Clams Grow in More Acidic Water</title>
 <link>https://thetomorrowpost.com/article/crushed-shells-young-clams-acidification</link>
 <guid isPermaLink="true">https://thetomorrowpost.com/article/crushed-shells-young-clams-acidification</guid>
-<pubDate>Wed, 11 Nov 2026 12:00:00 +0000</pubDate>
+<pubDate>Thu, 12 Nov 2026 12:00:00 +0000</pubDate>
 <description>Adding shell fragments to the sand where baby clams burrow changed the water between the grains, lowered its acidity, and produced larger shells — a measured version of a shell-adding practice Indigenous communities have used for generations.</description>
 </item>
 <item>
-<title>CoreWeave Beat Its Own Revenue Forecast, and Its Interest Bill Passed $846 Million in One Quarter</title>
-<link>https://thetomorrowpost.com/article/coreweave-q3-revenue-interest-846-million</link>
-<guid isPermaLink="true">https://thetomorrowpost.com/article/coreweave-q3-revenue-interest-846-million</guid>
-<pubDate>Wed, 11 Nov 2026 12:00:00 +0000</pubDate>
-<description>CoreWeave reported third-quarter results after Tuesday’s close. Revenue was $3.661 billion, up 168% from a year earlier and above the top of its own $3.45 billion to $3.60 billion guidance. Adjusted operating income was $379 million, against guidance of $200 million to $260 million. Net interest expense was $846 million, up from $310 million a year earlier, and the net loss was $709 million. Revenue backlog reached about $132.5 billion, and the company raised its full-year revenue guidance to $13.0 billion to $13.3 billion.</description>
-<content:encoded><![CDATA[<p>The quarter CoreWeave promised in this paper’s agenda arrived with both halves of the neocloud argument in the same filing. The operating half beat everything: revenue of $3.661 billion, up 168% year over year and 42% on the second quarter — the first quarter in which revenue grew by more than $1 billion — and adjusted operating income of $379 million, well above the $200 million to $260 million the company had guided. Adjusted EBITDA was $2.256 billion, a 62% margin. Backlog — contracted amounts not yet recognised as revenue, subject to delivery — reached about $132.5 billion, from $104.2 billion at the end of June. Active power doubled since the end of 2025 to 1.7 gigawatts.</p><p>The financing half is the same size as the operating half, and growing faster. Net interest expense was $846 million for the quarter, up from $310 million a year earlier and $640 million in the second quarter; the company guided to $1.05 billion to $1.15 billion for the fourth quarter. Against $207 million of GAAP operating income, the interest bill produced a net loss of $709 million. Total debt stood at $46.873 billion at September 30. Capital expenditure guidance for 2026 rose to $37 billion to $39 billion. Management raised the full-year revenue guide to $13.0 billion to $13.3 billion and the exit run-rate target to $20 billion to $21 billion, and said the 2028 capacity it has brought to market is already sold out. The filing does not resolve the argument; it prices it. CoreWeave’s operations now earn real money at scale, and its lenders earn roughly four times as much from the same quarter.</p>]]></content:encoded>
+<title>CoreWeave Plans a $4 Billion Loan at About Half the Interest Rate Its Own Bonds Command</title>
+<link>https://thetomorrowpost.com/article/coreweave-4-billion-investment-grade-loan-plan</link>
+<guid isPermaLink="true">https://thetomorrowpost.com/article/coreweave-4-billion-investment-grade-loan-plan</guid>
+<pubDate>Thu, 12 Nov 2026 12:00:00 +0000</pubDate>
+<description>Bloomberg reported on Wednesday, November 11 that CoreWeave plans to raise at least $4 billion through an investment-grade loan, led by Morgan Stanley and Mitsubishi UFJ, possibly as soon as next week. The company’s finance chief told analysts the loan should yield 7% to 7.5%. CoreWeave’s unsecured bonds due 2032 traded at a yield of about 14.2% the same day. The plans are not final and could change, and CoreWeave has filed nothing about the loan.</description>
+<content:encoded><![CDATA[<p>The difference between CoreWeave’s two prices for money is the story of its balance sheet. Bloomberg reported on Wednesday evening that the company plans to raise at least $4 billion in an investment-grade loan, syndicated in phases by Morgan Stanley and Mitsubishi UFJ, possibly as soon as next week. On Tuesday’s earnings call, finance chief Nitin Agrawal said the next such loan should price at a yield of 7% to 7.5%. CoreWeave’s 9.625% bonds due 2032 last traded at a yield of about 14.2%, by FINRA trade data read on Wednesday.</p><p>The structure explains the gap. The loan is expected to be backed by chips and by a contract with a creditworthy customer, following the pattern of the $8.5 billion facility CoreWeave raised in March, which was supported by Meta’s contracts. Lenders to that facility are not mainly betting on CoreWeave. They are betting on the customer’s promise to pay and on hardware they can claim. Bondholders hold the company itself: $46.9 billion of debt at September 30, a $709 million third-quarter net loss, and an $846 million interest bill for the same quarter, as this paper reported yesterday from the company’s filing.</p><p>Chief executive Michael Intrator told analysts the company will not fund itself in the unsecured market at current yields, and does not need to. Whether that holds depends on customers continuing to sign the contracts that make the cheap loans possible. The loan’s size, price and rating are not established until it launches. Bloomberg’s report is sourced to people familiar with the matter, and no filing had appeared by Wednesday night.</p>]]></content:encoded>
 </item>
 <item>
 <title>Pines Planted Far From Home Grow Up to Four Times Faster, and Handle Drought Better</title>
 <link>https://thetomorrowpost.com/article/conifers-grow-faster-southern-hemisphere</link>
 <guid isPermaLink="true">https://thetomorrowpost.com/article/conifers-grow-faster-southern-hemisphere</guid>
-<pubDate>Wed, 11 Nov 2026 12:00:00 +0000</pubDate>
+<pubDate>Thu, 12 Nov 2026 12:00:00 +0000</pubDate>
 <description>Across 192 sites on four continents, conifers planted in the Southern Hemisphere outgrew the same species at home — and stored more sugars and starches, a reserve that appears to carry them through dry spells.</description>
 </item>
 <item>
 <title>Cells Can Now Record What They Were Doing Days Ago</title>
 <link>https://thetomorrowpost.com/article/cells-record-their-own-past</link>
 <guid isPermaLink="true">https://thetomorrowpost.com/article/cells-record-their-own-past</guid>
-<pubDate>Wed, 11 Nov 2026 12:00:00 +0000</pubDate>
+<pubDate>Thu, 12 Nov 2026 12:00:00 +0000</pubDate>
 <description>Engineered organelles archive a cell’s own RNA as it works — so days later, researchers can read back which genes were active, including in the rare cancer cells that survive chemotherapy and seed relapse.</description>
 </item>
 <item>
 <title>A Structure Called the Cat’s Tail Records a Pluto-Scale Collision 63 Light-Years Away</title>
 <link>https://thetomorrowpost.com/article/cats-tail-beta-pictoris-collision</link>
 <guid isPermaLink="true">https://thetomorrowpost.com/article/cats-tail-beta-pictoris-collision</guid>
-<pubDate>Wed, 11 Nov 2026 12:00:00 +0000</pubDate>
+<pubDate>Thu, 12 Nov 2026 12:00:00 +0000</pubDate>
 <description>Hubble has imaged the Cat’s Tail in visible light for the first time: a dark stream about 1,000 times the Earth–Sun distance across, inside a young star’s debris disk — evidence of a collision between bodies the size of Pluto.</description>
 </item>
 <item>
 <title>An Arctic Ocean Bacterium Appears to Live on Acetone and Carbon Dioxide</title>
 <link>https://thetomorrowpost.com/article/arctic-bacterium-acetone-carbon</link>
 <guid isPermaLink="true">https://thetomorrowpost.com/article/arctic-bacterium-acetone-carbon</guid>
-<pubDate>Wed, 11 Nov 2026 12:00:00 +0000</pubDate>
+<pubDate>Thu, 12 Nov 2026 12:00:00 +0000</pubDate>
 <description>In the cold, food-scarce water of the Arctic Ocean, a bacterium appears to build what it needs to grow out of two unlikely ingredients: acetone, the chemical in nail-polish remover, and carbon dioxide dissolved in seawater.</description>
+</item>
+<item>
+<title>Apple Will Close Its Support Community Forums on November 20, After 28 Years</title>
+<link>https://thetomorrowpost.com/article/apple-support-community-closing-november-20</link>
+<guid isPermaLink="true">https://thetomorrowpost.com/article/apple-support-community-closing-november-20</guid>
+<pubDate>Thu, 12 Nov 2026 12:00:00 +0000</pubDate>
+<description>Apple announced on Wednesday, November 11 that the Apple Support Community, its user-to-user help forums, will close permanently on Friday, November 20. The forums are already read-only. They have run in some form since 1998, when Apple launched the Apple Tech Exchange. Apple told MacRumors it decided to close the forums after evaluating its strategy and customer needs.</description>
+<content:encoded><![CDATA[<p>For 28 years, the place many Apple owners actually solved their problems was a forum other owners answered. Apple announced on Wednesday that the Apple Support Community will close permanently on November 20, and that no new posts are being accepted from today. The last message appears to have been posted on Tuesday evening. The forums began in 1998 as the Apple Tech Exchange and grew into a large, searchable record of fixes, workarounds and warnings, written by users rather than by the company.</p><p>Apple told MacRumors the decision followed a careful evaluation of strategy and customer needs, and pointed people to its official support site. The alternatives it named are other people’s forums, including MacRumors and Reddit. The closing fits a pattern readers will recognise from this autumn’s coverage: the open, searchable commons where users helped each other is being retired in favour of official channels and assistants, and the archive of answers written in public becomes read-only, then gone. Anyone with a bookmarked fix has until November 20 to save it.</p>]]></content:encoded>
 </item>
 <item>
 <title>Starving Ants Protect Their Brains’ Energy First, Like Humans Do</title>
 <link>https://thetomorrowpost.com/article/ants-protect-brain-energy-starvation</link>
 <guid isPermaLink="true">https://thetomorrowpost.com/article/ants-protect-brain-energy-starvation</guid>
-<pubDate>Wed, 11 Nov 2026 12:00:00 +0000</pubDate>
+<pubDate>Thu, 12 Nov 2026 12:00:00 +0000</pubDate>
 <description>When food runs short, ants keep supplying their brains at a rate comparable to the share humans protect — even though a colony is supposed to put the group ahead of any individual.</description>
 </item>
 </channel>
