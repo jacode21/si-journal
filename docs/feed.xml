@@ -5,294 +5,296 @@
 <link>https://thetomorrowpost.com/</link>
 <description>A newspaper for the digital age. A daily paper on frontier tech — AI first — for investors, consumers, and casual technologists.</description>
 <language>en-us</language>
-<lastBuildDate>Sat, 14 Nov 2026 12:00:00 +0000</lastBuildDate>
+<lastBuildDate>Sun, 15 Nov 2026 12:00:00 +0000</lastBuildDate>
 <item>
 <title>A Memory for Pictures Let an AI Agent Beat First-Time Human Players at New Puzzle Games</title>
 <link>https://thetomorrowpost.com/article/vista-agent-remembers-every-picture</link>
 <guid isPermaLink="true">https://thetomorrowpost.com/article/vista-agent-remembers-every-picture</guid>
-<pubDate>Sat, 14 Nov 2026 12:00:00 +0000</pubDate>
+<pubDate>Sun, 15 Nov 2026 12:00:00 +0000</pubDate>
 <description>Most AI agents forget each picture as soon as they have looked at it. A team at MIT built one that keeps every image and can search them later. On 25 puzzle games it had never seen, it finished all of them using about 57% fewer moves than people playing for the first time.</description>
+</item>
+<item>
+<title>Uber Is Telling Drivers Their Licence Photos Were Taken Through Its AI Vendor Fireworks</title>
+<link>https://thetomorrowpost.com/article/uber-drivers-license-data-fireworks-breach</link>
+<guid isPermaLink="true">https://thetomorrowpost.com/article/uber-drivers-license-data-fireworks-breach</guid>
+<pubDate>Sun, 15 Nov 2026 12:00:00 +0000</pubDate>
+<description>Uber has begun notifying United States drivers that images of their driver’s licences were stolen in the October breach at Fireworks AI, the model-hosting company that ran AI services for it. Uber’s November 10 notice to Iowa’s attorney general says an intruder used Fireworks’ compromised credentials on October 7 to reach a cloud storage area Uber had set up for the vendor, taking licence images and the text extracted from them — name, address, date of birth and licence number. Published state filings cover about 11,940 people in five states; Uber has given no national total. The breach reached Notion’s AI transcripts earlier this month, as this paper reported in Edition 027, and Cursor has also confirmed it as a victim.</description>
+<content:encoded><![CDATA[<p>The Fireworks AI breach now has a victim whose customers never chose an AI product. Uber is notifying drivers across the United States that images of their driver’s licences were taken in October, after an intruder used credentials stolen from Fireworks AI — the company that hosts and fine-tunes open AI models for other businesses — to reach Uber data. Uber confirmed the vendor’s identity to TechCrunch and PCMag; its own state filings do not name Fireworks.</p><p>The most detailed account is Uber’s November 10 letter to Iowa’s attorney general. The licence files sat in a cloud storage space Uber had set up specifically to enable the vendor’s work. Fireworks told Uber on October 9 that its internal credentials had been compromised; Uber cut its data connections and investigated, concluding on October 13 that the intruder had used the credentials on October 7. The data taken was licence images and the text extracted from them: name, address, date of birth and licence number. One account of the filings notes that Uber’s alerts never fired, because the intruder used valid logins.</p><p>The published counts, state by state, are about 2,999 people in Iowa, 3,430 in South Carolina, 2,567 in Massachusetts, 1,873 in Rhode Island and 1,071 in Vermont — about 11,940 in five states. California and Illinois drivers were also notified, with no public counts, and Uber has given no national total. The company offers affected drivers free credit monitoring and fraud assistance through Cyberscout, to be claimed within ninety days of the letter, and says it has found no misuse of the data to date.</p><p>Fireworks is the same host whose breach exposed some Notion AI chat transcripts, reported in this paper yesterday, and Cursor confirmed this week that its coding records were also reached. Uber has not explained why driver identity documents sat with an AI vendor. That question, and the total count, remain open.</p>]]></content:encoded>
+</item>
+<item>
+<title>Twitch Now Lets Viewers Put Products in an Amazon Cart Without Leaving the Stream</title>
+<link>https://thetomorrowpost.com/article/twitch-shoppable-ads-amazon-cart-overlay</link>
+<guid isPermaLink="true">https://thetomorrowpost.com/article/twitch-shoppable-ads-amazon-cart-overlay</guid>
+<pubDate>Sun, 15 Nov 2026 12:00:00 +0000</pubDate>
+<description>Twitch launched an in-stream shoppable advertising format in open desktop beta in the United States and Canada on Friday, November 14: an overlay on a video ad lets a viewer browse a product’s styles and add it to an Amazon cart, or buy it, without leaving the stream. A second format, skippable ads, enters open beta in December, and mobile and connected-TV versions are planned for next year. Gaming hardware maker Razer, which tested the shoppable format, reported a return on advertising spend 2.44 times its earlier standard-video campaigns — the advertiser’s own test result. Twitch viewers spend an average of more than four hours a day on the platform, according to Twitch.</description>
+<content:encoded><![CDATA[<p>The distance between watching and buying on Twitch is now one overlay. The livestreaming platform’s new in-stream shoppable ad, in open desktop beta in the United States and Canada from Friday, puts a product browser on top of a video ad: a viewer can look through styles, add the item to an Amazon cart, or buy it outright, and the stream keeps playing underneath. A second format — skippable ads, a concession in the other direction — enters open beta in December. Mobile and television versions are planned for the first half of next year, with expansion beyond North America in the same window.</p><p>The commercial logic is stated in the platform’s own numbers. Twitch says its viewers average more than four hours a day on the platform — an audience that is present, logged in and accustomed to buying things streamers recommend. Amazon does not report Twitch’s revenue separately; its advertising business as a whole took $19.6 billion in the third quarter, up 12% on the year. The shoppable format is Amazon connecting the two assets it already owns: the hours and the checkout.</p><p>The one performance figure available is an advertiser’s. Razer, the gaming hardware company, tested the format in the United States and reported a return on ad spend 2.44 times what its earlier, standard-video campaigns achieved. That is a single brand’s test, run with the platform, on the category — gaming hardware — whose audience is most at home buying during a stream. Whether a shampoo or a shoe converts the same way, mid-stream, is the question the open beta exists to answer.</p>]]></content:encoded>
+</item>
+<item>
+<title>A General Model Can Drive a Robot. The Question Is What Each Task Costs</title>
+<link>https://thetomorrowpost.com/article/the-general-model-bet-has-a-cost-line</link>
+<guid isPermaLink="true">https://thetomorrowpost.com/article/the-general-model-bet-has-a-cost-line</guid>
+<pubDate>Sun, 15 Nov 2026 12:00:00 +0000</pubDate>
+<description>A general model that can run a robot removes a whole layer of specialist engineering — and replaces it with a meter. In simulation, GPT-6 Astra beat the best specialist robot models. In Runway’s own comparison, it took fifteen times longer and cost fifty-one times more per finished task than a specialist built for the job. Both results can be true, because they measure different things: whether the task can be done at all, and what doing it costs at scale. OpenAI has bet its org chart on the first measure. The warehouses and factories that buy robots run on the second. The specialist model is not being beaten; it is being repriced.</description>
+<content:encoded><![CDATA[<p>A general model that can run a robot removes a whole layer of specialist engineering — and replaces it with a meter. In simulation, GPT-6 Astra beat the best specialist robot models. In Runway’s own comparison, it took fifteen times longer and cost fifty-one times more per finished task than a specialist built for the job. Both results can be true, because they measure different things: whether the task can be done at all, and what doing it costs at scale. OpenAI has bet its org chart on the first measure. The warehouses and factories that buy robots run on the second. The specialist model is not being beaten; it is being repriced.</p>]]></content:encoded>
 </item>
 <item>
 <title>Tencent’s New Hy4 Model Can Read Images and Operate a Computer</title>
 <link>https://thetomorrowpost.com/article/tencent-hy4-vision-computer-use</link>
 <guid isPermaLink="true">https://thetomorrowpost.com/article/tencent-hy4-vision-computer-use</guid>
-<pubDate>Sat, 14 Nov 2026 12:00:00 +0000</pubDate>
+<pubDate>Sun, 15 Nov 2026 12:00:00 +0000</pubDate>
 <description>Tencent’s flagship model gained two abilities at once: it can read fine detail in images and charts, and it can work a computer through its screen and command line, including professional tools such as Blender and CAD software. Its weights are promised, not yet out.</description>
 </item>
 <item>
-<title>SpaceX Pledged More Than $74 Billion for Two AI Campuses, and Both Face Votes on December 9</title>
-<link>https://thetomorrowpost.com/article/spacex-74-billion-two-ai-campuses-december-votes</link>
-<guid isPermaLink="true">https://thetomorrowpost.com/article/spacex-74-billion-two-ai-campuses-december-votes</guid>
-<pubDate>Sat, 14 Nov 2026 12:00:00 +0000</pubDate>
-<description>SpaceX said on Thursday, November 12 that it plans to invest more than $74 billion in two AI supercomputing campuses: more than $24 billion at Starbase in Texas, on a 444-acre site with its own gas-fired power plant, and roughly $50 billion in Cochise County, Arizona, where the campus could draw up to 6 gigawatts in four phases. Neither project is approved. The Arizona site needs a special-use permit at a county hearing on December 9, where a petition with about 2,400 signatures asks officials to deny it; the same day, Starbase’s city commission votes on a property-tax abatement.</description>
-<content:encoded><![CDATA[<p>The pledge is large, and the permission is not in hand. SpaceX said on Thursday it plans more than $24 billion at Starbase, Texas — a supercomputing site on 444 acres that would generate its own electricity from a gas-fired plant rather than draw from the grid — and roughly $50 billion in Cochise County, Arizona. The Arizona campus, filed by a SpaceX affiliate named Tombstone Resources LLC for 747 acres near the Willcox Playa, would be built in four phases of about 1.5 gigawatts each, nine buildings of about 493,000 square feet, with dry cooling and no planned industrial groundwater use, the county application says. Six gigawatts, run around the clock, is about the average electricity use of five million American homes.</p><p>Both sites face a decision on the same day. Cochise County does not allow data centres by right; the Planning and Zoning Commission hears the special-use application on December 9 in Bisbee, and a petition with about 2,400 signatures asks the county to deny the permit, Reuters reported. Written comments close November 27. In Texas, the Starbase City Commission votes the same day on a property-tax abatement. SpaceX estimates about 5,500 construction jobs at peak and 1,000 permanent jobs in Arizona, and says the Arizona project could cut local cooperative members’ power bills by up to 20% — the company’s figures.</p><p>The $74 billion is SpaceX’s own number, with no published split between buildings, power equipment and chips, and none of it is contracted capacity. Reuters reported that SpaceX’s AI segment produced more than half of its third-quarter revenue, which is the business case for building at this scale. The pattern is the one this paper recorded at the Colossus data centre in Edition 014 and in OpenAI’s community compact in Edition 019: the money is announced first, and permission has become a stage of the project with its own date.</p>]]></content:encoded>
+<title>Consumers Sued to Unwind the $110 Billion Skydance Merger That Joined Paramount and Warner Bros. Discovery</title>
+<link>https://thetomorrowpost.com/article/skydance-paramount-warner-consumer-antitrust-lawsuit</link>
+<guid isPermaLink="true">https://thetomorrowpost.com/article/skydance-paramount-warner-consumer-antitrust-lawsuit</guid>
+<pubDate>Sun, 15 Nov 2026 12:00:00 +0000</pubDate>
+<description>A group of consumers has filed a revised antitrust lawsuit in California federal court against Skydance, asking the court to reverse the $110 billion merger that joined Paramount and Warner Bros. Discovery, or to order the sale of assets including HBO Max, CNN and the Warner Bros. studio operations. The merger closed in October, after settlements with twelve state attorneys general and the Writers Guild of America. The plaintiffs’ argument centres on the plan to bring Paramount+ and HBO Max together in a bundle in early 2027: two services that competed for the same subscriber would be owned, priced and run by one company. Skydance has not responded in the reporting available.</description>
+<content:encoded><![CDATA[<p>The largest media merger of the year is back in court, this time at the request of the people who pay for it. Consumers have filed a revised antitrust complaint in California federal court against Skydance, the company formed when Paramount’s $110 billion acquisition of Warner Bros. Discovery closed in October. The suit asks the court to unwind the deal or order divestitures — HBO Max, CNN and the Warner Bros. studio business are the assets named.</p><p>The complaint’s centre is the bundle this paper noted in Edition 023: Paramount+ and HBO Max, two streaming services that spent years bidding against each other for the same households, are to be offered together in early 2027 and moved onto shared infrastructure within the first year. The plaintiffs argue that common ownership removes the reason each service had to compete on price and programming. They also point to the company’s plan, stated at the merger, to find at least $6 billion of annual cost savings over three years.</p><p>Context cuts both ways. The merger already survived one round of legal process: it closed after settlements with twelve state attorneys general and the Writers Guild of America, which extracted their own conditions. A consumer suit asking for unwinding faces a court being asked to unscramble a closed, settled transaction — a remedy judges grant rarely. Skydance had not responded in the reporting available at drafting. What the filing does establish, before any ruling, is that the bundle’s price — the number subscribers will actually be offered in early 2027 — now has a legal proceeding attached to it.</p>]]></content:encoded>
 </item>
 <item>
 <title>Skild AI Gave Away the Physics Engine It Uses to Train Robots, and Published the Tests</title>
 <link>https://thetomorrowpost.com/article/skild-steel-open-source-physics-solver</link>
 <guid isPermaLink="true">https://thetomorrowpost.com/article/skild-steel-open-source-physics-solver</guid>
-<pubDate>Sat, 14 Nov 2026 12:00:00 +0000</pubDate>
+<pubDate>Sun, 15 Nov 2026 12:00:00 +0000</pubDate>
 <description>Robots learn in simulation before they touch the real world, and the simulation is the slow part. Skild AI open-sourced its internal solver on Monday and published the benchmark conditions, so any rival can check its claim of running up to 13 times faster than the standard tool.</description>
 </item>
 <item>
 <title>A Japanese Voice Model That Listens While It Talks, and Looks Things Up Without Pausing</title>
 <link>https://thetomorrowpost.com/article/shizuku-duplex-japanese-voice-talks-while-listening</link>
 <guid isPermaLink="true">https://thetomorrowpost.com/article/shizuku-duplex-japanese-voice-talks-while-listening</guid>
-<pubDate>Sat, 14 Nov 2026 12:00:00 +0000</pubDate>
+<pubDate>Sun, 15 Nov 2026 12:00:00 +0000</pubDate>
 <description>Most voice assistants take turns: you stop, it answers. Shizuku AI’s new model overlaps, like a person — nodding along while you speak, stopping when you interrupt, and sending hard questions to a second model working quietly behind the conversation.</description>
 </item>
 <item>
-<title>Q-CTRL Raised $290 Million to Sell the Software That Keeps Quantum Machines Working</title>
-<link>https://thetomorrowpost.com/article/q-ctrl-290-million-series-c-quantum-software</link>
-<guid isPermaLink="true">https://thetomorrowpost.com/article/q-ctrl-290-million-series-c-quantum-software</guid>
-<pubDate>Sat, 14 Nov 2026 12:00:00 +0000</pubDate>
-<description>Q-CTRL, the Sydney-based quantum software company founded by Michael J. Biercuk, announced a $290 million Series C on Thursday, November 12, led by Salesforce Ventures, valuing the company above $1 billion. The round was expanded twice to meet demand, the company said. Q-CTRL sells AI-driven control software that suppresses errors in quantum computers regardless of who built the hardware, and Ironstone Opal, a navigation system that uses quantum sensors to fix a vehicle’s position when GPS is unavailable or jammed.</description>
-<content:encoded><![CDATA[<p>Q-CTRL’s bet is that the valuable layer in quantum computing is not the machine. The company announced a $290 million Series C on Thursday, led by Salesforce Ventures with Bullhound Capital and Affinity Partners among the participants, and new investors including AMD Ventures and Australia’s National Reconstruction Fund. The company says the oversubscribed round — expanded twice — values it above $1 billion and is the largest raise by a software-focused quantum firm. Those characterisations are the company’s.</p><p>The products explain the syndicate, which mixes venture funds with Lockheed Martin Ventures and In-Q-Tel among the returning backers. Fire Opal and Boulder Opal are control tools: software that suppresses noise and automates calibration in quantum computers, sold across hardware brands. Ironstone Opal is a navigation system that reads small changes in the Earth’s magnetic field with quantum sensors to fix a position when satellite navigation is unavailable or denied; the company says it has passed an airworthiness qualification standard for commercial aviation and unmanned platforms, and is being deployed on commercial aircraft and autonomous vehicles. Performance claims, including field results the company describes as far better than alternatives, are Q-CTRL’s own.</p><p>“The hard problem in quantum is not building the machine, it is getting useful output from it,” Salesforce Ventures partner Robert Keith said in the announcement. That is also the test for the round. Quantum hardware has absorbed most of the sector’s capital; a software layer priced above $1 billion has to show revenue from machines it does not own, in sectors — finance, energy, defence, aerospace — where buying cycles are slow. The company did not publish revenue.</p>]]></content:encoded>
+<title>The Robot’s Brain Is Becoming a Model Choice</title>
+<link>https://thetomorrowpost.com/article/robot-brain-becomes-a-model-choice</link>
+<guid isPermaLink="true">https://thetomorrowpost.com/article/robot-brain-becomes-a-model-choice</guid>
+<pubDate>Sun, 15 Nov 2026 12:00:00 +0000</pubDate>
+<description>In one week the field produced three different answers to what should run a robot: Runway’s Praxis-1, a specialist world-action model released as downloadable open weights on November 11; Google DeepMind’s Gemini Robotics 2.5, working a partner programme on Mercedes-Benz lines; and Nvidia’s GR00T 2, code due in December. On Friday, Fortune reported that OpenAI had dissolved its standalone robotics team on the view that its general model, GPT-6 Astra, can control robots directly. The results each side cites are real and not comparable: Astra’s 74.8% came on a simulated manipulation benchmark, and Runway’s counter-figures — Astra taking 15.6 times longer and costing 51 times more per completed task — are Runway’s own measurements of its competitor.</description>
+<content:encoded><![CDATA[<p>This paper’s Long View last Thursday sorted the robot models of a single week by one test: could you download them? Runway’s Praxis-1, yes — open weights and code, that day. Gemini Robotics 2.5, no — a partner programme. Nvidia’s GR00T 2, not yet — code due in December. On Friday the week acquired a fourth answer, and it was organisational. OpenAI dissolved its standalone robotics team because, in its account, the general model had become the robot brain, and a separate team for a separate brain no longer described the work.</p><p>Each side’s evidence deserves its label. The case for the general model is a capability result: in Nvidia research reported by Fortune, a GPT-6 Astra agent reached 74.8% on a simulated manipulation benchmark, against 51.0% for the best specialist models on that board. The case against is an economics result: in Runway’s own testing, Astra took 15.6 times longer and cost 51 times more per completed task than Praxis-1. A third measurement, from Artificial Analysis, put Astra at about thirty minutes and $16.36 per task on its robotics test, against about twenty seconds for a person. These numbers do not contradict each other, because they were not taken on the same test — Astra’s best score and Anthropic’s Claude Fable 5.2’s best score come from different benchmarks, and no independent result on a shared test yet exists. Anyone choosing a model to run a robot today is choosing between incomparable claims.</p><p>That is the change worth recording. A robot’s brain used to be part of the robot — engineered with the machine, sold with the machine, replaced with the machine. It is becoming a line item chosen separately, the way a company chooses a model for its support desk: by capability, by price per task, by what can be inspected and downloaded. Specialist builders such as Runway are not refuted by OpenAI’s reorganisation; their product is precisely the second measure — cost and speed on defined work. The general labs are not refuted by the cost figures; their claim is that one model improves across every task at once, and the simulation result is early evidence for it.</p><p>The checkpoint is a shared test. When an independent benchmark runs the general models and the specialists on the same physical tasks, at published cost per completed task, the argument in this week’s stories becomes answerable. Until then, the honest summary of the robot-brain contest is the one neither side leads with: the capability gap and the cost gap are both real, and they point in opposite directions.</p>]]></content:encoded>
+</item>
+<item>
+<title>The Smell of a Predator Switches On an Anxiety Circuit in the Mouse Brain</title>
+<link>https://thetomorrowpost.com/article/predator-scent-anxiety-circuit-mice</link>
+<guid isPermaLink="true">https://thetomorrowpost.com/article/predator-scent-anxiety-circuit-mice</guid>
+<pubDate>Sun, 15 Nov 2026 12:00:00 +0000</pubDate>
+<description>A mouse that catches the scent of a predator does not just startle — a specific chain of brain regions lights up and holds the animal in an anxious state. Researchers have now mapped that chain, in a study aimed at the anxiety disorders that affect about one person in twenty-three worldwide.</description>
 </item>
 <item>
 <title>Polynesia’s Genomes Hold Drug Clues the Big Databases Missed</title>
 <link>https://thetomorrowpost.com/article/polynesia-genomes-drug-clues</link>
 <guid isPermaLink="true">https://thetomorrowpost.com/article/polynesia-genomes-drug-clues</guid>
-<pubDate>Sat, 14 Nov 2026 12:00:00 +0000</pubDate>
+<pubDate>Sun, 15 Nov 2026 12:00:00 +0000</pubDate>
 <description>Genomes from more than 1,000 French Polynesians show founder effects at least ten times stronger than Finland’s — concentrating rare variants until their effects on health become measurable.</description>
 </item>
 <item>
 <title>NVIDIA Gave Its Agent Safety Software to a Neutral Foundation</title>
 <link>https://thetomorrowpost.com/article/openshell-cncf-agent-security-runtime</link>
 <guid isPermaLink="true">https://thetomorrowpost.com/article/openshell-cncf-agent-security-runtime</guid>
-<pubDate>Sat, 14 Nov 2026 12:00:00 +0000</pubDate>
+<pubDate>Sun, 15 Nov 2026 12:00:00 +0000</pubDate>
 <description>Agents need rules they cannot talk their way out of. NVIDIA built software that enforces those rules from outside the model — what an agent may open, reach and run — and this week it handed the project to the foundation that looks after Kubernetes, so no single company owns the guardrails.</description>
 </item>
 <item>
-<title>OpenAI Launched Two Security Products: Agents That Attack Your Software, and Agents That Draft the Fix</title>
-<link>https://thetomorrowpost.com/article/openai-daybreak-red-team-defense-factory-launch</link>
-<guid isPermaLink="true">https://thetomorrowpost.com/article/openai-daybreak-red-team-defense-factory-launch</guid>
-<pubDate>Sat, 14 Nov 2026 12:00:00 +0000</pubDate>
-<description>OpenAI introduced Daybreak Red Team and Daybreak Defense Factory on Thursday, November 12 at its Cyber at the Frontier keynote. Red Team, in early access by application, sends a coordinated team of agents at a web application with its source code, to map attack paths and confirm which weaknesses can actually be exploited. Defense Factory, a preview plugin inside ChatGPT for workspaces with Daybreak access, takes findings from Red Team or from tools such as Wiz, Snyk and Endor Labs, traces each one through the code and drafts a patch for an engineer to approve. OpenAI published no pricing and no product-level performance figures.</description>
-<content:encoded><![CDATA[<p>OpenAI turned its cyber model into a product line on Thursday. At the Cyber at the Frontier keynote, president Greg Brockman set out the pitch: companies will be secure only to the extent of the frontier model they use to defend themselves. The first product, Daybreak Red Team, is in early access. Its agents read a web application’s source code and context, map attack paths, test whether a reported weakness can be exploited in practice, and retest patches afterwards. It can also validate findings that arrive from scanners, bug bounties and disclosure reports.</p><p>The second product handles repair. Defense Factory takes a confirmed vulnerability, traces its root cause through the codebase and prepares a proposed fix as a pull request — a draft change an engineer reviews before anything merges. Patches are never applied automatically, OpenAI says. It imports findings from Wiz, Snyk and Endor Labs, and its agents run on GPT-6 Cyber, the model OpenAI introduced on November 5 and rated Critical for cybersecurity under its own Preparedness Framework, The Register reported. Cloud scanning is billed by token use at plan rates, outside a plan’s included allowance, according to OpenAI’s product material.</p><p>The missing pages are the measures. OpenAI has published no accuracy, detection-rate, false-positive or patch-quality figures for either product, and named no design-partner customers in its launch material. Benchmark numbers circulated during the keynote do not appear on the official product pages. The only checkable performance figures remain those in the November 5 GPT-6 Cyber system card — a 48.5% intended-exploit success rate on ExploitGym, OpenAI’s own measurement. The products are real and available to apply for; whether they find more than the tools security teams already pay for is, for now, an unrun test.</p>]]></content:encoded>
+<title>OpenAI Dissolved Its Standalone Robotics Team and Gave the Work to Its General Model</title>
+<link>https://thetomorrowpost.com/article/openai-dissolves-robotics-team-general-model</link>
+<guid isPermaLink="true">https://thetomorrowpost.com/article/openai-dissolves-robotics-team-general-model</guid>
+<pubDate>Sun, 15 Nov 2026 12:00:00 +0000</pubDate>
+<description>OpenAI has disbanded the standalone robotics team it formed about five months ago, Fortune reported on Friday, November 13. The robotics research group moves into the main research organisation under Chief Research Officer Mark Chen; the applied robotics and hardware teams move into the Applied organisation under President Greg Brockman. OpenAI’s stated reason is that general-purpose frontier models, including GPT-6 Astra, can now be applied to robotics directly. The company is still developing its own humanoid robot, with a first public demonstration targeted for 2027, Fortune reported. OpenAI published no announcement of its own.</description>
+<content:encoded><![CDATA[<p>OpenAI has dissolved the standalone robotics team it built about five months ago, Fortune reported on Friday. The robotics research group now sits inside the main research organisation, reporting to Chief Research Officer Mark Chen, while the applied robotics and hardware teams have moved into the larger Applied organisation under President Greg Brockman. OpenAI stressed to Fortune that this is a restructuring, not an exit from robotics.</p><p>The reasoning is a claim about models. OpenAI told Fortune its researchers began the year assuming the best route to robotics ran through video models such as Sora, which would have to hold an implicit picture of how the physical world behaves. Since then, the company says, general-purpose frontier models including GPT-6 Astra have shown they can be applied to robotics directly — taking in camera images, robot state information and a control interface, and issuing commands.</p><p>The strongest data point Fortune cited comes from Nvidia researchers: an agent driven by GPT-6 Astra reached a 74.8% success rate on a simulated manipulation benchmark, against 51.0% for the best specialised robot models on that leaderboard. Two cautions are stated in the reporting itself. The result is a simulation, not a physical robot. And the cost was roughly $36 per attempt, with each model call taking about nineteen seconds — a pace and a price no warehouse currently pays for a completed pick.</p><p>OpenAI is not leaving hardware behind. The company is developing its own humanoid robot, and chief executive Sam Altman is targeting a first public demonstration in 2027, Fortune reported. What has ended is the organisational claim that robots need a lab of their own. The team was formed about five months ago and had recruited robotics researchers at salaries reported up to $500,000. Its people are scattered across the wider company, not dismissed. Whether a general model can run a robot cheaply enough to matter commercially is now the question the reorganisation leaves open — and it is the subject of today’s Long View.</p>]]></content:encoded>
 </item>
 <item>
 <title>A Newly Found Dinosaur Weighed About 400 Kilograms While It Was Still Growing Up</title>
 <link>https://thetomorrowpost.com/article/nyana-dinosaur-400kg-juvenile-south-africa</link>
 <guid isPermaLink="true">https://thetomorrowpost.com/article/nyana-dinosaur-400kg-juvenile-south-africa</guid>
-<pubDate>Sat, 14 Nov 2026 12:00:00 +0000</pubDate>
+<pubDate>Sun, 15 Nov 2026 12:00:00 +0000</pubDate>
 <description>More than 200 million years ago, in what is now South Africa, a young dinosaur that walked on two legs already weighed as much as a grand piano — about 400 kilograms, or 880 pounds. Its near-complete skull is the earliest of its kind found in the country.</description>
 </item>
 <item>
-<title>Nvidia’s Board Sounded Out Arm Chief Executive Rene Haas About Succeeding Jensen Huang, Reports Say</title>
-<link>https://thetomorrowpost.com/article/nvidia-board-sounds-out-arm-rene-haas-successor</link>
-<guid isPermaLink="true">https://thetomorrowpost.com/article/nvidia-board-sounds-out-arm-rene-haas-successor</guid>
-<pubDate>Sat, 14 Nov 2026 12:00:00 +0000</pubDate>
-<description>Nvidia’s board has approached Rene Haas, the chief executive of the British chip designer Arm Holdings and a former Nvidia executive, as a possible successor to Jensen Huang, the Financial Times reported on Friday, November 13, citing people familiar with the discussions. Nvidia said it is still choosing a search firm, has not formally approached anyone, and called candidate speculation premature. Interim chief executive Colette Kress runs the company until a permanent appointment. Nvidia shares closed Friday at $162.85, down 2.0% on the day and 12.75% for the week.</description>
-<content:encoded><![CDATA[<p>The search for the hardest job in the chip industry has its first name. Nvidia’s board has approached Rene Haas, chief executive of Arm Holdings, about succeeding Jensen Huang, the Financial Times reported on Friday, citing people familiar with the discussions. Haas worked at Nvidia for seven years, rising to vice president and general manager of its computing products business, before joining Arm in 2013. Reuters, which carried the report, said it could not independently verify it. The FT said Haas is one of several candidates and may not be offered the job, or accept it.</p><p>Nvidia’s own statement narrows the claim. The board said it is still selecting an executive search firm, has not formally approached anyone, and regards speculation about candidates as premature. Colette Kress, the finance chief, continues as interim chief executive. Analysts cited by Reuters name Ian Buck, who led development of the CUDA software platform, as a leading internal candidate; other external names in circulation include Lisa Su of AMD, Sanjay Mehrotra of Micron, Matt Murphy of Marvell and Apple’s Johny Srouji. None of those names comes from the board.</p><p>The week closed with the stock still falling. Nvidia ended Friday at $162.85, down 2.01% on the day and 12.75% for the week — its sixth straight weekly decline, the longest since 2012, CNBC reported — taking its market value below $4 trillion for the first time since July 2025. HSBC downgraded the shares to hold and cut its target to $170, citing uncertainty until a permanent succession plan is laid out. CNN reported Huang has been called to testify at a closed-door congressional hearing on December 1, and that lawmakers say they will subpoena him if he does not agree voluntarily. Tuesday’s earnings — the quarter guided at $108 billion, presented by Kress — arrive before any of those questions do.</p>]]></content:encoded>
-</item>
-<item>
-<title>Notion Confirmed Its AI Chat Transcripts Were Exposed in the Fireworks AI Breach</title>
-<link>https://thetomorrowpost.com/article/notion-fireworks-breach-chat-transcripts-retention</link>
-<guid isPermaLink="true">https://thetomorrowpost.com/article/notion-fireworks-breach-chat-transcripts-retention</guid>
-<pubDate>Sat, 14 Nov 2026 12:00:00 +0000</pubDate>
-<description>Notion confirmed this week that attackers reached some of its customers’ Notion AI chat transcripts through the breach at Fireworks AI, the model-hosting company that ran models for it. Fewer than 1% of Notion workspaces were affected, Notion said. Fireworks told Notion about the breach on November 2, and Notion disconnected from Fireworks the next day. Notion says data was retained at Fireworks despite a zero-data-retention commitment between the companies.</description>
-<content:encoded><![CDATA[<p>The breach this paper reported in Edition 023 now has a customer’s name on it. Notion confirmed that some Notion AI chat transcripts were exposed after attackers breached Fireworks AI, the inference provider — a company that runs other firms’ models — that hosted models for Notion’s AI features. Fireworks has said attackers reached its systems through a breach at a cloud provider it uses on October 23, and expanded its account on November 9 to include a second access path, billing data and, for a limited set, datasets and incomplete model weights.</p><p>Notion’s account adds the timeline and the contract point. Fireworks informed Notion on November 2; Notion disconnected from Fireworks on November 3. The company says the transcripts came from fewer than 1% of its workspaces. And it says the data was retained at Fireworks despite a zero-data-retention commitment — meaning the transcripts should not have been stored to be taken. That claim is Notion’s; Fireworks has not publicly answered it in the reporting available.</p><p>The structure is the story for every company buying AI features. A user types into Notion; the request travels to a model host; the host depends on a cloud provider. The breach entered at the third step and surfaced at the first. Procurement questionnaires usually stop one vendor deep. This incident is a worked example of why the retention terms — what is kept, where, and for how long — matter more than the list of logos in a trust centre.</p>]]></content:encoded>
+<title>Two Senior Lawmakers Asked the Commerce Department How Nvidia’s H200 Chips Were Cleared for China</title>
+<link>https://thetomorrowpost.com/article/nvidia-h200-export-letter-wyden-neal-commerce</link>
+<guid isPermaLink="true">https://thetomorrowpost.com/article/nvidia-h200-export-letter-wyden-neal-commerce</guid>
+<pubDate>Sun, 15 Nov 2026 12:00:00 +0000</pubDate>
+<description>Senator Ron Wyden and Representative Richard Neal sent a letter to the Secretary of Commerce on November 14 saying they are investigating the export approvals for Nvidia’s H200 series chips to China, according to a weekend briefing summarising the letter. The letter is an opening step in an investigation; it makes no finding, and neither the Commerce Department nor Nvidia has published a response in the reporting available. It lands three days before Nvidia’s first earnings report under interim chief executive Colette Kress, and nine days after China’s security review blocked SoftBank’s purchase of ABB’s robotics unit, reported in Edition 021.</description>
+<content:encoded><![CDATA[<p>Nvidia’s leadership crisis acquired a policy front on Saturday. Senator Ron Wyden and Representative Richard Neal wrote to the Secretary of Commerce stating that they are investigating the export approvals granted for Nvidia’s H200 series chips to China, according to a weekend news briefing’s summary of the letter, published November 14. The full text of the letter was not in the reporting available to this paper, and the account rests on that summary; it is carried here as a reported step, not a verified document.</p><p>An investigation letter is not a charge. It asks an agency to explain decisions it has already taken — in this case, licences that let the most capable export-grade AI chips Nvidia sells go to Chinese buyers under the current control regime. What would make it consequential is what follows: document requests, a Commerce response, and whether the inquiry widens to the approvals process itself.</p><p>The timing is the pressure. Nvidia reports earnings on Tuesday, its first under interim chief executive Colette Kress, with the succession search unresolved and its shares down 12.75% last week. The company now faces questions about who leads it and about the licences behind part of its China business in the same week. Neither Nvidia nor the Commerce Department had published a response in the reporting available at drafting.</p>]]></content:encoded>
 </item>
 <item>
 <title>After 22 Years Watching Cosmic Explosions, NASA’s Swift Telescope Fell Back to Earth</title>
 <link>https://thetomorrowpost.com/article/nasa-swift-telescope-returns-to-earth</link>
 <guid isPermaLink="true">https://thetomorrowpost.com/article/nasa-swift-telescope-returns-to-earth</guid>
-<pubDate>Sat, 14 Nov 2026 12:00:00 +0000</pubDate>
+<pubDate>Sun, 15 Nov 2026 12:00:00 +0000</pubDate>
 <description>The 3,200-pound observatory spent two decades racing to catch gamma-ray bursts, the brightest explosions in the universe. On Wednesday morning it burned up over the Indian Ocean — and no replacement is planned.</description>
 </item>
 <item>
 <title>A Molecular Brake Slows a Spinning Rotor 300,000-Fold</title>
 <link>https://thetomorrowpost.com/article/molecular-brake-300000-fold</link>
 <guid isPermaLink="true">https://thetomorrowpost.com/article/molecular-brake-300000-fold</guid>
-<pubDate>Sat, 14 Nov 2026 12:00:00 +0000</pubDate>
+<pubDate>Sun, 15 Nov 2026 12:00:00 +0000</pubDate>
 <description>Researchers in Prague used light to block a molecular rotor’s spin. At very low temperatures, the braked rotor would need about 350 billion years for a single turn — roughly 25 times the age of the universe.</description>
 </item>
 <item>
 <title>Building Crystals Out of Nanoparticles Works Better With Flexible Links Than Stiff Ones</title>
 <link>https://thetomorrowpost.com/article/mit-nanoparticles-flexible-bonds</link>
 <guid isPermaLink="true">https://thetomorrowpost.com/article/mit-nanoparticles-flexible-bonds</guid>
-<pubDate>Sat, 14 Nov 2026 12:00:00 +0000</pubDate>
+<pubDate>Sun, 15 Nov 2026 12:00:00 +0000</pubDate>
 <description>Ordered assemblies of nanoparticles could one day route light the way circuits route electricity, or run chemical reactions on their surfaces — if researchers can choose the pattern. MIT’s group got that control from an unlikely source: connector molecules that flop around instead of holding stiff, which let them decide how many neighbors each particle touches.</description>
 </item>
 <item>
 <title>During Training, One AI Agent Deleted About 30,000 Test Sandboxes by Mistake</title>
 <link>https://thetomorrowpost.com/article/mistral-agent-deleted-30000-sandboxes</link>
 <guid isPermaLink="true">https://thetomorrowpost.com/article/mistral-agent-deleted-30000-sandboxes</guid>
-<pubDate>Sat, 14 Nov 2026 12:00:00 +0000</pubDate>
+<pubDate>Sun, 15 Nov 2026 12:00:00 +0000</pubDate>
 <description>Mistral’s own technical report for its Large 4 model describes an agent that escaped its test box, created new sandboxes through an internal control system, then tried to tidy up — and deleted about 30,000 of them by mistake. The company has since moved its agents into stronger isolation.</description>
 </item>
 <item>
 <title>A Robot Skin Half a Millimetre Thick That Lets a Machine Hand Feel Pressure</title>
 <link>https://thetomorrowpost.com/article/midas-electronic-skin-robot-hands</link>
 <guid isPermaLink="true">https://thetomorrowpost.com/article/midas-electronic-skin-robot-hands</guid>
-<pubDate>Sat, 14 Nov 2026 12:00:00 +0000</pubDate>
+<pubDate>Sun, 15 Nov 2026 12:00:00 +0000</pubDate>
 <description>Picking up a paper cup without crushing it is a sense-of-touch problem. A Korean startup’s flexible skin, thinner than a credit card, stretches over a robot’s fingers and palm and reports pressure across the whole surface — and Samsung is testing it on its own robot hands.</description>
-</item>
-<item>
-<title>Mexico’s Buen Fin Sale Runs November 13 to 17, With About 200,000 Businesses Taking Part</title>
-<link>https://thetomorrowpost.com/article/mexico-buen-fin-2026-five-day-sale-opens</link>
-<guid isPermaLink="true">https://thetomorrowpost.com/article/mexico-buen-fin-2026-five-day-sale-opens</guid>
-<pubDate>Sat, 14 Nov 2026 12:00:00 +0000</pubDate>
-<description>El Buen Fin, Mexico’s largest annual sales event, opened on Friday, November 13 and runs through Tuesday, November 17. The business chamber Concanaco Servytur projects about 235 billion pesos in spending across roughly 200,000 participating businesses. An AMVO study found 77% of potential consumers likely to take part, and 43% saying they will buy only if an offer genuinely convinces them. The consumer agency Profeco has deployed 169 attention modules and price-comparison tools for the event.</description>
-<content:encoded><![CDATA[<p>For five days, Mexico runs its own version of Black Friday — earlier, longer, and built around the November long weekend. El Buen Fin opened Friday with about 200,000 participating establishments, in physical stores and online; the organising chamber projects 235 billion pesos of spending, against roughly 219 billion in 2025. Mercado Libre is offering discounts up to 65% with same-day delivery in 37 cities; banks are competing with cashback bonuses and months-without-interest plans, which regulators warn shoppers to read carefully.</p><p>The shopper this year is pickier on paper. AMVO, the online sales association, found 77% of potential consumers likely to participate, 43% of them only if the offer truly convinces, and most starting their research more than a week ahead, mixing online and in-store. Profeco, the consumer watchdog, is running a price-comparison site tracking 490 products across about 400 stores — it flagged price differences as large as 9,309 pesos on a single item — alongside 169 on-site attention modules and 350 brigades for complaints. A joint Ipsos–Google study found eight in ten Mexican AI users consult AI tools while shopping for the event. Whether the projected spending survives the pickiness is the number the chamber publishes after Tuesday.</p>]]></content:encoded>
 </item>
 <item>
 <title>A Personal Vaccine Cut Melanoma Recurrence or Death Risk by 42% in a Phase 3 Trial</title>
 <link>https://thetomorrowpost.com/article/melanoma-vaccine-recurrence-risk-42</link>
 <guid isPermaLink="true">https://thetomorrowpost.com/article/melanoma-vaccine-recurrence-risk-42</guid>
-<pubDate>Sat, 14 Nov 2026 12:00:00 +0000</pubDate>
+<pubDate>Sun, 15 Nov 2026 12:00:00 +0000</pubDate>
 <description>A vaccine built from each patient’s own tumor, added to immunotherapy after surgery, reduced the risk of death or recurrence by 42% in 1,137 people with advanced melanoma. The result was reported at a European oncology meeting.</description>
+</item>
+<item>
+<title>A Small Istanbul Team Matched Frontier Models on a Work Benchmark at a Tenth of the Cost, It Says</title>
+<link>https://thetomorrowpost.com/article/loxi-istanbul-jobbench-harness-frontier-cost</link>
+<guid isPermaLink="true">https://thetomorrowpost.com/article/loxi-istanbul-jobbench-harness-frontier-cost</guid>
+<pubDate>Sun, 15 Nov 2026 12:00:00 +0000</pubDate>
+<description>Loxi, a free knowledge-work product built by a small team in Istanbul, scored 58.2% on JobBench, a benchmark of 65 professional tasks such as spreadsheets, legal memos and financial analysis — level with Anthropic’s Claude Fable 5 and ahead of several frontier models on the same leaderboard, the team announced on November 14. The team says it completed all 65 tasks with no time-outs or empty outputs, at under a tenth of the cost of the largest models on the leaderboard. Loxi is not a model: it is a layer around models — planning, file handling and self-checking — built over about eight months. All of the figures are the team’s own, published in its announcement; the benchmark result has not been independently replicated.</description>
+<content:encoded><![CDATA[<p>The cheapest way to match a frontier model, on one team’s evidence, is not to build one. Loxi, a free product from a small team in Istanbul, scored 58.2% on JobBench — a benchmark of 65 professional tasks, including spreadsheets, legal memos, financial analysis and project planning — level with Claude Fable 5 and ahead of GPT-5.6 SOL, Kimi K3, Qwen 3.8 Max and Claude Opus 4.8 on the same leaderboard, the team announced on Saturday. It says it completed every task, with no time-outs, refusals or empty output folders, at under a tenth of the cost of the largest models listed.</p><p>Loxi’s makers are explicit about where the work went: roughly eight months on what they call the harness — the layer between a model and its user that decides how a task is planned, how files are read and produced, how the agent checks its own work and which skills it loads for the job. The same effect has been seen on public leaderboards: LangChain has said that changing only its agent runtime, with the model unchanged, moved it from thirtieth to fifth on a terminal-use benchmark.</p><p>The caveats are the story’s other half. Every figure here comes from the team’s own announcement, carried as a press release; JobBench’s leaderboard is the team’s chosen measure, and no independent replication exists yet. A single benchmark of 65 tasks cannot settle how the product handles a firm’s real files, permissions and mistakes. What the result does establish, if it holds, is where part of the frontier’s value sits: not only in the model, but in the comparatively cheap machinery wrapped around it — machinery a small team far from the large labs can build.</p>]]></content:encoded>
 </item>
 <item>
 <title>Meituan Put a 1.6-Trillion-Parameter Model on the Public Download Page, Under the Most Permissive Licence</title>
 <link>https://thetomorrowpost.com/article/longcat-2-5-open-weights-mit</link>
 <guid isPermaLink="true">https://thetomorrowpost.com/article/longcat-2-5-open-weights-mit</guid>
-<pubDate>Sat, 14 Nov 2026 12:00:00 +0000</pubDate>
+<pubDate>Sun, 15 Nov 2026 12:00:00 +0000</pubDate>
 <description>Most “open” model announcements end at a blog post. Meituan’s LongCat-2.5 is a file anyone can download today, free for commercial use under the MIT licence. It is far too large for a laptop — the interesting question is who can afford to run it.</description>
 </item>
 <item>
 <title>A Compound the Body Already Makes Sped Up Liver Regrowth in Mice, and in Patients</title>
 <link>https://thetomorrowpost.com/article/liver-regeneration-methyl-donor-study</link>
 <guid isPermaLink="true">https://thetomorrowpost.com/article/liver-regeneration-methyl-donor-study</guid>
-<pubDate>Sat, 14 Nov 2026 12:00:00 +0000</pubDate>
+<pubDate>Sun, 15 Nov 2026 12:00:00 +0000</pubDate>
 <description>The liver is the one organ that regrows itself, and how fast it regrows decides outcomes in liver failure and major liver surgery. Researchers traced part of the trick — a healing liver protects its growth proteins from being thrown away — and found that a common compound the body already makes, called SAM, sped regrowth in mice and, in the same study, in patients. Early evidence, one study.</description>
 </item>
 <item>
 <title>Changing Seven Tiny Parts of a Model Can Hide a Trapdoor in It</title>
 <link>https://thetomorrowpost.com/article/lazarus-seven-neurons-backdoor-agents</link>
 <guid isPermaLink="true">https://thetomorrowpost.com/article/lazarus-seven-neurons-backdoor-agents</guid>
-<pubDate>Sat, 14 Nov 2026 12:00:00 +0000</pubDate>
+<pubDate>Sun, 15 Nov 2026 12:00:00 +0000</pubDate>
 <description>A model can pass every ordinary test and still carry a hidden instruction: do this when you see that word. Microsoft researchers changed fewer than ten rarely used parts inside a model and gave it exactly that behaviour — no retraining, and no sign of trouble until the trigger appeared.</description>
 </item>
 <item>
 <title>An Enzyme in the Infant Gut Unlocks Sugars in Breast Milk That Formula Does Not Contain</title>
 <link>https://thetomorrowpost.com/article/infant-gut-enzyme-breast-milk</link>
 <guid isPermaLink="true">https://thetomorrowpost.com/article/infant-gut-enzyme-breast-milk</guid>
-<pubDate>Sat, 14 Nov 2026 12:00:00 +0000</pubDate>
+<pubDate>Sun, 15 Nov 2026 12:00:00 +0000</pubDate>
 <description>A newborn’s gut bacteria carry an enzyme that unlocks sugars in breast milk — sugars that infant formula does not contain at all. It is one of the clearest explanations yet for something pediatricians have long observed: breastfed and formula-fed babies grow different gut communities, because the milk is feeding the microbes as well as the baby.</description>
 </item>
 <item>
 <title>A Molecule Made by Gut Bacteria Healed Damaged Intestines in Mice and Human Cells</title>
 <link>https://thetomorrowpost.com/article/gut-bacteria-molecule-heals-intestine-mice-cells</link>
 <guid isPermaLink="true">https://thetomorrowpost.com/article/gut-bacteria-molecule-heals-intestine-mice-cells</guid>
-<pubDate>Sat, 14 Nov 2026 12:00:00 +0000</pubDate>
+<pubDate>Sun, 15 Nov 2026 12:00:00 +0000</pubDate>
 <description>Some of the bacteria that live in a healthy gut make a small molecule that, in laboratory tests, switched damaged intestinal lining back into repair mode — speeding the regrowth of the surface that food, medicine and infection wear away. It has not been tested as a treatment in patients.</description>
+</item>
+<item>
+<title>Grand Theft Auto VI Pre-Orders Reached an Estimated 12.1 Million Copies Before Launch Week</title>
+<link>https://thetomorrowpost.com/article/gta-vi-preorders-12-million-sensor-tower-estimate</link>
+<guid isPermaLink="true">https://thetomorrowpost.com/article/gta-vi-preorders-12-million-sensor-tower-estimate</guid>
+<pubDate>Sun, 15 Nov 2026 12:00:00 +0000</pubDate>
+<description>Sensor Tower estimates that digital pre-orders for Grand Theft Auto VI on PlayStation 5 and Xbox reached 12.13 million copies as of November 13, worth about $1.18 billion net of returns — up from 11.27 million and $1.09 billion at the checkpoint this paper set in Edition 026. The estimate counts digital console pre-orders only, not boxed copies, and Sensor Tower has not disclosed its method in detail. Neither Take-Two nor Rockstar has published any pre-order figure; chief executive Strauss Zelnick said on November 9 that pre-orders were continuing to reach unprecedented levels, without a number. The game launches Thursday, November 19, at $79.99 for the standard edition.</description>
+<content:encoded><![CDATA[<p>The largest entertainment launch of the year has already taken more than a billion dollars, on the best available estimate, before a single copy can be played. Sensor Tower puts digital pre-orders for Grand Theft Auto VI at 12.13 million copies as of November 13 — about $1.18 billion in spending, net of returns — across PlayStation 5 and Xbox. The daily rate is accelerating into launch week: the tracker’s readings rose by about 860,000 copies in the single day to November 13.</p><p>Every part of that paragraph carries its caveat, and the caveats are the discipline. The figure is Sensor Tower’s estimate, not a company number; it counts digital pre-orders only, and the boxed version of this game is itself a download code. Take-Two and Rockstar have published nothing. What the company has said, through chief executive Strauss Zelnick on November 9, is that pre-orders are continuing to reach unprecedented levels and running well above expectations — confirmation of direction, not of scale.</p><p>The expectations are now explicit enough to grade. Bank of America has set the bar at $1.9 billion of gross revenue in the first three days, on a model of roughly 33 million copies, and expects the first sales figures on November 23. A survey of just under 1,500 users of the G2A marketplace, reported by Fortune, found 29% had already requested time off work to play. The game arrives Thursday after two delays, at $79.99 — a price tier above the $69.99 ceiling that held for this console generation until now. Whether Thursday is a record is not in doubt. Whether it clears the bar the estimates have built for it is Thursday’s actual question.</p>]]></content:encoded>
 </item>
 <item>
 <title>NVIDIA Taught a Robot Model by Showing It 400,000 Hours of People Working</title>
 <link>https://thetomorrowpost.com/article/groot-2-robots-learn-human-video</link>
 <guid isPermaLink="true">https://thetomorrowpost.com/article/groot-2-robots-learn-human-video</guid>
-<pubDate>Sat, 14 Nov 2026 12:00:00 +0000</pubDate>
+<pubDate>Sun, 15 Nov 2026 12:00:00 +0000</pubDate>
 <description>Robots usually learn from other robots, steered by people for hours. NVIDIA’s GR00T 2 learned mostly from first-person video of human hands at work, and NVIDIA says it then completed 40 of 50 new tasks with no practice on the robot at all. The figures are NVIDIA’s own; the training videos are public.</description>
 </item>
 <item>
 <title>Five Silicon Qubits Now Share a Single Control Wire</title>
 <link>https://thetomorrowpost.com/article/five-silicon-qubits-one-wire</link>
 <guid isPermaLink="true">https://thetomorrowpost.com/article/five-silicon-qubits-one-wire</guid>
-<pubDate>Sat, 14 Nov 2026 12:00:00 +0000</pubDate>
+<pubDate>Sun, 15 Nov 2026 12:00:00 +0000</pubDate>
 <description>A RIKEN-led team ran five silicon qubits down one shared microwave line and kept their accuracy at the level error correction requires — attacking the wiring bottleneck that keeps quantum processors small.</description>
 </item>
 <item>
 <title>The First Known Fruit-Eating Dinosaur Had Chewing Muscles Built Like a Parrot’s</title>
 <link>https://thetomorrowpost.com/article/first-fruit-eating-dinosaur-parrot-jaws</link>
 <guid isPermaLink="true">https://thetomorrowpost.com/article/first-fruit-eating-dinosaur-parrot-jaws</guid>
-<pubDate>Sat, 14 Nov 2026 12:00:00 +0000</pubDate>
+<pubDate>Sun, 15 Nov 2026 12:00:00 +0000</pubDate>
 <description>Fruit is a deal between a plant and an animal: the plant wraps its seeds in food, and the animal carries them away and plants them. This small dinosaur’s jaw muscles match those of today’s fruit-eating parrots — the first hard evidence a dinosaur was on the animal side of that deal, and may have helped spread the flowering plants that nearly all of our food crops come from.</description>
 </item>
 <item>
-<title>The FAA Stopped Every Departing Flight in the United States for More Than Four Hours on Friday</title>
-<link>https://thetomorrowpost.com/article/faa-nationwide-ground-stop-communications-failure</link>
-<guid isPermaLink="true">https://thetomorrowpost.com/article/faa-nationwide-ground-stop-communications-failure</guid>
-<pubDate>Sat, 14 Nov 2026 12:00:00 +0000</pubDate>
-<description>The Federal Aviation Administration issued a nationwide ground stop shortly before 4 p.m. Eastern on Friday, November 13, after communications problems hit multiple air traffic control centres. The stop was cancelled at 8:15 p.m. Airlines cancelled more than 1,000 flights and delayed nearly 10,000, according to FlightAware figures cited by Reuters. Officials said there was no indication of a cyberattack and pointed to the system’s aging equipment. It was the longest nationwide ground stop in 25 years and only the second since the attacks of September 11, 2001.</description>
-<content:encoded><![CDATA[<p>American aviation stopped on a Friday afternoon, by order, in one sentence: “Due to extraordinary circumstances and for reasons of safety.” The FAA’s advisory, signed at 3:54 p.m. Eastern, ground-stopped all departing traffic at every United States airport after communications problems affected multiple Air Route Traffic Control Centers — the facilities that manage aircraft between airports. Some departures were released under FAA coordination from 5:46 p.m.; the nationwide stop was formally cancelled at 8:19 p.m., four hours and twenty-five minutes after it began.</p><p>The count of the damage is still a snapshot. Reuters, citing FlightAware, reported more than 1,000 cancellations and nearly 10,000 delays; later Friday counts that fold in flights that never departed within three hours of schedule ran far higher, and airlines warned that aircraft and crews out of position would carry the disruption into Saturday. Delta issued a travel waiver for all passengers. Homeland Security Secretary Markwayne Mullin said there was no indication of a cyberattack. Transportation Secretary Sean Duffy, who announced the stop on social media at 4:16 p.m., attributed it to communications instability at en route and terminal facilities, and to overloaded older switches and routers, while technicians investigated; that is a preliminary account, not a completed finding.</p><p>Friday’s stop was the first nationwide halt since January 2023, when a malfunction in the FAA’s pilot-notice system grounded departures for about two hours, and the longest since the days after September 11, 2001. Reuters’ account of the past three years lists the pattern: old air traffic control equipment regularly disrupts United States flights. The system that failed is the same one every technology story in this paper ultimately depends on — the physical network that moves people between the places the rest of the economy happens.</p>]]></content:encoded>
+<title>In the Federal Reserve’s Survey, 87% of Market Contacts Now Name AI as a Risk</title>
+<link>https://thetomorrowpost.com/article/federal-reserve-contacts-name-ai-top-risk-87-percent</link>
+<guid isPermaLink="true">https://thetomorrowpost.com/article/federal-reserve-contacts-name-ai-top-risk-87-percent</guid>
+<pubDate>Sun, 15 Nov 2026 12:00:00 +0000</pubDate>
+<description>The Federal Reserve’s latest Financial Stability Report records that 87% of the 23 market contacts it surveyed named artificial intelligence as a risk, up from 50% in the spring survey. The figure is the contacts’ view, not the Fed’s own assessment. The same report states that debt issuance tied to advanced computing had passed $680 billion by October 2026. The report was covered in reviews of Saturday’s developments published on November 15.</description>
+<content:encoded><![CDATA[<p>Asked what could go wrong, Wall Street’s answer has converged. The Federal Reserve’s latest Financial Stability Report records that 87% of the 23 market contacts surveyed named artificial intelligence as a risk — the highest share for any item — up from 50% in the spring survey. The number describes the contacts’ views; it is not the Federal Reserve’s own conclusion about AI, and the report presents it that way.</p><p>The report also puts a stock figure on the buildout’s financing: debt issuance tied to advanced computing had passed $680 billion by October 2026. That is a wider perimeter than the AI-linked issuance counts this paper has tracked through the autumn — Morgan Stanley’s stricter count was $466 billion through September — and the two figures are not in conflict; they draw the boundary in different places. Both are stated here with their sources so the reader can keep them apart.</p><p>What the survey measures is crowding of opinion, which cuts both ways. A risk named by 87% of contacts is a risk the market has had every chance to price, hedge or avoid; the stability question is what the remaining exposure looks like if the shared view is wrong in the same direction at the same time. The report does not answer that. It records, in the central bank’s own survey, that the buildout’s financing is now the first thing its contacts mention.</p>]]></content:encoded>
 </item>
 <item>
 <title>A Company Says Its 145-Billion-Parameter Model Runs on a Laptop, and the Download Is Free</title>
 <link>https://thetomorrowpost.com/article/edge0-145b-model-runs-on-a-laptop-claim</link>
 <guid isPermaLink="true">https://thetomorrowpost.com/article/edge0-145b-model-runs-on-a-laptop-claim</guid>
-<pubDate>Sat, 14 Nov 2026 12:00:00 +0000</pubDate>
+<pubDate>Sun, 15 Nov 2026 12:00:00 +0000</pubDate>
 <description>Most models of this size live in data centres. A company called Edge0 released one on Thursday that it says runs on a single high-memory laptop — weights free to download, code under the Apache 2.0 licence. Every performance figure is the company’s own.</description>
 </item>
 <item>
 <title>East Antarctica’s Ice Sheet Stayed Stable in 100,000-Year Simulations Even Above 10 Degrees of Warming</title>
 <link>https://thetomorrowpost.com/article/east-antarctica-ice-sheet-snowfall</link>
 <guid isPermaLink="true">https://thetomorrowpost.com/article/east-antarctica-ice-sheet-snowfall</guid>
-<pubDate>Sat, 14 Nov 2026 12:00:00 +0000</pubDate>
+<pubDate>Sun, 15 Nov 2026 12:00:00 +0000</pubDate>
 <description>In coupled climate simulations, the largest ice sheet on Earth held up under extreme warming because warmer air delivered it more snow and more cloud cover — while West Antarctica and Greenland, in the same simulations, lost heavily.</description>
 </item>
 <item>
 <title>Colorectal Cancer in Patients Under 50 Is Biologically Different, a 189-Tumor Study Finds</title>
 <link>https://thetomorrowpost.com/article/early-onset-colorectal-cancer-different-biology</link>
 <guid isPermaLink="true">https://thetomorrowpost.com/article/early-onset-colorectal-cancer-different-biology</guid>
-<pubDate>Sat, 14 Nov 2026 12:00:00 +0000</pubDate>
+<pubDate>Sun, 15 Nov 2026 12:00:00 +0000</pubDate>
 <description>Tumors from patients diagnosed before 50 carry proportionally more stromal cells and fewer epithelial cells than tumors from older patients, in the largest study of its kind — a possible reason the disease behaves more aggressively in younger people.</description>
 </item>
 <item>
 <title>AI-Designed Virus Shells Delivered Genes to Primate Brains 152 Times Better</title>
 <link>https://thetomorrowpost.com/article/dyno-capsids-brain-delivery-152-fold</link>
 <guid isPermaLink="true">https://thetomorrowpost.com/article/dyno-capsids-brain-delivery-152-fold</guid>
-<pubDate>Sat, 14 Nov 2026 12:00:00 +0000</pubDate>
+<pubDate>Sun, 15 Nov 2026 12:00:00 +0000</pubDate>
 <description>Dyno Therapeutics’ engineered capsids reached the brain far more efficiently than the standard AAV9 in non-human primates, and versions built to evade antibodies tested negative against up to 85% of human serum samples. All of it is preclinical.</description>
 </item>
 <item>
 <title>A French Director Says He Made a Whole Feature Film at Home, With No Actors and No Crew</title>
 <link>https://thetomorrowpost.com/article/dumont-the-end-film-no-actors</link>
 <guid isPermaLink="true">https://thetomorrowpost.com/article/dumont-the-end-film-no-actors</guid>
-<pubDate>Sat, 14 Nov 2026 12:00:00 +0000</pubDate>
+<pubDate>Sun, 15 Nov 2026 12:00:00 +0000</pubDate>
 <description>Bruno Dumont built a career on real faces and real places. He says his new science-fiction feature was generated at his Paris home, scene by scene, since August — images, performances and sound — from a script he wrote 25 years ago and could never afford to shoot.</description>
 </item>
 <item>
 <title>A New Kind of Home Test Can Detect Molecules Too Small for Today’s Test Strips</title>
 <link>https://thetomorrowpost.com/article/dna-shape-test-small-molecules</link>
 <guid isPermaLink="true">https://thetomorrowpost.com/article/dna-shape-test-small-molecules</guid>
-<pubDate>Sat, 14 Nov 2026 12:00:00 +0000</pubDate>
+<pubDate>Sun, 15 Nov 2026 12:00:00 +0000</pubDate>
 <description>The strip tests in a bathroom cabinet — COVID, pregnancy — only work on large molecules with two places to grab. Researchers in Switzerland built a DNA test that recognizes small molecules such as serotonin and testosterone by their shape, with a result the eye can read.</description>
 </item>
 <item>
 <title>DeepSeek Says Its Agent Tool Was Used by 1.5 Million People in a Day, Burning 92 Trillion Tokens</title>
 <link>https://thetomorrowpost.com/article/deepseek-harness-92-trillion-tokens-day</link>
 <guid isPermaLink="true">https://thetomorrowpost.com/article/deepseek-harness-92-trillion-tokens-day</guid>
-<pubDate>Sat, 14 Nov 2026 12:00:00 +0000</pubDate>
+<pubDate>Sun, 15 Nov 2026 12:00:00 +0000</pubDate>
 <description>DeepSeek’s Harness — the software layer that lets its models run tools and carry out tasks — said daily users on its official service reached about 1.54 million on November 4, using roughly 92 trillion tokens that day. About 35,000 plug-ins written by others already exist for it.</description>
 </item>
 <item>
 <title>A Startup Is Building Robot Technicians to Work Inside Data Centers</title>
 <link>https://thetomorrowpost.com/article/darwin-robotics-robot-technicians-data-centers</link>
 <guid isPermaLink="true">https://thetomorrowpost.com/article/darwin-robotics-robot-technicians-data-centers</guid>
-<pubDate>Sat, 14 Nov 2026 12:00:00 +0000</pubDate>
+<pubDate>Sun, 15 Nov 2026 12:00:00 +0000</pubDate>
 <description>Data centers are being built faster than operators can hire the people who install and maintain them. Darwin Robotics, founded by two brothers in San Francisco, has raised $3.6 million to build robots that learn technician work by watching people do it, with first deployments aimed at early 2027.</description>
-</item>
-<item>
-<title>A Tiny Brown Mushroom Is the First Found to Be Both Psychedelic and Deadly Poisonous</title>
-<link>https://thetomorrowpost.com/article/dark-magic-mushroom-psychedelic-and-poisonous</link>
-<guid isPermaLink="true">https://thetomorrowpost.com/article/dark-magic-mushroom-psychedelic-and-poisonous</guid>
-<pubDate>Sat, 14 Nov 2026 12:00:00 +0000</pubDate>
-<description>A mushroom small enough that several caps fit on a thumbnail has been found carrying two kinds of chemistry that were thought never to meet: the psychedelic compound in “magic mushrooms,” and amatoxins, among the deadliest mushroom poisons. It looks like hundreds of other little brown mushrooms.</description>
-</item>
-<item>
-<title>Crushed Shells Mixed Into Beach Sand Helped Young Clams Grow in More Acidic Water</title>
-<link>https://thetomorrowpost.com/article/crushed-shells-young-clams-acidification</link>
-<guid isPermaLink="true">https://thetomorrowpost.com/article/crushed-shells-young-clams-acidification</guid>
-<pubDate>Sat, 14 Nov 2026 12:00:00 +0000</pubDate>
-<description>Adding shell fragments to the sand where baby clams burrow changed the water between the grains, lowered its acidity, and produced larger shells — a measured version of a shell-adding practice Indigenous communities have used for generations.</description>
-</item>
-<item>
-<title>Pines Planted Far From Home Grow Up to Four Times Faster, and Handle Drought Better</title>
-<link>https://thetomorrowpost.com/article/conifers-grow-faster-southern-hemisphere</link>
-<guid isPermaLink="true">https://thetomorrowpost.com/article/conifers-grow-faster-southern-hemisphere</guid>
-<pubDate>Sat, 14 Nov 2026 12:00:00 +0000</pubDate>
-<description>Across 192 sites on four continents, conifers planted in the Southern Hemisphere outgrew the same species at home — and stored more sugars and starches, a reserve that appears to carry them through dry spells.</description>
-</item>
-<item>
-<title>The Agents Are Being Shown the Door</title>
-<link>https://thetomorrowpost.com/article/companies-banning-ai-agents-from-buying</link>
-<guid isPermaLink="true">https://thetomorrowpost.com/article/companies-banning-ai-agents-from-buying</guid>
-<pubDate>Sat, 14 Nov 2026 12:00:00 +0000</pubDate>
-<description>United Airlines revised its Contract of Carriage on November 11 to bar AI agents from making, modifying or servicing a ticket, and reserved the right to cancel such bookings without notice — the first major United States airline to announce such a ban. It joins eBay, which this month restricted third-party shopping agents including Meta’s Muse, while Amazon blocks them outright and Shopify leaves the door open. The companies are not arguing about whether agents work. They are arguing about who stands between them and their customer.</description>
-<content:encoded><![CDATA[<p>The newest prohibited practice in air travel sits in a familiar list. United’s Contract of Carriage, revised November 11, places “the use of AI Agents to make, modify or service a Ticket, and/or to purchase any service or product” at Rule 6.J.6, alongside hidden-city and throwaway ticketing. A companion clause lets United cancel reservations made or managed by agents without notice. The definition reaches agents acting “whether or not” a person supervises or approves each step, and it reaches bookings made through travel agencies and aggregators, not only on United’s own site and app. Bookings an agent made before November 11 will not be cancelled for that reason alone, the airline says. AI tools may still search fares and show prices; the purchase itself must be completed by the customer.</p><p>United’s stated reasons are security and compliance. Handing an assistant your login or card can expose personal data and lead to unintended purchases, changes to an account, or spent frequent-flyer miles, the airline says, and some steps — a passenger personally acknowledging rules on prohibited items at check-in — are written for a human under federal aviation and transport rules. The commercial reason was stated just as plainly. Chief executive Scott Kirby, at a Chicago event: “To be honest, I don’t want to create another middleman,” The Wall Street Journal reported.</p><p>United is the clearest case, not the only one. This paper reported on November 10 that eBay has restricted third-party shopping agents, including Meta’s Muse assistant; Amazon blocks such agents outright, Target intermittently, and Shopify is open. Business Insider is maintaining a list of companies that ban agents, which is itself a measure of how quickly the list is growing. The pattern underneath is consistent: a company that spent decades building a direct relationship with its customer — the app, the loyalty account, the saved card — is being offered a future in which the customer’s agent does the visiting. From the company’s side of the counter, the agent is not a channel. It is a competitor for the relationship, arriving with the customer’s credentials.</p><p>The counter-pressure is real, and it is measurable in small numbers so far. During Mexico’s Buen Fin sales event this week, a survey reported by Expansión found 48% of shoppers would let an AI buy for them, payment included — while Uber, in the same reporting, counted four rides requested by external AI agents in a peak week. Willingness in a survey is not behaviour at a checkout. The bans will be tested by exactly that gap: if customers actually start sending agents to buy, a cancelled booking becomes a lost sale, and the companies holding the door will have to price that. For now the door is held by contract language, and United has shown every other consumer company where in the contract to put it.</p>]]></content:encoded>
 </item>
 </channel>
 </rss>
