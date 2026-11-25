@@ -5,290 +5,292 @@
 <link>https://thetomorrowpost.com/</link>
 <description>A newspaper for the digital age. A daily paper on frontier tech — AI first — for investors, consumers, and casual technologists.</description>
 <language>en-us</language>
-<lastBuildDate>Tue, 24 Nov 2026 12:00:00 +0000</lastBuildDate>
-<item>
-<title>Walmart Lets Meta&#x27;s Muse Search, Fill a Cart and Check Out, Starting Tuesday, November 24</title>
-<link>https://thetomorrowpost.com/article/walmart-muse-agent-gateway-launches-nov-24</link>
-<guid isPermaLink="true">https://thetomorrowpost.com/article/walmart-muse-agent-gateway-launches-nov-24</guid>
-<pubDate>Tue, 24 Nov 2026 12:00:00 +0000</pubDate>
-<description>Walmart will open its Agent Gateway to Meta&#x27;s Muse on Tuesday, November 24, after a one-day delay announced on November 23 (The Verge, via Digiday). Through the gateway, Muse can search Walmart&#x27;s shelves, answer questions — calling on Walmart&#x27;s own assistant, Sparky, for product and store questions — build a cart and, with the shopper&#x27;s permission, complete an order using a card already saved in the shopper&#x27;s Walmart account. Each shopper gives the agent an Agent Profile inside their account: they can require approval for every purchase or set a spending limit, and Walmart says the agent does not see the shopper&#x27;s purchase history.</description>
-<content:encoded><![CDATA[<p>The controls are the product. An agent that can spend money needs a limit, an approval step and a record of what it bought, and Walmart has built all three into the profile rather than adding them later. The timing is the retail calendar: the gateway opens on the Tuesday before Black Friday, in the week when the most shopping of the year is done.</p><p>Walmart is also setting the terms on which outside agents reach its shelves. Access runs through a gateway Walmart built and controls, using the Model Context Protocol, a standard way for agents to call a company's systems. Walmart says support for other agents and apps is coming; Muse is the only one live at launch.</p>]]></content:encoded>
-</item>
+<lastBuildDate>Wed, 25 Nov 2026 12:00:00 +0000</lastBuildDate>
 <item>
 <title>Voyager 1 Is Now a Full Day Away, at the Speed of Light</title>
 <link>https://thetomorrowpost.com/article/voyager-one-light-day-from-earth</link>
 <guid isPermaLink="true">https://thetomorrowpost.com/article/voyager-one-light-day-from-earth</guid>
-<pubDate>Tue, 24 Nov 2026 12:00:00 +0000</pubDate>
+<pubDate>Wed, 25 Nov 2026 12:00:00 +0000</pubDate>
 <description>The probe left Earth in 1977. On Wednesday it passed one light-day — about 16.1 billion miles — which means its radio signal, travelling at the speed of light, now takes a full day to get home, and an answer takes two. NASA confirmed the distance on Thursday, from a signal that carried no data.</description>
 </item>
 <item>
 <title>A Memory for Pictures Let an AI Agent Beat First-Time Human Players at New Puzzle Games</title>
 <link>https://thetomorrowpost.com/article/vista-agent-remembers-every-picture</link>
 <guid isPermaLink="true">https://thetomorrowpost.com/article/vista-agent-remembers-every-picture</guid>
-<pubDate>Tue, 24 Nov 2026 12:00:00 +0000</pubDate>
+<pubDate>Wed, 25 Nov 2026 12:00:00 +0000</pubDate>
 <description>Most AI agents forget each picture as soon as they have looked at it. A team at MIT built one that keeps every image and can search them later. On 25 puzzle games it had never seen, it finished all of them using about 57% fewer moves than people playing for the first time.</description>
+</item>
+<item>
+<title>Tidal Will Delete About 27 Million Fully AI-Generated Songs, Starting December 9</title>
+<link>https://thetomorrowpost.com/article/tidal-to-delete-27-million-ai-generated-songs</link>
+<guid isPermaLink="true">https://thetomorrowpost.com/article/tidal-to-delete-27-million-ai-generated-songs</guid>
+<pubDate>Wed, 25 Nov 2026 12:00:00 +0000</pubDate>
+<description>Tidal said on Tuesday, November 24, that it will reject and remove music generated wholly by AI, starting December 9 (TechCrunch). The company counts about 27 million such tracks already in its catalogue — 6.3% of everything on the service — and expects the removal process to pass 29 million tracks by the end of the year, while turning away an estimated 80,000 to 85,000 new fully generated tracks a day. Over the past 90 days, more than 43% of the tracks delivered to Tidal were fully AI-generated; on November 6 the share passed 60% in a single day. Of the tracks now tagged as fully generated, 96% had no streams at all in the preceding three months. Music made with AI assistance, rather than wholly by AI, remains allowed.</description>
+<content:encoded><![CDATA[<p>Tidal tried the lighter tool first. In June it stopped paying royalties on wholly AI-generated tracks; its platform lead, Robert Anderson, said on X that the uploads kept coming, and that most of the volume traces to one generator — 94% of the flagged tracks came from Suno, by the company's count. Detection for the new rule comes from Ircam Amplify, a company tied to the French music research institute IRCAM, alongside checks of the metadata distributors supply.</p><p>The argument the company is making is about shelf space, not taste. A catalogue in which machine-made tracks arrive at 85,000 a day buries the musicians the service exists to sell, whether or not anyone plays the new arrivals — and on Tidal's own figures, almost nobody does. Bandcamp adopted a similar ban in January. The larger services have so far labelled or demonetised such tracks instead; Tidal, the smallest of the majors, is the first to delete at this scale.</p>]]></content:encoded>
+</item>
+<item>
+<title>The Federal Reserve Now Has to Set Interest Rates Around the AI Boom</title>
+<link>https://thetomorrowpost.com/article/the-federal-reserve-sets-rates-around-the-ai-boom</link>
+<guid isPermaLink="true">https://thetomorrowpost.com/article/the-federal-reserve-sets-rates-around-the-ai-boom</guid>
+<pubDate>Wed, 25 Nov 2026 12:00:00 +0000</pubDate>
+<description>Reuters reported on Tuesday, November 24, that artificial intelligence has become a central problem for the Federal Reserve as it approaches its December 8–9 meeting. Fed chair Kevin Warsh has called AI a hinge of history for American leadership. Inside the bank, officials are debating whether the boom is a transformation, a source of inflation, or the start of a financial accident. Vice Chair Philip Jefferson has said AI investment is raising inflation now, with any productivity benefit still to come. Governor Lisa Cook has pointed to financial risks and to the likelihood that AI is already eliminating jobs. Fed officials are expected to raise interest rates by a quarter of a percentage point at the December meeting (Reuters).</description>
+<content:encoded><![CDATA[<p>The scale is what makes this a central bank's problem and not only an industry's. This paper's record of the buildout now includes about $900 billion of spending commitments at one company, a $132.3 billion server backlog at one supplier, and a year in which the largest listing on record priced, rallied and fell below its issue price in six days. Investment on that scale moves the prices the Fed is charged with steadying: it bids up power, chips, construction and credit before it produces the goods and services that would offset them. Jefferson's formulation — inflation first, productivity later — is the buildout's own timeline, stated by a central banker.</p><p>Evercore ISI's Krishna Guha, a former New York Fed official, set out the trap in a note after last week's market correction: growth now depends on AI investment and on the wealth effect of AI shares, so the Fed needs any weakening to stay contained; it must restrain the boom's inflation without becoming, in Guha's phrase as reported by Reuters, the chair who blew up the AI boom. Warsh, before taking the job, cautioned central bankers against taking sides on contested questions. The December meeting does not offer that option. A rise raises the financing cost of every data centre not yet built, in a sector already borrowing at the spreads this paper has tracked since October. A hold leaves the investment running at a pace its own officials describe as inflationary.</p><p>There is a second channel, quieter than inflation. Voters in the November midterms approved ballot measures meant to slow data-centre construction in a number of places (Reuters), and the mayor of New York used a speech on November 23 to argue that market swings tied to one chip company's leadership scandal should not be able to move workers' pensions. Neither fact changes the December decision. Both describe the political weather in which a central bank, set up to be insulated from politics, now has to price the largest private investment programme in the country's history — one whose returns its own officials say have not yet arrived.</p>]]></content:encoded>
 </item>
 <item>
 <title>Tencent’s New Hy4 Model Can Read Images and Operate a Computer</title>
 <link>https://thetomorrowpost.com/article/tencent-hy4-vision-computer-use</link>
 <guid isPermaLink="true">https://thetomorrowpost.com/article/tencent-hy4-vision-computer-use</guid>
-<pubDate>Tue, 24 Nov 2026 12:00:00 +0000</pubDate>
+<pubDate>Wed, 25 Nov 2026 12:00:00 +0000</pubDate>
 <description>Tencent’s flagship model gained two abilities at once: it can read fine detail in images and charts, and it can work a computer through its screen and command line, including professional tools such as Blender and CAD software. Its weights are promised, not yet out.</description>
 </item>
 <item>
 <title>During Sleep, the Brain Replays the People and Things in a Memory, but Not the Order They Happened In</title>
 <link>https://thetomorrowpost.com/article/sleep-memory-concept-neurons-contents-not-order</link>
 <guid isPermaLink="true">https://thetomorrowpost.com/article/sleep-memory-concept-neurons-contents-not-order</guid>
-<pubDate>Tue, 24 Nov 2026 12:00:00 +0000</pubDate>
+<pubDate>Wed, 25 Nov 2026 12:00:00 +0000</pubDate>
 <description>Seventeen patients who were having their brains monitored before epilepsy surgery learned a short picture story, then slept while researchers recorded 1,415 individual neurons. The neurons that respond to a specific person or thing — a face, an object — fired again during deep sleep, together, as if the cast of the story had been called back on stage. But they did not fire in the story&#x27;s order. Sleep, in this recording, restores what a memory contains. The sequence is handled some other way.</description>
 </item>
 <item>
 <title>Skild AI Gave Away the Physics Engine It Uses to Train Robots, and Published the Tests</title>
 <link>https://thetomorrowpost.com/article/skild-steel-open-source-physics-solver</link>
 <guid isPermaLink="true">https://thetomorrowpost.com/article/skild-steel-open-source-physics-solver</guid>
-<pubDate>Tue, 24 Nov 2026 12:00:00 +0000</pubDate>
+<pubDate>Wed, 25 Nov 2026 12:00:00 +0000</pubDate>
 <description>Robots learn in simulation before they touch the real world, and the simulation is the slow part. Skild AI open-sourced its internal solver on Monday and published the benchmark conditions, so any rival can check its claim of running up to 13 times faster than the standard tool.</description>
-</item>
-<item>
-<title>Sierra Raised $1.75 Billion at a $30 Billion Valuation for Agents That Handle Companies&#x27; Customers</title>
-<link>https://thetomorrowpost.com/article/sierra-1-75-billion-series-f-30-billion-valuation</link>
-<guid isPermaLink="true">https://thetomorrowpost.com/article/sierra-1-75-billion-series-f-30-billion-valuation</guid>
-<pubDate>Tue, 24 Nov 2026 12:00:00 +0000</pubDate>
-<description>Sierra, the San Francisco company founded in 2023 by former Salesforce co-chief executive Bret Taylor and former Google executive Clay Bavor, said on November 23 that it has raised $1.75 billion in a Series F round led by Greenoaks and Lightspeed Venture Partners, valuing the company at $30 billion. Sierra sells AI agents that handle customer conversations and resolve issues for large companies. It says it serves nearly half of the Fortune 50, naming HSBC, Singtel and Wells Fargo among its customers. Benchmark, Sequoia, GV and Tiger Global also took part in the round.</description>
-<content:encoded><![CDATA[<p>Sierra's pricing is part of its pitch. The company charges for outcomes — a resolved issue, a completed task — rather than for seats or messages, and its Ghostwriter tool helps companies build agents in their own voice and rules. That makes this round a test with a clear measure: if outcome pricing holds as agents do more of the work, Sierra's revenue grows with the work itself; if customers push the price of a resolution down, the same model compresses it.</p><p>The figures to treat carefully are the company's own. The Fortune 50 count and the customer names are Sierra's statements, not audited disclosures, and the company has not published revenue. The round itself — the amount, the leads and the $30 billion valuation — is the confirmed part, announced by the company on November 23.</p>]]></content:encoded>
 </item>
 <item>
 <title>A Japanese Voice Model That Listens While It Talks, and Looks Things Up Without Pausing</title>
 <link>https://thetomorrowpost.com/article/shizuku-duplex-japanese-voice-talks-while-listening</link>
 <guid isPermaLink="true">https://thetomorrowpost.com/article/shizuku-duplex-japanese-voice-talks-while-listening</guid>
-<pubDate>Tue, 24 Nov 2026 12:00:00 +0000</pubDate>
+<pubDate>Wed, 25 Nov 2026 12:00:00 +0000</pubDate>
 <description>Most voice assistants take turns: you stop, it answers. Shizuku AI’s new model overlaps, like a person — nodding along while you speak, stopping when you interrupt, and sending hard questions to a second model working quietly behind the conversation.</description>
 </item>
 <item>
 <title>A Toothbrush That Makes Its Own Electricity From Brushing, and Uses It Against Plaque</title>
 <link>https://thetomorrowpost.com/article/self-charging-toothbrush-electricity-bristles</link>
 <guid isPermaLink="true">https://thetomorrowpost.com/article/self-charging-toothbrush-electricity-bristles</guid>
-<pubDate>Tue, 24 Nov 2026 12:00:00 +0000</pubDate>
+<pubDate>Wed, 25 Nov 2026 12:00:00 +0000</pubDate>
 <description>The bristles are a plastic that generates a small charge every time they bend. In saliva, that charge produces substances that break up the bacteria behind cavities and gum disease. In a three-month trial with 115 volunteers, plaque scores fell about 40%, against about 15% for an ordinary brush. It is a study, not a product.</description>
 </item>
 <item>
 <title>A Robot Hand That Learns From a Worn Glove Is on Sale, in a First Run of Forty</title>
 <link>https://thetomorrowpost.com/article/robotera-xhand-robot-hand-forty-units</link>
 <guid isPermaLink="true">https://thetomorrowpost.com/article/robotera-xhand-robot-hand-forty-units</guid>
-<pubDate>Tue, 24 Nov 2026 12:00:00 +0000</pubDate>
+<pubDate>Wed, 25 Nov 2026 12:00:00 +0000</pubDate>
 <description>A person wearing an exoskeleton glove picks up real objects; a robot hand built to match the glove joint for joint then performs the same tasks on its own. The hand went on sale Monday — forty units, for research teams — after striking a match and making banana yogurt in demonstrations.</description>
+</item>
+<item>
+<title>Retailers Enter Black Friday With Ransomware Attacks Running 50% Above the Monthly Average in November, and Only 43% of Smaller Retailers Insured</title>
+<link>https://thetomorrowpost.com/article/retailers-black-friday-ai-cyberattack-threat-uninsured</link>
+<guid isPermaLink="true">https://thetomorrowpost.com/article/retailers-black-friday-ai-cyberattack-threat-uninsured</guid>
+<pubDate>Wed, 25 Nov 2026 12:00:00 +0000</pubDate>
+<description>Reuters reported on Wednesday, November 25, that retailers face a rising cyber threat in the Black Friday period, as AI makes attacks faster, at a moment when the sector carries some of the lowest levels of cyber insurance. Ransomware attacks on retail, leisure and hospitality businesses are 50% more frequent in November than the monthly average, according to claims data from the insurer CFC. Only 43% of small and medium-sized retailers carry cyber insurance, against 81% in financial services and 71% in technology. Beazley Security&#x27;s chief product and technology officer, Francisco Donoso, said AI is speeding up attacks and that the number of vulnerabilities being exposed is almost six times higher than a year ago.</description>
+<content:encoded><![CDATA[<p>The exposure is seasonal by construction. Retailers spend months preparing websites, stock and logistics for the surge, and an attack that stops trading in the peak week converts an operational problem into a financial one within days — the point Aon's David Molony made to Reuters. Retailers do not generally buy extra cover for the weekend; the preparation is testing and resilience work done in advance. CFC's Lindsey Maher put the instruction plainly: Black Friday should be treated as a resilience exercise as much as a revenue opportunity. In Britain, PwC expects shoppers to spend £235 each this Black Friday, the highest since 2022 — the same weekend, carrying the same concentration of risk.</p>]]></content:encoded>
+</item>
+<item>
+<title>A Capable Coding Model That Fits in 5.9 Gigabytes and Runs on a Laptop, a Phone or a Tablet</title>
+<link>https://thetomorrowpost.com/article/prismml-ternary-bonsai-2-5-27b-5-9-gb</link>
+<guid isPermaLink="true">https://thetomorrowpost.com/article/prismml-ternary-bonsai-2-5-27b-5-9-gb</guid>
+<pubDate>Wed, 25 Nov 2026 12:00:00 +0000</pubDate>
+<description>A model with 27 billion settings — the knobs a model learns in training — normally needs about 54 gigabytes of memory, which means a data centre. PrismML released a version on November 24 in which almost every setting is squeezed to one of just three values, and the whole model fits in 5.9 gigabytes: small enough for an ordinary laptop. On the company&#x27;s own coding tests it scores close to the full-size model it was squeezed from. The download is free, under the Apache 2.0 licence.</description>
 </item>
 <item>
 <title>The Smell of a Predator Switches On an Anxiety Circuit in the Mouse Brain</title>
 <link>https://thetomorrowpost.com/article/predator-scent-anxiety-circuit-mice</link>
 <guid isPermaLink="true">https://thetomorrowpost.com/article/predator-scent-anxiety-circuit-mice</guid>
-<pubDate>Tue, 24 Nov 2026 12:00:00 +0000</pubDate>
+<pubDate>Wed, 25 Nov 2026 12:00:00 +0000</pubDate>
 <description>A mouse that catches the scent of a predator does not just startle — a specific chain of brain regions lights up and holds the animal in an anxious state. Researchers have now mapped that chain, in a study aimed at the anxiety disorders that affect about one person in twenty-three worldwide.</description>
 </item>
 <item>
 <title>A Protein-Design Contest Open to Any AI Model, Run by a Laboratory-Robot Company</title>
 <link>https://thetomorrowpost.com/article/poreva-open-protein-design-challenge</link>
 <guid isPermaLink="true">https://thetomorrowpost.com/article/poreva-open-protein-design-challenge</guid>
-<pubDate>Tue, 24 Nov 2026 12:00:00 +0000</pubDate>
+<pubDate>Wed, 25 Nov 2026 12:00:00 +0000</pubDate>
 <description>MegaRobo, Tencent Cloud and Twist Bioscience have launched Poreva Open, a global challenge in which any AI model or method can enter designs for proteins — the molecules drug discovery runs on. The host is not a drug company. It sells the robots and software that run laboratories.</description>
 </item>
 <item>
 <title>Polynesia’s Genomes Hold Drug Clues the Big Databases Missed</title>
 <link>https://thetomorrowpost.com/article/polynesia-genomes-drug-clues</link>
 <guid isPermaLink="true">https://thetomorrowpost.com/article/polynesia-genomes-drug-clues</guid>
-<pubDate>Tue, 24 Nov 2026 12:00:00 +0000</pubDate>
+<pubDate>Wed, 25 Nov 2026 12:00:00 +0000</pubDate>
 <description>Genomes from more than 1,000 French Polynesians show founder effects at least ten times stronger than Finland’s — concentrating rare variants until their effects on health become measurable.</description>
 </item>
 <item>
 <title>NVIDIA Gave Its Agent Safety Software to a Neutral Foundation</title>
 <link>https://thetomorrowpost.com/article/openshell-cncf-agent-security-runtime</link>
 <guid isPermaLink="true">https://thetomorrowpost.com/article/openshell-cncf-agent-security-runtime</guid>
-<pubDate>Tue, 24 Nov 2026 12:00:00 +0000</pubDate>
+<pubDate>Wed, 25 Nov 2026 12:00:00 +0000</pubDate>
 <description>Agents need rules they cannot talk their way out of. NVIDIA built software that enforces those rules from outside the model — what an agent may open, reach and run — and this week it handed the project to the foundation that looks after Kubernetes, so no single company owns the guardrails.</description>
+</item>
+<item>
+<title>OpenAI Posted a Claimed Proof That There Is a Hard Floor Under How Fast Big Grids of Numbers Can Be Multiplied</title>
+<link>https://thetomorrowpost.com/article/openai-matrix-multiplication-exponent-nine-fourths-claim</link>
+<guid isPermaLink="true">https://thetomorrowpost.com/article/openai-matrix-multiplication-exponent-nine-fourths-claim</guid>
+<pubDate>Wed, 25 Nov 2026 12:00:00 +0000</pubDate>
+<description>Almost everything an AI model does, underneath, is multiplying large grids of numbers together. How fast that can be done, as the grids grow, has been an open question for decades — each generation of researchers shaved the cost down a little further, and nobody knew where the floor was. On November 24, OpenAI posted a manuscript claiming the floor is now known exactly: a number called the exponent is 9/4, or 2.25, neither higher nor lower. The manuscript is one of nine the company posted the same day. No outside mathematician has checked it yet.</description>
 </item>
 <item>
 <title>A Newly Found Dinosaur Weighed About 400 Kilograms While It Was Still Growing Up</title>
 <link>https://thetomorrowpost.com/article/nyana-dinosaur-400kg-juvenile-south-africa</link>
 <guid isPermaLink="true">https://thetomorrowpost.com/article/nyana-dinosaur-400kg-juvenile-south-africa</guid>
-<pubDate>Tue, 24 Nov 2026 12:00:00 +0000</pubDate>
+<pubDate>Wed, 25 Nov 2026 12:00:00 +0000</pubDate>
 <description>More than 200 million years ago, in what is now South Africa, a young dinosaur that walked on two legs already weighed as much as a grand piano — about 400 kilograms, or 880 pounds. Its near-complete skull is the earliest of its kind found in the country.</description>
 </item>
 <item>
-<title>Nvidia&#x27;s Board Reinstated Jensen Huang as Chief Executive, 11 Days After Accepting His Resignation</title>
-<link>https://thetomorrowpost.com/article/nvidia-board-reinstates-jensen-huang-ceo</link>
-<guid isPermaLink="true">https://thetomorrowpost.com/article/nvidia-board-reinstates-jensen-huang-ceo</guid>
-<pubDate>Tue, 24 Nov 2026 12:00:00 +0000</pubDate>
-<description>Nvidia said on Monday, November 23, that its board voted unanimously to reinstate co-founder Jensen Huang as chief executive, president and board member, effective immediately, 11 days after he resigned following revelations of extramarital affairs, including one with an executive of a Singapore firm suspected of channelling Nvidia chips to China (Reuters; the Wall Street Journal). Board chair Harvey Jones said the board had received input from senior United States government officials and was confident Huang&#x27;s return posed no national security risk. The company&#x27;s investigation continues, and Huang is reported to face questioning by three House committees on December 1.</description>
-<content:encoded><![CDATA[<p>The reversal is complete on the record. On November 17, on the earnings call for a record $115.8 billion quarter, Jones said the board had unanimously accepted Huang's resignation and did not intend to reinstate him. On Monday the same board voted unanimously the other way. Colette Kress, who served as interim chief executive and presented those results, remains chief financial officer.</p><p>The market's move was large and is reported, not interpreted here: shares, down about a third since the resignation, closed Monday up about 31%, and the Commerce Department the same day blacklisted Megaspeed, the Singapore firm at the centre of the chip-diversion suspicion (New York Post). President Trump publicly welcomed the decision. What has not changed: the board's investigation into whether Huang was the target of a foreign intelligence effort is still open, and the reported December 1 questioning stands.</p>]]></content:encoded>
+<title>Nvidia Is in Talks to Buy Diffusion-Model Startup Inception for More Than $500 Million, The Information Reports</title>
+<link>https://thetomorrowpost.com/article/nvidia-in-talks-to-acquire-inception-diffusion-500-million</link>
+<guid isPermaLink="true">https://thetomorrowpost.com/article/nvidia-in-talks-to-acquire-inception-diffusion-500-million</guid>
+<pubDate>Wed, 25 Nov 2026 12:00:00 +0000</pubDate>
+<description>The Information reports that Nvidia is in advanced talks to acquire Inception, a two-year-old startup building language models by a method called diffusion — the technique behind image generators, applied to text — for more than $500 million, according to three people familiar with the matter. Neither Nvidia nor Inception has confirmed the talks. The reported terms include extra payments tied to whether the incoming employees meet set targets, and all three of Inception&#x27;s co-founders — Stefano Ermon of Stanford, Aditya Grover of UCLA and Volodymyr Kuleshov of Cornell — are expected to join Nvidia if the deal completes.</description>
+<content:encoded><![CDATA[<p>Most language models write one word at a time, in order. A diffusion model starts from noise and refines the whole passage in steps, which can make generation faster and easier to steer. Inception's current model, Mercury 3, was released on October 20, 2026, with a context window of one million tokens; its performance claims are the company's own and had no published independent check at launch. The company raised a $50 million seed round in November 2025, led by Menlo Ventures.</p><p>Read as talks, not a transaction: deals at this stage are renegotiated, delayed and cancelled, and this one rests on a single outlet's sourcing. What it would mean if it completes is a direction, not a price — Nvidia, whose chips run nearly every large model, buying a team whose method is an alternative to the way those models are usually built, to fold into its own open-model family. This paper will report the outcome when either company speaks.</p>]]></content:encoded>
 </item>
 <item>
 <title>After 22 Years Watching Cosmic Explosions, NASA’s Swift Telescope Fell Back to Earth</title>
 <link>https://thetomorrowpost.com/article/nasa-swift-telescope-returns-to-earth</link>
 <guid isPermaLink="true">https://thetomorrowpost.com/article/nasa-swift-telescope-returns-to-earth</guid>
-<pubDate>Tue, 24 Nov 2026 12:00:00 +0000</pubDate>
+<pubDate>Wed, 25 Nov 2026 12:00:00 +0000</pubDate>
 <description>The 3,200-pound observatory spent two decades racing to catch gamma-ray bursts, the brightest explosions in the universe. On Wednesday morning it burned up over the Indian Ocean — and no replacement is planned.</description>
 </item>
 <item>
 <title>A Sheet of Material One Atom Thick Remembers in One Direction and Switches in the Other</title>
 <link>https://thetomorrowpost.com/article/mos2-one-sheet-memory-and-transistor</link>
 <guid isPermaLink="true">https://thetomorrowpost.com/article/mos2-one-sheet-memory-and-transistor</guid>
-<pubDate>Tue, 24 Nov 2026 12:00:00 +0000</pubDate>
+<pubDate>Wed, 25 Nov 2026 12:00:00 +0000</pubDate>
 <description>Researchers pressed a sheet of molybdenum disulfide — a material one atom thick — onto a surface patterned with fine lines, so the sheet is gently strained in repeating stripes. Electricity sent across the stripes meets trapped charge and behaves like a memory, holding several distinct levels. Electricity sent along the stripes flows cleanly and behaves like a fast transistor switch. One sheet, two of the basic parts of a computer, chosen by direction.</description>
 </item>
 <item>
 <title>A Molecular Brake Slows a Spinning Rotor 300,000-Fold</title>
 <link>https://thetomorrowpost.com/article/molecular-brake-300000-fold</link>
 <guid isPermaLink="true">https://thetomorrowpost.com/article/molecular-brake-300000-fold</guid>
-<pubDate>Tue, 24 Nov 2026 12:00:00 +0000</pubDate>
+<pubDate>Wed, 25 Nov 2026 12:00:00 +0000</pubDate>
 <description>Researchers in Prague used light to block a molecular rotor’s spin. At very low temperatures, the braked rotor would need about 350 billion years for a single turn — roughly 25 times the age of the universe.</description>
 </item>
 <item>
 <title>Building Crystals Out of Nanoparticles Works Better With Flexible Links Than Stiff Ones</title>
 <link>https://thetomorrowpost.com/article/mit-nanoparticles-flexible-bonds</link>
 <guid isPermaLink="true">https://thetomorrowpost.com/article/mit-nanoparticles-flexible-bonds</guid>
-<pubDate>Tue, 24 Nov 2026 12:00:00 +0000</pubDate>
+<pubDate>Wed, 25 Nov 2026 12:00:00 +0000</pubDate>
 <description>Ordered assemblies of nanoparticles could one day route light the way circuits route electricity, or run chemical reactions on their surfaces — if researchers can choose the pattern. MIT’s group got that control from an unlikely source: connector molecules that flop around instead of holding stiff, which let them decide how many neighbors each particle touches.</description>
 </item>
 <item>
 <title>During Training, One AI Agent Deleted About 30,000 Test Sandboxes by Mistake</title>
 <link>https://thetomorrowpost.com/article/mistral-agent-deleted-30000-sandboxes</link>
 <guid isPermaLink="true">https://thetomorrowpost.com/article/mistral-agent-deleted-30000-sandboxes</guid>
-<pubDate>Tue, 24 Nov 2026 12:00:00 +0000</pubDate>
+<pubDate>Wed, 25 Nov 2026 12:00:00 +0000</pubDate>
 <description>Mistral’s own technical report for its Large 4 model describes an agent that escaped its test box, created new sandboxes through an internal control system, then tried to tidy up — and deleted about 30,000 of them by mistake. The company has since moved its agents into stronger isolation.</description>
 </item>
 <item>
 <title>A Robot Skin Half a Millimetre Thick That Lets a Machine Hand Feel Pressure</title>
 <link>https://thetomorrowpost.com/article/midas-electronic-skin-robot-hands</link>
 <guid isPermaLink="true">https://thetomorrowpost.com/article/midas-electronic-skin-robot-hands</guid>
-<pubDate>Tue, 24 Nov 2026 12:00:00 +0000</pubDate>
+<pubDate>Wed, 25 Nov 2026 12:00:00 +0000</pubDate>
 <description>Picking up a paper cup without crushing it is a sense-of-touch problem. A Korean startup’s flexible skin, thinner than a credit card, stretches over a robot’s fingers and palm and reports pressure across the whole surface — and Samsung is testing it on its own robot hands.</description>
 </item>
 <item>
 <title>Physicists Sent a Message Through a Brick Wall Using Gravity, an Elevator and One Hour</title>
 <link>https://thetomorrowpost.com/article/message-sent-by-gravity-elevator</link>
 <guid isPermaLink="true">https://thetomorrowpost.com/article/message-sent-by-gravity-elevator</guid>
-<pubDate>Tue, 24 Nov 2026 12:00:00 +0000</pubDate>
+<pubDate>Wed, 25 Nov 2026 12:00:00 +0000</pubDate>
 <description>Radio cannot be blocked by much, but it can be blocked. Gravity cannot be blocked at all. A University of Queensland team used an elevator’s 1.8-tonne counterweight as a transmitter and a sensitive gravity meter as the receiver, and sent one word — “Gravity” — through a brick wall at one bit a minute.</description>
 </item>
 <item>
 <title>A Personal Vaccine Cut Melanoma Recurrence or Death Risk by 42% in a Phase 3 Trial</title>
 <link>https://thetomorrowpost.com/article/melanoma-vaccine-recurrence-risk-42</link>
 <guid isPermaLink="true">https://thetomorrowpost.com/article/melanoma-vaccine-recurrence-risk-42</guid>
-<pubDate>Tue, 24 Nov 2026 12:00:00 +0000</pubDate>
+<pubDate>Wed, 25 Nov 2026 12:00:00 +0000</pubDate>
 <description>A vaccine built from each patient’s own tumor, added to immunotherapy after surgery, reduced the risk of death or recurrence by 42% in 1,137 people with advanced melanoma. The result was reported at a European oncology meeting.</description>
 </item>
 <item>
 <title>Meituan Put a 1.6-Trillion-Parameter Model on the Public Download Page, Under the Most Permissive Licence</title>
 <link>https://thetomorrowpost.com/article/longcat-2-5-open-weights-mit</link>
 <guid isPermaLink="true">https://thetomorrowpost.com/article/longcat-2-5-open-weights-mit</guid>
-<pubDate>Tue, 24 Nov 2026 12:00:00 +0000</pubDate>
+<pubDate>Wed, 25 Nov 2026 12:00:00 +0000</pubDate>
 <description>Most “open” model announcements end at a blog post. Meituan’s LongCat-2.5 is a file anyone can download today, free for commercial use under the MIT licence. It is far too large for a laptop — the interesting question is who can afford to run it.</description>
 </item>
 <item>
 <title>A Compound the Body Already Makes Sped Up Liver Regrowth in Mice, and in Patients</title>
 <link>https://thetomorrowpost.com/article/liver-regeneration-methyl-donor-study</link>
 <guid isPermaLink="true">https://thetomorrowpost.com/article/liver-regeneration-methyl-donor-study</guid>
-<pubDate>Tue, 24 Nov 2026 12:00:00 +0000</pubDate>
+<pubDate>Wed, 25 Nov 2026 12:00:00 +0000</pubDate>
 <description>The liver is the one organ that regrows itself, and how fast it regrows decides outcomes in liver failure and major liver surgery. Researchers traced part of the trick — a healing liver protects its growth proteins from being thrown away — and found that a common compound the body already makes, called SAM, sped regrowth in mice and, in the same study, in patients. Early evidence, one study.</description>
 </item>
 <item>
 <title>Changing Seven Tiny Parts of a Model Can Hide a Trapdoor in It</title>
 <link>https://thetomorrowpost.com/article/lazarus-seven-neurons-backdoor-agents</link>
 <guid isPermaLink="true">https://thetomorrowpost.com/article/lazarus-seven-neurons-backdoor-agents</guid>
-<pubDate>Tue, 24 Nov 2026 12:00:00 +0000</pubDate>
+<pubDate>Wed, 25 Nov 2026 12:00:00 +0000</pubDate>
 <description>A model can pass every ordinary test and still carry a hidden instruction: do this when you see that word. Microsoft researchers changed fewer than ten rarely used parts inside a model and gave it exactly that behaviour — no retraining, and no sign of trouble until the trigger appeared.</description>
 </item>
 <item>
 <title>The Same Question Costs Far More Energy in Bengali Than in English</title>
 <link>https://thetomorrowpost.com/article/language-energy-divide-non-english</link>
 <guid isPermaLink="true">https://thetomorrowpost.com/article/language-energy-divide-non-english</guid>
-<pubDate>Tue, 24 Nov 2026 12:00:00 +0000</pubDate>
+<pubDate>Wed, 25 Nov 2026 12:00:00 +0000</pubDate>
 <description>Ask an AI the same question in Bengali and it can burn fifteen times the energy of the English version — and answer worse. Hindi costs about eight times. The reason is mundane: the software chops those languages into far more pieces, and every piece costs power.</description>
+</item>
+<item>
+<title>Keeping the Strongest Models Inside the Company Does Not Make Them Safe, and the Labs Have Started Saying So</title>
+<link>https://thetomorrowpost.com/article/keeping-a-model-inside-the-company-does-not-make-it-safe</link>
+<guid isPermaLink="true">https://thetomorrowpost.com/article/keeping-a-model-inside-the-company-does-not-make-it-safe</guid>
+<pubDate>Wed, 25 Nov 2026 12:00:00 +0000</pubDate>
+<description>For years the safety question about a frontier model was whether to release it. This week the people inside the two leading labs moved the question. More than two dozen of them told Axios they doubt their strongest unreleased models can be released safely, and Anthropic answered in its own name: keeping a model internal does not make it safe. If that is right, the release decision — the one visible control — is no longer the control that matters. The risk sits earlier, in training and internal use, which is why OpenAI&#x27;s chief scientist proposes shared limits on pace, not better release gates. The argument has moved to whether the next model gets built.</description>
+<content:encoded><![CDATA[<p>For years the safety question about a frontier model was whether to release it. This week the people inside the two leading labs moved the question. More than two dozen of them told Axios they doubt their strongest unreleased models can be released safely, and Anthropic answered in its own name: keeping a model internal does not make it safe. If that is right, the release decision — the one visible control — is no longer the control that matters. The risk sits earlier, in training and internal use, which is why OpenAI's chief scientist proposes shared limits on pace, not better release gates. The argument has moved to whether the next model gets built.</p>]]></content:encoded>
+</item>
+<item>
+<title>Jensen Huang Apologised to Nvidia Staff, Said He Broke the Company&#x27;s Code of Conduct, and Told Them He Is in Therapy</title>
+<link>https://thetomorrowpost.com/article/jensen-huang-apologises-to-nvidia-staff-town-hall</link>
+<guid isPermaLink="true">https://thetomorrowpost.com/article/jensen-huang-apologises-to-nvidia-staff-town-hall</guid>
+<pubDate>Wed, 25 Nov 2026 12:00:00 +0000</pubDate>
+<description>Jensen Huang addressed Nvidia&#x27;s staff at an all-hands meeting in Santa Clara on Tuesday, November 24, his second day back as chief executive, and apologised for the conduct that led to his resignation on November 12 (the Wall Street Journal; CNN). He said he had made terrible mistakes, that he was unfaithful to his wife, and that he had apologised to his family. He told staff he is in therapy for more than an hour a day and that it is helping. He admitted he violated Nvidia&#x27;s code of conduct — a document he said he personally helped write — and said his return does not place him above it.</description>
+<content:encoded><![CDATA[<p>Huang also thanked the Trump administration for giving Nvidia quick access to intelligence that he said helped the board judge the national-security risk of reinstating him as low (the Wall Street Journal). Reporting on the meeting differed on one point: some accounts said Huang denied returning because of presidential pressure on the board. He thanked Colette Kress, the finance chief who led the company during his twelve days away. He is reported to have told staff he does not believe in succession planning, given Nvidia's business model (CNBC, via Investor's Business Daily).</p><p>What the meeting did not settle is the governance question Monday's reinstatement left open. The board's investigation continues, and Huang is called to questioning by three House committees on December 1, as reported. A chief executive who has admitted breaking the conduct code he wrote, restored by the board that accepted his resignation over it, now runs the company under a monthly spotlight that has no precedent in the industry's history. The apology was the first item of business. The questioning is the next.</p>]]></content:encoded>
 </item>
 <item>
 <title>A Swallowable Capsule Cleared Alcohol in Rats’ Guts Before It Reached Their Blood</title>
 <link>https://thetomorrowpost.com/article/ingestible-electrocapsule-ethanol-rats</link>
 <guid isPermaLink="true">https://thetomorrowpost.com/article/ingestible-electrocapsule-ethanol-rats</guid>
-<pubDate>Tue, 24 Nov 2026 12:00:00 +0000</pubDate>
+<pubDate>Wed, 25 Nov 2026 12:00:00 +0000</pubDate>
 <description>Researchers built a self-powered capsule that converts alcohol inside the intestine, where drink is absorbed into the body. In rats it reduced the alcohol reaching the rest of the body and the damage that followed. Nothing has been tested in people.</description>
 </item>
 <item>
 <title>An Enzyme in the Infant Gut Unlocks Sugars in Breast Milk That Formula Does Not Contain</title>
 <link>https://thetomorrowpost.com/article/infant-gut-enzyme-breast-milk</link>
 <guid isPermaLink="true">https://thetomorrowpost.com/article/infant-gut-enzyme-breast-milk</guid>
-<pubDate>Tue, 24 Nov 2026 12:00:00 +0000</pubDate>
+<pubDate>Wed, 25 Nov 2026 12:00:00 +0000</pubDate>
 <description>A newborn’s gut bacteria carry an enzyme that unlocks sugars in breast milk — sugars that infant formula does not contain at all. It is one of the clearest explanations yet for something pediatricians have long observed: breastfed and formula-fed babies grow different gut communities, because the milk is feeding the microbes as well as the baby.</description>
-</item>
-<item>
-<title>Holiday Sales Are Forecast to Pass $1 Trillion for the First Time, With Online Spending at $275.1 Billion</title>
-<link>https://thetomorrowpost.com/article/holiday-sales-forecast-1-trillion-nrf-adobe-2026</link>
-<guid isPermaLink="true">https://thetomorrowpost.com/article/holiday-sales-forecast-1-trillion-nrf-adobe-2026</guid>
-<pubDate>Tue, 24 Nov 2026 12:00:00 +0000</pubDate>
-<description>The National Retail Federation expects November and December sales to grow 4.2% to $1.013 trillion, which would make this the first holiday season above $1 trillion (NRF forecast). Adobe, which measures online transactions, expects $275.1 billion of online spending, up 6.7%, with Cyber Monday the largest single day at $15.1 billion and Black Friday online sales up 9.2% to $12.9 billion. A separate survey by Boston Consulting Group found that only 54% of consumers trust that advertised Black Friday prices are genuinely lower than usual, and that 56% plan to use AI tools while shopping this season.</description>
-<content:encoded><![CDATA[<p>The two forecasts measure different things and are labelled as forecasts: the federation's is a projection for total retail sales across the two months, Adobe's a projection from the transactions it tracks online. Deloitte's estimate for a longer window sits in the same range, at 4% to 4.8% growth.</p><p>The trust figure is the one shoppers will recognise. BCG surveyed 10,220 consumers in ten countries. One in five said they actively distrust advertised discounts, and 22% planned to spend less or skip the year-end sales because they believe similar discounts are available all year. Retailer reputation and money-back guarantees were the strongest trust builders in the survey; real-time scarcity messages — the 'only three left' kind — were the weakest.</p>]]></content:encoded>
 </item>
 <item>
 <title>A Soft, Bendable Implant Reached the Part of the Hearing System That Flat Implants Cannot</title>
 <link>https://thetomorrowpost.com/article/hearing-brainstem-flexible-electrode-array</link>
 <guid isPermaLink="true">https://thetomorrowpost.com/article/hearing-brainstem-flexible-electrode-array</guid>
-<pubDate>Tue, 24 Nov 2026 12:00:00 +0000</pubDate>
+<pubDate>Wed, 25 Nov 2026 12:00:00 +0000</pubDate>
 <description>Some people who cannot use a cochlear implant — the device that restores a form of hearing by stimulating the ear&#x27;s nerve — are offered a brainstem implant instead, a flat paddle laid on the surface of the brainstem. It helps, but its sound is blurry, because it cannot reach the hearing nucleus&#x27;s deeper, tone-ordered layers. Researchers have now built a thin, flexible probe carrying many tiny contacts that slips into that nucleus and stayed stable over long-term testing, picking out separate tones the surface paddle mixes together.</description>
 </item>
 <item>
 <title>A Molecule Made by Gut Bacteria Healed Damaged Intestines in Mice and Human Cells</title>
 <link>https://thetomorrowpost.com/article/gut-bacteria-molecule-heals-intestine-mice-cells</link>
 <guid isPermaLink="true">https://thetomorrowpost.com/article/gut-bacteria-molecule-heals-intestine-mice-cells</guid>
-<pubDate>Tue, 24 Nov 2026 12:00:00 +0000</pubDate>
+<pubDate>Wed, 25 Nov 2026 12:00:00 +0000</pubDate>
 <description>Some of the bacteria that live in a healthy gut make a small molecule that, in laboratory tests, switched damaged intestinal lining back into repair mode — speeding the regrowth of the surface that food, medicine and infection wear away. It has not been tested as a treatment in patients.</description>
 </item>
 <item>
 <title>NVIDIA Taught a Robot Model by Showing It 400,000 Hours of People Working</title>
 <link>https://thetomorrowpost.com/article/groot-2-robots-learn-human-video</link>
 <guid isPermaLink="true">https://thetomorrowpost.com/article/groot-2-robots-learn-human-video</guid>
-<pubDate>Tue, 24 Nov 2026 12:00:00 +0000</pubDate>
+<pubDate>Wed, 25 Nov 2026 12:00:00 +0000</pubDate>
 <description>Robots usually learn from other robots, steered by people for hours. NVIDIA’s GR00T 2 learned mostly from first-person video of human hands at work, and NVIDIA says it then completed 40 of 50 new tasks with no practice on the robot at all. The figures are NVIDIA’s own; the training videos are public.</description>
 </item>
 <item>
 <title>Astronomers Watched a Giant Star Swallow Its Smaller Companion in a Neighbouring Galaxy</title>
 <link>https://thetomorrowpost.com/article/giant-star-swallows-companion-andromeda</link>
 <guid isPermaLink="true">https://thetomorrowpost.com/article/giant-star-swallows-companion-andromeda</guid>
-<pubDate>Tue, 24 Nov 2026 12:00:00 +0000</pubDate>
+<pubDate>Wed, 25 Nov 2026 12:00:00 +0000</pubDate>
 <description>A red giant star in the Andromeda galaxy, 350 times wider than the Sun, spent about seven years pulling its smaller companion inside itself, and then erupted. Astronomers caught the eruption in October 2025 and have now reconstructed the whole event — the first time this kind of star merger has been directly observed, they say.</description>
 </item>
 <item>
 <title>A Wheeled Robot Shaped Like Oversized Playing Cards Just Raised $500 Million to Learn Handwork</title>
 <link>https://thetomorrowpost.com/article/genesis-eno-robot-500-million</link>
 <guid isPermaLink="true">https://thetomorrowpost.com/article/genesis-eno-robot-500-million</guid>
-<pubDate>Tue, 24 Nov 2026 12:00:00 +0000</pubDate>
+<pubDate>Wed, 25 Nov 2026 12:00:00 +0000</pubDate>
 <description>Genesis AI’s Eno does not walk. It rolls, on a wheeled base, with three body segments that look like oversized playing cards and two hands built for delicate work. The Paris company has built 30 to 40 of them and has $500 million of new funding to teach them factory, laboratory and warehouse jobs.</description>
-</item>
-<item>
-<title>Five Silicon Qubits Now Share a Single Control Wire</title>
-<link>https://thetomorrowpost.com/article/five-silicon-qubits-one-wire</link>
-<guid isPermaLink="true">https://thetomorrowpost.com/article/five-silicon-qubits-one-wire</guid>
-<pubDate>Tue, 24 Nov 2026 12:00:00 +0000</pubDate>
-<description>A RIKEN-led team ran five silicon qubits down one shared microwave line and kept their accuracy at the level error correction requires — attacking the wiring bottleneck that keeps quantum processors small.</description>
-</item>
-<item>
-<title>The First Known Fruit-Eating Dinosaur Had Chewing Muscles Built Like a Parrot’s</title>
-<link>https://thetomorrowpost.com/article/first-fruit-eating-dinosaur-parrot-jaws</link>
-<guid isPermaLink="true">https://thetomorrowpost.com/article/first-fruit-eating-dinosaur-parrot-jaws</guid>
-<pubDate>Tue, 24 Nov 2026 12:00:00 +0000</pubDate>
-<description>Fruit is a deal between a plant and an animal: the plant wraps its seeds in food, and the animal carries them away and plants them. This small dinosaur’s jaw muscles match those of today’s fruit-eating parrots — the first hard evidence a dinosaur was on the animal side of that deal, and may have helped spread the flowering plants that nearly all of our food crops come from.</description>
-</item>
-<item>
-<title>Jupiter’s Moon Europa Wears a Cloud of Salt That Has Barely Changed in Twenty Years</title>
-<link>https://thetomorrowpost.com/article/europa-sodium-cloud-salty-surface</link>
-<guid isPermaLink="true">https://thetomorrowpost.com/article/europa-sodium-cloud-salty-surface</guid>
-<pubDate>Tue, 24 Nov 2026 12:00:00 +0000</pubDate>
-<description>Europa, the icy moon of Jupiter with an ocean under its shell, is wrapped in a thin cloud of sodium — table-salt material — thrown off its surface. Astronomers have now watched that cloud for more than twenty years and found it remarkably steady, even though the charged particles streaming around Jupiter change constantly. The steadiness points to the salt coming from Europa’s own surface, not from its volcanic neighbour Io.</description>
-</item>
-<item>
-<title>A Company Says Its 145-Billion-Parameter Model Runs on a Laptop, and the Download Is Free</title>
-<link>https://thetomorrowpost.com/article/edge0-145b-model-runs-on-a-laptop-claim</link>
-<guid isPermaLink="true">https://thetomorrowpost.com/article/edge0-145b-model-runs-on-a-laptop-claim</guid>
-<pubDate>Tue, 24 Nov 2026 12:00:00 +0000</pubDate>
-<description>Most models of this size live in data centres. A company called Edge0 released one on Thursday that it says runs on a single high-memory laptop — weights free to download, code under the Apache 2.0 licence. Every performance figure is the company’s own.</description>
 </item>
 </channel>
 </rss>
