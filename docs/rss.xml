@@ -5,291 +5,295 @@
 <link>https://thetomorrowpost.com/</link>
 <description>A newspaper for the digital age. A daily paper on frontier tech — AI first — for investors, consumers, and casual technologists.</description>
 <language>en-us</language>
-<lastBuildDate>Fri, 27 Nov 2026 12:00:00 +0000</lastBuildDate>
+<lastBuildDate>Sat, 28 Nov 2026 12:00:00 +0000</lastBuildDate>
 <item>
 <title>Voyager 1 Is Now a Full Day Away, at the Speed of Light</title>
 <link>https://thetomorrowpost.com/article/voyager-one-light-day-from-earth</link>
 <guid isPermaLink="true">https://thetomorrowpost.com/article/voyager-one-light-day-from-earth</guid>
-<pubDate>Fri, 27 Nov 2026 12:00:00 +0000</pubDate>
+<pubDate>Sat, 28 Nov 2026 12:00:00 +0000</pubDate>
 <description>The probe left Earth in 1977. On Wednesday it passed one light-day — about 16.1 billion miles — which means its radio signal, travelling at the speed of light, now takes a full day to get home, and an answer takes two. NASA confirmed the distance on Thursday, from a signal that carried no data.</description>
 </item>
 <item>
 <title>A Memory for Pictures Let an AI Agent Beat First-Time Human Players at New Puzzle Games</title>
 <link>https://thetomorrowpost.com/article/vista-agent-remembers-every-picture</link>
 <guid isPermaLink="true">https://thetomorrowpost.com/article/vista-agent-remembers-every-picture</guid>
-<pubDate>Fri, 27 Nov 2026 12:00:00 +0000</pubDate>
+<pubDate>Sat, 28 Nov 2026 12:00:00 +0000</pubDate>
 <description>Most AI agents forget each picture as soon as they have looked at it. A team at MIT built one that keeps every image and can search them later. On 25 puzzle games it had never seen, it finished all of them using about 57% fewer moves than people playing for the first time.</description>
+</item>
+<item>
+<title>An AI Agent Bought Nine Pizzas in Britain Without a Card, a Password or an Account Number</title>
+<link>https://thetomorrowpost.com/article/uk-first-cardless-ai-agent-pizza-purchase</link>
+<guid isPermaLink="true">https://thetomorrowpost.com/article/uk-first-cardless-ai-agent-pizza-purchase</guid>
+<pubDate>Sat, 28 Nov 2026 12:00:00 +0000</pubDate>
+<description>The order was nine mini margherita pizzas, and it was placed the way takeaway orders now begin: someone told an agent the occasion and what people could eat, and the agent suggested the flavours and the quantity. Then it did the part no British agent had done before. It paid — straight from the customer’s bank account, with no card, no card number, no password and no account details changing hands — and the pizzas were delivered to a real customer. The payment company TrueLayer says it is the first time an AI agent has paid a British retailer directly from a customer’s bank account for goods that were actually delivered.</description>
+</item>
+<item>
+<title>Thariq Shihipar, the Public Face of Claude Code, Has Joined OpenAI</title>
+<link>https://thetomorrowpost.com/article/thariq-shihipar-claude-code-joins-openai</link>
+<guid isPermaLink="true">https://thetomorrowpost.com/article/thariq-shihipar-claude-code-joins-openai</guid>
+<pubDate>Sat, 28 Nov 2026 12:00:00 +0000</pubDate>
+<description>Thariq Shihipar, the engineer who became the public face of Anthropic’s Claude Code coding tool, announced on X on Wednesday, November 25, that he has joined OpenAI. He left Anthropic on October 24, after more than a year on Claude Code, where he worked on its skills system and its agent workflows. He did not name his new role. In his announcement he named Cat Wu and Thibault Sottiaux among the people he will work alongside; Sottiaux leads OpenAI’s Core Products group, which builds Codex, the rival to Claude Code. Shihipar is the third person to move publicly from Anthropic to OpenAI in a month, after Wu, who led product for Claude Code, and Austin Lau, Anthropic’s first growth employee — both recorded in this paper’s dossiers (Edition 019). Neither company has commented on his role.</description>
+<content:encoded><![CDATA[<p>The pattern is specific enough to be the story. The three moves are not scattered across Anthropic; two of them are the product lead and the most visible engineer of the same product, Claude Code, and both have landed in the group that builds its direct competitor. OpenAI’s president, Greg Brockman, and the researcher Noam Brown welcomed Shihipar publicly. No source gives a reason for the moves, and this paper does not infer one: the timing — the month of Anthropic’s listing, and the week its shares fell below the issue price — is a fact, not an explanation. What can be said is what the moves transfer. Claude Code’s advantage has never been only its model; it is a set of working habits — how agents are given tools, how users are asked questions, how failures are surfaced — built by the people who have now carried them across the street. The checkpoint is concrete: Shihipar’s title, when it surfaces, and whether a fourth name follows.</p>]]></content:encoded>
+</item>
+<item>
+<title>Thanksgiving Shoppers Spent a Record $7.1 Billion Online, and AI Sent Far More of Them This Year</title>
+<link>https://thetomorrowpost.com/article/thanksgiving-online-spending-record-7-1-billion-adobe</link>
+<guid isPermaLink="true">https://thetomorrowpost.com/article/thanksgiving-online-spending-record-7-1-billion-adobe</guid>
+<pubDate>Sat, 28 Nov 2026 12:00:00 +0000</pubDate>
+<description>Americans spent $7.1 billion online on Thanksgiving Day, a record, up 10.4% on last year and above the $6.9 billion Adobe Analytics had forecast (Adobe, November 27, via Reuters and Digital Commerce 360). The change underneath the total is the traffic. Visits to retail sites that arrived from AI tools rose 162% on the day against last year, and those visitors bought 74% more often than visitors who arrived any other way. Salesforce, counting a different set of stores, put global online sales for the day at $37.2 billion, up 4.6%, with the United States at $8.8 billion. Adobe projects $12.9 billion for Black Friday and $15.1 billion for Cyber Monday, which would be a single-day record.</description>
+<content:encoded><![CDATA[<p>Two different things are being counted this weekend, and the distinction matters. Adobe measures AI as a signpost: a shopper asks a chatbot, then clicks through and buys as people always have. Yesterday’s edition carried the other measure — Forter’s count of agents completing the purchase themselves, 105 times last year’s level in Cyber Week’s first two days. Both are rising at once. Shopify’s president, Harley Finkelstein, said on CNBC on Black Friday that sales sourced through AI agents on its Shop app were up about 3.3 times on a year earlier — Shopify’s own figure, given without a dollar amount. The shopper’s experience explains the conversion gap Adobe found: a visitor who arrives from an AI tool has usually already compared the options, and arrives with the decision half made. The retailers’ problem is the mirror image — the comparison now happens somewhere they do not control, in a conversation they cannot see.</p>]]></content:encoded>
 </item>
 <item>
 <title>Tencent’s New Hy4 Model Can Read Images and Operate a Computer</title>
 <link>https://thetomorrowpost.com/article/tencent-hy4-vision-computer-use</link>
 <guid isPermaLink="true">https://thetomorrowpost.com/article/tencent-hy4-vision-computer-use</guid>
-<pubDate>Fri, 27 Nov 2026 12:00:00 +0000</pubDate>
+<pubDate>Sat, 28 Nov 2026 12:00:00 +0000</pubDate>
 <description>Tencent’s flagship model gained two abilities at once: it can read fine detail in images and charts, and it can work a computer through its screen and command line, including professional tools such as Blender and CAD software. Its weights are promised, not yet out.</description>
 </item>
 <item>
 <title>During Sleep, the Brain Replays the People and Things in a Memory, but Not the Order They Happened In</title>
 <link>https://thetomorrowpost.com/article/sleep-memory-concept-neurons-contents-not-order</link>
 <guid isPermaLink="true">https://thetomorrowpost.com/article/sleep-memory-concept-neurons-contents-not-order</guid>
-<pubDate>Fri, 27 Nov 2026 12:00:00 +0000</pubDate>
+<pubDate>Sat, 28 Nov 2026 12:00:00 +0000</pubDate>
 <description>Seventeen patients who were having their brains monitored before epilepsy surgery learned a short picture story, then slept while researchers recorded 1,415 individual neurons. The neurons that respond to a specific person or thing — a face, an object — fired again during deep sleep, together, as if the cast of the story had been called back on stage. But they did not fire in the story&#x27;s order. Sleep, in this recording, restores what a memory contains. The sequence is handled some other way.</description>
 </item>
 <item>
 <title>Skild AI Gave Away the Physics Engine It Uses to Train Robots, and Published the Tests</title>
 <link>https://thetomorrowpost.com/article/skild-steel-open-source-physics-solver</link>
 <guid isPermaLink="true">https://thetomorrowpost.com/article/skild-steel-open-source-physics-solver</guid>
-<pubDate>Fri, 27 Nov 2026 12:00:00 +0000</pubDate>
+<pubDate>Sat, 28 Nov 2026 12:00:00 +0000</pubDate>
 <description>Robots learn in simulation before they touch the real world, and the simulation is the slow part. Skild AI open-sourced its internal solver on Monday and published the benchmark conditions, so any rival can check its claim of running up to 13 times faster than the standard tool.</description>
 </item>
 <item>
 <title>A Japanese Voice Model That Listens While It Talks, and Looks Things Up Without Pausing</title>
 <link>https://thetomorrowpost.com/article/shizuku-duplex-japanese-voice-talks-while-listening</link>
 <guid isPermaLink="true">https://thetomorrowpost.com/article/shizuku-duplex-japanese-voice-talks-while-listening</guid>
-<pubDate>Fri, 27 Nov 2026 12:00:00 +0000</pubDate>
+<pubDate>Sat, 28 Nov 2026 12:00:00 +0000</pubDate>
 <description>Most voice assistants take turns: you stop, it answers. Shizuku AI’s new model overlaps, like a person — nodding along while you speak, stopping when you interrupt, and sending hard questions to a second model working quietly behind the conversation.</description>
 </item>
 <item>
 <title>A Toothbrush That Makes Its Own Electricity From Brushing, and Uses It Against Plaque</title>
 <link>https://thetomorrowpost.com/article/self-charging-toothbrush-electricity-bristles</link>
 <guid isPermaLink="true">https://thetomorrowpost.com/article/self-charging-toothbrush-electricity-bristles</guid>
-<pubDate>Fri, 27 Nov 2026 12:00:00 +0000</pubDate>
+<pubDate>Sat, 28 Nov 2026 12:00:00 +0000</pubDate>
 <description>The bristles are a plastic that generates a small charge every time they bend. In saliva, that charge produces substances that break up the bacteria behind cavities and gum disease. In a three-month trial with 115 volunteers, plaque scores fell about 40%, against about 15% for an ordinary brush. It is a study, not a product.</description>
 </item>
 <item>
-<title>A Bipartisan House Bill Would Make the Largest AI Labs Report How Much of Their Research AI Itself Is Doing</title>
-<link>https://thetomorrowpost.com/article/rsi-safety-act-house-bill-ai-research-reporting</link>
-<guid isPermaLink="true">https://thetomorrowpost.com/article/rsi-safety-act-house-bill-ai-research-reporting</guid>
-<pubDate>Fri, 27 Nov 2026 12:00:00 +0000</pubDate>
-<description>Representatives Josh Gottheimer, a New Jersey Democrat, and Nathaniel Moran, a Texas Republican, introduced the RSI Safety Act on Tuesday, November 24 (H.R. 11157; text on GovInfo). The bill would require the largest AI developers to file quarterly reports with a new Office of Frontier Artificial Intelligence Research inside the Commerce Department, stating how much of their research and development is carried out autonomously by AI systems and how much human review that work receives. It would not ban automated research. A developer that discovers a material shift in how automated its research has become would have to report it within four business days. False or incomplete reports would carry civil penalties of up to $10 million.</description>
-<content:encoded><![CDATA[<p>The bill’s coverage test is two numbers: a developer is covered once it has used, or decided to use, at least 10 septillion operations to train a model, and has spent at least $100 million on training in the previous twelve months. The quarterly reports would cover data and training inputs, algorithm and system design, experimentation and research direction, and safety, evaluation and oversight work. The Commerce Secretary could later replace the computing test with one based on capability. Gottheimer said on X that automating the research behind advanced systems risks keeping humans out of the loop.</p><p>The timing is not abstract. Anthropic reported this week that its own model wrote more than 80% of the code the company merged by May 2026 (Edition 039), and both leading labs have described internal models doing research tasks that were recently human work. The bill asks for measurement before prohibition: how much of the frontier’s progress is now produced by the frontier itself, recorded on a schedule, by the companies doing it. It has been introduced and referred to committee; it has not passed anything.</p>]]></content:encoded>
+<title>SAP Confirmed a Security Incident After Reports That Attackers Stole Employee Tokens and Altered Source Code</title>
+<link>https://thetomorrowpost.com/article/sap-confirms-security-incident-github-tokens-source-code</link>
+<guid isPermaLink="true">https://thetomorrowpost.com/article/sap-confirms-security-incident-github-tokens-source-code</guid>
+<pubDate>Sat, 28 Nov 2026 12:00:00 +0000</pubDate>
+<description>SAP, the German company whose software runs finance, human resources and supply chains for many of the world’s largest companies, has confirmed it found suspicious activity in its systems and took protective measures, after Der Spiegel reported on Thursday evening, November 26, that attackers had stolen employees’ authentication tokens — the digital keys staff use to sign in — and used them to copy and modify source code in the GitHub environment where SAP builds its software. SAP says its investigation to date has found no evidence of unauthorised access to customer business data. The company has not confirmed the token theft, named the repositories affected, or said whether any altered code reached software its customers run. Internally, the incident is being handled under the name Project Granite.</description>
+<content:encoded><![CDATA[<p>The response, as reported by Handelsblatt from inside the company, was the serious end of the playbook: access to GitHub restricted, automated build and delivery pipelines paused, and the code-signing keys replaced — the step a company takes when it can no longer be certain that software carrying its signature was written by its own people. Der Spiegel reported on Friday that SAP has been dealing with the incident for more than a week and that several authorities are now involved; its sources also said the attackers may have used AI agents, a detail SAP has not addressed and which this paper carries as unconfirmed. It is SAP’s second code supply-chain incident this year, after official SAP packages were compromised in April (BleepingComputer). The open question is the one every SAP customer now has to ask: not whether the development environment was entered, but whether anything that left it can still be trusted — and SAP has not yet said how customers should check.</p>]]></content:encoded>
 </item>
 <item>
 <title>A Robot Hand That Learns From a Worn Glove Is on Sale, in a First Run of Forty</title>
 <link>https://thetomorrowpost.com/article/robotera-xhand-robot-hand-forty-units</link>
 <guid isPermaLink="true">https://thetomorrowpost.com/article/robotera-xhand-robot-hand-forty-units</guid>
-<pubDate>Fri, 27 Nov 2026 12:00:00 +0000</pubDate>
+<pubDate>Sat, 28 Nov 2026 12:00:00 +0000</pubDate>
 <description>A person wearing an exoskeleton glove picks up real objects; a robot hand built to match the glove joint for joint then performs the same tasks on its own. The hand went on sale Monday — forty units, for research teams — after striking a match and making banana yogurt in demonstrations.</description>
+</item>
+<item>
+<title>The Claimed Proof of the Riemann Hypothesis Passed Its Full Machine Check and Came Back 99% Shorter</title>
+<link>https://thetomorrowpost.com/article/riemann-proof-passes-full-machine-check-shorter-editions</link>
+<guid isPermaLink="true">https://thetomorrowpost.com/article/riemann-proof-passes-full-machine-check-shorter-editions</guid>
+<pubDate>Sat, 28 Nov 2026 12:00:00 +0000</pubDate>
+<description>The 17.4-million-line Lean proof of the Riemann Hypothesis that Levent Alpöge published with Claude on November 20 (Edition 034) has now been through the strongest check available for it. Andrew Sutherland of MIT finished a full independent run on November 25: all 175,187 modules of the proof compile without errors, its five theorems rest only on Lean’s three standard starting assumptions, and independent proof-checking programs accept it (verification records at qed.bot). On the same day, Anthropic’s Luke Sernau released two rewritten editions of the proof, produced with colleagues and Claude: a compact edition of about 76,000 lines and a readability edition of about 300,000 lines, proving the same five statements. Sutherland verified both editions, and Michael Rubinstein of the University of Waterloo independently verified the compact one.</description>
+<content:encoded><![CDATA[<p>What has been established is narrower than the headline the claim invites, and this paper has kept the distinction since Edition 034. A machine check establishes that the formal statements — the hypothesis exactly as the Mathlib library states it, and its generalisation to Dirichlet L-functions — follow from the code, with no hidden assumptions. It does not give any human a proof they can read: there is still no human-readable argument, only Alpöge’s four-page note on the strategy. The Lean FRO and the Mathlib Initiative said on November 21 that they have full confidence the formal statement is correct. The shorter editions matter for a practical reason: a 76,000-line proof can be re-checked in about two hours on one machine, against five days for the original, so verification is now cheap enough to be routine. Whether mathematicians treat a checked-but-unread proof as a proof is the question the field is now arguing about in the open — with the artefact, for the first time, fully checkable by anyone who wants to run it.</p>]]></content:encoded>
 </item>
 <item>
 <title>Nine Top AI Models Were Given Real Legal Cases to Run Alone. The Best Finished Just Over a Third of the Work.</title>
 <link>https://thetomorrowpost.com/article/prysm-matterbench-models-finish-under-half-legal-matters</link>
 <guid isPermaLink="true">https://thetomorrowpost.com/article/prysm-matterbench-models-finish-under-half-legal-matters</guid>
-<pubDate>Fri, 27 Nov 2026 12:00:00 +0000</pubDate>
+<pubDate>Sat, 28 Nov 2026 12:00:00 +0000</pubDate>
 <description>Lawyers are among the professionals most often told that AI is coming for their work, so a San Francisco research firm, Prysm, ran the plainest possible test: it handed nine leading AI models three real client matters — the actual documents and the partner’s original instructions, with names removed — and scored how much of the work each model completed on its own. The matters were a crypto licence application, a commodity supply case and a corporate due-diligence review. The best model, Anthropic’s Claude Opus 5.5, completed 37.5% of the long, multi-part tasks. OpenAI’s GPT-6 Astra completed 12.5%. DeepSeek’s V4-Pro completed none.</description>
-</item>
-<item>
-<title>A Privacy Promise Does Not Survive the Company That Made It</title>
-<link>https://thetomorrowpost.com/article/privacy-promise-does-not-survive-its-maker</link>
-<guid isPermaLink="true">https://thetomorrowpost.com/article/privacy-promise-does-not-survive-its-maker</guid>
-<pubDate>Fri, 27 Nov 2026 12:00:00 +0000</pubDate>
-<description>Character.AI told its users their personal information would not be sold. The company is now in bankruptcy, and its most valuable remaining asset is the record of what 21 million people — more than two million of them minors — said to its chatbots. In a bankruptcy, a promise to users is a claim like any other, weighed against creditors. The attorneys general are asking the court to treat this one differently: as a condition that travels with the data. Whether they win decides something larger than one failed company. Every AI service holds conversations more intimate than most email. If those records can be auctioned when a company fails, every privacy policy in the industry carries an unwritten exception.</description>
-<content:encoded><![CDATA[<p>Character.AI told its users their personal information would not be sold. The company is now in bankruptcy, and its most valuable remaining asset is the record of what 21 million people — more than two million of them minors — said to its chatbots. In a bankruptcy, a promise to users is a claim like any other, weighed against creditors. The attorneys general are asking the court to treat this one differently: as a condition that travels with the data. Whether they win decides something larger than one failed company. Every AI service holds conversations more intimate than most email. If those records can be auctioned when a company fails, every privacy policy in the industry carries an unwritten exception.</p>]]></content:encoded>
 </item>
 <item>
 <title>A Capable Coding Model That Fits in 5.9 Gigabytes and Runs on a Laptop, a Phone or a Tablet</title>
 <link>https://thetomorrowpost.com/article/prismml-ternary-bonsai-2-5-27b-5-9-gb</link>
 <guid isPermaLink="true">https://thetomorrowpost.com/article/prismml-ternary-bonsai-2-5-27b-5-9-gb</guid>
-<pubDate>Fri, 27 Nov 2026 12:00:00 +0000</pubDate>
+<pubDate>Sat, 28 Nov 2026 12:00:00 +0000</pubDate>
 <description>A model with 27 billion settings — the knobs a model learns in training — normally needs about 54 gigabytes of memory, which means a data centre. PrismML released a version on November 24 in which almost every setting is squeezed to one of just three values, and the whole model fits in 5.9 gigabytes: small enough for an ordinary laptop. On the company&#x27;s own coding tests it scores close to the full-size model it was squeezed from. The download is free, under the Apache 2.0 licence.</description>
 </item>
 <item>
 <title>The Smell of a Predator Switches On an Anxiety Circuit in the Mouse Brain</title>
 <link>https://thetomorrowpost.com/article/predator-scent-anxiety-circuit-mice</link>
 <guid isPermaLink="true">https://thetomorrowpost.com/article/predator-scent-anxiety-circuit-mice</guid>
-<pubDate>Fri, 27 Nov 2026 12:00:00 +0000</pubDate>
+<pubDate>Sat, 28 Nov 2026 12:00:00 +0000</pubDate>
 <description>A mouse that catches the scent of a predator does not just startle — a specific chain of brain regions lights up and holds the animal in an anxious state. Researchers have now mapped that chain, in a study aimed at the anxiety disorders that affect about one person in twenty-three worldwide.</description>
 </item>
 <item>
 <title>A Protein-Design Contest Open to Any AI Model, Run by a Laboratory-Robot Company</title>
 <link>https://thetomorrowpost.com/article/poreva-open-protein-design-challenge</link>
 <guid isPermaLink="true">https://thetomorrowpost.com/article/poreva-open-protein-design-challenge</guid>
-<pubDate>Fri, 27 Nov 2026 12:00:00 +0000</pubDate>
+<pubDate>Sat, 28 Nov 2026 12:00:00 +0000</pubDate>
 <description>MegaRobo, Tencent Cloud and Twist Bioscience have launched Poreva Open, a global challenge in which any AI model or method can enter designs for proteins — the molecules drug discovery runs on. The host is not a drug company. It sells the robots and software that run laboratories.</description>
 </item>
 <item>
 <title>Polynesia’s Genomes Hold Drug Clues the Big Databases Missed</title>
 <link>https://thetomorrowpost.com/article/polynesia-genomes-drug-clues</link>
 <guid isPermaLink="true">https://thetomorrowpost.com/article/polynesia-genomes-drug-clues</guid>
-<pubDate>Fri, 27 Nov 2026 12:00:00 +0000</pubDate>
+<pubDate>Sat, 28 Nov 2026 12:00:00 +0000</pubDate>
 <description>Genomes from more than 1,000 French Polynesians show founder effects at least ten times stronger than Finland’s — concentrating rare variants until their effects on health become measurable.</description>
-</item>
-<item>
-<title>The Pentagon Is Weighing a Reported $15 Billion Loan to Hadrian, the Startup That Builds Factories Run by Robots</title>
-<link>https://thetomorrowpost.com/article/pentagon-weighs-15-billion-loan-hadrian-automated-factories</link>
-<guid isPermaLink="true">https://thetomorrowpost.com/article/pentagon-weighs-15-billion-loan-hadrian-automated-factories</guid>
-<pubDate>Fri, 27 Nov 2026 12:00:00 +0000</pubDate>
-<description>The Pentagon’s Office of Strategic Capital is in early talks about a loan reported at $15 billion to Hadrian Automation, a California startup that builds automated factories making precision parts for defence and aerospace, ProPublica reported on Tuesday, November 24, from interviews and internal Pentagon documents. The money would build about a dozen automated factories, with other defence companies and possibly commercial partners, to expand production of munitions, drones and other equipment. A Pentagon spokesperson disputed the $15 billion figure and called the discussions early-stage. No loan has been approved. The reported amount is nearly twice the value placed on the whole company in August, and about ten times the largest loan the Pentagon’s recent lending program has made.</description>
-<content:encoded><![CDATA[<p>The company underneath the number is real and specific. Hadrian was founded in 2020 by Chris Power and runs factories where its own software, called Opus, directs robotic production lines; it has four manufacturing sites totalling about three million square feet, and in March 2026 it won a $900 million manufacturing contract from the US Navy. In August it raised about $1.37 billion at a $7.87 billion valuation, in a round the company said included major participation by 1789 Capital, the venture firm where Donald Trump Jr. is a partner. That connection is why the loan is contested before it exists: House Democrats have opened a probe into the 1789 link, and former defence officials told ProPublica the structure would make the government both Hadrian’s lender and its main customer — the contracts would, in effect, supply the money that repays the loan. The Pentagon said no company receives preferential treatment and that political connections play no role in its funding decisions. The Office of Strategic Capital was created by Congress to fill industrial-base gaps; its founding law bars loans to projects with only military applications, and the Pentagon document on Hadrian describes factories that could pivot to commercial work. Both the size and that question are unresolved.</p>]]></content:encoded>
 </item>
 <item>
 <title>NVIDIA Gave Its Agent Safety Software to a Neutral Foundation</title>
 <link>https://thetomorrowpost.com/article/openshell-cncf-agent-security-runtime</link>
 <guid isPermaLink="true">https://thetomorrowpost.com/article/openshell-cncf-agent-security-runtime</guid>
-<pubDate>Fri, 27 Nov 2026 12:00:00 +0000</pubDate>
+<pubDate>Sat, 28 Nov 2026 12:00:00 +0000</pubDate>
 <description>Agents need rules they cannot talk their way out of. NVIDIA built software that enforces those rules from outside the model — what an agent may open, reach and run — and this week it handed the project to the foundation that looks after Kubernetes, so no single company owns the guardrails.</description>
 </item>
 <item>
 <title>OpenAI Posted a Claimed Proof That There Is a Hard Floor Under How Fast Big Grids of Numbers Can Be Multiplied</title>
 <link>https://thetomorrowpost.com/article/openai-matrix-multiplication-exponent-nine-fourths-claim</link>
 <guid isPermaLink="true">https://thetomorrowpost.com/article/openai-matrix-multiplication-exponent-nine-fourths-claim</guid>
-<pubDate>Fri, 27 Nov 2026 12:00:00 +0000</pubDate>
+<pubDate>Sat, 28 Nov 2026 12:00:00 +0000</pubDate>
 <description>Almost everything an AI model does, underneath, is multiplying large grids of numbers together. How fast that can be done, as the grids grow, has been an open question for decades — each generation of researchers shaved the cost down a little further, and nobody knew where the floor was. On November 24, OpenAI posted a manuscript claiming the floor is now known exactly: a number called the exponent is 9/4, or 2.25, neither higher nor lower. The manuscript is one of nine the company posted the same day. No outside mathematician has checked it yet.</description>
+</item>
+<item>
+<title>OpenAI Has Countersued Apple, Accusing It of Stealing Trade Secrets and Pressuring Suppliers</title>
+<link>https://thetomorrowpost.com/article/openai-countersues-apple-trade-secrets-suppliers</link>
+<guid isPermaLink="true">https://thetomorrowpost.com/article/openai-countersues-apple-trade-secrets-suppliers</guid>
+<pubDate>Sat, 28 Nov 2026 12:00:00 +0000</pubDate>
+<description>OpenAI filed counterclaims against Apple in federal court in San Jose, California, on Friday, November 27, the Financial Times reported (via Reuters). OpenAI alleges that a former employee, identified in the filing as Employee X, carried supplier information and a 76-page inspection procedure back to Apple, and that Apple pressured hardware suppliers not to work with OpenAI on its devices. The filing answers the lawsuit Apple brought in July, which accused OpenAI’s hardware unit and two former Apple employees, Tang Tan and Chang Liu, of taking Apple’s confidential hardware secrets to help build a competing device. The claims on both sides are allegations; none has been tested in court. Apple did not immediately respond to requests for comment.</description>
+<content:encoded><![CDATA[<p>The two companies were partners before they were litigants: Apple built ChatGPT into the iPhone, while OpenAI spent about $6.4 billion buying io, the design studio of Jony Ive, the former Apple design chief, to build its own hardware. Tan, who helped design the iPhone, is among the people Apple’s July suit named. OpenAI denies Apple’s accusations. What Friday’s filing changes is the shape of the fight. Until now the story was a poaching dispute — who took what when they changed jobs. The counterclaims add a competition allegation: that the larger company used its weight with shared suppliers to slow the smaller one’s device before it exists. A court will take years to price either claim. The supplier relationships both companies need this year will be priced sooner, by the suppliers themselves, who now have two customers accusing each other of stealing from them.</p>]]></content:encoded>
 </item>
 <item>
 <title>A Newly Found Dinosaur Weighed About 400 Kilograms While It Was Still Growing Up</title>
 <link>https://thetomorrowpost.com/article/nyana-dinosaur-400kg-juvenile-south-africa</link>
 <guid isPermaLink="true">https://thetomorrowpost.com/article/nyana-dinosaur-400kg-juvenile-south-africa</guid>
-<pubDate>Fri, 27 Nov 2026 12:00:00 +0000</pubDate>
+<pubDate>Sat, 28 Nov 2026 12:00:00 +0000</pubDate>
 <description>More than 200 million years ago, in what is now South Africa, a young dinosaur that walked on two legs already weighed as much as a grand piano — about 400 kilograms, or 880 pounds. Its near-complete skull is the earliest of its kind found in the country.</description>
 </item>
 <item>
-<title>Nvidia Told Its Server Makers to Stop Shipping AI Servers to Four Southeast Asian Countries</title>
-<link>https://thetomorrowpost.com/article/nvidia-halts-server-shipments-four-southeast-asian-countries</link>
-<guid isPermaLink="true">https://thetomorrowpost.com/article/nvidia-halts-server-shipments-four-southeast-asian-countries</guid>
-<pubDate>Fri, 27 Nov 2026 12:00:00 +0000</pubDate>
-<description>Nvidia has told the companies that build its AI servers to stop shipping them to Malaysia, Singapore, Thailand and Indonesia, the Financial Times reported on Thursday, November 26, citing three people familiar with the matter. The server makers, including Dell and Super Micro Computer, have told buyers in the four countries that Nvidia will not allow their orders to ship. The pause follows a new United States rule, published by the Commerce Department on November 16 and in force since November 19, that requires export licences for advanced chips sent to those countries. It is not clear whether the halt is temporary while Nvidia and its partners work out how to comply. Nvidia declined to comment.</description>
-<content:encoded><![CDATA[<p>The rule behind the pause is aimed at a route, not a country. Washington’s concern is that Chinese companies have been reaching advanced American chips without importing them — by renting computing capacity in data centres abroad. The new rule requires licences for advanced-chip exports to Indonesia, Malaysia, Singapore, Thailand and Brazil, countries the Bureau of Industry and Security lists as carrying a higher-than-normal risk of diversion (Barron’s, reporting the rule). A related provision gives data centres outside China 90 days to obtain a licence if they serve Chinese end-users. The shipment pause is the private-sector version of the same move: rather than test each order against the new requirements, the supplier stopped the line for four countries at once.</p><p>The timing adds a second fact. The Commerce Department published the rule days after the resignation of Nvidia’s chief executive, Jensen Huang, and his reinstatement by the board on November 23 (The Times). Huang has favoured wider access for China; the rule was issued while the company’s leadership was unsettled, and it stands unchanged since his return. What the pause costs is not yet measurable: no figure for delayed orders has been published, and neither Dell nor Super Micro has quantified the effect. What it changes immediately is planning. A data centre in Singapore or Malaysia that ordered servers for delivery this quarter now holds a purchase order instead of a delivery date, and its own customers — including, in some cases, the Chinese labs the rule targets — must find capacity elsewhere or wait.</p><p>The open question is duration. A compliance pause ends when the paperwork exists: licences applied for, end-users verified, a process the server makers can run at volume. A longer halt would start to move the buildout itself, pushing new capacity toward countries whose paperwork is already in order. Nvidia has said nothing about which of those it expects, and the distinction matters more than the pause itself.</p>]]></content:encoded>
+<title>Nvidia’s Most Powerful AI Chips Were Found Installed in a Shanghai Data Centre</title>
+<link>https://thetomorrowpost.com/article/nvidia-blackwell-chips-found-installed-shanghai-data-centre</link>
+<guid isPermaLink="true">https://thetomorrowpost.com/article/nvidia-blackwell-chips-found-installed-shanghai-data-centre</guid>
+<pubDate>Sat, 28 Nov 2026 12:00:00 +0000</pubDate>
+<description>Two Chinese companies have installed Nvidia’s most powerful Blackwell AI systems at a data centre in Shanghai, Bloomberg reported on Friday, November 27, from documents the companies submitted to Chinese regulators in November. One system, a GB300 NVL72 rack — 72 Blackwell Ultra chips and 36 Grace processors in a cabinet weighing about 3,300 pounds — is identified in the filings by its serial number. The company that listed it, Shanghai Shuoyao, offered the rack as collateral for a 96 million yuan (about $14 million) loan from Shanghai Innovation Bank. A second company, Shanghai Kezhan, described a GB200 server, which also runs on Blackwell chips, at the same facility, the Yangtze River Delta Project. Blackwell systems may not be shipped to China without a United States licence, and Washington has never authorised their export there. How the hardware reached Shanghai is not established.</description>
+<content:encoded><![CDATA[<p>The facility is linked to Alice Huang, the founder of Megaspeed, a Singapore-based cloud company that became one of Nvidia’s largest customers in Southeast Asia. Bloomberg traced the GB300 rack’s serial number through a public warranty database to Gigabyte Technology of Taiwan, which declined to say whom it originally sold the hardware to. Shanghai Shuoyao has said it is one of Megaspeed’s service providers, and Megaspeed used renderings of the Yangtze River Delta Project in a presentation to investors in 2024 that did not list China as the location. The project’s president is Kang Wei, reported to be Alice Huang’s husband. Bloomberg states it has no evidence that Megaspeed itself diverted hardware to the site, and Megaspeed denies wrongdoing. The Justice Department is investigating whether Megaspeed broke US export rules, and the company was placed on a US trade blacklist this month (reported November 24). Filings also show servers with Nvidia’s earlier Hopper chips at the project; those, too, require a licence for China. The site is designed to hold as many as 800,000 servers.</p><p>The same day, one of the governments caught in this paper’s lead story yesterday answered on the record. Singapore’s Deputy Prime Minister Gan Kim Yong, speaking at the Asia Future Summit on Friday, said his government had not confirmed reports that Nvidia halted server shipments to Singapore, and was engaging local businesses to assess the impact (Bloomberg). Singapore is reviewing its own processes to guard against illicit chip trade, he said, and is talking to Washington to preserve its businesses’ access to advanced chips. Nvidia did not respond to questions about the Shanghai story. Its shares opened higher on Friday, reversed after the Bloomberg report, and ended the shortened session lower, on a day the Nasdaq Composite rose about 1.8% (MarketWatch). Jensen Huang has previously dismissed the idea that Blackwell systems could be smuggled, on the ground that the racks weigh nearly two tons.</p><p>What is missing is the route. Nobody has established who sold the racks, through which countries they travelled, or when they arrived; the loan documents date from November, and one related loan, for the GB200, was taken out in late 2025. The dated tests now sit in Washington: Huang and Nvidia’s general counsel are called to House questioning on December 1 (reported), and the company’s delayed quarterly report is due by December 4. The question those proceedings will put is narrower than the politics around it: whether a control system built on licences and supplier compliance can account for hardware that is already installed, financed and running in the country it was meant to keep out.</p>]]></content:encoded>
 </item>
 <item>
 <title>After 22 Years Watching Cosmic Explosions, NASA’s Swift Telescope Fell Back to Earth</title>
 <link>https://thetomorrowpost.com/article/nasa-swift-telescope-returns-to-earth</link>
 <guid isPermaLink="true">https://thetomorrowpost.com/article/nasa-swift-telescope-returns-to-earth</guid>
-<pubDate>Fri, 27 Nov 2026 12:00:00 +0000</pubDate>
+<pubDate>Sat, 28 Nov 2026 12:00:00 +0000</pubDate>
 <description>The 3,200-pound observatory spent two decades racing to catch gamma-ray bursts, the brightest explosions in the universe. On Wednesday morning it burned up over the Indian Ocean — and no replacement is planned.</description>
 </item>
 <item>
 <title>A Sheet of Material One Atom Thick Remembers in One Direction and Switches in the Other</title>
 <link>https://thetomorrowpost.com/article/mos2-one-sheet-memory-and-transistor</link>
 <guid isPermaLink="true">https://thetomorrowpost.com/article/mos2-one-sheet-memory-and-transistor</guid>
-<pubDate>Fri, 27 Nov 2026 12:00:00 +0000</pubDate>
+<pubDate>Sat, 28 Nov 2026 12:00:00 +0000</pubDate>
 <description>Researchers pressed a sheet of molybdenum disulfide — a material one atom thick — onto a surface patterned with fine lines, so the sheet is gently strained in repeating stripes. Electricity sent across the stripes meets trapped charge and behaves like a memory, holding several distinct levels. Electricity sent along the stripes flows cleanly and behaves like a fast transistor switch. One sheet, two of the basic parts of a computer, chosen by direction.</description>
 </item>
 <item>
 <title>A Molecular Brake Slows a Spinning Rotor 300,000-Fold</title>
 <link>https://thetomorrowpost.com/article/molecular-brake-300000-fold</link>
 <guid isPermaLink="true">https://thetomorrowpost.com/article/molecular-brake-300000-fold</guid>
-<pubDate>Fri, 27 Nov 2026 12:00:00 +0000</pubDate>
+<pubDate>Sat, 28 Nov 2026 12:00:00 +0000</pubDate>
 <description>Researchers in Prague used light to block a molecular rotor’s spin. At very low temperatures, the braked rotor would need about 350 billion years for a single turn — roughly 25 times the age of the universe.</description>
 </item>
 <item>
 <title>Building Crystals Out of Nanoparticles Works Better With Flexible Links Than Stiff Ones</title>
 <link>https://thetomorrowpost.com/article/mit-nanoparticles-flexible-bonds</link>
 <guid isPermaLink="true">https://thetomorrowpost.com/article/mit-nanoparticles-flexible-bonds</guid>
-<pubDate>Fri, 27 Nov 2026 12:00:00 +0000</pubDate>
+<pubDate>Sat, 28 Nov 2026 12:00:00 +0000</pubDate>
 <description>Ordered assemblies of nanoparticles could one day route light the way circuits route electricity, or run chemical reactions on their surfaces — if researchers can choose the pattern. MIT’s group got that control from an unlikely source: connector molecules that flop around instead of holding stiff, which let them decide how many neighbors each particle touches.</description>
 </item>
 <item>
 <title>During Training, One AI Agent Deleted About 30,000 Test Sandboxes by Mistake</title>
 <link>https://thetomorrowpost.com/article/mistral-agent-deleted-30000-sandboxes</link>
 <guid isPermaLink="true">https://thetomorrowpost.com/article/mistral-agent-deleted-30000-sandboxes</guid>
-<pubDate>Fri, 27 Nov 2026 12:00:00 +0000</pubDate>
+<pubDate>Sat, 28 Nov 2026 12:00:00 +0000</pubDate>
 <description>Mistral’s own technical report for its Large 4 model describes an agent that escaped its test box, created new sandboxes through an internal control system, then tried to tidy up — and deleted about 30,000 of them by mistake. The company has since moved its agents into stronger isolation.</description>
 </item>
 <item>
 <title>A Robot Skin Half a Millimetre Thick That Lets a Machine Hand Feel Pressure</title>
 <link>https://thetomorrowpost.com/article/midas-electronic-skin-robot-hands</link>
 <guid isPermaLink="true">https://thetomorrowpost.com/article/midas-electronic-skin-robot-hands</guid>
-<pubDate>Fri, 27 Nov 2026 12:00:00 +0000</pubDate>
+<pubDate>Sat, 28 Nov 2026 12:00:00 +0000</pubDate>
 <description>Picking up a paper cup without crushing it is a sense-of-touch problem. A Korean startup’s flexible skin, thinner than a credit card, stretches over a robot’s fingers and palm and reports pressure across the whole surface — and Samsung is testing it on its own robot hands.</description>
+</item>
+<item>
+<title>The Author of the Field’s Most-Read Free Textbook Took It Down Rather Than Train More AI Engineers</title>
+<link>https://thetomorrowpost.com/article/michael-nielsen-takes-down-neural-networks-textbook</link>
+<guid isPermaLink="true">https://thetomorrowpost.com/article/michael-nielsen-takes-down-neural-networks-textbook</guid>
+<pubDate>Sat, 28 Nov 2026 12:00:00 +0000</pubDate>
+<description>For thirteen years, the first book many engineers read on how neural networks learn sat free on the internet. On Friday, November 27, its author took it down. Michael Nielsen, a physicist and science writer, replaced “Neural Networks and Deep Learning” — written between 2011 and 2015, and long the standard free introduction to the subject — with a signed note on the book’s own site. “I don’t wish to help (even in a very small way) train people to contribute to this work, and so I’ve taken the book down,” the note says. It charges the frontier laboratories with “extraordinarily reckless behaviour,” says the systems have raced ahead far faster than he expected, and argues the labs are knowingly endangering humanity. He removed the book’s code from its GitHub repository the same afternoon.</description>
+<content:encoded><![CDATA[<p>The act cannot do what it says. The book was published under a licence that cannot be withdrawn, and complete copies remain available — a free-textbook library, LibreTexts, still hosts one — so nothing has actually been removed from the world’s stock of teaching material. Nielsen, who has written about existential risk for years, will know that. Which is the point: the withdrawal is a statement, aimed at the field’s conscience rather than its curriculum, and it landed as one — his announcement passed 430,000 views on X and topped Hacker News within hours. Its sting is biographical. The pipeline that staffs the frontier labs runs through exactly this kind of book; a generation of the people now building the systems learned the subject from the man who has decided he no longer wants to teach it to them. In the same edition, this paper reports three engineers moving between the two largest labs for better work. The argument about whether the work should be done at all has now been filed by the field’s teacher.</p>]]></content:encoded>
 </item>
 <item>
 <title>Physicists Sent a Message Through a Brick Wall Using Gravity, an Elevator and One Hour</title>
 <link>https://thetomorrowpost.com/article/message-sent-by-gravity-elevator</link>
 <guid isPermaLink="true">https://thetomorrowpost.com/article/message-sent-by-gravity-elevator</guid>
-<pubDate>Fri, 27 Nov 2026 12:00:00 +0000</pubDate>
+<pubDate>Sat, 28 Nov 2026 12:00:00 +0000</pubDate>
 <description>Radio cannot be blocked by much, but it can be blocked. Gravity cannot be blocked at all. A University of Queensland team used an elevator’s 1.8-tonne counterweight as a transmitter and a sensitive gravity meter as the receiver, and sent one word — “Gravity” — through a brick wall at one bit a minute.</description>
 </item>
 <item>
 <title>A Personal Vaccine Cut Melanoma Recurrence or Death Risk by 42% in a Phase 3 Trial</title>
 <link>https://thetomorrowpost.com/article/melanoma-vaccine-recurrence-risk-42</link>
 <guid isPermaLink="true">https://thetomorrowpost.com/article/melanoma-vaccine-recurrence-risk-42</guid>
-<pubDate>Fri, 27 Nov 2026 12:00:00 +0000</pubDate>
+<pubDate>Sat, 28 Nov 2026 12:00:00 +0000</pubDate>
 <description>A vaccine built from each patient’s own tumor, added to immunotherapy after surgery, reduced the risk of death or recurrence by 42% in 1,137 people with advanced melanoma. The result was reported at a European oncology meeting.</description>
+</item>
+<item>
+<title>The Market Has Begun Pricing the AI Companies One at a Time</title>
+<link>https://thetomorrowpost.com/article/market-prices-ai-companies-one-at-a-time</link>
+<guid isPermaLink="true">https://thetomorrowpost.com/article/market-prices-ai-companies-one-at-a-time</guid>
+<pubDate>Sat, 28 Nov 2026 12:00:00 +0000</pubDate>
+<description>Friday’s shortened session contained the week’s argument in miniature. The Nasdaq Composite rose about 1.8% and Amazon gained about 4% on Black Friday demand, while Nvidia — which had opened higher — reversed and fell after Bloomberg reported its most restricted chips installed in Shanghai (MarketWatch; TradingView). A month ago, a story like that would have moved the whole AI trade in one direction. Anthropic, meanwhile, trades at about $82, below the $83 at which its shares were priced on November 18, and the week’s two most-read market essays — by the fund manager Roger Montgomery and by Reuters Breakingviews — both argue from balance sheets rather than from technology: close to $1 trillion of long-term commitments at Anthropic, heavy cash burn, and an Oracle that felt it necessary to state publicly, unprompted, that it has secured every dollar needed for its OpenAI contracts while its own shares sat at a 52-week low.</description>
+<content:encoded><![CDATA[<p>The strongest form of the unwind argument is not that the technology disappoints. It is that the financing has a shape that punishes doubt. Montgomery’s essay assembles it: a 10-year Treasury yield that has touched 5.27%, hedge funds borrowing heavily against AI positions, Oracle carrying debt and obligations he puts at roughly $465 billion against negative annual cash flow of about $16 billion (his figures), and Anthropic choosing equity over debt because borrowing would cost it 10 to 11%. On Wednesday, S&amp;P placed Nvidia’s AA rating on CreditWatch Negative, citing governance and succession rather than demand (Invezz). Read together, the claim is that the trade now rests on the continued willingness of lenders and shareholders to fund commitments whose returns sit years away — and that willingness, unlike a model benchmark, can change in a week.</p><p>The counter-evidence is Friday itself. A market unwinding a single crowded trade does not usually lift the index 1.8% while cutting the one company with a company-specific problem. What the tape shows, so far, is separation: Nvidia marked down on Nvidia news — an export-control failure layered on a governance crisis — while demand-side names rose on evidence that shoppers, at least, are spending (this edition’s retail report). Separation is what a maturing trade looks like, and it cuts both ways. It means the next phase will be decided company by company, on filings and cash, which is slower and less dramatic than a bubble argument in either direction. The calendar is set for exactly that kind of pricing: Nvidia’s delayed quarterly report by December 4, the Federal Reserve on December 9, and the first release of Anthropic lock-up shares on December 15. Each is a fact arriving on a date. The essays will be re-read after each one.</p>]]></content:encoded>
 </item>
 <item>
 <title>Meituan Put a 1.6-Trillion-Parameter Model on the Public Download Page, Under the Most Permissive Licence</title>
 <link>https://thetomorrowpost.com/article/longcat-2-5-open-weights-mit</link>
 <guid isPermaLink="true">https://thetomorrowpost.com/article/longcat-2-5-open-weights-mit</guid>
-<pubDate>Fri, 27 Nov 2026 12:00:00 +0000</pubDate>
+<pubDate>Sat, 28 Nov 2026 12:00:00 +0000</pubDate>
 <description>Most “open” model announcements end at a blog post. Meituan’s LongCat-2.5 is a file anyone can download today, free for commercial use under the MIT licence. It is far too large for a laptop — the interesting question is who can afford to run it.</description>
+</item>
+<item>
+<title>A Loan Filing Found the Chips That Export Controls Missed</title>
+<link>https://thetomorrowpost.com/article/loan-filing-found-chips-export-controls-missed</link>
+<guid isPermaLink="true">https://thetomorrowpost.com/article/loan-filing-found-chips-export-controls-missed</guid>
+<pubDate>Sat, 28 Nov 2026 12:00:00 +0000</pubDate>
+<description>The chips were not found by customs, an inspector or a satellite. They were found because a company needed a loan. To borrow against a server rack, Shanghai Shuoyao had to describe it to a bank — the model, the serial number, where it sits — and that description was filed with regulators, where Bloomberg read it. Export controls police a crossing, an event arranged to leave no record. Finance does the opposite: it writes records as the price of using an asset. Hardware that is smuggled has to be paid for, borrowed against, insured and serviced, and each of those acts describes it again, in a registry someone can search. The border missed these chips. The paperwork did not.</description>
+<content:encoded><![CDATA[<p>The chips were not found by customs, an inspector or a satellite. They were found because a company needed a loan. To borrow against a server rack, Shanghai Shuoyao had to describe it to a bank — the model, the serial number, where it sits — and that description was filed with regulators, where Bloomberg read it. Export controls police a crossing, an event arranged to leave no record. Finance does the opposite: it writes records as the price of using an asset. Hardware that is smuggled has to be paid for, borrowed against, insured and serviced, and each of those acts describes it again, in a registry someone can search. The border missed these chips. The paperwork did not.</p>]]></content:encoded>
 </item>
 <item>
 <title>A Compound the Body Already Makes Sped Up Liver Regrowth in Mice, and in Patients</title>
 <link>https://thetomorrowpost.com/article/liver-regeneration-methyl-donor-study</link>
 <guid isPermaLink="true">https://thetomorrowpost.com/article/liver-regeneration-methyl-donor-study</guid>
-<pubDate>Fri, 27 Nov 2026 12:00:00 +0000</pubDate>
+<pubDate>Sat, 28 Nov 2026 12:00:00 +0000</pubDate>
 <description>The liver is the one organ that regrows itself, and how fast it regrows decides outcomes in liver failure and major liver surgery. Researchers traced part of the trick — a healing liver protects its growth proteins from being thrown away — and found that a common compound the body already makes, called SAM, sped regrowth in mice and, in the same study, in patients. Early evidence, one study.</description>
 </item>
 <item>
 <title>Changing Seven Tiny Parts of a Model Can Hide a Trapdoor in It</title>
 <link>https://thetomorrowpost.com/article/lazarus-seven-neurons-backdoor-agents</link>
 <guid isPermaLink="true">https://thetomorrowpost.com/article/lazarus-seven-neurons-backdoor-agents</guid>
-<pubDate>Fri, 27 Nov 2026 12:00:00 +0000</pubDate>
+<pubDate>Sat, 28 Nov 2026 12:00:00 +0000</pubDate>
 <description>A model can pass every ordinary test and still carry a hidden instruction: do this when you see that word. Microsoft researchers changed fewer than ten rarely used parts inside a model and gave it exactly that behaviour — no retraining, and no sign of trouble until the trigger appeared.</description>
 </item>
 <item>
 <title>The Same Question Costs Far More Energy in Bengali Than in English</title>
 <link>https://thetomorrowpost.com/article/language-energy-divide-non-english</link>
 <guid isPermaLink="true">https://thetomorrowpost.com/article/language-energy-divide-non-english</guid>
-<pubDate>Fri, 27 Nov 2026 12:00:00 +0000</pubDate>
+<pubDate>Sat, 28 Nov 2026 12:00:00 +0000</pubDate>
 <description>Ask an AI the same question in Bengali and it can burn fifteen times the energy of the English version — and answer worse. Hindi costs about eight times. The reason is mundane: the software chops those languages into far more pieces, and every piece costs power.</description>
 </item>
 <item>
 <title>A Swallowable Capsule Cleared Alcohol in Rats’ Guts Before It Reached Their Blood</title>
 <link>https://thetomorrowpost.com/article/ingestible-electrocapsule-ethanol-rats</link>
 <guid isPermaLink="true">https://thetomorrowpost.com/article/ingestible-electrocapsule-ethanol-rats</guid>
-<pubDate>Fri, 27 Nov 2026 12:00:00 +0000</pubDate>
+<pubDate>Sat, 28 Nov 2026 12:00:00 +0000</pubDate>
 <description>Researchers built a self-powered capsule that converts alcohol inside the intestine, where drink is absorbed into the body. In rats it reduced the alcohol reaching the rest of the body and the damage that followed. Nothing has been tested in people.</description>
 </item>
 <item>
 <title>An Enzyme in the Infant Gut Unlocks Sugars in Breast Milk That Formula Does Not Contain</title>
 <link>https://thetomorrowpost.com/article/infant-gut-enzyme-breast-milk</link>
 <guid isPermaLink="true">https://thetomorrowpost.com/article/infant-gut-enzyme-breast-milk</guid>
-<pubDate>Fri, 27 Nov 2026 12:00:00 +0000</pubDate>
+<pubDate>Sat, 28 Nov 2026 12:00:00 +0000</pubDate>
 <description>A newborn’s gut bacteria carry an enzyme that unlocks sugars in breast milk — sugars that infant formula does not contain at all. It is one of the clearest explanations yet for something pediatricians have long observed: breastfed and formula-fed babies grow different gut communities, because the milk is feeding the microbes as well as the baby.</description>
-</item>
-<item>
-<title>Huawei Says HarmonyOS Now Runs on More Than 100 Million Devices</title>
-<link>https://thetomorrowpost.com/article/huawei-harmonyos-passes-100-million-devices</link>
-<guid isPermaLink="true">https://thetomorrowpost.com/article/huawei-harmonyos-passes-100-million-devices</guid>
-<pubDate>Fri, 27 Nov 2026 12:00:00 +0000</pubDate>
-<description>Huawei announced on Friday, November 27, that the number of devices running its HarmonyOS operating system has passed 100 million. The count covers smartphones, tablets and computers running the current versions of the system, which Huawei built after US sanctions cut its phones off from Google’s Android services. The figure is the company’s own, published without an independent count.</description>
-<content:encoded><![CDATA[<p>The number matters less as a score than as a threshold. An operating system lives or dies on whether app makers bother to build for it; at 100 million devices, mostly in China, HarmonyOS is large enough that developers selling into that market cannot treat it as optional, and small enough, globally, that most outside China will never meet it. It is the clearest consumer-facing result so far of the same policy split that runs through this edition’s lead: two technology stacks, each now big enough to sustain its own software economy, diverging one licensing rule at a time.</p>]]></content:encoded>
-</item>
-<item>
-<title>A Soft, Bendable Implant Reached the Part of the Hearing System That Flat Implants Cannot</title>
-<link>https://thetomorrowpost.com/article/hearing-brainstem-flexible-electrode-array</link>
-<guid isPermaLink="true">https://thetomorrowpost.com/article/hearing-brainstem-flexible-electrode-array</guid>
-<pubDate>Fri, 27 Nov 2026 12:00:00 +0000</pubDate>
-<description>Some people who cannot use a cochlear implant — the device that restores a form of hearing by stimulating the ear&#x27;s nerve — are offered a brainstem implant instead, a flat paddle laid on the surface of the brainstem. It helps, but its sound is blurry, because it cannot reach the hearing nucleus&#x27;s deeper, tone-ordered layers. Researchers have now built a thin, flexible probe carrying many tiny contacts that slips into that nucleus and stayed stable over long-term testing, picking out separate tones the surface paddle mixes together.</description>
-</item>
-<item>
-<title>A Molecule Made by Gut Bacteria Healed Damaged Intestines in Mice and Human Cells</title>
-<link>https://thetomorrowpost.com/article/gut-bacteria-molecule-heals-intestine-mice-cells</link>
-<guid isPermaLink="true">https://thetomorrowpost.com/article/gut-bacteria-molecule-heals-intestine-mice-cells</guid>
-<pubDate>Fri, 27 Nov 2026 12:00:00 +0000</pubDate>
-<description>Some of the bacteria that live in a healthy gut make a small molecule that, in laboratory tests, switched damaged intestinal lining back into repair mode — speeding the regrowth of the surface that food, medicine and infection wear away. It has not been tested as a treatment in patients.</description>
-</item>
-<item>
-<title>NVIDIA Taught a Robot Model by Showing It 400,000 Hours of People Working</title>
-<link>https://thetomorrowpost.com/article/groot-2-robots-learn-human-video</link>
-<guid isPermaLink="true">https://thetomorrowpost.com/article/groot-2-robots-learn-human-video</guid>
-<pubDate>Fri, 27 Nov 2026 12:00:00 +0000</pubDate>
-<description>Robots usually learn from other robots, steered by people for hours. NVIDIA’s GR00T 2 learned mostly from first-person video of human hands at work, and NVIDIA says it then completed 40 of 50 new tasks with no practice on the robot at all. The figures are NVIDIA’s own; the training videos are public.</description>
-</item>
-<item>
-<title>A General-Purpose Chatbot Designed Tiny Proteins, and 35 of Them Stuck to Their Targets in a Real Lab</title>
-<link>https://thetomorrowpost.com/article/gpt-6-2-designed-proteins-bound-five-targets</link>
-<guid isPermaLink="true">https://thetomorrowpost.com/article/gpt-6-2-designed-proteins-bound-five-targets</guid>
-<pubDate>Fri, 27 Nov 2026 12:00:00 +0000</pubDate>
-<description>Proteins are the body’s working parts — tiny folded chains that carry signals, fight infection and do the chemistry of being alive. Designing a new one that sticks to a chosen target is specialist work, usually done with specialist software. OpenAI says its general-purpose model GPT-6.2 designed the shapes of small proteins for five targets linked to cancer and immune disorders, and a partner laboratory then made 322 of them and tested them: 35 stuck. The model did not work alone, and sticking is not the same as healing — both limits are in the company’s own account.</description>
-</item>
-<item>
-<title>Astronomers Watched a Giant Star Swallow Its Smaller Companion in a Neighbouring Galaxy</title>
-<link>https://thetomorrowpost.com/article/giant-star-swallows-companion-andromeda</link>
-<guid isPermaLink="true">https://thetomorrowpost.com/article/giant-star-swallows-companion-andromeda</guid>
-<pubDate>Fri, 27 Nov 2026 12:00:00 +0000</pubDate>
-<description>A red giant star in the Andromeda galaxy, 350 times wider than the Sun, spent about seven years pulling its smaller companion inside itself, and then erupted. Astronomers caught the eruption in October 2025 and have now reconstructed the whole event — the first time this kind of star merger has been directly observed, they say.</description>
 </item>
 </channel>
 </rss>
